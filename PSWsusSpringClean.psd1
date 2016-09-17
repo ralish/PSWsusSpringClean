@@ -103,7 +103,7 @@ PrivateData = @{
         # IconUri = ''
 
         # ReleaseNotes of this module
-        # ReleaseNotes = ''
+        ReleaseNotes = 'https://github.com/ralish/PSWsusSpringClean/CHANGELOG.md'
 
     } # End of PSData hashtable
 
