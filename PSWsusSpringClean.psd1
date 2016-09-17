@@ -105,6 +105,9 @@ PrivateData = @{
         # ReleaseNotes of this module
         ReleaseNotes = 'https://github.com/ralish/PSWsusSpringClean/CHANGELOG.md'
 
+        # Module dependencies not available via the repository
+        ExternalModuleDependencies = @('UpdateServices')
+
     } # End of PSData hashtable
 
 } # End of PrivateData hashtable
