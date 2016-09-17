@@ -37,8 +37,18 @@ Function Invoke-WsusSpringClean {
         Specifies that the cmdlet declines expired updates.
         .PARAMETER DeclineSupersededUpdates
         Specifies that the cmdlet declines superseded updates.
+        .EXAMPLE
+        PS C:\>Invoke-WsusSpringClean -DeclineClusterUpdates -DeclineFarmUpdates -DeclineItaniumUpdates
+
+        Declines all failover clustering, farm server/deployment & Itanium updates.
+        .EXAMPLE
+        PS C:\>Invoke-WsusSpringClean -DeclineUnneededUpdates -DeclineCategoriesInclude @('Superseded', 'Pre-release')
+
+        Declines all unneeded updates in the Superseded & Pre-release categories.
         .NOTES
         The script intentionally avoids usage of most WSUS cmdlets provided by the UpdateServices module as many are extremely slow. This is particularly true of the Get-WsusUpdate cmdlet.
+
+        The efficiency of the update declining logic could be substantially improved. That said, this script is not typically run frequently (~monthly), so this isn't a major priority.
         .LINK
         https://github.com/ralish/PSWsusSpringClean
     #>
