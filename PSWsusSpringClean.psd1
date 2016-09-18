@@ -94,7 +94,7 @@ PrivateData = @{
         Tags = @('wsus')
 
         # A URL to the license for this module.
-        LicenseUri = 'https://github.com/ralish/PSWsusSpringClean/LICENSE'
+        LicenseUri = 'https://github.com/ralish/PSWsusSpringClean/blob/stable/LICENSE'
 
         # A URL to the main website for this project.
         ProjectUri = 'https://github.com/ralish/PSWsusSpringClean'
@@ -103,7 +103,7 @@ PrivateData = @{
         # IconUri = ''
 
         # ReleaseNotes of this module
-        ReleaseNotes = 'https://github.com/ralish/PSWsusSpringClean/CHANGELOG.md'
+        ReleaseNotes = 'https://github.com/ralish/PSWsusSpringClean/blob/stable/CHANGELOG.md'
 
         # Module dependencies not available via the repository
         ExternalModuleDependencies = @('UpdateServices')
