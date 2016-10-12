@@ -1,6 +1,10 @@
 Changelog
 =========
 
+## v0.1.2
+
+- Added 2171(!) updates to the CSV (almost entirely language packs)
+
 ## v0.1.1
 
 - Added 449 updates to the CSV (almost entirely language packs)
