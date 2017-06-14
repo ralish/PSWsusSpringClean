@@ -16,6 +16,8 @@ Function Invoke-WsusSpringClean {
         Decline any updates which are exclusively for farm deployment installations.
         .PARAMETER DeclineItaniumUpdates
         Decline any updates which are exclusively for Itanium architecture installations.
+        .PARAMETER DeclineSecurityOnlyQualityUpdates
+        Decline any Security Only Quality updates.
         .PARAMETER DeclineUnneededUpdates
         Decline any updates in the bundled updates catalog filtered against the provided inclusion or exclusion categories.
         .PARAMETER FindSuspectDeclines
@@ -68,6 +70,7 @@ Function Invoke-WsusSpringClean {
         [Switch]$DeclineClusterUpdates,
         [Switch]$DeclineFarmUpdates,
         [Switch]$DeclineItaniumUpdates,
+        [Switch]$DeclineSecurityOnlyQualityUpdates,
         [Switch]$DeclineUnneededUpdates,
         [Switch]$FindSuspectDeclines,
 
@@ -100,6 +103,7 @@ Function Invoke-WsusSpringClean {
                                                          -DeclineClusterUpdates:$DeclineClusterUpdates `
                                                          -DeclineFarmUpdates:$DeclineFarmUpdates `
                                                          -DeclineItaniumUpdates:$DeclineItaniumUpdates `
+                                                         -DeclineSecurityOnlyQualityUpdates:$DeclineSecurityOnlyQualityUpdates `
                                                          -DeclineUnneededUpdates:$DeclineUnneededUpdates `
                                                          -FindSuspectDeclines:$FindSuspectDeclines
     } else {
@@ -107,6 +111,7 @@ Function Invoke-WsusSpringClean {
                                                          -DeclineClusterUpdates:$DeclineClusterUpdates `
                                                          -DeclineFarmUpdates:$DeclineFarmUpdates `
                                                          -DeclineItaniumUpdates:$DeclineItaniumUpdates `
+                                                         -DeclineSecurityOnlyQualityUpdates:$DeclineSecurityOnlyQualityUpdates `
                                                          -DeclineUnneededUpdates:$DeclineUnneededUpdates `
                                                          -FindSuspectDeclines:$FindSuspectDeclines
     }
@@ -194,6 +199,7 @@ Function Invoke-WsusServerExtraCleanup {
         [Switch]$DeclineClusterUpdates,
         [Switch]$DeclineFarmUpdates,
         [Switch]$DeclineItaniumUpdates,
+        [Switch]$DeclineSecurityOnlyQualityUpdates,
         [Switch]$DeclineUnneededUpdates,
         [Switch]$FindSuspectDeclines
     )
@@ -259,6 +265,18 @@ Function Invoke-WsusServerExtraCleanup {
         }
     }
 
+    if ($DeclineSecurityOnlyQualityUpdates) {
+        Write-Host -ForegroundColor Green '[*] Declining Security Only Quality updates ...'
+        foreach ($Update in $WsusAnyExceptDeclined) {
+            if ($Update.Title -match 'Security Only Quality Update') {
+                if ($PSCmdlet.ShouldProcess($Update.Title, 'Decline')) {
+                    Write-Host -ForegroundColor Cyan ('[-] Declining update: {0}' -f $Update.Title)
+                    $Update.Decline()
+                }
+            }
+        }
+    }
+
     if ($DeclineUnneededUpdates) {
         foreach ($Category in $FilteredCategories) {
             Write-Host -ForegroundColor Green ('[*] Declining updates in category: {0}' -f $Category)
@@ -306,6 +324,12 @@ Function Invoke-WsusServerExtraCleanup {
             # Ignore Itanium updates if they were declined
             if ($DeclineItaniumUpdates -and
                 $Update.Title -match '(IA64|Itanium)') {
+                continue
+            }
+
+            # Ignore Security Only Quality updates if they were declined
+            if ($DeclineSecurityOnlyQualityUpdates -and
+                $Update.Title -match 'Security Only Quality Update') {
                 continue
             }
 
