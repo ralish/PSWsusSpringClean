@@ -136,9 +136,10 @@ Function ConvertTo-WsusSpringCleanCatalog {
         $Update.ProductTitles.CopyTo($ProductTitles, 0)
 
         [PSCustomObject]@{
-            Category = 'Unknown'
-            Title = $Update.Title
-            ProductTitles = [String]::Join(', ', $ProductTitles)
+            'Category'      = 'Unknown'
+            'Pre-release'   = if ($Update.IsBeta) { "TRUE" } else { "FALSE" }
+            'Title'         = $Update.Title
+            'ProductTitles' = [String]::Join(', ', $ProductTitles)
         }
     }
 }
