@@ -1,6 +1,14 @@
 Changelog
 =========
 
+## v0.2.0
+
+- Added new `DeclinePrereleaseUpdates` parameter
+- Added new `DeclineSecurityOnlyQualityUpdates` parameter
+- Added 441 updates to the CSV (almost entirely language packs)
+- Added new attribute in catalogue to denote pre-release updates
+- Major clean-up of the code & substantial performance improvements
+
 ## v0.1.2
 
 - Added 2171(!) updates to the CSV (almost entirely language packs)

@@ -8,7 +8,7 @@
 RootModule = 'PSWsusSpringClean.psm1'
 
 # Version number of this module.
-ModuleVersion = '0.1.2'
+ModuleVersion = '0.2.0'
 
 # Supported PSEditions
 # CompatiblePSEditions = @()
@@ -23,7 +23,7 @@ Author = 'Samuel Leslie'
 # CompanyName = ''
 
 # Copyright statement for this module
-Copyright = '(c) 2016 Samuel Leslie. All rights reserved.'
+Copyright = '(c) Samuel Leslie. All rights reserved.'
 
 # Description of the functionality provided by this module
 Description = 'Give your WSUS server a thorough spring cleaning'
