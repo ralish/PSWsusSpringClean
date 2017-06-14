@@ -16,6 +16,8 @@ Function Invoke-WsusSpringClean {
         Decline any updates which are exclusively for farm deployment installations.
         .PARAMETER DeclineItaniumUpdates
         Decline any updates which are exclusively for Itanium architecture installations.
+        .PARAMETER DeclinePrereleaseUpdates
+        Decline any updates which are exclusively for pre-release products (e.g. betas).
         .PARAMETER DeclineSecurityOnlyQualityUpdates
         Decline any Security Only Quality updates.
         .PARAMETER DeclineUnneededUpdates
@@ -70,6 +72,7 @@ Function Invoke-WsusSpringClean {
         [Switch]$DeclineClusterUpdates,
         [Switch]$DeclineFarmUpdates,
         [Switch]$DeclineItaniumUpdates,
+        [Switch]$DeclinePrereleaseUpdates,
         [Switch]$DeclineSecurityOnlyQualityUpdates,
         [Switch]$DeclineUnneededUpdates,
         [Switch]$FindSuspectDeclines,
@@ -103,6 +106,7 @@ Function Invoke-WsusSpringClean {
                                                          -DeclineClusterUpdates:$DeclineClusterUpdates `
                                                          -DeclineFarmUpdates:$DeclineFarmUpdates `
                                                          -DeclineItaniumUpdates:$DeclineItaniumUpdates `
+                                                         -DeclinePrereleaseUpdates:$DeclinePrereleaseUpdates `
                                                          -DeclineSecurityOnlyQualityUpdates:$DeclineSecurityOnlyQualityUpdates `
                                                          -DeclineUnneededUpdates:$DeclineUnneededUpdates `
                                                          -FindSuspectDeclines:$FindSuspectDeclines
@@ -111,6 +115,7 @@ Function Invoke-WsusSpringClean {
                                                          -DeclineClusterUpdates:$DeclineClusterUpdates `
                                                          -DeclineFarmUpdates:$DeclineFarmUpdates `
                                                          -DeclineItaniumUpdates:$DeclineItaniumUpdates `
+                                                         -DeclinePrereleaseUpdates:$DeclinePrereleaseUpdates `
                                                          -DeclineSecurityOnlyQualityUpdates:$DeclineSecurityOnlyQualityUpdates `
                                                          -DeclineUnneededUpdates:$DeclineUnneededUpdates `
                                                          -FindSuspectDeclines:$FindSuspectDeclines
@@ -200,6 +205,7 @@ Function Invoke-WsusServerExtraCleanup {
         [Switch]$DeclineClusterUpdates,
         [Switch]$DeclineFarmUpdates,
         [Switch]$DeclineItaniumUpdates,
+        [Switch]$DeclinePrereleaseUpdates,
         [Switch]$DeclineSecurityOnlyQualityUpdates,
         [Switch]$DeclineUnneededUpdates,
         [Switch]$FindSuspectDeclines
@@ -266,6 +272,19 @@ Function Invoke-WsusServerExtraCleanup {
         }
     }
 
+    if ($DeclinePrereleaseUpdates) {
+        Write-Host -ForegroundColor Green '[*] Declining pre-release updates ...'
+        $PrereleaseUpdates = $Updates | Where-Object { $_.'Pre-release' -eq $true }
+        $MatchingUpdates = $WsusAnyExceptDeclined | Where-Object { $_.Title -in $PrereleaseUpdates.Title }
+
+        foreach ($Update in $MatchingUpdates) {
+            if ($PSCmdlet.ShouldProcess($Update.Title, 'Decline')) {
+                Write-Host -ForegroundColor Cyan ('[-] Declining update: {0}' -f $Update.Title)
+                $Update.Decline()
+            }
+        }
+    }
+
     if ($DeclineSecurityOnlyQualityUpdates) {
         Write-Host -ForegroundColor Green '[*] Declining Security Only Quality updates ...'
         foreach ($Update in $WsusAnyExceptDeclined) {
@@ -325,6 +344,12 @@ Function Invoke-WsusServerExtraCleanup {
             # Ignore Itanium updates if they were declined
             if ($DeclineItaniumUpdates -and
                 $Update.Title -match '(IA64|Itanium)') {
+                continue
+            }
+
+            # Ignore pre-release updates if they were declined
+            if ($DeclinePrereleaseUpdates -and
+                $Update.Title -in $PrereleaseUpdates) {
                 continue
             }
 
