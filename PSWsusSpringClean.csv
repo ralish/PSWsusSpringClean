@@ -1131,6 +1131,8 @@ Language - ig-NG,FALSE,Igbo Language Interface Pack - Windows 8.1 - (KB2839636) 
 Language - ig-NG,FALSE,Igbo Language Interface Pack - Windows 8.1 for x64-based Systems - (KB2839636) [ig-NG_LIP],Windows 8.1 Language Interface Packs
 Language - ig-NG,FALSE,Igbo LanguageInterfacePack - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [ig-NG_LIP],Windows 10 Language Interface Packs
 Language - ig-NG,FALSE,Igbo LanguageInterfacePack - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [ig-NG_LIP],Windows 10 Language Interface Packs
+Superseded,FALSE,Important Update for SQL Server 2016 RTM (KB3210111),Microsoft SQL Server 2016
+Superseded,FALSE,Important Update for SQL Server 2016 RTM CU(KB3210110),Microsoft SQL Server 2016
 Language - id-ID,TRUE,Indonesian (Indonesia) LanguageInterfacePack - Windows 10 Insider Preview 14390 for AMD64-based Systems - (KB3179271) [id-ID_LIP],Windows 10 Language Interface Packs
 Language - id-ID,TRUE,Indonesian (Indonesia) LanguageInterfacePack - Windows 10 Insider Preview 14390 for x86-based Systems - (KB3179271) [id-ID_LIP],Windows 10 Language Interface Packs
 Language - id-ID,FALSE,Indonesian (Indonesia) LanguageInterfacePack - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [id-ID_LIP],Windows 10 Language Interface Packs
@@ -3028,6 +3030,7 @@ Superseded,FALSE,Security Update for Microsoft .NET Framework 4.5 on Windows Vis
 Superseded,FALSE,Security Update for Microsoft .NET Framework 4.5.1 on Windows 8 (KB2898870),Windows 8
 Superseded,FALSE,Security Update for Microsoft .NET Framework 4.5.1 on Windows 8 and Windows Server 2012 for x64-based Systems (KB2898870),"Windows 8, Windows Server 2012"
 Superseded,FALSE,"Security Update for Microsoft .NET Framework, Version 2.0 (KB929916)",Windows Vista
+Superseded,FALSE,Security Update for Microsoft Visual C++ 2010 Redistributable Package (KB2467173),Visual Studio 2010
 Superseded,FALSE,Security Update for Microsoft Visual Studio 2005 (KB925674),Visual Studio 2005
 Superseded,FALSE,Security Update for Microsoft Visual Studio 2005 (KB937060),Visual Studio 2005
 Superseded,FALSE,Security Update for Microsoft Visual Studio 2008 (KB971091),Visual Studio 2008
@@ -3053,9 +3056,12 @@ Superseded,FALSE,Security Update for SQL Server 2012 Service Pack 1 (KB3045317),
 Superseded,FALSE,Security Update for SQL Server 2012 Service Pack 1 (KB3045318),Microsoft SQL Server 2012
 Superseded,FALSE,Security Update for SQL Server 2012 Service Pack 2 (KB3045319),Microsoft SQL Server 2012
 Superseded,FALSE,Security Update for SQL Server 2012 Service Pack 2 (KB3045321),Microsoft SQL Server 2012
+Superseded,FALSE,Security Update for SQL Server 2012 Service Pack 2 GDR (KB3194719),Microsoft SQL Server 2012
 Superseded,FALSE,Security Update for SQL Server 2014 (KB3045323),Microsoft SQL Server 2014
 Superseded,FALSE,Security Update for SQL Server 2014 (KB3045324),Microsoft SQL Server 2014
 Superseded,FALSE,Security Update for SQL Server 2014 Service Pack 1 (KB3070446),Microsoft SQL Server 2014
+Superseded,FALSE,Security Update for SQL Server 2014 Service Pack 1 CU (KB3194722),Microsoft SQL Server 2014
+Superseded,FALSE,Security Update for SQL Server 2014 Service Pack 1 GDR (KB3194720),Microsoft SQL Server 2014
 Superseded,FALSE,Security Update for Windows 2000 (329834),Windows 2000
 Superseded,FALSE,Security Update for Windows 2000 (819696),Windows 2000
 Superseded,TRUE,Security Update for Windows 7 Beta (KB958690),Windows 7
@@ -3259,6 +3265,10 @@ Language - es-ES,FALSE,Spanish LanguagePack - Windows 10 Version 1607 for x86-ba
 Language - es-ES,FALSE,Spanish LanguagePack - Windows Server 2016 for AMD64-based Systems - (KB3192967) [es-ES_LP],Windows Server Technical Preview Language Packs
 Superseded,FALSE,SQL Server 2005 Books Online (February 2007),SQL Server 2005
 Superseded,FALSE,SQL Server 2012 Service Pack 1 Setup Update (KB2674319),SQL Server 2012 Product Updates for Setup
+Superseded,FALSE,SQL Server 2012 Service Pack 2 Cumulative Update (CU) 15 KB3205416,Microsoft SQL Server 2012
+Superseded,FALSE,SQL Server 2012 Service Pack 2 Cumulative Update (CU) 16 KB3205054,Microsoft SQL Server 2012
+Superseded,FALSE,SQL Server 2014 Service Pack 1 Cumulative Update (CU) 11 KB4010392,Microsoft SQL Server 2014
+Superseded,FALSE,SQL Server 2016 RTM Cumulative Update (CU) 5 KB4013105,Microsoft SQL Server 2016
 Language - sv-SE,FALSE,Swedish Language Pack,Windows Vista Ultimate Language Packs
 Language - sv-SE,FALSE,Swedish Language Pack - Windows 10 - (KB3079343) [sv-SE_LP],Windows 10 Language Packs
 Language - sv-SE,FALSE,Swedish Language Pack - Windows 10 for x64-based Systems - (KB3079343) [sv-SE_LP],Windows 10 Language Packs
