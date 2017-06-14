@@ -1,0 +1,11 @@
+# Windows files
+$RECYCLE.BIN/
+Desktop.ini
+Thumbs.db
+ehthumbs.db
+
+# Temporary files
+*~
+~$*
+*.swp
+*.tmp
