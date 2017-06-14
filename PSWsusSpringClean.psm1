@@ -7,9 +7,9 @@ Function Invoke-WsusSpringClean {
         .PARAMETER SynchroniseServer
         Perform a synchronisation against the upstream server before running cleanup.
         .PARAMETER DeclineCategoriesExclude
-        Array of update categories in the bundled updates catalog to not decline.
+        Array of update categories in the bundled updates catalogue to not decline.
         .PARAMETER DeclineCategoriesInclude
-        Array of update categories in the bundled updates catalog to decline.
+        Array of update categories in the bundled updates catalogue to decline.
         .PARAMETER DeclineClusterUpdates
         Decline any updates which are exclusively for failover clustering installations.
         .PARAMETER DeclineFarmUpdates
@@ -21,14 +21,14 @@ Function Invoke-WsusSpringClean {
         .PARAMETER DeclineSecurityOnlyQualityUpdates
         Decline any Security Only Quality updates.
         .PARAMETER DeclineUnneededUpdates
-        Decline any updates in the bundled updates catalog filtered against the provided inclusion or exclusion categories.
+        Decline any updates in the bundled updates catalogue filtered against the provided inclusion or exclusion categories.
         .PARAMETER FindSuspectDeclines
         Scan all declined updates for any that may have been inadvertently declined.
 
         The returned suspect updates are those which:
          - Are not superseded or expired
          - Are not cluster, farm or Itanium updates (if set to decline)
-         - Are not in the filtered list of updates to decline from the bundled catalog
+         - Are not in the filtered list of updates to decline from the bundled catalogue
         .PARAMETER CleanupObsoleteComputers
         Specifies that the cmdlet deletes obsolete computers from the database.
         .PARAMETER CleanupObsoleteUpdates
@@ -95,59 +95,42 @@ Function Invoke-WsusSpringClean {
     }
 
     Write-Host -ForegroundColor Green "`r`nBeginning WSUS server cleanup (Phase 1) ..."
-    Invoke-WsusServerCleanupWrapper -CleanupObsoleteUpdates:$CleanupObsoleteUpdates `
-                                    -CompressUpdates:$CompressUpdates `
-                                    -DeclineExpiredUpdates:$DeclineExpiredUpdates `
-                                    -DeclineSupersededUpdates:$DeclineSupersededUpdates
+    $CleanupParams = @{
+        CleanupObsoleteUpdates=$CleanupObsoleteUpdates
+        CompressUpdates=$CompressUpdates
+        DeclineExpiredUpdates=$DeclineExpiredUpdates
+        DeclineSupersededUpdates=$DeclineSupersededUpdates
+    }
+    Invoke-WsusServerCleanupWrapper @CleanupParams
 
     Write-Host -ForegroundColor Green "`r`nBeginning WSUS server cleanup (Phase 2) ..."
+    $ExtraCleanupParams = @{
+        DeclineClusterUpdates=$DeclineClusterUpdates
+        DeclineFarmUpdates=$DeclineFarmUpdates
+        DeclineItaniumUpdates=$DeclineItaniumUpdates
+        DeclinePrereleaseUpdates=$DeclinePrereleaseUpdates
+        DeclineSecurityOnlyQualityUpdates=$DeclineSecurityOnlyQualityUpdates
+        DeclineUnneededUpdates=$DeclineUnneededUpdates
+        FindSuspectDeclines=$FindSuspectDeclines
+    }
     if ($PSCmdlet.ParameterSetName -eq 'Exclude') {
-        $SuspectDeclines = Invoke-WsusServerExtraCleanup -DeclineCategoriesExclude $DeclineCategoriesExclude `
-                                                         -DeclineClusterUpdates:$DeclineClusterUpdates `
-                                                         -DeclineFarmUpdates:$DeclineFarmUpdates `
-                                                         -DeclineItaniumUpdates:$DeclineItaniumUpdates `
-                                                         -DeclinePrereleaseUpdates:$DeclinePrereleaseUpdates `
-                                                         -DeclineSecurityOnlyQualityUpdates:$DeclineSecurityOnlyQualityUpdates `
-                                                         -DeclineUnneededUpdates:$DeclineUnneededUpdates `
-                                                         -FindSuspectDeclines:$FindSuspectDeclines
+        $SuspectDeclines = Invoke-WsusServerExtraCleanup -DeclineCategoriesExclude $DeclineCategoriesExclude @ExtraCleanupParams
     } else {
-        $SuspectDeclines = Invoke-WsusServerExtraCleanup -DeclineCategoriesInclude $DeclineCategoriesInclude `
-                                                         -DeclineClusterUpdates:$DeclineClusterUpdates `
-                                                         -DeclineFarmUpdates:$DeclineFarmUpdates `
-                                                         -DeclineItaniumUpdates:$DeclineItaniumUpdates `
-                                                         -DeclinePrereleaseUpdates:$DeclinePrereleaseUpdates `
-                                                         -DeclineSecurityOnlyQualityUpdates:$DeclineSecurityOnlyQualityUpdates `
-                                                         -DeclineUnneededUpdates:$DeclineUnneededUpdates `
-                                                         -FindSuspectDeclines:$FindSuspectDeclines
+        $SuspectDeclines = Invoke-WsusServerExtraCleanup -DeclineCategoriesInclude $DeclineCategoriesInclude @ExtraCleanupParams
     }
 
     Write-Host -ForegroundColor Green "`r`nBeginning WSUS server cleanup (Phase 3) ..."
-    Invoke-WsusServerCleanupWrapper -CleanupObsoleteComputers:$CleanupObsoleteComputers `
-                                    -CleanupUnneededContentFiles:$CleanupUnneededContentFiles
+    $CleanupParams = @{
+        CleanupObsoleteComputers=$CleanupObsoleteComputers
+        CleanupUnneededContentFiles=$CleanupUnneededContentFiles
+    }
+    Invoke-WsusServerCleanupWrapper @CleanupParams
 
     if ($FindSuspectDeclines) {
         return $SuspectDeclines
     }
 }
 
-Function ConvertTo-WsusSpringCleanCatalog {
-    Param(
-        [Parameter(Mandatory)]
-        [Microsoft.UpdateServices.Internal.BaseApi.Update[]]$Updates
-    )
-
-    foreach ($Update in $Updates) {
-        $ProductTitles = New-Object -TypeName String[] -ArgumentList $Update.ProductTitles.Count
-        $Update.ProductTitles.CopyTo($ProductTitles, 0)
-
-        [PSCustomObject]@{
-            'Category'      = 'Unknown'
-            'Pre-release'   = if ($Update.IsBeta) { "TRUE" } else { "FALSE" }
-            'Title'         = $Update.Title
-            'ProductTitles' = [String]::Join(', ', $ProductTitles)
-        }
-    }
-}
 
 Function Invoke-WsusServerCleanupWrapper {
     [CmdletBinding(SupportsShouldProcess)]
@@ -191,6 +174,7 @@ Function Invoke-WsusServerCleanupWrapper {
     }
 }
 
+
 Function Invoke-WsusServerExtraCleanup {
     [CmdletBinding(SupportsShouldProcess)]
     Param(
@@ -214,9 +198,9 @@ Function Invoke-WsusServerExtraCleanup {
     $WsusServer = Get-WsusServer
     $UpdateScope = New-Object -TypeName Microsoft.UpdateServices.Administration.UpdateScope
 
-    Write-Host -ForegroundColor Green '[*] Importing update catalog ...'
-    $Updates = Import-Csv -Path (Join-Path -Path $PSScriptRoot -ChildPath 'PSWsusSpringClean.csv')
-    $Categories = $Updates.Category | Sort-Object | Get-Unique
+    Write-Host -ForegroundColor Green '[*] Importing update catalogue ...'
+    $Catalogue = Import-Csv -Path (Join-Path -Path $PSScriptRoot -ChildPath 'PSWsusSpringClean.csv')
+    $Categories = $Catalogue.Category | Sort-Object | Get-Unique
 
     if ($PSCmdlet.ParameterSetName -eq 'Exclude') {
         $FilteredCategories = $Categories | Where-Object { $_ -notin $DeclineCategoriesExclude }
@@ -224,17 +208,15 @@ Function Invoke-WsusServerExtraCleanup {
         $FilteredCategories = $Categories | Where-Object { $_ -in $DeclineCategoriesInclude }
     }
 
-    if ($DeclineItaniumUpdates -or $DeclineUnneededUpdates) {
-        Write-Host -ForegroundColor Green '[*] Retrieving approved updates ...'
-        $UpdateScope.ApprovedStates = [Microsoft.UpdateServices.Administration.ApprovedStates]::LatestRevisionApproved
-        $WsusApproved = $WsusServer.GetUpdates($UpdateScope)
+    Write-Host -ForegroundColor Green '[*] Retrieving approved updates ...'
+    $UpdateScope.ApprovedStates = [Microsoft.UpdateServices.Administration.ApprovedStates]::LatestRevisionApproved
+    $WsusApproved = $WsusServer.GetUpdates($UpdateScope)
 
-        Write-Host -ForegroundColor Green '[*] Retrieving unapproved updates ...'
-        $UpdateScope.ApprovedStates = [Microsoft.UpdateServices.Administration.ApprovedStates]::NotApproved
-        $WsusUnapproved = $WsusServer.GetUpdates($UpdateScope)
+    Write-Host -ForegroundColor Green '[*] Retrieving unapproved updates ...'
+    $UpdateScope.ApprovedStates = [Microsoft.UpdateServices.Administration.ApprovedStates]::NotApproved
+    $WsusUnapproved = $WsusServer.GetUpdates($UpdateScope)
 
-        $WsusAnyExceptDeclined = $WsusApproved + $WsusUnapproved
-    }
+    $WsusAnyExceptDeclined = $WsusApproved + $WsusUnapproved
 
     if ($DeclineClusterUpdates) {
         Write-Host -ForegroundColor Green '[*] Declining cluster updates ...'
@@ -274,9 +256,8 @@ Function Invoke-WsusServerExtraCleanup {
 
     if ($DeclinePrereleaseUpdates) {
         Write-Host -ForegroundColor Green '[*] Declining pre-release updates ...'
-        $PrereleaseUpdates = $Updates | Where-Object { $_.'Pre-release' -eq $true }
-        $MatchingUpdates = $WsusAnyExceptDeclined | Where-Object { $_.Title -in $PrereleaseUpdates.Title }
-
+        $Prerelease = $Catalogue | Where-Object { $_.'Pre-release' -eq $true }
+        $MatchingUpdates = $WsusAnyExceptDeclined | Where-Object { $_.Title -in $Prerelease.Title }
         foreach ($Update in $MatchingUpdates) {
             if ($PSCmdlet.ShouldProcess($Update.Title, 'Decline')) {
                 Write-Host -ForegroundColor Cyan ('[-] Declining update: {0}' -f $Update.Title)
@@ -300,14 +281,12 @@ Function Invoke-WsusServerExtraCleanup {
     if ($DeclineUnneededUpdates) {
         foreach ($Category in $FilteredCategories) {
             Write-Host -ForegroundColor Green ('[*] Declining updates in category: {0}' -f $Category)
-            $UpdatesToDecline = $Updates | Where-Object { $_.Category -eq $Category }
-            foreach ($Update in $UpdatesToDecline) {
-                $MatchingUpdates = $WsusAnyExceptDeclined | Where-Object { $_.Title -eq $Update.Title }
-                foreach ($Update in $MatchingUpdates) {
-                    if ($PSCmdlet.ShouldProcess($Update.Title, 'Decline')) {
-                        Write-Host -ForegroundColor Cyan ('[-] Declining update: {0}' -f $Update.Title)
-                        $Update.Decline()
-                    }
+            $UpdatesToDecline = $Catalogue | Where-Object { $_.Category -eq $Category }
+            $MatchingUpdates = $UpdatesToDecline | Where-Object { $WsusAnyExceptDeclined -contains $_ }
+            foreach ($Update in $MatchingUpdates) {
+                if ($PSCmdlet.ShouldProcess($Update.Title, 'Decline')) {
+                    Write-Host -ForegroundColor Cyan ('[-] Declining update: {0}' -f $Update.Title)
+                    $Update.Decline()
                 }
             }
         }
@@ -318,44 +297,38 @@ Function Invoke-WsusServerExtraCleanup {
         $UpdateScope.ApprovedStates = [Microsoft.UpdateServices.Administration.ApprovedStates]::Declined
         $WsusDeclined = $WsusServer.GetUpdates($UpdateScope)
 
-        $IgnoredDeclines = $Updates | Where-Object { $_.Category -in $FilteredCategories }
+        $IgnoredDeclines = $Catalogue | Where-Object { $_.Category -in $FilteredCategories }
 
         Write-Host -ForegroundColor Green '[*] Finding suspect declined updates ...'
         $SuspectUpdates = @()
         foreach ($Update in $WsusDeclined) {
             # Ignore superseded and expired updates
-            if ($Update.IsSuperseded -or
-                $Update.PublicationState -eq 'Expired') {
+            if ($Update.IsSuperseded -or $Update.PublicationState -eq 'Expired') {
                 continue
             }
 
             # Ignore cluster updates if they were declined
-            if ($DeclineClusterUpdates -and
-                $Update.Title -match 'Failover Clustering') {
+            if ($DeclineClusterUpdates -and $Update.Title -match 'Failover Clustering') {
                 continue
             }
 
             # Ignore farm updates if they were declined
-            if ($DeclineFarmUpdates -and
-                $Update.Title -match '(Farm( |-deployment))') {
+            if ($DeclineFarmUpdates -and $Update.Title -match '(Farm( |-deployment))') {
                 continue
             }
 
             # Ignore Itanium updates if they were declined
-            if ($DeclineItaniumUpdates -and
-                $Update.Title -match '(IA64|Itanium)') {
+            if ($DeclineItaniumUpdates -and $Update.Title -match '(IA64|Itanium)') {
                 continue
             }
 
             # Ignore pre-release updates if they were declined
-            if ($DeclinePrereleaseUpdates -and
-                $Update.Title -in $PrereleaseUpdates) {
+            if ($DeclinePrereleaseUpdates -and $Update.Title -in $Prerelease) {
                 continue
             }
 
             # Ignore Security Only Quality updates if they were declined
-            if ($DeclineSecurityOnlyQualityUpdates -and
-                $Update.Title -match 'Security Only Quality Update') {
+            if ($DeclineSecurityOnlyQualityUpdates -and $Update.Title -match 'Security Only Quality Update') {
                 continue
             }
 
@@ -371,12 +344,13 @@ Function Invoke-WsusServerExtraCleanup {
     }
 }
 
+
 Function Invoke-WsusServerSynchronisation {
     [CmdletBinding(SupportsShouldProcess)]
 
     $WsusServer = Get-WsusServer
 
-    if ($PSCmdlet.ShouldProcess($env:COMPUTERNAME, 'Server synchronization')) {
+    if ($PSCmdlet.ShouldProcess($env:COMPUTERNAME, 'WSUS synchronization')) {
         $SyncStatus = $WsusServer.GetSubscription().GetSynchronizationStatus()
         if ($SyncStatus -eq 'NotProcessing') {
             $WsusServer.GetSubscription().StartSynchronization()
@@ -398,26 +372,57 @@ Function Invoke-WsusServerSynchronisation {
     }
 }
 
-Function Test-WsusSpringCleanCatalog {
-    [CmdletBinding()]
 
-    $WsusServer = Get-WsusServer
-    $UpdateScope = New-Object -TypeName Microsoft.UpdateServices.Administration.UpdateScope
+Function ConvertTo-WsusSpringCleanCatalogue {
+    Param(
+        [Parameter(Mandatory,ValueFromPipeline)]
+        [Microsoft.UpdateServices.Internal.BaseApi.Update[]]$Updates
+    )
 
-    Write-Host -ForegroundColor Green '[*] Importing update catalog ...'
-    $Updates = Import-Csv -Path (Join-Path -Path $PSScriptRoot -ChildPath 'PSWsusSpringClean.csv')
+    Process {
+        foreach ($Update in $Updates) {
+            [String[]]$ProductTitles = @()
+            foreach ($ProductTitle in $Update.ProductTitles) {
+                $ProductTitles += $ProductTitle
+            }
+
+            [PSCustomObject]@{
+                'Category'      = 'Unknown'
+                'Pre-release'   = if ($Update.IsBeta) { 'TRUE' } else { 'FALSE' }
+                'Title'         = $Update.Title
+                'ProductTitles' = [String]::Join(', ', $ProductTitles)
+            }
+        }
+    }
+}
+
+
+Function Test-WsusSpringCleanCatalogue {
+    Param(
+        [ValidateNotNullOrEmpty()]
+        [String]$CataloguePath
+    )
+
+    if (!$PSBoundParameters.ContainsKey('CataloguePath')) {
+        $CataloguePath = Join-Path -Path $PSScriptRoot -ChildPath 'PSWsusSpringClean.csv'
+    }
+
+    Write-Host -ForegroundColor Green '[*] Importing update catalogue ...'
+    $Catalogue = Import-Csv -Path $CataloguePath
 
     Write-Host -ForegroundColor Green '[*] Retrieving all updates ...'
-    $UpdateScope.ApprovedStates = [Microsoft.UpdateServices.Administration.ApprovedStates]::Any
-    $WsusUpdates = $WsusServer.GetUpdates($UpdateScope)
+    $WsusServer = Get-WsusServer
+    $WsusUpdateScope = New-Object -TypeName Microsoft.UpdateServices.Administration.UpdateScope
+    $WsusUpdateScope.ApprovedStates = [Microsoft.UpdateServices.Administration.ApprovedStates]::Any
+    $WsusUpdates = $WsusServer.GetUpdates($WsusUpdateScope)
 
-    Write-Host -ForegroundColor Green '[*] Scanning for updates only present in catalog ...'
-    $CatalogOnly = @()
-    foreach ($Update in $Updates) {
+    Write-Host -ForegroundColor Green '[*] Scanning for updates only present in catalogue ...'
+    $CatalogueOnly = @()
+    foreach ($Update in $Catalogue) {
         if ($Update.Title -notin $WsusUpdates.Title) {
-            $CatalogOnly += $Update
+            $CatalogueOnly += $Update
         }
     }
 
-    return $CatalogOnly
+    return $CatalogueOnly
 }
