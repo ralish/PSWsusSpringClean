@@ -45,7 +45,6 @@ Language - am-ET,FALSE,Amharic Language Interface Pack - Windows 8.1 for x64-bas
 Language - am-ET,FALSE,Amharic LanguageInterfacePack - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [am-ET_LIP],Windows 10 Language Interface Packs
 Language - am-ET,FALSE,Amharic LanguageInterfacePack - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [am-ET_LIP],Windows 10 Language Interface Packs
 Language - ar-SA,FALSE,Arabic Language Pack,Windows Vista Ultimate Language Packs
-Language - ar-SA,FALSE,Arabic Language Pack,Windows Vista Ultimate Language Packs
 Language - ar-SA,FALSE,Arabic Language Pack - Windows 10 - (KB3079343) [ar-SA_LP],Windows 10 Language Packs
 Language - ar-SA,FALSE,Arabic Language Pack - Windows 10 for x64-based Systems - (KB3079343) [ar-SA_LP],Windows 10 Language Packs
 Language - ar-SA,FALSE,Arabic Language Pack - Windows 10 Version 1511 - (KB3109596) [ar-SA_LP],Windows 10 Language Packs
@@ -145,7 +144,6 @@ Language - bs-Latn-BA,FALSE,Bosnian (Latin) LanguageInterfacePack - Windows 10 V
 Language - bs-Latn-BA,FALSE,Bosnian (Latin) LanguageInterfacePack - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [bs-Latn-BA_LIP],Windows 10 Language Interface Packs
 Language - bs-Latn-BA,FALSE,Bosnian(Latin) Language Interface Pack - Windows 8 for x64-based System - (KB2607607) [bs-Latn-BA_LIP],Windows 8 Language Interface Packs
 Language - bg-BG,FALSE,Bulgarian Language Pack,Windows Vista Ultimate Language Packs
-Language - bg-BG,FALSE,Bulgarian Language Pack,Windows Vista Ultimate Language Packs
 Language - bg-BG,FALSE,Bulgarian Language Pack - Windows 10 - (KB3079343) [bg-BG_LP],Windows 10 Language Packs
 Language - bg-BG,FALSE,Bulgarian Language Pack - Windows 10 for x64-based Systems - (KB3079343) [bg-BG_LP],Windows 10 Language Packs
 Language - bg-BG,FALSE,Bulgarian Language Pack - Windows 10 Version 1511 - (KB3109596) [bg-BG_LP],Windows 10 Language Packs
@@ -195,8 +193,6 @@ Language - chr-Cher-US,FALSE,Cherokee (Cherokee) Language Interface Pack - Windo
 Language - chr-Cher-US,FALSE,Cherokee (Cherokee) LanguageInterfacePack - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [chr-CHER-US_LIP],Windows 10 Language Interface Packs
 Language - chr-Cher-US,FALSE,Cherokee (Cherokee) LanguageInterfacePack - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [chr-CHER-US_LIP],Windows 10 Language Interface Packs
 Language - zh-CN,FALSE,Chinese (Simplified) Language Pack,Windows Vista Ultimate Language Packs
-Language - zh-CN,FALSE,Chinese (Simplified) Language Pack,Windows Vista Ultimate Language Packs
-Language - zh-TW,FALSE,Chinese (Traditional) Language Pack,Windows Vista Ultimate Language Packs
 Language - zh-TW,FALSE,Chinese (Traditional) Language Pack,Windows Vista Ultimate Language Packs
 Language - zh-CN,TRUE,Chinese Simplified (PR China) LanguagePack - Windows 10 Insider Preview 14390 for AMD64-based Systems - (KB3179271) [zh-CN_LP],Windows 10 Language Packs
 Language - zh-CN,TRUE,Chinese Simplified (PR China) LanguagePack - Windows 10 Insider Preview 14390 for x86-based Systems - (KB3179271) [zh-CN_LP],Windows 10 Language Packs
@@ -246,7 +242,6 @@ Superseded,FALSE,Critical Update for Windows XP (KB885626),Windows XP
 Superseded,FALSE,Critical Update for Windows XP (KB888162),Windows XP
 Superseded,FALSE,Critical Update for Windows XP Media Center Edition 2004 (KB830786),Windows XP
 Language - hr-HR,FALSE,Croatian Language Pack,Windows Vista Ultimate Language Packs
-Language - hr-HR,FALSE,Croatian Language Pack,Windows Vista Ultimate Language Packs
 Language - hr-HR,FALSE,Croatian Language Pack - Windows 10 - (KB3079343) [hr-HR_LP],Windows 10 Language Packs
 Language - hr-HR,FALSE,Croatian Language Pack - Windows 10 for x64-based Systems - (KB3079343) [hr-HR_LP],Windows 10 Language Packs
 Language - hr-HR,FALSE,Croatian Language Pack - Windows 10 Version 1511 - (KB3109596) [hr-HR_LP],Windows 10 Language Packs
@@ -271,7 +266,6 @@ Superseded,TRUE,Cumulative Update for Windows Server 2016 Technical Preview 5 fo
 Superseded,TRUE,Cumulative Update for Windows Server 2016 Technical Preview 5 for x64-based Systems (KB3188966),Windows Server 2016
 Superseded,TRUE,Cumulative Update for Windows Server 2016 Technical Preview 5 for x64-based Systems (KB3195038),Windows Server 2016
 Language - cs-CZ,FALSE,Czech Language Pack,Windows Vista Ultimate Language Packs
-Language - cs-CZ,FALSE,Czech Language Pack,Windows Vista Ultimate Language Packs
 Language - cs-CZ,FALSE,Czech Language Pack - Windows 10 - (KB3079343) [cs-CZ_LP],Windows 10 Language Packs
 Language - cs-CZ,FALSE,Czech Language Pack - Windows 10 for x64-based Systems - (KB3079343) [cs-CZ_LP],Windows 10 Language Packs
 Language - cs-CZ,FALSE,Czech Language Pack - Windows 10 Version 1511 - (KB3109596) [cs-CZ_LP],Windows 10 Language Packs
@@ -290,7 +284,6 @@ Language - cs-CZ,TRUE,Czech LanguagePack - Windows 10 Insider Preview 14390 for 
 Language - cs-CZ,FALSE,Czech LanguagePack - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [cs-CZ_LP],Windows 10 Language Packs
 Language - cs-CZ,FALSE,Czech LanguagePack - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [cs-CZ_LP],Windows 10 Language Packs
 Language - cs-CZ,FALSE,Czech LanguagePack - Windows Server 2016 for AMD64-based Systems - (KB3192967) [cs-CZ_LP],Windows Server Technical Preview Language Packs
-Language - da-DK,FALSE,Danish Language Pack,Windows Vista Ultimate Language Packs
 Language - da-DK,FALSE,Danish Language Pack,Windows Vista Ultimate Language Packs
 Language - da-DK,FALSE,Danish Language Pack - Windows 10 - (KB3079343) [da-DK_LP],Windows 10 Language Packs
 Language - da-DK,FALSE,Danish Language Pack - Windows 10 for x64-based Systems - (KB3079343) [da-DK_LP],Windows 10 Language Packs
@@ -320,7 +313,6 @@ Language - prs-AF,FALSE,Dari Language Interface Pack - Windows 8.1 - (KB2839636)
 Language - prs-AF,FALSE,Dari Language Interface Pack - Windows 8.1 for x64-based Systems - (KB2839636) [prs-AF_LIP],Windows 8.1 Language Interface Packs
 Language - prs-AF,FALSE,Dari LanguageInterfacePack - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [prs-AF_LIP],Windows 10 Language Interface Packs
 Language - prs-AF,FALSE,Dari LanguageInterfacePack - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [prs-AF_LIP],Windows 10 Language Interface Packs
-Language - nl-NL,FALSE,Dutch Language Pack,Windows Vista Ultimate Language Packs
 Language - nl-NL,FALSE,Dutch Language Pack,Windows Vista Ultimate Language Packs
 Language - nl-NL,FALSE,Dutch Language Pack - Windows 10 - (KB3079343) [nl-NL_LP],Windows 10 Language Packs
 Language - nl-NL,FALSE,Dutch Language Pack - Windows 10 for x64-based Systems - (KB3079343) [nl-NL_LP],Windows 10 Language Packs
@@ -370,7 +362,6 @@ Language - en-US,FALSE,English (United States) Language Pack - Windows Server 20
 Language - en-US,FALSE,English (United States) Language Pack - Windows Server 2012 R2 - (KB3012997) [en-US_LP],Windows Server 2012 R2 Language Packs
 Language - en-US,TRUE,English (United States) Language Pack - Windows Server 2016 Technical Preview 4 - (KB3116201) [en-US_LP],Windows Server Technical Preview Language Packs
 Language - en-US,FALSE,English Language Pack,Windows Vista Ultimate Language Packs
-Language - en-US,FALSE,English Language Pack,Windows Vista Ultimate Language Packs
 Language - en-US,FALSE,English Language Pack - Windows 8 - (KB2607607) [en-US_LP],Windows 8 Language Packs
 Language - en-US,FALSE,English Language Pack - Windows 8 for x64-based Systems - (KB2607607) [en-US_LP],Windows 8 Language Packs
 Language - en-US,FALSE,English Language Pack - Windows Server 2012 for x64-based Systems - (KB2607607) [en-US_LP],Windows Server 2012 Language Packs
@@ -379,7 +370,6 @@ Language - en-US,TRUE,English LanguagePack - Windows 10 Insider Preview 14390 fo
 Language - en-US,FALSE,English LanguagePack - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [en-US_LP],Windows 10 Language Packs
 Language - en-US,FALSE,English LanguagePack - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [en-US_LP],Windows 10 Language Packs
 Language - en-US,FALSE,English LanguagePack - Windows Server 2016 for AMD64-based Systems - (KB3192967) [en-US_LP],Windows Server Technical Preview Language Packs
-Language - et-EE,FALSE,Estonian Language Pack,Windows Vista Ultimate Language Packs
 Language - et-EE,FALSE,Estonian Language Pack,Windows Vista Ultimate Language Packs
 Language - et-EE,FALSE,Estonian Language Pack - Windows 10 - (KB3079343) [et-EE_LP],Windows 10 Language Packs
 Language - et-EE,FALSE,Estonian Language Pack - Windows 10 for x64-based Systems - (KB3079343) [et-EE_LP],Windows 10 Language Packs
@@ -421,6 +411,8 @@ Upgrade - ro-RO,FALSE,"Feature update to Windows 10 Education N, version 1607, r
 Upgrade - sk-SK,FALSE,"Feature update to Windows 10 Education N, version 1607, sk-sk",Windows 10
 Upgrade - sl-SI,FALSE,"Feature update to Windows 10 Education N, version 1607, sl-si",Windows 10
 Upgrade - sv-SE,FALSE,"Feature update to Windows 10 Education N, version 1607, sv-se",Windows 10
+Upgrade - en-GB,FALSE,"Feature update to Windows 10 Education N, version 1703, en-gb",Windows 10
+Upgrade - en-US,FALSE,"Feature update to Windows 10 Education N, version 1703, en-us",Windows 10
 Upgrade - ar-SA,FALSE,"Feature update to Windows 10 Education, version 1607, ar-sa",Windows 10
 Upgrade - bg-BG,FALSE,"Feature update to Windows 10 Education, version 1607, bg-bg",Windows 10
 Upgrade - cs-CZ,FALSE,"Feature update to Windows 10 Education, version 1607, cs-cz",Windows 10
@@ -459,6 +451,8 @@ Upgrade - tr-TR,FALSE,"Feature update to Windows 10 Education, version 1607, tr-
 Upgrade - uk-UA,FALSE,"Feature update to Windows 10 Education, version 1607, uk-ua",Windows 10
 Upgrade - zh-CN,FALSE,"Feature update to Windows 10 Education, version 1607, zh-cn",Windows 10
 Upgrade - zh-TW,FALSE,"Feature update to Windows 10 Education, version 1607, zh-tw",Windows 10
+Upgrade - en-GB,FALSE,"Feature update to Windows 10 Education, version 1703, en-gb",Windows 10
+Upgrade - en-US,FALSE,"Feature update to Windows 10 Education, version 1703, en-us",Windows 10
 Upgrade - bg-BG,FALSE,"Feature update to Windows 10 Enterprise N, version 1607, bg-bg",Windows 10
 Upgrade - cs-CZ,FALSE,"Feature update to Windows 10 Enterprise N, version 1607, cs-cz",Windows 10
 Upgrade - da-DK,FALSE,"Feature update to Windows 10 Enterprise N, version 1607, da-dk",Windows 10
@@ -483,6 +477,8 @@ Upgrade - ro-RO,FALSE,"Feature update to Windows 10 Enterprise N, version 1607, 
 Upgrade - sk-SK,FALSE,"Feature update to Windows 10 Enterprise N, version 1607, sk-sk",Windows 10
 Upgrade - sl-SI,FALSE,"Feature update to Windows 10 Enterprise N, version 1607, sl-si",Windows 10
 Upgrade - sv-SE,FALSE,"Feature update to Windows 10 Enterprise N, version 1607, sv-se",Windows 10
+Upgrade - en-GB,FALSE,"Feature update to Windows 10 Enterprise N, version 1703, en-gb",Windows 10
+Upgrade - en-US,FALSE,"Feature update to Windows 10 Enterprise N, version 1703, en-us",Windows 10
 Upgrade - ar-SA,FALSE,"Feature update to Windows 10 Enterprise, version 1607, ar-sa",Windows 10
 Upgrade - bg-BG,FALSE,"Feature update to Windows 10 Enterprise, version 1607, bg-bg",Windows 10
 Upgrade - cs-CZ,FALSE,"Feature update to Windows 10 Enterprise, version 1607, cs-cz",Windows 10
@@ -521,6 +517,8 @@ Upgrade - tr-TR,FALSE,"Feature update to Windows 10 Enterprise, version 1607, tr
 Upgrade - uk-UA,FALSE,"Feature update to Windows 10 Enterprise, version 1607, uk-ua",Windows 10
 Upgrade - zh-CN,FALSE,"Feature update to Windows 10 Enterprise, version 1607, zh-cn",Windows 10
 Upgrade - zh-TW,FALSE,"Feature update to Windows 10 Enterprise, version 1607, zh-tw",Windows 10
+Upgrade - en-GB,FALSE,"Feature update to Windows 10 Enterprise, version 1703, en-gb",Windows 10
+Upgrade - en-US,FALSE,"Feature update to Windows 10 Enterprise, version 1703, en-us",Windows 10
 Upgrade - bg-BG,FALSE,"Feature update to Windows 10 Pro N, version 1607, bg-bg",Windows 10
 Upgrade - bg-BG,FALSE,"Feature update to Windows 10 Pro N, version 1607, bg-bg, Retail",Windows 10
 Upgrade - cs-CZ,FALSE,"Feature update to Windows 10 Pro N, version 1607, cs-cz",Windows 10
@@ -569,6 +567,10 @@ Upgrade - sl-SI,FALSE,"Feature update to Windows 10 Pro N, version 1607, sl-si",
 Upgrade - sl-SI,FALSE,"Feature update to Windows 10 Pro N, version 1607, sl-si, Retail",Windows 10
 Upgrade - sv-SE,FALSE,"Feature update to Windows 10 Pro N, version 1607, sv-se",Windows 10
 Upgrade - sv-SE,FALSE,"Feature update to Windows 10 Pro N, version 1607, sv-se, Retail",Windows 10
+Upgrade - en-GB,FALSE,"Feature update to Windows 10 Pro N, version 1703, en-gb",Windows 10
+Upgrade - en-GB,FALSE,"Feature update to Windows 10 Pro N, version 1703, en-gb, Retail",Windows 10
+Upgrade - en-US,FALSE,"Feature update to Windows 10 Pro N, version 1703, en-us",Windows 10
+Upgrade - en-US,FALSE,"Feature update to Windows 10 Pro N, version 1703, en-us, Retail",Windows 10
 Upgrade - ar-SA,FALSE,"Feature update to Windows 10 Pro, version 1607, ar-sa",Windows 10
 Upgrade - ar-SA,FALSE,"Feature update to Windows 10 Pro, version 1607, ar-sa, Retail",Windows 10
 Upgrade - bg-BG,FALSE,"Feature update to Windows 10 Pro, version 1607, bg-bg",Windows 10
@@ -645,12 +647,24 @@ Upgrade - zh-CN,FALSE,"Feature update to Windows 10 Pro, version 1607, zh-cn",Wi
 Upgrade - zh-CN,FALSE,"Feature update to Windows 10 Pro, version 1607, zh-cn, Retail",Windows 10
 Upgrade - zh-TW,FALSE,"Feature update to Windows 10 Pro, version 1607, zh-tw",Windows 10
 Upgrade - zh-TW,FALSE,"Feature update to Windows 10 Pro, version 1607, zh-tw, Retail",Windows 10
+Upgrade - en-GB,FALSE,"Feature update to Windows 10 Pro, version 1703, en-gb",Windows 10
+Upgrade - en-GB,FALSE,"Feature update to Windows 10 Pro, version 1703, en-gb, Retail",Windows 10
+Upgrade - en-US,FALSE,"Feature update to Windows 10 Pro, version 1703, en-us",Windows 10
+Upgrade - en-US,FALSE,"Feature update to Windows 10 Pro, version 1703, en-us, Retail",Windows 10
+Upgrade - en-GB,FALSE,"Feature update to Windows 10 Team, version 1607, en-gb",Windows 10
+Upgrade - en-US,FALSE,"Feature update to Windows 10 Team, version 1607, en-us",Windows 10
+Upgrade - en-GB,FALSE,"Feature update to Windows 10 Team, version 1703, en-gb",Windows 10
+Upgrade - en-US,FALSE,"Feature update to Windows 10 Team, version 1703, en-us",Windows 10
 Superseded,TRUE,FeatureOnDemandDeveloperMode - Windows 10 Insider Preview 14390 for AMD64-based Systems - (KB3179271),Windows 10 Feature On Demand
 Superseded,TRUE,FeatureOnDemandDeveloperMode - Windows 10 Insider Preview 14390 for x86-based Systems - (KB3179271),Windows 10 Feature On Demand
 Superseded,TRUE,FeatureOnDemandDirectX - Windows 10 Insider Preview 14390 for AMD64-based Systems - (KB3179271),Windows 10 Feature On Demand
 Superseded,TRUE,FeatureOnDemandDirectX - Windows 10 Insider Preview 14390 for x86-based Systems - (KB3179271),Windows 10 Feature On Demand
 Superseded,TRUE,FeatureOnDemandDotNet35 - Windows 10 Insider Preview 14390 for AMD64-based Systems - (KB3179271),Windows 10 Feature On Demand
 Superseded,TRUE,FeatureOnDemandDotNet35 - Windows 10 Insider Preview 14390 for x86-based Systems - (KB3179271),Windows 10 Feature On Demand
+Language - zh-TW,FALSE,FeatureOnDemandTaiwaneseCalendar - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [zh-TW],Windows 10 Feature On Demand
+Language - zh-TW,FALSE,FeatureOnDemandTaiwaneseCalendar - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [zh-TW],Windows 10 Feature On Demand
+Language - zh-TW,FALSE,FeatureOnDemandTaiwaneseCalendar - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [zh-TW],Windows 10 Feature On Demand
+Language - zh-TW,FALSE,FeatureOnDemandTaiwaneseCalendar - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [zh-TW],Windows 10 Feature On Demand
 Language - fil-PH,FALSE,Filipino (Philippines) LanguageInterfacePack - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [fil-PH_LIP],Windows 10 Language Interface Packs
 Language - fil-PH,FALSE,Filipino (Philippines) LanguageInterfacePack - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [fil-PH_LIP],Windows 10 Language Interface Packs
 Language - fil-PH,FALSE,Filipino Language Interface Pack - Windows 10 - (KB3079343) [fil-PH_LIP],Windows 10 Language Interface Packs
@@ -661,7 +675,6 @@ Language - fil-PH,FALSE,Filipino Language Interface Pack - Windows 8 - (KB260760
 Language - fil-PH,FALSE,Filipino Language Interface Pack - Windows 8 for x64-based System - (KB2607607) [fil-PH_LIP],Windows 8 Language Interface Packs
 Language - fil-PH,FALSE,Filipino Language Interface Pack - Windows 8.1 - (KB2839636) [fil-PH_LIP],Windows 8.1 Language Interface Packs
 Language - fil-PH,FALSE,Filipino Language Interface Pack - Windows 8.1 for x64-based Systems - (KB2839636) [fil-PH_LIP],Windows 8.1 Language Interface Packs
-Language - fi-FI,FALSE,Finnish Language Pack,Windows Vista Ultimate Language Packs
 Language - fi-FI,FALSE,Finnish Language Pack,Windows Vista Ultimate Language Packs
 Language - fi-FI,FALSE,Finnish Language Pack - Windows 10 - (KB3079343) [fi-FI_LP],Windows 10 Language Packs
 Language - fi-FI,FALSE,Finnish Language Pack - Windows 10 for x64-based Systems - (KB3079343) [fi-FI_LP],Windows 10 Language Packs
@@ -690,7 +703,6 @@ Language - fr-CA,TRUE,French (Canada) LanguagePack - Windows 10 Insider Preview 
 Language - fr-CA,FALSE,French (Canada) LanguagePack - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [fr-CA_LP],Windows 10 Language Packs
 Language - fr-CA,FALSE,French (Canada) LanguagePack - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [fr-CA_LP],Windows 10 Language Packs
 Language - fr-CA,FALSE,French (Canada) LanguagePack - Windows Server 2016 for AMD64-based Systems - (KB3192967) [fr-CA_LP],Windows Server Technical Preview Language Packs
-Language - fr-FR,FALSE,French Language Pack,Windows Vista Ultimate Language Packs
 Language - fr-FR,FALSE,French Language Pack,Windows Vista Ultimate Language Packs
 Language - fr-FR,FALSE,French Language Pack - Windows 10 - (KB3079343) [fr-FR_LP],Windows 10 Language Packs
 Language - fr-FR,FALSE,French Language Pack - Windows 10 for x64-based Systems - (KB3079343) [fr-FR_LP],Windows 10 Language Packs
@@ -1000,7 +1012,6 @@ Language - ka-GE,FALSE,Georgian Language Interface Pack - Windows 8.1 for x64-ba
 Language - ka-GE,FALSE,Georgian LanguageInterfacePack - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [ka-GE_LIP],Windows 10 Language Interface Packs
 Language - ka-GE,FALSE,Georgian LanguageInterfacePack - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [ka-GE_LIP],Windows 10 Language Interface Packs
 Language - de-DE,FALSE,German Language Pack,Windows Vista Ultimate Language Packs
-Language - de-DE,FALSE,German Language Pack,Windows Vista Ultimate Language Packs
 Language - de-DE,FALSE,German Language Pack - Windows 10 - (KB3079343) [de-DE_LP],Windows 10 Language Packs
 Language - de-DE,FALSE,German Language Pack - Windows 10 for x64-based Systems - (KB3079343) [de-DE_LP],Windows 10 Language Packs
 Language - de-DE,FALSE,German Language Pack - Windows 10 Version 1511 - (KB3109596) [de-DE_LP],Windows 10 Language Packs
@@ -1019,7 +1030,6 @@ Language - de-DE,TRUE,German LanguagePack - Windows 10 Insider Preview 14390 for
 Language - de-DE,TRUE,German LanguagePack - Windows 10 Insider Preview 14390 for x86-based Systems - (KB3179271) [de-DE_LP],Windows 10 Language Packs
 Language - de-DE,FALSE,German LanguagePack - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [de-DE_LP],Windows 10 Language Packs
 Language - de-DE,FALSE,German LanguagePack - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [de-DE_LP],Windows 10 Language Packs
-Language - el-GR,FALSE,Greek Language Pack,Windows Vista Ultimate Language Packs
 Language - el-GR,FALSE,Greek Language Pack,Windows Vista Ultimate Language Packs
 Language - el-GR,FALSE,Greek Language Pack - Windows 10 - (KB3079343) [el-GR_LP],Windows 10 Language Packs
 Language - el-GR,FALSE,Greek Language Pack - Windows 10 for x64-based Systems - (KB3079343) [el-GR_LP],Windows 10 Language Packs
@@ -1056,7 +1066,6 @@ Language - ha-Latn-NG,FALSE,Hausa (Latin) Language Interface Pack - Windows 8 fo
 Language - ha-Latn-NG,FALSE,Hausa (Latin) Language Interface Pack - Windows 8.1 - (KB2839636) [ha-Latn-NG_LIP],Windows 8.1 Language Interface Packs
 Language - ha-Latn-NG,FALSE,Hausa (Latin) Language Interface Pack - Windows 8.1 for x64-based Systems - (KB2839636) [ha-Latn-NG_LIP],Windows 8.1 Language Interface Packs
 Language - he-IL,FALSE,Hebrew Language Pack,Windows Vista Ultimate Language Packs
-Language - he-IL,FALSE,Hebrew Language Pack,Windows Vista Ultimate Language Packs
 Language - he-IL,FALSE,Hebrew Language Pack - Windows 10 - (KB3079343) [he-IL_LP],Windows 10 Language Packs
 Language - he-IL,FALSE,Hebrew Language Pack - Windows 10 for x64-based Systems - (KB3079343) [he-IL_LP],Windows 10 Language Packs
 Language - he-IL,FALSE,Hebrew Language Pack - Windows 10 Version 1511 - (KB3109596) [he-IL_LP],Windows 10 Language Packs
@@ -1085,7 +1094,6 @@ Language - hi-IN,FALSE,Hindi Language Interface Pack - Windows 8 - (KB2607607) [
 Language - hi-IN,FALSE,Hindi Language Interface Pack - Windows 8 for x64-based System - (KB2607607) [hi-IN_LIP],Windows 8 Language Interface Packs
 Language - hi-IN,FALSE,Hindi Language Interface Pack - Windows 8.1 - (KB2839636) [hi-IN_LIP],Windows 8.1 Language Interface Packs
 Language - hi-IN,FALSE,Hindi Language Interface Pack - Windows 8.1 for x64-based Systems - (KB2839636) [hi-IN_LIP],Windows 8.1 Language Interface Packs
-Language - hu-HU,FALSE,Hungarian Language Pack,Windows Vista Ultimate Language Packs
 Language - hu-HU,FALSE,Hungarian Language Pack,Windows Vista Ultimate Language Packs
 Language - hu-HU,FALSE,Hungarian Language Pack - Windows 10 - (KB3079343) [hu-HU_LP],Windows 10 Language Packs
 Language - hu-HU,FALSE,Hungarian Language Pack - Windows 10 for x64-based Systems - (KB3079343) [hu-HU_LP],Windows 10 Language Packs
@@ -1171,7 +1179,6 @@ Language - zu-ZA,FALSE,isiZulu Language Interface Pack - Windows 8.1 for x64-bas
 Language - zu-ZA,FALSE,isiZulu LanguageInterfacePack - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [zu-ZA_LIP],Windows 10 Language Interface Packs
 Language - zu-ZA,FALSE,isiZulu LanguageInterfacePack - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [zu-ZA_LIP],Windows 10 Language Interface Packs
 Language - it-IT,FALSE,Italian Language Pack,Windows Vista Ultimate Language Packs
-Language - it-IT,FALSE,Italian Language Pack,Windows Vista Ultimate Language Packs
 Language - it-IT,FALSE,Italian Language Pack - Windows 10 - (KB3079343) [it-IT_LP],Windows 10 Language Packs
 Language - it-IT,FALSE,Italian Language Pack - Windows 10 for x64-based Systems - (KB3079343) [it-IT_LP],Windows 10 Language Packs
 Language - it-IT,FALSE,Italian Language Pack - Windows 10 Version 1511 - (KB3109596) [it-IT_LP],Windows 10 Language Packs
@@ -1191,7 +1198,6 @@ Language - it-IT,TRUE,Italian LanguagePack - Windows 10 Insider Preview 14390 fo
 Language - it-IT,FALSE,Italian LanguagePack - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [it-IT_LP],Windows 10 Language Packs
 Language - it-IT,FALSE,Italian LanguagePack - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [it-IT_LP],Windows 10 Language Packs
 Language - it-IT,FALSE,Italian LanguagePack - Windows Server 2016 for AMD64-based Systems - (KB3192967) [it-IT_LP],Windows Server Technical Preview Language Packs
-Language - ja-JP,FALSE,Japanese Language Pack,Windows Vista Ultimate Language Packs
 Language - ja-JP,FALSE,Japanese Language Pack,Windows Vista Ultimate Language Packs
 Language - ja-JP,FALSE,Japanese Language Pack - Windows 10 - (KB3079343) [ja-JP_LP],Windows 10 Language Packs
 Language - ja-JP,FALSE,Japanese Language Pack - Windows 10 for x64-based Systems - (KB3079343) [ja-JP_LP],Windows 10 Language Packs
@@ -1282,7 +1288,6 @@ Language - kok-IN,FALSE,Konkani Language Interface Pack - Windows 8.1 - (KB28396
 Language - kok-IN,FALSE,Konkani Language Interface Pack - Windows 8.1 for x64-based Systems - (KB2839636) [kok-IN_LIP],Windows 8.1 Language Interface Packs
 Language - kok-IN,FALSE,Konkani LanguageInterfacePack - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [kok-IN_LIP],Windows 10 Language Interface Packs
 Language - kok-IN,FALSE,Konkani LanguageInterfacePack - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [kok-IN_LIP],Windows 10 Language Interface Packs
-Language - ko-KR,FALSE,Korean Language Pack,Windows Vista Ultimate Language Packs
 Language - ko-KR,FALSE,Korean Language Pack,Windows Vista Ultimate Language Packs
 Language - ko-KR,FALSE,Korean Language Pack - Windows 10 - (KB3079343) [ko-KR_LP],Windows 10 Language Packs
 Language - ko-KR,FALSE,Korean Language Pack - Windows 10 for x64-based Systems - (KB3079343) [ko-KR_LP],Windows 10 Language Packs
@@ -1519,6 +1524,218 @@ Language - zh-TW,FALSE,Lang Pack Taiwan Calendar Feature On Demand - Windows 10 
 Language - zh-TW,FALSE,Lang Pack Taiwan Calendar Feature On Demand - Windows 10 Version 1607 for X86-based Systems - (KB3180033) [zh-TW],Windows 10 Feature On Demand
 Language - zh-TW,FALSE,Lang Pack Taiwan Calendar Feature On Demand for X64 [zh-TW],Windows 10 Feature On Demand
 Language - zh-TW,FALSE,Lang Pack Taiwan Calendar Feature On Demand for X86 [zh-TW],Windows 10 Feature On Demand
+Language - af-ZA,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [af-ZA],Windows 10 Feature On Demand
+Language - am-ET,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [am-ET],Windows 10 Feature On Demand
+Language - ar-EG,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [ar-EG],Windows 10 Feature On Demand
+Language - ar-SA,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [ar-SA],Windows 10 Feature On Demand
+Language - as-IN,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [as-IN],Windows 10 Feature On Demand
+Language - az-Latn-AZ,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [az-Latn-AZ],Windows 10 Feature On Demand
+Language - bg-BG,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [bg-BG],Windows 10 Feature On Demand
+Language - bn-BD,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [bn-BD],Windows 10 Feature On Demand
+Language - bn-IN,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [bn-IN],Windows 10 Feature On Demand
+Language - bs-Latn-BA,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [bs-Latn-BA],Windows 10 Feature On Demand
+Language - ca-ES,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [ca-ES],Windows 10 Feature On Demand
+Language - chr-Cher-US,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [chr-CHER-US],Windows 10 Feature On Demand
+Language - cs-CZ,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [cs-CZ],Windows 10 Feature On Demand
+Language - cy-GB,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [cy-GB],Windows 10 Feature On Demand
+Language - da-DK,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [da-DK],Windows 10 Feature On Demand
+Language - de-AT,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [de-AT],Windows 10 Feature On Demand
+Language - de-CH,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [de-CH],Windows 10 Feature On Demand
+Language - de-DE,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [de-DE],Windows 10 Feature On Demand
+Language - el-GR,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [el-GR],Windows 10 Feature On Demand
+Language - en-CA,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [en-ca],Windows 10 Feature On Demand
+Language - en-GB,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [en-GB],Windows 10 Feature On Demand
+Language - en-IE,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [en-ie],Windows 10 Feature On Demand
+Language - en-IN,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [en-in],Windows 10 Feature On Demand
+Language - en-US,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [en-US],Windows 10 Feature On Demand
+Language - es-ES,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [es-ES],Windows 10 Feature On Demand
+Language - es-MX,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [es-MX],Windows 10 Feature On Demand
+Language - et-EE,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [et-EE],Windows 10 Feature On Demand
+Language - eu-ES,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [eu-ES],Windows 10 Feature On Demand
+Language - fa-IR,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [fa-IR],Windows 10 Feature On Demand
+Language - fi-FI,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [fi-FI],Windows 10 Feature On Demand
+Language - fr-CA,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [fr-CA],Windows 10 Feature On Demand
+Language - fr-CH,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [fr-CH],Windows 10 Feature On Demand
+Language - fr-FR,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [fr-FR],Windows 10 Feature On Demand
+Language - ga-IE,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [ga-IE],Windows 10 Feature On Demand
+Language - gd-GB,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [gd-GB],Windows 10 Feature On Demand
+Language - gl-ES,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [gl-ES],Windows 10 Feature On Demand
+Language - gu-IN,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [gu-IN],Windows 10 Feature On Demand
+Language - ha-Latn-NG,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [ha-Latn-NG],Windows 10 Feature On Demand
+Language - he-IL,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [he-IL],Windows 10 Feature On Demand
+Language - hi-IN,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [hi-IN],Windows 10 Feature On Demand
+Language - hr-HR,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [hr-HR],Windows 10 Feature On Demand
+Language - hu-HU,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [hu-HU],Windows 10 Feature On Demand
+Language - hy-AM,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [hy-AM],Windows 10 Feature On Demand
+Language - id-ID,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [id-ID],Windows 10 Feature On Demand
+Language - ig-NG,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [ig-NG],Windows 10 Feature On Demand
+Language - is-IS,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [is-IS],Windows 10 Feature On Demand
+Language - it-IT,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [it-IT],Windows 10 Feature On Demand
+Language - ja-JP,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [ja-JP],Windows 10 Feature On Demand
+Language - ka-GE,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [ka-GE],Windows 10 Feature On Demand
+Language - kk-KZ,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [kk-KZ],Windows 10 Feature On Demand
+Language - km-KH,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [km-KH],Windows 10 Feature On Demand
+Language - kn-IN,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [kn-IN],Windows 10 Feature On Demand
+Language - kok-IN,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [kok-IN],Windows 10 Feature On Demand
+Language - ko-KR,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [ko-KR],Windows 10 Feature On Demand
+Language - ky-KG,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [ky-KG],Windows 10 Feature On Demand
+Language - lb-LU,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [lb-LU],Windows 10 Feature On Demand
+Language - lb-LT,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [lt-LT],Windows 10 Feature On Demand
+Language - lv-LV,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [lv-LV],Windows 10 Feature On Demand
+Language - mi-NZ,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [mi-NZ],Windows 10 Feature On Demand
+Language - mk-MK,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [mk-MK],Windows 10 Feature On Demand
+Language - ml-IN,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [ml-IN],Windows 10 Feature On Demand
+Language - mr-IN,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [mr-IN],Windows 10 Feature On Demand
+Language - ms-BN,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [ms-BN],Windows 10 Feature On Demand
+Language - ms-MY,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [ms-MY],Windows 10 Feature On Demand
+Language - mt-MT,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [mt-MT],Windows 10 Feature On Demand
+Language - nb-NO,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [nb-NO],Windows 10 Feature On Demand
+Language - ne-NP,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [ne-NP],Windows 10 Feature On Demand
+Language - nl-BE,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [nl-be],Windows 10 Feature On Demand
+Language - nl-NL,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [nl-NL],Windows 10 Feature On Demand
+Language - nn-NO,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [nn-NO],Windows 10 Feature On Demand
+Language - nso-ZA,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [nso-ZA],Windows 10 Feature On Demand
+Language - or-IN,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [or-IN],Windows 10 Feature On Demand
+Language - pa-IN,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [pa-IN],Windows 10 Feature On Demand
+Language - pl-PL,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [pl-PL],Windows 10 Feature On Demand
+Language - ps-AF,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [ps-AF],Windows 10 Feature On Demand
+Language - pt-BR,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [pt-BR],Windows 10 Feature On Demand
+Language - pt-PT,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [pt-PT],Windows 10 Feature On Demand
+Language - rm-CH,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [rm-CH],Windows 10 Feature On Demand
+Language - ro-RO,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [ro-RO],Windows 10 Feature On Demand
+Language - ru-RU,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [ru-RU],Windows 10 Feature On Demand
+Language - ru-RW,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [rw-RW],Windows 10 Feature On Demand
+Language - si-LK,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [si-LK],Windows 10 Feature On Demand
+Language - sk-SK,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [sk-SK],Windows 10 Feature On Demand
+Language - sl-SI,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [sl-SI],Windows 10 Feature On Demand
+Language - sq-AL,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [sq-AL],Windows 10 Feature On Demand
+Language - sr-Cyrl-RS,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [sr-Cyrl-RS],Windows 10 Feature On Demand
+Language - sr-Latn-RS,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [sr-Latn-RS],Windows 10 Feature On Demand
+Language - sv-SE,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [sv-SE],Windows 10 Feature On Demand
+Language - sw-KE,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [sw-KE],Windows 10 Feature On Demand
+Language - ta-IN,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [ta-IN],Windows 10 Feature On Demand
+Language - te-IN,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [te-IN],Windows 10 Feature On Demand
+Language - th-TH,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [th-TH],Windows 10 Feature On Demand
+Language - tn-ZA,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [tn-ZA],Windows 10 Feature On Demand
+Language - tr-TR,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [tr-TR],Windows 10 Feature On Demand
+Language - tt-RU,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [tt-RU],Windows 10 Feature On Demand
+Language - uk-UA,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [uk-UA],Windows 10 Feature On Demand
+Language - ur-PK,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [ur-PK],Windows 10 Feature On Demand
+Language - uz-Latn-UZ,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [uz-Latn-UZ],Windows 10 Feature On Demand
+Language - vi-VN,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [vi-VN],Windows 10 Feature On Demand
+Language - wo-SN,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [wo-SN],Windows 10 Feature On Demand
+Language - xh-ZA,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [xh-ZA],Windows 10 Feature On Demand
+Language - yo-NG,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [yo-NG],Windows 10 Feature On Demand
+Language - zh-CN,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [zh-CN],Windows 10 Feature On Demand
+Language - zh-HK,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [zh-HK],Windows 10 Feature On Demand
+Language - zh-TW,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [zh-TW],Windows 10 Feature On Demand
+Language - zu-ZA,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [zu-ZA],Windows 10 Feature On Demand
+Language - af-ZA,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [af-ZA],Windows 10 Feature On Demand
+Language - am-ET,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [am-ET],Windows 10 Feature On Demand
+Language - ar-EG,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [ar-EG],Windows 10 Feature On Demand
+Language - ar-SA,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [ar-SA],Windows 10 Feature On Demand
+Language - as-IN,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [as-IN],Windows 10 Feature On Demand
+Language - az-Latn-AZ,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [az-Latn-AZ],Windows 10 Feature On Demand
+Language - bg-BG,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [bg-BG],Windows 10 Feature On Demand
+Language - bn-BD,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [bn-BD],Windows 10 Feature On Demand
+Language - bn-IN,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [bn-IN],Windows 10 Feature On Demand
+Language - bs-Latn-BA,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [bs-Latn-BA],Windows 10 Feature On Demand
+Language - ca-ES,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [ca-ES],Windows 10 Feature On Demand
+Language - chr-Cher-US,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [chr-CHER-US],Windows 10 Feature On Demand
+Language - cs-CZ,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [cs-CZ],Windows 10 Feature On Demand
+Language - cy-GB,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [cy-GB],Windows 10 Feature On Demand
+Language - da-DK,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [da-DK],Windows 10 Feature On Demand
+Language - de-AT,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [de-AT],Windows 10 Feature On Demand
+Language - de-CH,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [de-CH],Windows 10 Feature On Demand
+Language - de-DE,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [de-DE],Windows 10 Feature On Demand
+Language - el-GR,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [el-GR],Windows 10 Feature On Demand
+Language - en-CA,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [en-ca],Windows 10 Feature On Demand
+Language - en-GB,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [en-GB],Windows 10 Feature On Demand
+Language - en-IE,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [en-ie],Windows 10 Feature On Demand
+Language - en-IN,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [en-in],Windows 10 Feature On Demand
+Language - en-US,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [en-US],Windows 10 Feature On Demand
+Language - es-ES,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [es-ES],Windows 10 Feature On Demand
+Language - es-MX,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [es-MX],Windows 10 Feature On Demand
+Language - et-EE,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [et-EE],Windows 10 Feature On Demand
+Language - eu-ES,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [eu-ES],Windows 10 Feature On Demand
+Language - fa-IR,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [fa-IR],Windows 10 Feature On Demand
+Language - fi-FI,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [fi-FI],Windows 10 Feature On Demand
+Language - fr-CA,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [fr-CA],Windows 10 Feature On Demand
+Language - fr-CH,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [fr-CH],Windows 10 Feature On Demand
+Language - fr-FR,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [fr-FR],Windows 10 Feature On Demand
+Language - ga-IE,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [ga-IE],Windows 10 Feature On Demand
+Language - gd-GB,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [gd-GB],Windows 10 Feature On Demand
+Language - gl-ES,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [gl-ES],Windows 10 Feature On Demand
+Language - gu-IN,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [gu-IN],Windows 10 Feature On Demand
+Language - ha-Latn-NG,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [ha-Latn-NG],Windows 10 Feature On Demand
+Language - he-IL,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [he-IL],Windows 10 Feature On Demand
+Language - hi-IN,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [hi-IN],Windows 10 Feature On Demand
+Language - hr-HR,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [hr-HR],Windows 10 Feature On Demand
+Language - hu-HU,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [hu-HU],Windows 10 Feature On Demand
+Language - hy-AM,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [hy-AM],Windows 10 Feature On Demand
+Language - id-ID,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [id-ID],Windows 10 Feature On Demand
+Language - ig-NG,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [ig-NG],Windows 10 Feature On Demand
+Language - is-IS,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [is-IS],Windows 10 Feature On Demand
+Language - it-IT,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [it-IT],Windows 10 Feature On Demand
+Language - ja-JP,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [ja-JP],Windows 10 Feature On Demand
+Language - ka-GE,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [ka-GE],Windows 10 Feature On Demand
+Language - kk-KZ,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [kk-KZ],Windows 10 Feature On Demand
+Language - km-KH,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [km-KH],Windows 10 Feature On Demand
+Language - kn-IN,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [kn-IN],Windows 10 Feature On Demand
+Language - kok-IN,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [kok-IN],Windows 10 Feature On Demand
+Language - ko-KR,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [ko-KR],Windows 10 Feature On Demand
+Language - ky-KG,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [ky-KG],Windows 10 Feature On Demand
+Language - lb-LU,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [lb-LU],Windows 10 Feature On Demand
+Language - lb-LT,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [lt-LT],Windows 10 Feature On Demand
+Language - lv-LV,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [lv-LV],Windows 10 Feature On Demand
+Language - mi-NZ,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [mi-NZ],Windows 10 Feature On Demand
+Language - mk-MK,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [mk-MK],Windows 10 Feature On Demand
+Language - ml-IN,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [ml-IN],Windows 10 Feature On Demand
+Language - mr-IN,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [mr-IN],Windows 10 Feature On Demand
+Language - ms-BN,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [ms-BN],Windows 10 Feature On Demand
+Language - ms-MY,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [ms-MY],Windows 10 Feature On Demand
+Language - mt-MT,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [mt-MT],Windows 10 Feature On Demand
+Language - nb-NO,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [nb-NO],Windows 10 Feature On Demand
+Language - ne-NP,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [ne-NP],Windows 10 Feature On Demand
+Language - nl-BE,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [nl-be],Windows 10 Feature On Demand
+Language - nl-NL,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [nl-NL],Windows 10 Feature On Demand
+Language - nn-NO,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [nn-NO],Windows 10 Feature On Demand
+Language - nso-ZA,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [nso-ZA],Windows 10 Feature On Demand
+Language - or-IN,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [or-IN],Windows 10 Feature On Demand
+Language - pa-IN,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [pa-IN],Windows 10 Feature On Demand
+Language - pl-PL,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [pl-PL],Windows 10 Feature On Demand
+Language - ps-AF,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [ps-AF],Windows 10 Feature On Demand
+Language - pt-BR,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [pt-BR],Windows 10 Feature On Demand
+Language - pt-PT,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [pt-PT],Windows 10 Feature On Demand
+Language - rm-CH,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [rm-CH],Windows 10 Feature On Demand
+Language - ro-RO,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [ro-RO],Windows 10 Feature On Demand
+Language - ru-RU,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [ru-RU],Windows 10 Feature On Demand
+Language - ru-RW,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [rw-RW],Windows 10 Feature On Demand
+Language - si-LK,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [si-LK],Windows 10 Feature On Demand
+Language - sk-SK,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [sk-SK],Windows 10 Feature On Demand
+Language - sl-SI,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [sl-SI],Windows 10 Feature On Demand
+Language - sq-AL,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [sq-AL],Windows 10 Feature On Demand
+Language - sr-Cyrl-RS,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [sr-Cyrl-RS],Windows 10 Feature On Demand
+Language - sr-Latn-RS,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [sr-Latn-RS],Windows 10 Feature On Demand
+Language - sv-SE,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [sv-SE],Windows 10 Feature On Demand
+Language - sw-KE,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [sw-KE],Windows 10 Feature On Demand
+Language - ta-IN,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [ta-IN],Windows 10 Feature On Demand
+Language - te-IN,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [te-IN],Windows 10 Feature On Demand
+Language - th-TH,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [th-TH],Windows 10 Feature On Demand
+Language - tn-ZA,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [tn-ZA],Windows 10 Feature On Demand
+Language - tr-TR,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [tr-TR],Windows 10 Feature On Demand
+Language - tt-RU,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [tt-RU],Windows 10 Feature On Demand
+Language - uk-UA,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [uk-UA],Windows 10 Feature On Demand
+Language - ur-PK,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [ur-PK],Windows 10 Feature On Demand
+Language - uz-Latn-UZ,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [uz-Latn-UZ],Windows 10 Feature On Demand
+Language - vi-VN,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [vi-VN],Windows 10 Feature On Demand
+Language - wo-SN,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [wo-SN],Windows 10 Feature On Demand
+Language - xh-ZA,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [xh-ZA],Windows 10 Feature On Demand
+Language - yo-NG,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [yo-NG],Windows 10 Feature On Demand
+Language - zh-CN,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [zh-CN],Windows 10 Feature On Demand
+Language - zh-HK,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [zh-HK],Windows 10 Feature On Demand
+Language - zh-TW,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [zh-TW],Windows 10 Feature On Demand
+Language - zu-ZA,FALSE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [zu-ZA],Windows 10 Feature On Demand
 Language - af-ZA,TRUE,LanguageFeatureOnDemand - Windows 10 Insider Preview 14390 for AMD64-based Systems - (KB3179271) [af-ZA],Windows 10 Feature On Demand
 Language - am-ET,TRUE,LanguageFeatureOnDemand - Windows 10 Insider Preview 14390 for AMD64-based Systems - (KB3179271) [am-ET],Windows 10 Feature On Demand
 Language - ar-EG,TRUE,LanguageFeatureOnDemand - Windows 10 Insider Preview 14390 for AMD64-based Systems - (KB3179271) [ar-EG],Windows 10 Feature On Demand
@@ -1932,6 +2149,218 @@ Language - zh-TW,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1607 for x86
 Language - zu-ZA,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [zu-ZA],Windows 10 Feature On Demand
 Language - bn-IN,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3197985) [bn-IN],Windows 10 Feature On Demand
 Language - bs-Latn-BA,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3197985) [bs-Latn-BA],Windows 10 Feature On Demand
+Language - af-ZA,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [af-ZA],Windows 10 Feature On Demand
+Language - am-ET,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [am-ET],Windows 10 Feature On Demand
+Language - ar-EG,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [ar-EG],Windows 10 Feature On Demand
+Language - ar-SA,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [ar-SA],Windows 10 Feature On Demand
+Language - as-IN,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [as-IN],Windows 10 Feature On Demand
+Language - az-Latn-AZ,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [az-Latn-AZ],Windows 10 Feature On Demand
+Language - bg-BG,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [bg-BG],Windows 10 Feature On Demand
+Language - bn-BD,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [bn-BD],Windows 10 Feature On Demand
+Language - bn-IN,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [bn-IN],Windows 10 Feature On Demand
+Language - bs-Latn-BA,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [bs-Latn-BA],Windows 10 Feature On Demand
+Language - ca-ES,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [ca-ES],Windows 10 Feature On Demand
+Language - chr-Cher-US,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [chr-CHER-US],Windows 10 Feature On Demand
+Language - cs-CZ,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [cs-CZ],Windows 10 Feature On Demand
+Language - cy-GB,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [cy-GB],Windows 10 Feature On Demand
+Language - da-DK,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [da-DK],Windows 10 Feature On Demand
+Language - de-AT,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [de-AT],Windows 10 Feature On Demand
+Language - de-CH,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [de-CH],Windows 10 Feature On Demand
+Language - de-DE,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [de-DE],Windows 10 Feature On Demand
+Language - el-GR,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [el-GR],Windows 10 Feature On Demand
+Language - en-CA,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [en-ca],Windows 10 Feature On Demand
+Language - en-GB,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [en-GB],Windows 10 Feature On Demand
+Language - en-IE,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [en-ie],Windows 10 Feature On Demand
+Language - en-IN,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [en-in],Windows 10 Feature On Demand
+Language - en-US,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [en-US],Windows 10 Feature On Demand
+Language - es-ES,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [es-ES],Windows 10 Feature On Demand
+Language - es-MX,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [es-MX],Windows 10 Feature On Demand
+Language - et-EE,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [et-EE],Windows 10 Feature On Demand
+Language - eu-ES,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [eu-ES],Windows 10 Feature On Demand
+Language - fa-IR,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [fa-IR],Windows 10 Feature On Demand
+Language - fi-FI,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [fi-FI],Windows 10 Feature On Demand
+Language - fr-CA,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [fr-CA],Windows 10 Feature On Demand
+Language - fr-CH,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [fr-CH],Windows 10 Feature On Demand
+Language - fr-FR,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [fr-FR],Windows 10 Feature On Demand
+Language - ga-IE,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [ga-IE],Windows 10 Feature On Demand
+Language - gd-GB,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [gd-GB],Windows 10 Feature On Demand
+Language - gl-ES,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [gl-ES],Windows 10 Feature On Demand
+Language - gu-IN,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [gu-IN],Windows 10 Feature On Demand
+Language - ha-Latn-NG,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [ha-Latn-NG],Windows 10 Feature On Demand
+Language - he-IL,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [he-IL],Windows 10 Feature On Demand
+Language - hi-IN,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [hi-IN],Windows 10 Feature On Demand
+Language - hr-HR,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [hr-HR],Windows 10 Feature On Demand
+Language - hu-HU,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [hu-HU],Windows 10 Feature On Demand
+Language - hy-AM,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [hy-AM],Windows 10 Feature On Demand
+Language - id-ID,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [id-ID],Windows 10 Feature On Demand
+Language - ig-NG,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [ig-NG],Windows 10 Feature On Demand
+Language - is-IS,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [is-IS],Windows 10 Feature On Demand
+Language - it-IT,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [it-IT],Windows 10 Feature On Demand
+Language - ja-JP,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [ja-JP],Windows 10 Feature On Demand
+Language - ka-GE,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [ka-GE],Windows 10 Feature On Demand
+Language - kk-KZ,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [kk-KZ],Windows 10 Feature On Demand
+Language - km-KH,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [km-KH],Windows 10 Feature On Demand
+Language - kn-IN,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [kn-IN],Windows 10 Feature On Demand
+Language - kok-IN,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [kok-IN],Windows 10 Feature On Demand
+Language - ko-KR,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [ko-KR],Windows 10 Feature On Demand
+Language - ky-KG,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [ky-KG],Windows 10 Feature On Demand
+Language - lb-LU,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [lb-LU],Windows 10 Feature On Demand
+Language - lb-LT,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [lt-LT],Windows 10 Feature On Demand
+Language - lv-LV,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [lv-LV],Windows 10 Feature On Demand
+Language - mi-NZ,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [mi-NZ],Windows 10 Feature On Demand
+Language - mk-MK,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [mk-MK],Windows 10 Feature On Demand
+Language - ml-IN,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [ml-IN],Windows 10 Feature On Demand
+Language - mr-IN,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [mr-IN],Windows 10 Feature On Demand
+Language - ms-BN,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [ms-BN],Windows 10 Feature On Demand
+Language - ms-MY,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [ms-MY],Windows 10 Feature On Demand
+Language - mt-MT,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [mt-MT],Windows 10 Feature On Demand
+Language - nb-NO,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [nb-NO],Windows 10 Feature On Demand
+Language - ne-NP,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [ne-NP],Windows 10 Feature On Demand
+Language - nl-BE,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [nl-be],Windows 10 Feature On Demand
+Language - nl-NL,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [nl-NL],Windows 10 Feature On Demand
+Language - nn-NO,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [nn-NO],Windows 10 Feature On Demand
+Language - nso-ZA,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [nso-ZA],Windows 10 Feature On Demand
+Language - or-IN,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [or-IN],Windows 10 Feature On Demand
+Language - pa-IN,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [pa-IN],Windows 10 Feature On Demand
+Language - pl-PL,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [pl-PL],Windows 10 Feature On Demand
+Language - ps-AF,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [ps-AF],Windows 10 Feature On Demand
+Language - pt-BR,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [pt-BR],Windows 10 Feature On Demand
+Language - pt-PT,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [pt-PT],Windows 10 Feature On Demand
+Language - rm-CH,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [rm-CH],Windows 10 Feature On Demand
+Language - ro-RO,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [ro-RO],Windows 10 Feature On Demand
+Language - ru-RU,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [ru-RU],Windows 10 Feature On Demand
+Language - ru-RW,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [rw-RW],Windows 10 Feature On Demand
+Language - si-LK,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [si-LK],Windows 10 Feature On Demand
+Language - sk-SK,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [sk-SK],Windows 10 Feature On Demand
+Language - sl-SI,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [sl-SI],Windows 10 Feature On Demand
+Language - sq-AL,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [sq-AL],Windows 10 Feature On Demand
+Language - sr-Cyrl-RS,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [sr-Cyrl-RS],Windows 10 Feature On Demand
+Language - sr-Latn-RS,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [sr-Latn-RS],Windows 10 Feature On Demand
+Language - sv-SE,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [sv-SE],Windows 10 Feature On Demand
+Language - sw-KE,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [sw-KE],Windows 10 Feature On Demand
+Language - ta-IN,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [ta-IN],Windows 10 Feature On Demand
+Language - te-IN,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [te-IN],Windows 10 Feature On Demand
+Language - th-TH,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [th-TH],Windows 10 Feature On Demand
+Language - tn-ZA,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [tn-ZA],Windows 10 Feature On Demand
+Language - tr-TR,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [tr-TR],Windows 10 Feature On Demand
+Language - tt-RU,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [tt-RU],Windows 10 Feature On Demand
+Language - uk-UA,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [uk-UA],Windows 10 Feature On Demand
+Language - ur-PK,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [ur-PK],Windows 10 Feature On Demand
+Language - uz-Latn-UZ,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [uz-Latn-UZ],Windows 10 Feature On Demand
+Language - vi-VN,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [vi-VN],Windows 10 Feature On Demand
+Language - wo-SN,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [wo-SN],Windows 10 Feature On Demand
+Language - xh-ZA,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [xh-ZA],Windows 10 Feature On Demand
+Language - yo-NG,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [yo-NG],Windows 10 Feature On Demand
+Language - zh-CN,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [zh-CN],Windows 10 Feature On Demand
+Language - zh-HK,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [zh-HK],Windows 10 Feature On Demand
+Language - zh-TW,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [zh-TW],Windows 10 Feature On Demand
+Language - zu-ZA,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [zu-ZA],Windows 10 Feature On Demand
+Language - af-ZA,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [af-ZA],Windows 10 Feature On Demand
+Language - am-ET,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [am-ET],Windows 10 Feature On Demand
+Language - ar-EG,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [ar-EG],Windows 10 Feature On Demand
+Language - ar-SA,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [ar-SA],Windows 10 Feature On Demand
+Language - as-IN,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [as-IN],Windows 10 Feature On Demand
+Language - az-Latn-AZ,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [az-Latn-AZ],Windows 10 Feature On Demand
+Language - bg-BG,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [bg-BG],Windows 10 Feature On Demand
+Language - bn-BD,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [bn-BD],Windows 10 Feature On Demand
+Language - bn-IN,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [bn-IN],Windows 10 Feature On Demand
+Language - bs-Latn-BA,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [bs-Latn-BA],Windows 10 Feature On Demand
+Language - ca-ES,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [ca-ES],Windows 10 Feature On Demand
+Language - chr-Cher-US,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [chr-CHER-US],Windows 10 Feature On Demand
+Language - cs-CZ,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [cs-CZ],Windows 10 Feature On Demand
+Language - cy-GB,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [cy-GB],Windows 10 Feature On Demand
+Language - da-DK,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [da-DK],Windows 10 Feature On Demand
+Language - de-AT,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [de-AT],Windows 10 Feature On Demand
+Language - de-CH,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [de-CH],Windows 10 Feature On Demand
+Language - de-DE,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [de-DE],Windows 10 Feature On Demand
+Language - el-GR,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [el-GR],Windows 10 Feature On Demand
+Language - en-CA,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [en-ca],Windows 10 Feature On Demand
+Language - en-GB,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [en-GB],Windows 10 Feature On Demand
+Language - en-IE,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [en-ie],Windows 10 Feature On Demand
+Language - en-IN,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [en-in],Windows 10 Feature On Demand
+Language - en-US,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [en-US],Windows 10 Feature On Demand
+Language - es-ES,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [es-ES],Windows 10 Feature On Demand
+Language - es-MX,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [es-MX],Windows 10 Feature On Demand
+Language - et-EE,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [et-EE],Windows 10 Feature On Demand
+Language - eu-ES,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [eu-ES],Windows 10 Feature On Demand
+Language - fa-IR,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [fa-IR],Windows 10 Feature On Demand
+Language - fi-FI,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [fi-FI],Windows 10 Feature On Demand
+Language - fr-CA,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [fr-CA],Windows 10 Feature On Demand
+Language - fr-CH,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [fr-CH],Windows 10 Feature On Demand
+Language - fr-FR,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [fr-FR],Windows 10 Feature On Demand
+Language - ga-IE,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [ga-IE],Windows 10 Feature On Demand
+Language - gd-GB,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [gd-GB],Windows 10 Feature On Demand
+Language - gl-ES,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [gl-ES],Windows 10 Feature On Demand
+Language - gu-IN,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [gu-IN],Windows 10 Feature On Demand
+Language - ha-Latn-NG,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [ha-Latn-NG],Windows 10 Feature On Demand
+Language - he-IL,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [he-IL],Windows 10 Feature On Demand
+Language - hi-IN,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [hi-IN],Windows 10 Feature On Demand
+Language - hr-HR,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [hr-HR],Windows 10 Feature On Demand
+Language - hu-HU,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [hu-HU],Windows 10 Feature On Demand
+Language - hy-AM,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [hy-AM],Windows 10 Feature On Demand
+Language - id-ID,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [id-ID],Windows 10 Feature On Demand
+Language - ig-NG,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [ig-NG],Windows 10 Feature On Demand
+Language - is-IS,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [is-IS],Windows 10 Feature On Demand
+Language - it-IT,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [it-IT],Windows 10 Feature On Demand
+Language - ja-JP,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [ja-JP],Windows 10 Feature On Demand
+Language - ka-GE,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [ka-GE],Windows 10 Feature On Demand
+Language - kk-KZ,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [kk-KZ],Windows 10 Feature On Demand
+Language - km-KH,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [km-KH],Windows 10 Feature On Demand
+Language - kn-IN,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [kn-IN],Windows 10 Feature On Demand
+Language - kok-IN,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [kok-IN],Windows 10 Feature On Demand
+Language - ko-KR,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [ko-KR],Windows 10 Feature On Demand
+Language - ky-KG,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [ky-KG],Windows 10 Feature On Demand
+Language - lb-LU,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [lb-LU],Windows 10 Feature On Demand
+Language - lb-LT,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [lt-LT],Windows 10 Feature On Demand
+Language - lv-LV,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [lv-LV],Windows 10 Feature On Demand
+Language - mi-NZ,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [mi-NZ],Windows 10 Feature On Demand
+Language - mk-MK,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [mk-MK],Windows 10 Feature On Demand
+Language - ml-IN,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [ml-IN],Windows 10 Feature On Demand
+Language - mr-IN,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [mr-IN],Windows 10 Feature On Demand
+Language - ms-BN,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [ms-BN],Windows 10 Feature On Demand
+Language - ms-MY,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [ms-MY],Windows 10 Feature On Demand
+Language - mt-MT,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [mt-MT],Windows 10 Feature On Demand
+Language - nb-NO,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [nb-NO],Windows 10 Feature On Demand
+Language - ne-NP,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [ne-NP],Windows 10 Feature On Demand
+Language - nl-BE,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [nl-be],Windows 10 Feature On Demand
+Language - nl-NL,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [nl-NL],Windows 10 Feature On Demand
+Language - nn-NO,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [nn-NO],Windows 10 Feature On Demand
+Language - nso-ZA,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [nso-ZA],Windows 10 Feature On Demand
+Language - or-IN,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [or-IN],Windows 10 Feature On Demand
+Language - pa-IN,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [pa-IN],Windows 10 Feature On Demand
+Language - pl-PL,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [pl-PL],Windows 10 Feature On Demand
+Language - ps-AF,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [ps-AF],Windows 10 Feature On Demand
+Language - pt-BR,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [pt-BR],Windows 10 Feature On Demand
+Language - pt-PT,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [pt-PT],Windows 10 Feature On Demand
+Language - rm-CH,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [rm-CH],Windows 10 Feature On Demand
+Language - ro-RO,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [ro-RO],Windows 10 Feature On Demand
+Language - ru-RU,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [ru-RU],Windows 10 Feature On Demand
+Language - ru-RW,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [rw-RW],Windows 10 Feature On Demand
+Language - si-LK,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [si-LK],Windows 10 Feature On Demand
+Language - sk-SK,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [sk-SK],Windows 10 Feature On Demand
+Language - sl-SI,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [sl-SI],Windows 10 Feature On Demand
+Language - sq-AL,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [sq-AL],Windows 10 Feature On Demand
+Language - sr-Cyrl-RS,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [sr-Cyrl-RS],Windows 10 Feature On Demand
+Language - sr-Latn-RS,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [sr-Latn-RS],Windows 10 Feature On Demand
+Language - sv-SE,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [sv-SE],Windows 10 Feature On Demand
+Language - sw-KE,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [sw-KE],Windows 10 Feature On Demand
+Language - ta-IN,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [ta-IN],Windows 10 Feature On Demand
+Language - te-IN,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [te-IN],Windows 10 Feature On Demand
+Language - th-TH,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [th-TH],Windows 10 Feature On Demand
+Language - tn-ZA,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [tn-ZA],Windows 10 Feature On Demand
+Language - tr-TR,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [tr-TR],Windows 10 Feature On Demand
+Language - tt-RU,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [tt-RU],Windows 10 Feature On Demand
+Language - uk-UA,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [uk-UA],Windows 10 Feature On Demand
+Language - ur-PK,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [ur-PK],Windows 10 Feature On Demand
+Language - uz-Latn-UZ,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [uz-Latn-UZ],Windows 10 Feature On Demand
+Language - vi-VN,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [vi-VN],Windows 10 Feature On Demand
+Language - wo-SN,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [wo-SN],Windows 10 Feature On Demand
+Language - xh-ZA,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [xh-ZA],Windows 10 Feature On Demand
+Language - yo-NG,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [yo-NG],Windows 10 Feature On Demand
+Language - zh-CN,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [zh-CN],Windows 10 Feature On Demand
+Language - zh-HK,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [zh-HK],Windows 10 Feature On Demand
+Language - zh-TW,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [zh-TW],Windows 10 Feature On Demand
+Language - zu-ZA,FALSE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [zu-ZA],Windows 10 Feature On Demand
 Language - af-ZA,FALSE,LanguageFeatureOnDemand - Windows Server 2016 for AMD64-based Systems - (KB3192967) [af-ZA],Windows 10 Feature On Demand
 Language - am-ET,FALSE,LanguageFeatureOnDemand - Windows Server 2016 for AMD64-based Systems - (KB3192967) [am-ET],Windows 10 Feature On Demand
 Language - ar-SA,FALSE,LanguageFeatureOnDemand - Windows Server 2016 for AMD64-based Systems - (KB3192967) [ar-SA],Windows 10 Feature On Demand
@@ -2143,7 +2572,6 @@ Language - lo-LA,FALSE,Lao Language Interface Pack - Windows 10 for x64-based Sy
 Language - lo-LA,FALSE,Lao Language Interface Pack - Windows 10 Version 1511 - (KB3109596) [lo-LA_LIP],Windows 10 Language Interface Packs
 Language - lo-LA,FALSE,Lao Language Interface Pack - Windows 10 Version 1511 for x64-based Systems - (KB3109596) [lo-LA_LIP],Windows 10 Language Interface Packs
 Language - lv-LV,FALSE,Latvian Language Pack,Windows Vista Ultimate Language Packs
-Language - lv-LV,FALSE,Latvian Language Pack,Windows Vista Ultimate Language Packs
 Language - lv-LV,FALSE,Latvian Language Pack - Windows 10 - (KB3079343) [lv-LV_LP],Windows 10 Language Packs
 Language - lv-LV,FALSE,Latvian Language Pack - Windows 10 for x64-based Systems - (KB3079343) [lv-LV_LP],Windows 10 Language Packs
 Language - lv-LV,FALSE,Latvian Language Pack - Windows 10 Version 1511 - (KB3109596) [lv-LV_LP],Windows 10 Language Packs
@@ -2160,7 +2588,6 @@ Language - lv-LV,FALSE,Latvian Language Pack - Windows Server 2012 R2 - (KB30129
 Language - lv-LV,FALSE,Latvian LanguagePack - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [lv-LV_LP],Windows 10 Language Packs
 Language - lv-LV,FALSE,Latvian LanguagePack - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [lv-LV_LP],Windows 10 Language Packs
 Language - lv-LV,FALSE,Latvian LanguagePack - Windows Server 2016 for AMD64-based Systems - (KB3192967) [lv-LV_LP],Windows Server Technical Preview Language Packs
-Language - lt-LT,FALSE,Lithuanian Language Pack,Windows Vista Ultimate Language Packs
 Language - lt-LT,FALSE,Lithuanian Language Pack,Windows Vista Ultimate Language Packs
 Language - lt-LT,FALSE,Lithuanian Language Pack - Windows 10 - (KB3079343) [lt-LT_LP],Windows 10 Language Packs
 Language - lt-LT,FALSE,Lithuanian Language Pack - Windows 10 for x64-based Systems - (KB3079343) [lt-LT_LP],Windows 10 Language Packs
@@ -2286,6 +2713,10 @@ Language Packs,FALSE,Microsoft .NET Framework 4.6.1 Language Packs for Windows S
 Language Packs,FALSE,Microsoft .NET Framework 4.6.1 Language Packs for x64 (KB3102433),Windows 7
 Language Packs,FALSE,Microsoft .NET Framework 4.6.1 Upgrade Language Packs (KB3102433),Windows 7
 Language Packs,FALSE,Microsoft .NET Framework 4.6.1 Upgrade Language Packs for x64 (KB3102433),Windows 7
+Language Packs,FALSE,Microsoft .NET Framework 4.7 Language Packs for Windows 10 Version 1607 (KB3186607),Windows 10
+Language Packs,FALSE,Microsoft .NET Framework 4.7 Language Packs for Windows 10 Version 1607 and Windows Server 2016 for x64 (KB3186607),"Windows 10, Windows Server 2016"
+Language Packs,FALSE,Microsoft .NET Framework 4.7 Language Packs for Windows 8.1 (KB3186606),Windows 8.1
+Language Packs,FALSE,Microsoft .NET Framework 4.7 Language Packs for Windows 8.1 and Windows Server 2012 R2 for x64 (KB3186606),"Windows 8.1, Windows Server 2012 R2"
 Region - GB,FALSE,Microsoft Office Accounting 2008 UK Service Pack 1 (KB949426),Office 2007
 Region - US,FALSE,Microsoft Office Accounting 2008 US Service Pack 1 (KB949426),Office 2007
 Region - GB/US,FALSE,Microsoft Office Accounting 2009 Service Pack 3 (KB2006634),Office 2007
@@ -2339,7 +2770,6 @@ Language - nn-NO,FALSE,Norwegian (Nynorsk) Language Interface Pack - Windows 8.1
 Language - nn-NO,FALSE,Norwegian (Nynorsk) LanguageInterfacePack - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [nn-NO_LIP],Windows 10 Language Interface Packs
 Language - nn-NO,FALSE,Norwegian (Nynorsk) LanguageInterfacePack - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [nn-NO_LIP],Windows 10 Language Interface Packs
 Language - nb-NO,FALSE,Norwegian Language Pack,Windows Vista Ultimate Language Packs
-Language - nb-NO,FALSE,Norwegian Language Pack,Windows Vista Ultimate Language Packs
 Language - nb-NO,TRUE,Norwegian LanguagePack - Windows 10 Insider Preview 14390 for AMD64-based Systems - (KB3179271) [nb-NO_LP],Windows 10 Language Packs
 Language - nb-NO,TRUE,Norwegian LanguagePack - Windows 10 Insider Preview 14390 for x86-based Systems - (KB3179271) [nb-NO_LP],Windows 10 Language Packs
 Language - nb-NO,FALSE,Norwegian LanguagePack - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [nb-NO_LP],Windows 10 Language Packs
@@ -2372,7 +2802,6 @@ Language - fa-IR,FALSE,Persian Language Interface Pack - Windows 8.1 for x64-bas
 Language - fa-IR,FALSE,Persian LanguageInterfacePack - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [fa-IR_LIP],Windows 10 Language Interface Packs
 Language - fa-IR,FALSE,Persian LanguageInterfacePack - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [fa-IR_LIP],Windows 10 Language Interface Packs
 Language - pl-PL,FALSE,Polish Language Pack,Windows Vista Ultimate Language Packs
-Language - pl-PL,FALSE,Polish Language Pack,Windows Vista Ultimate Language Packs
 Language - pl-PL,FALSE,Polish Language Pack - Windows 10 - (KB3079343) [pl-PL_LP],Windows 10 Language Packs
 Language - pl-PL,FALSE,Polish Language Pack - Windows 10 for x64-based Systems - (KB3079343) [pl-PL_LP],Windows 10 Language Packs
 Language - pl-PL,FALSE,Polish Language Pack - Windows 10 Version 1511 - (KB3109596) [pl-PL_LP],Windows 10 Language Packs
@@ -2391,7 +2820,6 @@ Language - pl-PL,TRUE,Polish LanguagePack - Windows 10 Insider Preview 14390 for
 Language - pl-PL,FALSE,Polish LanguagePack - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [pl-PL_LP],Windows 10 Language Packs
 Language - pl-PL,FALSE,Polish LanguagePack - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [pl-PL_LP],Windows 10 Language Packs
 Language - pl-PL,FALSE,Polish LanguagePack - Windows Server 2016 for AMD64-based Systems - (KB3192967) [pl-PL_LP],Windows Server Technical Preview Language Packs
-Language - pt-BR,FALSE,Portuguese (Brazil) Language Pack,Windows Vista Ultimate Language Packs
 Language - pt-BR,FALSE,Portuguese (Brazil) Language Pack,Windows Vista Ultimate Language Packs
 Language - pt-BR,FALSE,Portuguese (Brazil) Language Pack - Windows 10 - (KB3079343) [pt-BR_LP],Windows 10 Language Packs
 Language - pt-BR,FALSE,Portuguese (Brazil) Language Pack - Windows 10 for x64-based Systems - (KB3079343) [pt-BR_LP],Windows 10 Language Packs
@@ -2412,7 +2840,6 @@ Language - pt-BR,TRUE,Portuguese (Brazil) LanguagePack - Windows 10 Insider Prev
 Language - pt-BR,FALSE,Portuguese (Brazil) LanguagePack - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [pt-BR_LP],Windows 10 Language Packs
 Language - pt-BR,FALSE,Portuguese (Brazil) LanguagePack - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [pt-BR_LP],Windows 10 Language Packs
 Language - pt-BR,FALSE,Portuguese (Brazil) LanguagePack - Windows Server 2016 for AMD64-based Systems - (KB3192967) [pt-BR_LP],Windows Server Technical Preview Language Packs
-Language - pt-PT,FALSE,Portuguese (Portugal) Language Pack,Windows Vista Ultimate Language Packs
 Language - pt-PT,FALSE,Portuguese (Portugal) Language Pack,Windows Vista Ultimate Language Packs
 Language - pt-PT,FALSE,Portuguese (Portugal) Language Pack - Windows 10 - (KB3079343) [pt-PT_LP],Windows 10 Language Packs
 Language - pt-PT,FALSE,Portuguese (Portugal) Language Pack - Windows 10 for x64-based Systems - (KB3079343) [pt-PT_LP],Windows 10 Language Packs
@@ -2472,7 +2899,6 @@ Language - quz-PE,FALSE,Quechua LanguageInterfacePack - Windows 10 Version 1607 
 Language - quz-PE,FALSE,Quechua LanguageInterfacePack - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [quz-PE_LIP],Windows 10 Language Interface Packs
 Language Packs,FALSE,Remote Desktop Connection (Terminal Services Client 6.0) MUI Language Pack for Windows XP (KB925877),Windows XP
 Language - ro-RO,FALSE,Romanian Language Pack,Windows Vista Ultimate Language Packs
-Language - ro-RO,FALSE,Romanian Language Pack,Windows Vista Ultimate Language Packs
 Language - ro-RO,FALSE,Romanian Language Pack - Windows 10 - (KB3079343) [ro-RO_LP],Windows 10 Language Packs
 Language - ro-RO,FALSE,Romanian Language Pack - Windows 10 for x64-based Systems - (KB3079343) [ro-RO_LP],Windows 10 Language Packs
 Language - ro-RO,FALSE,Romanian Language Pack - Windows 10 Version 1511 - (KB3109596) [ro-RO_LP],Windows 10 Language Packs
@@ -2489,7 +2915,6 @@ Language - ro-RO,FALSE,Romanian Language Pack - Windows Server 2012 R2 - (KB3012
 Language - ro-RO,FALSE,Romanian LanguagePack - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [ro-RO_LP],Windows 10 Language Packs
 Language - ro-RO,FALSE,Romanian LanguagePack - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [ro-RO_LP],Windows 10 Language Packs
 Language - ro-RO,FALSE,Romanian LanguagePack - Windows Server 2016 for AMD64-based Systems - (KB3192967) [ro-RO_LP],Windows Server Technical Preview Language Packs
-Language - ru-RU,FALSE,Russian Language Pack,Windows Vista Ultimate Language Packs
 Language - ru-RU,FALSE,Russian Language Pack,Windows Vista Ultimate Language Packs
 Language - ru-RU,FALSE,Russian Language Pack - Windows 10 - (KB3079343) [ru-RU_LP],Windows 10 Language Packs
 Language - ru-RU,FALSE,Russian Language Pack - Windows 10 for x64-based Systems - (KB3079343) [ru-RU_LP],Windows 10 Language Packs
@@ -2701,7 +3126,6 @@ Language - sr-Cyrl-RS,FALSE,"Serbian (Cyrillic, Serbia) Language Interface Pack 
 Language - sr-Cyrl-RS,FALSE,"Serbian (Cyrillic, Serbia) Language Interface Pack - Windows 8.1 - (KB2839636) [sr-Cyrl-RS_LIP]",Windows 8.1 Language Interface Packs
 Language - sr-Cyrl-RS,FALSE,"Serbian (Cyrillic, Serbia) Language Interface Pack - Windows 8.1 for x64-based Systems - (KB2839636) [sr-Cyrl-RS_LIP]",Windows 8.1 Language Interface Packs
 Language - sr-Latn-RS,FALSE,Serbian (Latin) Language Pack,Windows Vista Ultimate Language Packs
-Language - sr-Latn-RS,FALSE,Serbian (Latin) Language Pack,Windows Vista Ultimate Language Packs
 Language - sr-Latn-RS,FALSE,Serbian (Latin) Language Pack - Windows 10 - (KB3079343) [sr-Latn-RS_LP],Windows 10 Language Packs
 Language - sr-Latn-RS,FALSE,Serbian (Latin) Language Pack - Windows 10 for x64-based Systems - (KB3079343) [sr-Latn-RS_LP],Windows 10 Language Packs
 Language - sr-Latn-RS,FALSE,Serbian (Latin) Language Pack - Windows 10 Version 1511 - (KB3109596) [sr-Latn-RS_LP],Windows 10 Language Packs
@@ -2769,7 +3193,6 @@ Language - si-LK,FALSE,Sinhala LanguageInterfacePack - Windows 10 Version 1607 f
 Language - sk-SK,FALSE,Slovak Interface for Windows Media Player Series 9,Windows XP
 Language - sk-SK,FALSE,Slovak Interface for Windows Movie Maker (Version 2.1),Windows XP
 Language - sk-SK,FALSE,Slovak Language Pack,Windows Vista Ultimate Language Packs
-Language - sk-SK,FALSE,Slovak Language Pack,Windows Vista Ultimate Language Packs
 Language - sk-SK,FALSE,Slovak Language Pack - Windows 10 - (KB3079343) [sk-SK_LP],Windows 10 Language Packs
 Language - sk-SK,FALSE,Slovak Language Pack - Windows 10 for x64-based Systems - (KB3079343) [sk-SK_LP],Windows 10 Language Packs
 Language - sk-SK,FALSE,Slovak Language Pack - Windows 10 Version 1511 - (KB3109596) [sk-SK_LP],Windows 10 Language Packs
@@ -2788,7 +3211,6 @@ Language - sk-SK,FALSE,Slovak LanguagePack - Windows 10 Version 1607 for x86-bas
 Language - sk-SK,FALSE,Slovak LanguagePack - Windows Server 2016 for AMD64-based Systems - (KB3192967) [sk-SK_LP],Windows Server Technical Preview Language Packs
 Language - sl-SI,FALSE,Slovenian Interface for Windows Media Player Series 9,Windows XP
 Language - sl-SI,FALSE,Slovenian Interface for Windows Movie Maker (Version 2.1),Windows XP
-Language - sl-SI,FALSE,Slovenian Language Pack,Windows Vista Ultimate Language Packs
 Language - sl-SI,FALSE,Slovenian Language Pack,Windows Vista Ultimate Language Packs
 Language - sl-SI,FALSE,Slovenian Language Pack - Windows 10 - (KB3079343) [sl-SI_LP],Windows 10 Language Packs
 Language - sl-SI,FALSE,Slovenian Language Pack - Windows 10 for x64-based Systems - (KB3079343) [sl-SI_LP],Windows 10 Language Packs
@@ -2816,7 +3238,6 @@ Language - es-MX,FALSE,Spanish (Mexico) LanguagePack - Windows 10 Version 1607 f
 Language - es-MX,FALSE,Spanish (Mexico) LanguagePack - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [es-MX_LP],Windows 10 Language Packs
 Language - es-MX,FALSE,Spanish (Mexico) LanguagePack - Windows Server 2016 for AMD64-based Systems - (KB3192967) [es-MX_LP],Windows Server Technical Preview Language Packs
 Language - es-ES,FALSE,Spanish Language Pack,Windows Vista Ultimate Language Packs
-Language - es-ES,FALSE,Spanish Language Pack,Windows Vista Ultimate Language Packs
 Language - es-ES,FALSE,Spanish Language Pack - Windows 10 - (KB3079343) [es-ES_LP],Windows 10 Language Packs
 Language - es-ES,FALSE,Spanish Language Pack - Windows 10 for x64-based Systems - (KB3079343) [es-ES_LP],Windows 10 Language Packs
 Language - es-ES,FALSE,Spanish Language Pack - Windows 10 Version 1511 - (KB3109596) [es-ES_LP],Windows 10 Language Packs
@@ -2838,7 +3259,6 @@ Language - es-ES,FALSE,Spanish LanguagePack - Windows 10 Version 1607 for x86-ba
 Language - es-ES,FALSE,Spanish LanguagePack - Windows Server 2016 for AMD64-based Systems - (KB3192967) [es-ES_LP],Windows Server Technical Preview Language Packs
 Superseded,FALSE,SQL Server 2005 Books Online (February 2007),SQL Server 2005
 Superseded,FALSE,SQL Server 2012 Service Pack 1 Setup Update (KB2674319),SQL Server 2012 Product Updates for Setup
-Language - sv-SE,FALSE,Swedish Language Pack,Windows Vista Ultimate Language Packs
 Language - sv-SE,FALSE,Swedish Language Pack,Windows Vista Ultimate Language Packs
 Language - sv-SE,FALSE,Swedish Language Pack - Windows 10 - (KB3079343) [sv-SE_LP],Windows 10 Language Packs
 Language - sv-SE,FALSE,Swedish Language Pack - Windows 10 for x64-based Systems - (KB3079343) [sv-SE_LP],Windows 10 Language Packs
@@ -2899,7 +3319,6 @@ Language - te-IN,FALSE,Telugu Language Interface Pack - Windows 8.1 for x64-base
 Language - te-IN,FALSE,Telugu LanguageInterfacePack - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [te-IN_LIP],Windows 10 Language Interface Packs
 Language - te-IN,FALSE,Telugu LanguageInterfacePack - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [te-IN_LIP],Windows 10 Language Interface Packs
 Language - th-TH,FALSE,Thai Language Pack,Windows Vista Ultimate Language Packs
-Language - th-TH,FALSE,Thai Language Pack,Windows Vista Ultimate Language Packs
 Language - th-TH,FALSE,Thai Language Pack - Windows 10 - (KB3079343) [th-TH_LP],Windows 10 Language Packs
 Language - th-TH,FALSE,Thai Language Pack - Windows 10 for x64-based Systems - (KB3079343) [th-TH_LP],Windows 10 Language Packs
 Language - th-TH,FALSE,Thai Language Pack - Windows 10 Version 1511 - (KB3109596) [th-TH_LP],Windows 10 Language Packs
@@ -2928,7 +3347,6 @@ Language - ti-ET,FALSE,Tigrinya (Ethiopia) LanguageInterfacePack - Windows 10 Ve
 Language - ti-ET,FALSE,Tigrinya (Ethiopia) LanguageInterfacePack - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [ti-ET_LIP],Windows 10 Language Interface Packs
 Language - ti-ET,FALSE,Tigrinya Language Interface Pack - Windows 8 - (KB2607607) [ti-ET_LIP],Windows 8 Language Interface Packs
 Language - ti-ET,FALSE,Tigrinya Language Interface Pack - Windows 8 for x64-based System - (KB2607607) [ti-ET_LIP],Windows 8 Language Interface Packs
-Language - tr-TR,FALSE,Turkish Language Pack,Windows Vista Ultimate Language Packs
 Language - tr-TR,FALSE,Turkish Language Pack,Windows Vista Ultimate Language Packs
 Language - tr-TR,FALSE,Turkish Language Pack - Windows 10 - (KB3079343) [tr-TR_LP],Windows 10 Language Packs
 Language - tr-TR,FALSE,Turkish Language Pack - Windows 10 for x64-based Systems - (KB3079343) [tr-TR_LP],Windows 10 Language Packs
@@ -2959,7 +3377,6 @@ Language - tk-TM,FALSE,Turkmen Language Interface Pack - Windows 8.1 - (KB283963
 Language - tk-TM,FALSE,Turkmen Language Interface Pack - Windows 8.1 for x64-based Systems - (KB2839636) [tk-TM_LIP],Windows 8.1 Language Interface Packs
 Language - tk-TM,FALSE,Turkmen LanguageInterfacePack - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [tk-TM_LIP],Windows 10 Language Interface Packs
 Language - tk-TM,FALSE,Turkmen LanguageInterfacePack - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [tk-TM_LIP],Windows 10 Language Interface Packs
-Language - uk-UA,FALSE,Ukrainian Language Pack,Windows Vista Ultimate Language Packs
 Language - uk-UA,FALSE,Ukrainian Language Pack,Windows Vista Ultimate Language Packs
 Language - uk-UA,FALSE,Ukrainian Language Pack - Windows 10 - (KB3079343) [uk-UA_LP],Windows 10 Language Packs
 Language - uk-UA,FALSE,Ukrainian Language Pack - Windows 10 for x64-based Systems - (KB3079343) [uk-UA_LP],Windows 10 Language Packs
@@ -3000,6 +3417,8 @@ Language Packs,FALSE,Update for Microsoft Office 2016 Language Interface Pack (K
 Language Packs,FALSE,Update for Microsoft Office 2016 Language Interface Pack (KB3118261) 64-Bit Edition,Office 2016
 Language Packs,FALSE,Update for Microsoft Office 2016 Language Interface Pack (KB3118333) 32-Bit Edition,Office 2016
 Language Packs,FALSE,Update for Microsoft Office 2016 Language Interface Pack (KB3118333) 64-Bit Edition,Office 2016
+Language Packs,FALSE,Update for Microsoft Office 2016 Language Interface Pack (KB3191866) 32-Bit Edition,Office 2016
+Language Packs,FALSE,Update for Microsoft Office 2016 Language Interface Pack (KB3191866) 64-Bit Edition,Office 2016
 Region - GB/US,FALSE,Update for Microsoft Office Accounting 2007 (KB946690),Office 2007
 Superseded,FALSE,Update for Microsoft Office Outlook 2007 Junk Email Filter (KB2825642),Office 2007
 Superseded,FALSE,Update for Microsoft Office Outlook 2007 Junk Email Filter (KB2880505),Office 2007
@@ -3385,6 +3804,8 @@ Upgrade - ro-RO,FALSE,"Windows 7 and 8.1 upgrade to Windows 10 Education N, vers
 Upgrade - sk-SK,FALSE,"Windows 7 and 8.1 upgrade to Windows 10 Education N, version 1607, sk-sk","Windows 8.1, Windows 7"
 Upgrade - sl-SI,FALSE,"Windows 7 and 8.1 upgrade to Windows 10 Education N, version 1607, sl-si","Windows 8.1, Windows 7"
 Upgrade - sv-SE,FALSE,"Windows 7 and 8.1 upgrade to Windows 10 Education N, version 1607, sv-se","Windows 8.1, Windows 7"
+Upgrade - en-GB,FALSE,"Windows 7 and 8.1 upgrade to Windows 10 Education N, version 1703, en-gb","Windows 8.1, Windows 7"
+Upgrade - en-US,FALSE,"Windows 7 and 8.1 upgrade to Windows 10 Education N, version 1703, en-us","Windows 8.1, Windows 7"
 Upgrade - en-GB,FALSE,"Windows 7 and 8.1 upgrade to Windows 10 Education, version 1511, 10586 - en-gb, Volume","Windows 10, Windows 8.1, Windows 7"
 Upgrade - en-US,FALSE,"Windows 7 and 8.1 upgrade to Windows 10 Education, version 1511, 10586 - en-us, Volume","Windows 10, Windows 8.1, Windows 7"
 Upgrade - zh-HK,FALSE,"Windows 7 and 8.1 upgrade to Windows 10 Education, version 1511, 10586 - zh-hk, Volume","Windows 8.1, Windows 7"
@@ -3426,6 +3847,8 @@ Upgrade - tr-TR,FALSE,"Windows 7 and 8.1 upgrade to Windows 10 Education, versio
 Upgrade - uk-UA,FALSE,"Windows 7 and 8.1 upgrade to Windows 10 Education, version 1607, uk-ua","Windows 8.1, Windows 7"
 Upgrade - zh-CN,FALSE,"Windows 7 and 8.1 upgrade to Windows 10 Education, version 1607, zh-cn","Windows 8.1, Windows 7"
 Upgrade - zh-TW,FALSE,"Windows 7 and 8.1 upgrade to Windows 10 Education, version 1607, zh-tw","Windows 8.1, Windows 7"
+Upgrade - en-GB,FALSE,"Windows 7 and 8.1 upgrade to Windows 10 Education, version 1703, en-gb","Windows 8.1, Windows 7"
+Upgrade - en-US,FALSE,"Windows 7 and 8.1 upgrade to Windows 10 Education, version 1703, en-us","Windows 8.1, Windows 7"
 Upgrade - en-GB,FALSE,"Windows 7 and 8.1 upgrade to Windows 10 Enterprise N, version 1511, 10586 - en-gb, Volume","Windows 10, Windows 8.1, Windows 7"
 Upgrade - en-US,FALSE,"Windows 7 and 8.1 upgrade to Windows 10 Enterprise N, version 1511, 10586 - en-us, Volume","Windows 10, Windows 8.1, Windows 7"
 Upgrade - ko-KR,FALSE,"Windows 7 and 8.1 upgrade to Windows 10 Enterprise N, version 1511, 10586 - ko-kr, Volume","Windows 8.1, Windows 7"
@@ -3453,6 +3876,8 @@ Upgrade - ro-RO,FALSE,"Windows 7 and 8.1 upgrade to Windows 10 Enterprise N, ver
 Upgrade - sk-SK,FALSE,"Windows 7 and 8.1 upgrade to Windows 10 Enterprise N, version 1607, sk-sk","Windows 8.1, Windows 7"
 Upgrade - sl-SI,FALSE,"Windows 7 and 8.1 upgrade to Windows 10 Enterprise N, version 1607, sl-si","Windows 8.1, Windows 7"
 Upgrade - sv-SE,FALSE,"Windows 7 and 8.1 upgrade to Windows 10 Enterprise N, version 1607, sv-se","Windows 8.1, Windows 7"
+Upgrade - en-GB,FALSE,"Windows 7 and 8.1 upgrade to Windows 10 Enterprise N, version 1703, en-gb","Windows 8.1, Windows 7"
+Upgrade - en-US,FALSE,"Windows 7 and 8.1 upgrade to Windows 10 Enterprise N, version 1703, en-us","Windows 8.1, Windows 7"
 Upgrade - en-GB,FALSE,"Windows 7 and 8.1 upgrade to Windows 10 Enterprise, version 1511, 10586 - en-gb, Volume","Windows 10, Windows 8.1, Windows 7"
 Upgrade - en-US,FALSE,"Windows 7 and 8.1 upgrade to Windows 10 Enterprise, version 1511, 10586 - en-us, Volume","Windows 10, Windows 8.1, Windows 7"
 Upgrade - zh-HK,FALSE,"Windows 7 and 8.1 upgrade to Windows 10 Enterprise, version 1511, 10586 - zh-hk, Volume","Windows 8.1, Windows 7"
@@ -3494,6 +3919,8 @@ Upgrade - tr-TR,FALSE,"Windows 7 and 8.1 upgrade to Windows 10 Enterprise, versi
 Upgrade - uk-UA,FALSE,"Windows 7 and 8.1 upgrade to Windows 10 Enterprise, version 1607, uk-ua","Windows 8.1, Windows 7"
 Upgrade - zh-CN,FALSE,"Windows 7 and 8.1 upgrade to Windows 10 Enterprise, version 1607, zh-cn","Windows 8.1, Windows 7"
 Upgrade - zh-TW,FALSE,"Windows 7 and 8.1 upgrade to Windows 10 Enterprise, version 1607, zh-tw","Windows 8.1, Windows 7"
+Upgrade - en-GB,FALSE,"Windows 7 and 8.1 upgrade to Windows 10 Enterprise, version 1703, en-gb","Windows 8.1, Windows 7"
+Upgrade - en-US,FALSE,"Windows 7 and 8.1 upgrade to Windows 10 Enterprise, version 1703, en-us","Windows 8.1, Windows 7"
 Upgrade - en-GB,FALSE,"Windows 7 and 8.1 upgrade to Windows 10 Pro N, version 1511, 10586 - en-gb, Retail","Windows 10, Windows 8.1, Windows 7"
 Upgrade - en-GB,FALSE,"Windows 7 and 8.1 upgrade to Windows 10 Pro N, version 1511, 10586 - en-gb, Volume","Windows 10, Windows 8.1, Windows 7"
 Upgrade - en-US,FALSE,"Windows 7 and 8.1 upgrade to Windows 10 Pro N, version 1511, 10586 - en-us, Retail","Windows 10, Windows 8.1, Windows 7"
@@ -3523,6 +3950,8 @@ Upgrade - ro-RO,FALSE,"Windows 7 and 8.1 upgrade to Windows 10 Pro N, version 16
 Upgrade - sk-SK,FALSE,"Windows 7 and 8.1 upgrade to Windows 10 Pro N, version 1607, sk-sk","Windows 8.1, Windows 7"
 Upgrade - sl-SI,FALSE,"Windows 7 and 8.1 upgrade to Windows 10 Pro N, version 1607, sl-si","Windows 8.1, Windows 7"
 Upgrade - sv-SE,FALSE,"Windows 7 and 8.1 upgrade to Windows 10 Pro N, version 1607, sv-se","Windows 8.1, Windows 7"
+Upgrade - en-GB,FALSE,"Windows 7 and 8.1 upgrade to Windows 10 Pro N, version 1703, en-gb","Windows 8.1, Windows 7"
+Upgrade - en-US,FALSE,"Windows 7 and 8.1 upgrade to Windows 10 Pro N, version 1703, en-us","Windows 8.1, Windows 7"
 Upgrade - en-GB,FALSE,"Windows 7 and 8.1 upgrade to Windows 10 Pro, version 1511, 10586 - en-gb, Retail","Windows 10, Windows 8.1, Windows 7"
 Upgrade - en-GB,FALSE,"Windows 7 and 8.1 upgrade to Windows 10 Pro, version 1511, 10586 - en-gb, Volume","Windows 10, Windows 8.1, Windows 7"
 Upgrade - en-US,FALSE,"Windows 7 and 8.1 upgrade to Windows 10 Pro, version 1511, 10586 - en-us, Retail","Windows 10, Windows 8.1, Windows 7"
@@ -3566,6 +3995,8 @@ Upgrade - tr-TR,FALSE,"Windows 7 and 8.1 upgrade to Windows 10 Pro, version 1607
 Upgrade - uk-UA,FALSE,"Windows 7 and 8.1 upgrade to Windows 10 Pro, version 1607, uk-ua","Windows 8.1, Windows 7"
 Upgrade - zh-CN,FALSE,"Windows 7 and 8.1 upgrade to Windows 10 Pro, version 1607, zh-cn","Windows 8.1, Windows 7"
 Upgrade - zh-TW,FALSE,"Windows 7 and 8.1 upgrade to Windows 10 Pro, version 1607, zh-tw","Windows 8.1, Windows 7"
+Upgrade - en-GB,FALSE,"Windows 7 and 8.1 upgrade to Windows 10 Pro, version 1703, en-gb","Windows 8.1, Windows 7"
+Upgrade - en-US,FALSE,"Windows 7 and 8.1 upgrade to Windows 10 Pro, version 1703, en-us","Windows 8.1, Windows 7"
 Language - sq-AL,FALSE,Windows Internet Explorer 7 Albanian LIP Pack for Windows XP,Windows XP
 Language - eu-ES,FALSE,Windows Internet Explorer 7 Basque LIP Pack for Windows XP,Windows XP
 Language - bs-Cyrl-BA,FALSE,Windows Internet Explorer 7 Bosnian (Cyrillic) LIP Pack for Windows XP,Windows XP
