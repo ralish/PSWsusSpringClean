@@ -46,9 +46,9 @@ Function Invoke-WsusSpringClean {
 
         Declines all failover clustering, farm server/deployment & Itanium updates.
         .EXAMPLE
-        PS C:\>Invoke-WsusSpringClean -DeclineUnneededUpdates -DeclineCategoriesInclude @('Superseded', 'Pre-release')
+        PS C:\>Invoke-WsusSpringClean -DeclineUnneededUpdates -DeclineCategoriesInclude @('Region - US', 'Superseded')
 
-        Declines all unneeded updates in the Superseded & Pre-release categories.
+        Declines all unneeded updates in the "Region - US" & "Superseded" categories.
         .NOTES
         The script intentionally avoids usage of most WSUS cmdlets provided by the UpdateServices module as many are extremely slow. This is particularly true of the Get-WsusUpdate cmdlet.
 
@@ -199,6 +199,7 @@ Function Invoke-WsusServerExtraCleanup {
     $RegExClusterUpdates = ' Failover Clustering '
     $RegExFarmUpdates = ' Farm[- ]'
     $RegExItaniumUpdates = '(IA64|Itanium)'
+    $RegExPrereleaseUpdates = ' (Beta|Preview|RC1|Release Candidate) '
     $RegExSecurityOnlyUpdates = ' Security Only (Quality )?Update '
 
     $WsusServer = Get-WsusServer
@@ -262,12 +263,12 @@ Function Invoke-WsusServerExtraCleanup {
 
     if ($DeclinePrereleaseUpdates) {
         Write-Host -ForegroundColor Green '[*] Declining pre-release updates ...'
-        $Prerelease = $Catalogue | Where-Object { $_.'Pre-release' -eq $true }
-        $MatchingUpdates = $WsusAnyExceptDeclined | Where-Object { $_.Title -in $Prerelease.Title }
-        foreach ($Update in $MatchingUpdates) {
-            if ($PSCmdlet.ShouldProcess($Update.Title, 'Decline')) {
-                Write-Host -ForegroundColor Cyan ('[-] Declining update: {0}' -f $Update.Title)
-                $Update.Decline()
+        foreach ($Update in $WsusAnyExceptDeclined) {
+            if ($Update.Title -match $RegExPrereleaseUpdates) {
+                if ($PSCmdlet.ShouldProcess($Update.Title, 'Decline')) {
+                    Write-Host -ForegroundColor Cyan ('[-] Declining update: {0}' -f $Update.Title)
+                    $Update.Decline()
+                }
             }
         }
     }
@@ -329,7 +330,7 @@ Function Invoke-WsusServerExtraCleanup {
             }
 
             # Ignore pre-release updates if they were declined
-            if ($DeclinePrereleaseUpdates -and $Update.Title -in $Prerelease) {
+            if ($DeclinePrereleaseUpdates -and $Update.Title -match $RegExPrereleaseUpdates) {
                 continue
             }
 
@@ -394,7 +395,6 @@ Function ConvertTo-WsusSpringCleanCatalogue {
 
             [PSCustomObject]@{
                 'Category'      = 'Unknown'
-                'Pre-release'   = if ($Update.IsBeta) { 'TRUE' } else { 'FALSE' }
                 'Title'         = $Update.Title
                 'ProductTitles' = [String]::Join(', ', $ProductTitles)
             }
