@@ -195,6 +195,12 @@ Function Invoke-WsusServerExtraCleanup {
         [Switch]$FindSuspectDeclines
     )
 
+    # RegEx patterns for update matching
+    $RegExClusterUpdates = ' Failover Clustering '
+    $RegExFarmUpdates = ' Farm[- ]'
+    $RegExItaniumUpdates = '(IA64|Itanium)'
+    $RegExSecurityOnlyUpdates = ' Security Only (Quality )?Update '
+
     $WsusServer = Get-WsusServer
     $UpdateScope = New-Object -TypeName Microsoft.UpdateServices.Administration.UpdateScope
 
@@ -221,7 +227,7 @@ Function Invoke-WsusServerExtraCleanup {
     if ($DeclineClusterUpdates) {
         Write-Host -ForegroundColor Green '[*] Declining cluster updates ...'
         foreach ($Update in $WsusAnyExceptDeclined) {
-            if ($Update.Title -match 'Failover Clustering') {
+            if ($Update.Title -match $RegExClusterUpdates) {
                 if ($PSCmdlet.ShouldProcess($Update.Title, 'Decline')) {
                     Write-Host -ForegroundColor Cyan ('[-] Declining update: {0}' -f $Update.Title)
                     $Update.Decline()
@@ -233,7 +239,7 @@ Function Invoke-WsusServerExtraCleanup {
     if ($DeclineFarmUpdates) {
         Write-Host -ForegroundColor Green '[*] Declining farm updates ...'
         foreach ($Update in $WsusAnyExceptDeclined) {
-            if ($Update.Title -match '(Farm( |-deployment))') {
+            if ($Update.Title -match $RegExFarmUpdates) {
                 if ($PSCmdlet.ShouldProcess($Update.Title, 'Decline')) {
                     Write-Host -ForegroundColor Cyan ('[-] Declining update: {0}' -f $Update.Title)
                     $Update.Decline()
@@ -245,7 +251,7 @@ Function Invoke-WsusServerExtraCleanup {
     if ($DeclineItaniumUpdates) {
         Write-Host -ForegroundColor Green '[*] Declining Itanium updates ...'
         foreach ($Update in $WsusAnyExceptDeclined) {
-            if ($Update.Title -match '(IA64|Itanium)') {
+            if ($Update.Title -match $RegExItaniumUpdates) {
                 if ($PSCmdlet.ShouldProcess($Update.Title, 'Decline')) {
                     Write-Host -ForegroundColor Cyan ('[-] Declining update: {0}' -f $Update.Title)
                     $Update.Decline()
@@ -269,7 +275,7 @@ Function Invoke-WsusServerExtraCleanup {
     if ($DeclineSecurityOnlyUpdates) {
         Write-Host -ForegroundColor Green '[*] Declining Security Only updates ...'
         foreach ($Update in $WsusAnyExceptDeclined) {
-            if ($Update.Title -match 'Security Only Quality Update') {
+            if ($Update.Title -match $RegExSecurityOnlyUpdates) {
                 if ($PSCmdlet.ShouldProcess($Update.Title, 'Decline')) {
                     Write-Host -ForegroundColor Cyan ('[-] Declining update: {0}' -f $Update.Title)
                     $Update.Decline()
@@ -308,17 +314,17 @@ Function Invoke-WsusServerExtraCleanup {
             }
 
             # Ignore cluster updates if they were declined
-            if ($DeclineClusterUpdates -and $Update.Title -match 'Failover Clustering') {
+            if ($DeclineClusterUpdates -and $Update.Title -match $RegExClusterUpdates) {
                 continue
             }
 
             # Ignore farm updates if they were declined
-            if ($DeclineFarmUpdates -and $Update.Title -match '(Farm( |-deployment))') {
+            if ($DeclineFarmUpdates -and $Update.Title -match $RegExFarmUpdates) {
                 continue
             }
 
             # Ignore Itanium updates if they were declined
-            if ($DeclineItaniumUpdates -and $Update.Title -match '(IA64|Itanium)') {
+            if ($DeclineItaniumUpdates -and $Update.Title -match $RegExItaniumUpdates) {
                 continue
             }
 
@@ -328,7 +334,7 @@ Function Invoke-WsusServerExtraCleanup {
             }
 
             # Ignore Security Only Quality updates if they were declined
-            if ($DeclineSecurityOnlyUpdates -and $Update.Title -match 'Security Only Quality Update') {
+            if ($DeclineSecurityOnlyUpdates -and $Update.Title -match $RegExSecurityOnlyUpdates) {
                 continue
             }
 
