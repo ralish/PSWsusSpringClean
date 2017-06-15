@@ -23,7 +23,7 @@ The PSWsusSpringClean module provides several additional options for cleaning yo
   Updates which only apply to products installed on *Itanium* architecture systems.
 - Decline pre-release updates (`-DeclinePrereleaseUpdates`)  
   Updates which only apply to pre-release products (e.g. release candidates).
-- Decline *Security Only Quality Updates* (`-DeclineSecurityOnlyQualityUpdates`)  
+- Decline *Security Only Quality Updates* (`-DeclineSecurityOnlyUpdates`)  
   Microsoft's new non-cumulative security only updates. The *Security Monthly Quality Rollups* contain everything in these updates and more.
 - Flag for review updates which may be incorrectly declined (`-FindSuspectDeclines`)  
   Lists updates which may be incorrectly declined (see the [Suspect Declines](#suspect-declines) section for more details).

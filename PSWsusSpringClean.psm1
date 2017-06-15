@@ -18,8 +18,8 @@ Function Invoke-WsusSpringClean {
         Decline any updates which are exclusively for Itanium architecture installations.
         .PARAMETER DeclinePrereleaseUpdates
         Decline any updates which are exclusively for pre-release products (e.g. betas).
-        .PARAMETER DeclineSecurityOnlyQualityUpdates
-        Decline any Security Only Quality updates.
+        .PARAMETER DeclineSecurityOnlyUpdates
+        Decline any Security Only updates.
         .PARAMETER DeclineUnneededUpdates
         Decline any updates in the bundled updates catalogue filtered against the provided inclusion or exclusion categories.
         .PARAMETER FindSuspectDeclines
@@ -73,7 +73,7 @@ Function Invoke-WsusSpringClean {
         [Switch]$DeclineFarmUpdates,
         [Switch]$DeclineItaniumUpdates,
         [Switch]$DeclinePrereleaseUpdates,
-        [Switch]$DeclineSecurityOnlyQualityUpdates,
+        [Switch]$DeclineSecurityOnlyUpdates,
         [Switch]$DeclineUnneededUpdates,
         [Switch]$FindSuspectDeclines,
 
@@ -109,7 +109,7 @@ Function Invoke-WsusSpringClean {
         DeclineFarmUpdates=$DeclineFarmUpdates
         DeclineItaniumUpdates=$DeclineItaniumUpdates
         DeclinePrereleaseUpdates=$DeclinePrereleaseUpdates
-        DeclineSecurityOnlyQualityUpdates=$DeclineSecurityOnlyQualityUpdates
+        DeclineSecurityOnlyUpdates=$DeclineSecurityOnlyUpdates
         DeclineUnneededUpdates=$DeclineUnneededUpdates
         FindSuspectDeclines=$FindSuspectDeclines
     }
@@ -190,7 +190,7 @@ Function Invoke-WsusServerExtraCleanup {
         [Switch]$DeclineFarmUpdates,
         [Switch]$DeclineItaniumUpdates,
         [Switch]$DeclinePrereleaseUpdates,
-        [Switch]$DeclineSecurityOnlyQualityUpdates,
+        [Switch]$DeclineSecurityOnlyUpdates,
         [Switch]$DeclineUnneededUpdates,
         [Switch]$FindSuspectDeclines
     )
@@ -266,8 +266,8 @@ Function Invoke-WsusServerExtraCleanup {
         }
     }
 
-    if ($DeclineSecurityOnlyQualityUpdates) {
-        Write-Host -ForegroundColor Green '[*] Declining Security Only Quality updates ...'
+    if ($DeclineSecurityOnlyUpdates) {
+        Write-Host -ForegroundColor Green '[*] Declining Security Only updates ...'
         foreach ($Update in $WsusAnyExceptDeclined) {
             if ($Update.Title -match 'Security Only Quality Update') {
                 if ($PSCmdlet.ShouldProcess($Update.Title, 'Decline')) {
@@ -328,7 +328,7 @@ Function Invoke-WsusServerExtraCleanup {
             }
 
             # Ignore Security Only Quality updates if they were declined
-            if ($DeclineSecurityOnlyQualityUpdates -and $Update.Title -match 'Security Only Quality Update') {
+            if ($DeclineSecurityOnlyUpdates -and $Update.Title -match 'Security Only Quality Update') {
                 continue
             }
 
