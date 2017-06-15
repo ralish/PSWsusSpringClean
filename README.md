@@ -11,7 +11,7 @@ For the cleanliness obsessed among us, maintaining a pristine WSUS catalogue of 
 The Solution
 ------------
 
-The PSWsusSpringClean module provides several additional options for cleaning your WSUS server:
+The `PSWsusSpringClean` module provides several additional options for cleaning your WSUS server:
 
 - Runs the default set of generally safe clean-up tasks (`RunCommonTasks`)  
   This consists of all the `Invoke-WsusServerCleanup` tasks and all parameters of this cmdlet prefixed with `-Decline`.
@@ -32,7 +32,7 @@ Several additional parameters not related to declining updates are also provided
 - Synchronise the WSUS server catalogue (`-SynchroniseServer`)  
   A synchronisation will be performed before any requested clean-up actions.
 - Flag for review updates which may be incorrectly declined (`-FindSuspectDeclines`)  
-  Lists updates which may be incorrectly declined (see the [Suspect Declines](#suspect-declines) section for more details).
+  Lists updates which may be incorrectly declined. See the [Suspect Declines](#suspect-declines) section for more details.
 
 ## Unneeded Updates
 
@@ -41,9 +41,9 @@ There are many updates which are likely unwanted in WSUS installations but have 
 Two parameters are provided to indicate to the module which unneeded updates should be declined:
 
 - Decline only the updates in the listed categories (`-DeclineCategoriesInclude`) [**Default**]  
-  An array of strings corresponding to the categories (per the CSV file) of unneeded updates to be declined. If an empty array is provided (default) then *no* updates listed in the CSV will be declined.
+  An array of strings corresponding to the categories of unneeded updates to be declined. If an empty array is provided (default) then *no* updates listed in the CSV will be declined.
 - Decline all unneeded updates except those in the listed categories (`-DeclineCategoriesExclude`)  
-  An array of strings corresponding to the categories (per the CSV file) of unneeded updates to exclude from declining. If an empty array is provided (default) then **all** updates listed in the CSV will be declined!
+  An array of strings corresponding to the categories of unneeded updates to exclude from declining. If an empty array is provided then **all** updates listed in the CSV will be declined!
 
 The `-DeclineCategoriesExclude` parameter should be used with caution as it could easily decline updates you did not intend to!
 
@@ -61,6 +61,7 @@ Requirements
 ------------
 
 - PowerShell 3.0 (or later)
+- `UpdateServices` module (included with WSUS)
 
 Installing
 ----------
@@ -98,17 +99,17 @@ Sample Usage
 ------------
 
 ```posh
-# Decline all failover clustering, farm server/deployment & Itanium updates:
+# Runs the default clean-up tasks & checks for declined updates that may not be intentional
+$SuspectDeclines = Invoke-WsusSpringClean -RunDefaultTasks -FindSuspectDeclines
+
+# Decline all failover clustering, farm server/deployment & Itanium updates
 Invoke-WsusSpringClean -DeclineClusterUpdates -DeclineFarmUpdates -DeclineItaniumUpdates
 
-# Decline all unneeded updates in the Superseded & Pre-release categories:
-Invoke-WsusSpringClean -DeclineUnneededUpdates -DeclineCategoriesInclude @('Superseded', 'Pre-release')
+# Declines all unneeded updates in the "Region - US" & "Superseded" categories
+Invoke-WsusSpringClean -DeclineCategoriesInclude @('Region - US', 'Superseded')
 
-# Find all suspect declines using the decline criteria from our previous invocations:
-Invoke-WsusSpringClean -DeclineClusterUpdates -DeclineFarmUpdates -DeclineItaniumUpdates -DeclineUnneededUpdates -DeclineCategoriesInclude @('Superseded','Pre-release') -FindSuspectDeclines
-
-# Show what updates would be declined if we were to decline all unneeded updates:
-Invoke-WsusSpringClean -DeclineUnneededUpdates -DeclineCategoriesExclude @() -WhatIf
+# Show what updates would be declined if we were to decline all unneeded updates
+Invoke-WsusSpringClean -RunDefaultTasks -DeclineCategoriesExclude @() -WhatIf
 ```
 
 License

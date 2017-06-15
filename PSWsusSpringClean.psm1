@@ -57,6 +57,10 @@ Function Invoke-WsusSpringClean {
         PS C:\>Invoke-WsusSpringClean -DeclineCategoriesInclude @('Region - US', 'Superseded')
 
         Declines all unneeded updates in the "Region - US" & "Superseded" categories.
+        .EXAMPLE
+        PS C:\>Invoke-WsusSpringClean -RunDefaultTasks -DeclineCategoriesExclude @() -WhatIf
+
+        Show what updates would be declined if we were to decline all unneeded updates.
         .NOTES
         The script intentionally avoids usage of most WSUS cmdlets provided by the UpdateServices module as many are extremely slow. This is particularly true of the Get-WsusUpdate cmdlet.
 
