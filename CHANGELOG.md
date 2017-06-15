@@ -1,6 +1,14 @@
 Changelog
 =========
 
+## v0.3.0
+
+- Added new `RunCommonTasks` parameter
+- Renamed `DeclineSecurityOnlyQualityUpdates` to `DeclineSecurityOnlyUpdates`
+- Removed superfluous `DeclineUnneededUpdates` parameter
+- Switch to using RegEx patterns to locate pre-release updates
+- Tweaks to existing RegEx patterns & other minor changes
+
 ## v0.2.0
 
 - Added new `DeclinePrereleaseUpdates` parameter
