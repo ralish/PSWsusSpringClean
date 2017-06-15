@@ -14,7 +14,7 @@ The Solution
 The PSWsusSpringClean module provides several additional options for cleaning your WSUS server:
 
 - Runs the default set of generally safe clean-up tasks (`RunCommonTasks`)  
-  This consists of all the `Invoke-WsusServerCleanup` tasks and all parameters of this cmdlet prefixed with `-Decline` *except* for `-DeclineUnneededUpdates`.
+  This consists of all the `Invoke-WsusServerCleanup` tasks and all parameters of this cmdlet prefixed with `-Decline`.
 - Decline failover clustering updates (`-DeclineClusterUpdates`)  
   Updates which only apply to **SQL Server 2000/2005** installations in a *failover clustering* configuration.
 - Decline farm server & deployment updates (`-DeclineFarmUpdates`)  
@@ -25,8 +25,6 @@ The PSWsusSpringClean module provides several additional options for cleaning yo
   Updates which only apply to pre-release products (e.g. release candidates).
 - Decline *Security Only Quality Updates* (`-DeclineSecurityOnlyUpdates`)  
   Microsoft's new non-cumulative security only updates. The *Security Monthly Quality Rollups* contain everything in these updates and more.
-- Decline unneeded updates (`DeclineUnneededUpdates`)  
-  Declines updates which are likely unneeded (see the [Unneeded Updates](#unneeded-updates) section for more details).
 - All parameters of `Invoke-WsusServerCleanup` for wrapping its functionality  
   Consult the help of `Invoke-WsusServerCleanup` for a description of these tasks.
 

@@ -26,8 +26,6 @@ Function Invoke-WsusSpringClean {
         Decline any updates which are exclusively for pre-release products (e.g. betas).
         .PARAMETER DeclineSecurityOnlyUpdates
         Decline any Security Only updates.
-        .PARAMETER DeclineUnneededUpdates
-        Decline any updates in the bundled updates catalogue filtered against the provided inclusion or exclusion categories.
         .PARAMETER FindSuspectDeclines
         Scan all declined updates for any that may have been inadvertently declined.
 
@@ -56,7 +54,7 @@ Function Invoke-WsusSpringClean {
 
         Declines all failover clustering, farm server/deployment & Itanium updates.
         .EXAMPLE
-        PS C:\>Invoke-WsusSpringClean -DeclineUnneededUpdates -DeclineCategoriesInclude @('Region - US', 'Superseded')
+        PS C:\>Invoke-WsusSpringClean -DeclineCategoriesInclude @('Region - US', 'Superseded')
 
         Declines all unneeded updates in the "Region - US" & "Superseded" categories.
         .NOTES
@@ -79,7 +77,7 @@ Function Invoke-WsusSpringClean {
         [Parameter(ParameterSetName='CommonEx')]
         [Parameter(ParameterSetName='Exclude')]
         [AllowEmptyCollection()]
-        [String[]]$DeclineCategoriesExclude=@(),
+        [String[]]$DeclineCategoriesExclude,
 
         [Parameter(ParameterSetName='CommonIn')]
         [Parameter(ParameterSetName='Include')]
@@ -105,10 +103,6 @@ Function Invoke-WsusSpringClean {
         [Parameter(ParameterSetName='Exclude')]
         [Parameter(ParameterSetName='Include')]
         [Switch]$DeclineSecurityOnlyUpdates,
-
-        [Parameter(ParameterSetName='Exclude')]
-        [Parameter(ParameterSetName='Include')]
-        [Switch]$DeclineUnneededUpdates,
 
         # Wrapping of Invoke-WsusServerCleanup
         [Parameter(ParameterSetName='Exclude')]
@@ -175,7 +169,6 @@ Function Invoke-WsusSpringClean {
         DeclineItaniumUpdates=$DeclineItaniumUpdates
         DeclinePrereleaseUpdates=$DeclinePrereleaseUpdates
         DeclineSecurityOnlyUpdates=$DeclineSecurityOnlyUpdates
-        DeclineUnneededUpdates=$DeclineUnneededUpdates
         FindSuspectDeclines=$FindSuspectDeclines
     }
     if ($PSCmdlet.ParameterSetName -in ('CommonEx', 'Exclude')) {
@@ -256,7 +249,6 @@ Function Invoke-WsusServerExtraCleanup {
         [Switch]$DeclineItaniumUpdates,
         [Switch]$DeclinePrereleaseUpdates,
         [Switch]$DeclineSecurityOnlyUpdates,
-        [Switch]$DeclineUnneededUpdates,
         [Switch]$FindSuspectDeclines
     )
 
@@ -350,7 +342,7 @@ Function Invoke-WsusServerExtraCleanup {
         }
     }
 
-    if ($DeclineUnneededUpdates) {
+    if ($DeclineCategoriesExclude -or $DeclineCategoriesInclude) {
         foreach ($Category in $FilteredCategories) {
             Write-Host -ForegroundColor Green ('[*] Declining updates in category: {0}' -f $Category)
             $UpdatesToDecline = $Catalogue | Where-Object { $_.Category -eq $Category }
