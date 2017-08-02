@@ -1,6 +1,10 @@
 Changelog
 =========
 
+## v0.3.1
+
+- Added 427 updates to the CSV (language updates)
+
 ## v0.3.0
 
 - Added new `RunCommonTasks` parameter
