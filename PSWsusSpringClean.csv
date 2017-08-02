@@ -679,6 +679,427 @@ Language - gl-ES,Galician Language Interface Pack - Windows 8 - (KB2607607) [gl-
 Language - gl-ES,Galician Language Interface Pack - Windows 8 for x64-based Systems - (KB2607607) [gl-ES_LIP],Windows 8 Language Interface Packs
 Language - gl-ES,Galician Language Interface Pack - Windows 8.1 - (KB2839636) [gl-ES_LIP],Windows 8.1 Language Interface Packs
 Language - gl-ES,Galician Language Interface Pack - Windows 8.1 for x64-based Systems - (KB2839636) [gl-ES_LIP],Windows 8.1 Language Interface Packs
+Language - zh-TW,GDR-DU: FeatureOnDemandTaiwaneseCalendar - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [zh-TW],Windows 10 GDR-DU
+Language - zh-TW,GDR-DU: FeatureOnDemandTaiwaneseCalendar - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [zh-TW],Windows 10 GDR-DU
+Language - am-ET,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [am-ET],Windows 10 GDR-DU
+Language - ar-EG,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [ar-EG],Windows 10 GDR-DU
+Language - ar-SA,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [ar-SA],Windows 10 GDR-DU
+Language - as-IN,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [as-IN],Windows 10 GDR-DU
+Language - az-Latn-AZ,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [az-Latn-AZ],Windows 10 GDR-DU
+Language - bg-BG,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [bg-BG],Windows 10 GDR-DU
+Language - bn-BD,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [bn-BD],Windows 10 GDR-DU
+Language - bn-IN,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [bn-IN],Windows 10 GDR-DU
+Language - bs-Latn-BA,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [bs-Latn-BA],Windows 10 GDR-DU
+Language - ca-ES,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [ca-ES],Windows 10 GDR-DU
+Language - chr-Cher-US,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [chr-CHER-US],Windows 10 GDR-DU
+Language - cs-CZ,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [cs-CZ],Windows 10 GDR-DU
+Language - cy-GB,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [cy-GB],Windows 10 GDR-DU
+Language - da-DK,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [da-DK],Windows 10 GDR-DU
+Language - de-DE,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [de-DE],Windows 10 GDR-DU
+Language - el-GR,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [el-GR],Windows 10 GDR-DU
+Language - en-AU,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [en-au],Windows 10 GDR-DU
+Language - en-CA,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [en-ca],Windows 10 GDR-DU
+Language - en-GB,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [en-GB],Windows 10 GDR-DU
+Language - en-IN,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [en-in],Windows 10 GDR-DU
+Language - en-US,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [en-US],Windows 10 GDR-DU
+Language - es-ES,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [es-ES],Windows 10 GDR-DU
+Language - es-MX,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [es-MX],Windows 10 GDR-DU
+Language - et-EE,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [et-EE],Windows 10 GDR-DU
+Language - eu-ES,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [eu-ES],Windows 10 GDR-DU
+Language - fa-IR,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [fa-IR],Windows 10 GDR-DU
+Language - fi-FI,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [fi-FI],Windows 10 GDR-DU
+Language - fr-CA,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [fr-CA],Windows 10 GDR-DU
+Language - fr-FR,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [fr-FR],Windows 10 GDR-DU
+Language - ga-IE,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [ga-IE],Windows 10 GDR-DU
+Language - gd-GB,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [gd-GB],Windows 10 GDR-DU
+Language - gl-ES,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [gl-ES],Windows 10 GDR-DU
+Language - gu-IN,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [gu-IN],Windows 10 GDR-DU
+Language - ha-Latn-NG,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [ha-Latn-NG],Windows 10 GDR-DU
+Language - he-IL,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [he-IL],Windows 10 GDR-DU
+Language - hi-IN,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [hi-IN],Windows 10 GDR-DU
+Language - hr-HR,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [hr-HR],Windows 10 GDR-DU
+Language - hu-HU,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [hu-HU],Windows 10 GDR-DU
+Language - hy-AM,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [hy-AM],Windows 10 GDR-DU
+Language - id-ID,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [id-ID],Windows 10 GDR-DU
+Language - ig-NG,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [ig-NG],Windows 10 GDR-DU
+Language - is-IS,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [is-IS],Windows 10 GDR-DU
+Language - it-IT,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [it-IT],Windows 10 GDR-DU
+Language - ja-JP,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [ja-JP],Windows 10 GDR-DU
+Language - ka-GE,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [ka-GE],Windows 10 GDR-DU
+Language - kk-KZ,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [kk-KZ],Windows 10 GDR-DU
+Language - km-KH,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [km-KH],Windows 10 GDR-DU
+Language - kn-IN,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [kn-IN],Windows 10 GDR-DU
+Language - kok-IN,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [kok-IN],Windows 10 GDR-DU
+Language - ko-KR,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [ko-KR],Windows 10 GDR-DU
+Language - ky-KG,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [ky-KG],Windows 10 GDR-DU
+Language - lb-LU,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [lb-LU],Windows 10 GDR-DU
+Language - lt-LT,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [lt-LT],Windows 10 GDR-DU
+Language - lv-LV,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [lv-LV],Windows 10 GDR-DU
+Language - mi-NZ,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [mi-NZ],Windows 10 GDR-DU
+Language - mk-MK,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [mk-MK],Windows 10 GDR-DU
+Language - ml-IN,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [ml-IN],Windows 10 GDR-DU
+Language - mr-IN,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [mr-IN],Windows 10 GDR-DU
+Language - ms-BN,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [ms-BN],Windows 10 GDR-DU
+Language - ms-MY,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [ms-MY],Windows 10 GDR-DU
+Language - mt-MT,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [mt-MT],Windows 10 GDR-DU
+Language - nb-NO,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [nb-NO],Windows 10 GDR-DU
+Language - ne-NP,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [ne-NP],Windows 10 GDR-DU
+Language - nl-BE,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [nl-be],Windows 10 GDR-DU
+Language - nl-NL,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [nl-NL],Windows 10 GDR-DU
+Language - nso-ZA,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [nso-ZA],Windows 10 GDR-DU
+Language - or-IN,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [or-IN],Windows 10 GDR-DU
+Language - pa-IN,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [pa-IN],Windows 10 GDR-DU
+Language - pl-PL,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [pl-PL],Windows 10 GDR-DU
+Language - ps-AF,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [ps-AF],Windows 10 GDR-DU
+Language - pt-BR,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [pt-BR],Windows 10 GDR-DU
+Language - pt-PT,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [pt-PT],Windows 10 GDR-DU
+Language - rm-CH,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [rm-CH],Windows 10 GDR-DU
+Language - ro-RO,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [ro-RO],Windows 10 GDR-DU
+Language - ru-RU,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [ru-RU],Windows 10 GDR-DU
+Language - rw-RW,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [rw-RW],Windows 10 GDR-DU
+Language - si-LK,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [si-LK],Windows 10 GDR-DU
+Language - sk-SK,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [sk-SK],Windows 10 GDR-DU
+Language - sl-SI,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [sl-SI],Windows 10 GDR-DU
+Language - sq-AL,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [sq-AL],Windows 10 GDR-DU
+Language - sr-Cyrl-RS,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [sr-Cyrl-RS],Windows 10 GDR-DU
+Language - sr-Latn-RS,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [sr-Latn-RS],Windows 10 GDR-DU
+Language - sv-SE,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [sv-SE],Windows 10 GDR-DU
+Language - sw-KE,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [sw-KE],Windows 10 GDR-DU
+Language - ta-IN,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [ta-IN],Windows 10 GDR-DU
+Language - te-IN,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [te-IN],Windows 10 GDR-DU
+Language - th-TH,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [th-TH],Windows 10 GDR-DU
+Language - tn-ZA,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [tn-ZA],Windows 10 GDR-DU
+Language - tr-TR,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [tr-TR],Windows 10 GDR-DU
+Language - tt-RU,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [tt-RU],Windows 10 GDR-DU
+Language - uk-UA,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [uk-UA],Windows 10 GDR-DU
+Language - ur-PK,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [ur-PK],Windows 10 GDR-DU
+Language - uz-Latn-UZ,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [uz-Latn-UZ],Windows 10 GDR-DU
+Language - vi-VN,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [vi-VN],Windows 10 GDR-DU
+Language - wo-SN,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [wo-SN],Windows 10 GDR-DU
+Language - xh-ZA,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [xh-ZA],Windows 10 GDR-DU
+Language - yo-NG,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [yo-NG],Windows 10 GDR-DU
+Language - zh-CN,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [zh-CN],Windows 10 GDR-DU
+Language - zh-HK,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [zh-HK],Windows 10 GDR-DU
+Language - zh-TW,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [zh-TW],Windows 10 GDR-DU
+Language - zu-ZA,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3180030) [zu-ZA],Windows 10 GDR-DU
+Language - af-ZA,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3197985) [af-ZA],Windows 10 GDR-DU
+Language - nn-NO,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for AMD64-based Systems - (KB3197985) [nn-NO],Windows 10 GDR-DU
+Language - af-ZA,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [af-ZA],Windows 10 GDR-DU
+Language - am-ET,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [am-ET],Windows 10 GDR-DU
+Language - ar-EG,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [ar-EG],Windows 10 GDR-DU
+Language - ar-SA,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [ar-SA],Windows 10 GDR-DU
+Language - as-IN,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [as-IN],Windows 10 GDR-DU
+Language - az-Latn-AZ,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [az-Latn-AZ],Windows 10 GDR-DU
+Language - bg-BG,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [bg-BG],Windows 10 GDR-DU
+Language - bn-BD,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [bn-BD],Windows 10 GDR-DU
+Language - bn-IN,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [bn-IN],Windows 10 GDR-DU
+Language - bs-Latn-BA,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [bs-Latn-BA],Windows 10 GDR-DU
+Language - ca-ES,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [ca-ES],Windows 10 GDR-DU
+Language - chr-Cher-US,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [chr-CHER-US],Windows 10 GDR-DU
+Language - cs-CZ,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [cs-CZ],Windows 10 GDR-DU
+Language - cy-GB,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [cy-GB],Windows 10 GDR-DU
+Language - da-DK,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [da-DK],Windows 10 GDR-DU
+Language - de-DE,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [de-DE],Windows 10 GDR-DU
+Language - el-GR,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [el-GR],Windows 10 GDR-DU
+Language - en-AU,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [en-au],Windows 10 GDR-DU
+Language - en-CA,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [en-ca],Windows 10 GDR-DU
+Language - en-GB,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [en-GB],Windows 10 GDR-DU
+Language - en-IN,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [en-in],Windows 10 GDR-DU
+Language - en-US,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [en-US],Windows 10 GDR-DU
+Language - es-ES,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [es-ES],Windows 10 GDR-DU
+Language - es-MX,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [es-MX],Windows 10 GDR-DU
+Language - et-EE,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [et-EE],Windows 10 GDR-DU
+Language - eu-ES,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [eu-ES],Windows 10 GDR-DU
+Language - fa-IR,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [fa-IR],Windows 10 GDR-DU
+Language - fi-FI,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [fi-FI],Windows 10 GDR-DU
+Language - fr-CA,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [fr-CA],Windows 10 GDR-DU
+Language - fr-FR,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [fr-FR],Windows 10 GDR-DU
+Language - ga-IE,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [ga-IE],Windows 10 GDR-DU
+Language - gd-GB,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [gd-GB],Windows 10 GDR-DU
+Language - gl-ES,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [gl-ES],Windows 10 GDR-DU
+Language - gu-IN,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [gu-IN],Windows 10 GDR-DU
+Language - ha-Latn-NG,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [ha-Latn-NG],Windows 10 GDR-DU
+Language - he-IL,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [he-IL],Windows 10 GDR-DU
+Language - hi-IN,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [hi-IN],Windows 10 GDR-DU
+Language - hr-HR,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [hr-HR],Windows 10 GDR-DU
+Language - hu-HU,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [hu-HU],Windows 10 GDR-DU
+Language - hy-AM,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [hy-AM],Windows 10 GDR-DU
+Language - id-ID,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [id-ID],Windows 10 GDR-DU
+Language - ig-NG,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [ig-NG],Windows 10 GDR-DU
+Language - is-IS,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [is-IS],Windows 10 GDR-DU
+Language - it-IT,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [it-IT],Windows 10 GDR-DU
+Language - ja-JP,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [ja-JP],Windows 10 GDR-DU
+Language - ka-GE,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [ka-GE],Windows 10 GDR-DU
+Language - kk-KZ,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [kk-KZ],Windows 10 GDR-DU
+Language - km-KH,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [km-KH],Windows 10 GDR-DU
+Language - kn-IN,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [kn-IN],Windows 10 GDR-DU
+Language - kok-IN,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [kok-IN],Windows 10 GDR-DU
+Language - ko-KR,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [ko-KR],Windows 10 GDR-DU
+Language - ky-KG,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [ky-KG],Windows 10 GDR-DU
+Language - lb-LU,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [lb-LU],Windows 10 GDR-DU
+Language - lt-LT,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [lt-LT],Windows 10 GDR-DU
+Language - lv-LV,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [lv-LV],Windows 10 GDR-DU
+Language - mi-NZ,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [mi-NZ],Windows 10 GDR-DU
+Language - mk-MK,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [mk-MK],Windows 10 GDR-DU
+Language - ml-IN,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [ml-IN],Windows 10 GDR-DU
+Language - mr-IN,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [mr-IN],Windows 10 GDR-DU
+Language - ms-BN,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [ms-BN],Windows 10 GDR-DU
+Language - ms-MY,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [ms-MY],Windows 10 GDR-DU
+Language - mt-MT,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [mt-MT],Windows 10 GDR-DU
+Language - nb-NO,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [nb-NO],Windows 10 GDR-DU
+Language - ne-NP,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [ne-NP],Windows 10 GDR-DU
+Language - nl-BE,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [nl-be],Windows 10 GDR-DU
+Language - nl-NL,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [nl-NL],Windows 10 GDR-DU
+Language - nn-NO,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [nn-NO],Windows 10 GDR-DU
+Language - nso-ZA,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [nso-ZA],Windows 10 GDR-DU
+Language - or-IN,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [or-IN],Windows 10 GDR-DU
+Language - pa-IN,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [pa-IN],Windows 10 GDR-DU
+Language - pl-PL,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [pl-PL],Windows 10 GDR-DU
+Language - ps-AF,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [ps-AF],Windows 10 GDR-DU
+Language - pt-BR,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [pt-BR],Windows 10 GDR-DU
+Language - pt-PT,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [pt-PT],Windows 10 GDR-DU
+Language - rm-CH,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [rm-CH],Windows 10 GDR-DU
+Language - ro-RO,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [ro-RO],Windows 10 GDR-DU
+Language - ru-RU,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [ru-RU],Windows 10 GDR-DU
+Language - rw-RW,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [rw-RW],Windows 10 GDR-DU
+Language - si-LK,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [si-LK],Windows 10 GDR-DU
+Language - sk-SK,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [sk-SK],Windows 10 GDR-DU
+Language - sl-SI,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [sl-SI],Windows 10 GDR-DU
+Language - sq-AL,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [sq-AL],Windows 10 GDR-DU
+Language - sr-Cyrl-RS,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [sr-Cyrl-RS],Windows 10 GDR-DU
+Language - sr-Latn-RS,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [sr-Latn-RS],Windows 10 GDR-DU
+Language - sv-SE,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [sv-SE],Windows 10 GDR-DU
+Language - sw-KE,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [sw-KE],Windows 10 GDR-DU
+Language - ta-IN,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [ta-IN],Windows 10 GDR-DU
+Language - te-IN,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [te-IN],Windows 10 GDR-DU
+Language - th-TH,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [th-TH],Windows 10 GDR-DU
+Language - tn-ZA,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [tn-ZA],Windows 10 GDR-DU
+Language - tr-TR,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [tr-TR],Windows 10 GDR-DU
+Language - tt-RU,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [tt-RU],Windows 10 GDR-DU
+Language - uk-UA,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [uk-UA],Windows 10 GDR-DU
+Language - ur-PK,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [ur-PK],Windows 10 GDR-DU
+Language - uz-Latn-UZ,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [uz-Latn-UZ],Windows 10 GDR-DU
+Language - vi-VN,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [vi-VN],Windows 10 GDR-DU
+Language - wo-SN,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [wo-SN],Windows 10 GDR-DU
+Language - xh-ZA,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [xh-ZA],Windows 10 GDR-DU
+Language - yo-NG,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [yo-NG],Windows 10 GDR-DU
+Language - zh-CN,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [zh-CN],Windows 10 GDR-DU
+Language - zh-HK,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [zh-HK],Windows 10 GDR-DU
+Language - zh-TW,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [zh-TW],Windows 10 GDR-DU
+Language - zu-ZA,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1607 for x86-based Systems - (KB3180030) [zu-ZA],Windows 10 GDR-DU
+Language - af-ZA,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [af-ZA],Windows 10 GDR-DU
+Language - am-ET,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [am-ET],Windows 10 GDR-DU
+Language - ar-EG,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [ar-EG],Windows 10 GDR-DU
+Language - ar-SA,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [ar-SA],Windows 10 GDR-DU
+Language - as-IN,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [as-IN],Windows 10 GDR-DU
+Language - az-Latn-AZ,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [az-Latn-AZ],Windows 10 GDR-DU
+Language - bg-BG,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [bg-BG],Windows 10 GDR-DU
+Language - bn-BD,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [bn-BD],Windows 10 GDR-DU
+Language - bn-IN,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [bn-IN],Windows 10 GDR-DU
+Language - bs-Latn-BA,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [bs-Latn-BA],Windows 10 GDR-DU
+Language - ca-ES,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [ca-ES],Windows 10 GDR-DU
+Language - chr-Cher-US,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [chr-CHER-US],Windows 10 GDR-DU
+Language - cs-CZ,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [cs-CZ],Windows 10 GDR-DU
+Language - cy-GB,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [cy-GB],Windows 10 GDR-DU
+Language - da-DK,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [da-DK],Windows 10 GDR-DU
+Language - de-AT,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [de-AT],Windows 10 GDR-DU
+Language - de-CH,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [de-CH],Windows 10 GDR-DU
+Language - de-DE,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [de-DE],Windows 10 GDR-DU
+Language - el-GR,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [el-GR],Windows 10 GDR-DU
+Language - en-AU,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [en-au],Windows 10 GDR-DU
+Language - en-CA,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [en-ca],Windows 10 GDR-DU
+Language - en-GB,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [en-GB],Windows 10 GDR-DU
+Language - en-IE,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [en-ie],Windows 10 GDR-DU
+Language - en-IN,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [en-in],Windows 10 GDR-DU
+Language - en-US,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [en-US],Windows 10 GDR-DU
+Language - es-ES,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [es-ES],Windows 10 GDR-DU
+Language - es-MX,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [es-MX],Windows 10 GDR-DU
+Language - et-EE,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [et-EE],Windows 10 GDR-DU
+Language - eu-ES,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [eu-ES],Windows 10 GDR-DU
+Language - fa-IR,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [fa-IR],Windows 10 GDR-DU
+Language - fi-FI,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [fi-FI],Windows 10 GDR-DU
+Language - fr-CA,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [fr-CA],Windows 10 GDR-DU
+Language - fr-CH,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [fr-CH],Windows 10 GDR-DU
+Language - fr-FR,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [fr-FR],Windows 10 GDR-DU
+Language - ga-IE,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [ga-IE],Windows 10 GDR-DU
+Language - gd-GB,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [gd-GB],Windows 10 GDR-DU
+Language - gl-ES,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [gl-ES],Windows 10 GDR-DU
+Language - ha-Latn-NG,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [ha-Latn-NG],Windows 10 GDR-DU
+Language - he-IL,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [he-IL],Windows 10 GDR-DU
+Language - hi-IN,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [hi-IN],Windows 10 GDR-DU
+Language - hr-HR,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [hr-HR],Windows 10 GDR-DU
+Language - hu-HU,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [hu-HU],Windows 10 GDR-DU
+Language - hy-AM,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [hy-AM],Windows 10 GDR-DU
+Language - id-ID,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [id-ID],Windows 10 GDR-DU
+Language - ig-NG,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [ig-NG],Windows 10 GDR-DU
+Language - is-IS,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [is-IS],Windows 10 GDR-DU
+Language - it-IT,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [it-IT],Windows 10 GDR-DU
+Language - ja-JP,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [ja-JP],Windows 10 GDR-DU
+Language - ka-GE,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [ka-GE],Windows 10 GDR-DU
+Language - kk-KZ,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [kk-KZ],Windows 10 GDR-DU
+Language - km-KH,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [km-KH],Windows 10 GDR-DU
+Language - kn-IN,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [kn-IN],Windows 10 GDR-DU
+Language - kok-IN,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [kok-IN],Windows 10 GDR-DU
+Language - ko-KR,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [ko-KR],Windows 10 GDR-DU
+Language - ky-KG,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [ky-KG],Windows 10 GDR-DU
+Language - lb-LU,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [lb-LU],Windows 10 GDR-DU
+Language - lt-LT,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [lt-LT],Windows 10 GDR-DU
+Language - lv-LV,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [lv-LV],Windows 10 GDR-DU
+Language - mi-NZ,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [mi-NZ],Windows 10 GDR-DU
+Language - mk-MK,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [mk-MK],Windows 10 GDR-DU
+Language - ml-IN,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [ml-IN],Windows 10 GDR-DU
+Language - mr-IN,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [mr-IN],Windows 10 GDR-DU
+Language - ms-BN,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [ms-BN],Windows 10 GDR-DU
+Language - ms-MY,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [ms-MY],Windows 10 GDR-DU
+Language - mt-MT,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [mt-MT],Windows 10 GDR-DU
+Language - nb-NO,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [nb-NO],Windows 10 GDR-DU
+Language - ne-NP,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [ne-NP],Windows 10 GDR-DU
+Language - nl-BE,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [nl-be],Windows 10 GDR-DU
+Language - nl-NL,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [nl-NL],Windows 10 GDR-DU
+Language - nn-NO,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [nn-NO],Windows 10 GDR-DU
+Language - nso-ZA,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [nso-ZA],Windows 10 GDR-DU
+Language - or-IN,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [or-IN],Windows 10 GDR-DU
+Language - pa-IN,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [pa-IN],Windows 10 GDR-DU
+Language - pl-PL,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [pl-PL],Windows 10 GDR-DU
+Language - ps-AF,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [ps-AF],Windows 10 GDR-DU
+Language - pt-BR,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [pt-BR],Windows 10 GDR-DU
+Language - pt-PT,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [pt-PT],Windows 10 GDR-DU
+Language - rm-CH,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [rm-CH],Windows 10 GDR-DU
+Language - ro-RO,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [ro-RO],Windows 10 GDR-DU
+Language - ru-RU,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [ru-RU],Windows 10 GDR-DU
+Language - rw-RW,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [rw-RW],Windows 10 GDR-DU
+Language - si-LK,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [si-LK],Windows 10 GDR-DU
+Language - sk-SK,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [sk-SK],Windows 10 GDR-DU
+Language - sl-SI,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [sl-SI],Windows 10 GDR-DU
+Language - sq-AL,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [sq-AL],Windows 10 GDR-DU
+Language - sr-Cyrl-RS,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [sr-Cyrl-RS],Windows 10 GDR-DU
+Language - sr-Latn-RS,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [sr-Latn-RS],Windows 10 GDR-DU
+Language - sv-SE,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [sv-SE],Windows 10 GDR-DU
+Language - sw-KE,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [sw-KE],Windows 10 GDR-DU
+Language - ta-IN,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [ta-IN],Windows 10 GDR-DU
+Language - te-IN,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [te-IN],Windows 10 GDR-DU
+Language - th-TH,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [th-TH],Windows 10 GDR-DU
+Language - tn-ZA,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [tn-ZA],Windows 10 GDR-DU
+Language - tr-TR,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [tr-TR],Windows 10 GDR-DU
+Language - tt-RU,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [tt-RU],Windows 10 GDR-DU
+Language - uk-UA,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [uk-UA],Windows 10 GDR-DU
+Language - ur-PK,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [ur-PK],Windows 10 GDR-DU
+Language - uz-Latn-UZ,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [uz-Latn-UZ],Windows 10 GDR-DU
+Language - vi-VN,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [vi-VN],Windows 10 GDR-DU
+Language - wo-SN,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [wo-SN],Windows 10 GDR-DU
+Language - xh-ZA,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [xh-ZA],Windows 10 GDR-DU
+Language - yo-NG,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [yo-NG],Windows 10 GDR-DU
+Language - zh-CN,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [zh-CN],Windows 10 GDR-DU
+Language - zh-HK,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [zh-HK],Windows 10 GDR-DU
+Language - zh-TW,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [zh-TW],Windows 10 GDR-DU
+Language - zu-ZA,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [zu-ZA],Windows 10 GDR-DU
+Language - af-ZA,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [af-ZA],Windows 10 GDR-DU
+Language - am-ET,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [am-ET],Windows 10 GDR-DU
+Language - ar-EG,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [ar-EG],Windows 10 GDR-DU
+Language - ar-SA,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [ar-SA],Windows 10 GDR-DU
+Language - as-IN,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [as-IN],Windows 10 GDR-DU
+Language - az-Latn-AZ,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [az-Latn-AZ],Windows 10 GDR-DU
+Language - bg-BG,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [bg-BG],Windows 10 GDR-DU
+Language - bn-BD,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [bn-BD],Windows 10 GDR-DU
+Language - bn-IN,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [bn-IN],Windows 10 GDR-DU
+Language - bs-Latn-BA,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [bs-Latn-BA],Windows 10 GDR-DU
+Language - ca-ES,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [ca-ES],Windows 10 GDR-DU
+Language - chr-Cher-US,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [chr-CHER-US],Windows 10 GDR-DU
+Language - cs-CZ,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [cs-CZ],Windows 10 GDR-DU
+Language - cy-GB,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [cy-GB],Windows 10 GDR-DU
+Language - da-DK,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [da-DK],Windows 10 GDR-DU
+Language - de-AT,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [de-AT],Windows 10 GDR-DU
+Language - de-CH,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [de-CH],Windows 10 GDR-DU
+Language - de-DE,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [de-DE],Windows 10 GDR-DU
+Language - el-GR,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [el-GR],Windows 10 GDR-DU
+Language - en-AU,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [en-au],Windows 10 GDR-DU
+Language - en-CA,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [en-ca],Windows 10 GDR-DU
+Language - en-GB,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [en-GB],Windows 10 GDR-DU
+Language - en-IE,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [en-ie],Windows 10 GDR-DU
+Language - en-IN,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [en-in],Windows 10 GDR-DU
+Language - en-US,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [en-US],Windows 10 GDR-DU
+Language - es-ES,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [es-ES],Windows 10 GDR-DU
+Language - es-MX,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [es-MX],Windows 10 GDR-DU
+Language - et-EE,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [et-EE],Windows 10 GDR-DU
+Language - eu-ES,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [eu-ES],Windows 10 GDR-DU
+Language - fa-IR,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [fa-IR],Windows 10 GDR-DU
+Language - fi-FI,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [fi-FI],Windows 10 GDR-DU
+Language - fr-CA,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [fr-CA],Windows 10 GDR-DU
+Language - fr-CH,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [fr-CH],Windows 10 GDR-DU
+Language - fr-FR,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [fr-FR],Windows 10 GDR-DU
+Language - ga-IE,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [ga-IE],Windows 10 GDR-DU
+Language - gd-GB,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [gd-GB],Windows 10 GDR-DU
+Language - gl-ES,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [gl-ES],Windows 10 GDR-DU
+Language - gu-IN,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [gu-IN],Windows 10 GDR-DU
+Language - ha-Latn-NG,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [ha-Latn-NG],Windows 10 GDR-DU
+Language - he-IL,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [he-IL],Windows 10 GDR-DU
+Language - hi-IN,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [hi-IN],Windows 10 GDR-DU
+Language - hr-HR,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [hr-HR],Windows 10 GDR-DU
+Language - hu-HU,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [hu-HU],Windows 10 GDR-DU
+Language - hy-AM,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [hy-AM],Windows 10 GDR-DU
+Language - id-ID,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [id-ID],Windows 10 GDR-DU
+Language - ig-NG,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [ig-NG],Windows 10 GDR-DU
+Language - is-IS,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [is-IS],Windows 10 GDR-DU
+Language - it-IT,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [it-IT],Windows 10 GDR-DU
+Language - ja-JP,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [ja-JP],Windows 10 GDR-DU
+Language - ka-GE,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [ka-GE],Windows 10 GDR-DU
+Language - kk-KZ,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [kk-KZ],Windows 10 GDR-DU
+Language - km-KH,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [km-KH],Windows 10 GDR-DU
+Language - kn-IN,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [kn-IN],Windows 10 GDR-DU
+Language - kok-IN,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [kok-IN],Windows 10 GDR-DU
+Language - ko-KR,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [ko-KR],Windows 10 GDR-DU
+Language - ky-KG,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [ky-KG],Windows 10 GDR-DU
+Language - lb-LU,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [lb-LU],Windows 10 GDR-DU
+Language - lt-LT,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [lt-LT],Windows 10 GDR-DU
+Language - lv-LV,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [lv-LV],Windows 10 GDR-DU
+Language - mi-NZ,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [mi-NZ],Windows 10 GDR-DU
+Language - mk-MK,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [mk-MK],Windows 10 GDR-DU
+Language - ml-IN,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [ml-IN],Windows 10 GDR-DU
+Language - mr-IN,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [mr-IN],Windows 10 GDR-DU
+Language - ms-BN,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [ms-BN],Windows 10 GDR-DU
+Language - ms-MY,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [ms-MY],Windows 10 GDR-DU
+Language - mt-MT,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [mt-MT],Windows 10 GDR-DU
+Language - nb-NO,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [nb-NO],Windows 10 GDR-DU
+Language - ne-NP,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [ne-NP],Windows 10 GDR-DU
+Language - nl-BE,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [nl-be],Windows 10 GDR-DU
+Language - nl-NL,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [nl-NL],Windows 10 GDR-DU
+Language - nn-NO,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [nn-NO],Windows 10 GDR-DU
+Language - nso-ZA,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [nso-ZA],Windows 10 GDR-DU
+Language - or-IN,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [or-IN],Windows 10 GDR-DU
+Language - pa-IN,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [pa-IN],Windows 10 GDR-DU
+Language - pl-PL,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [pl-PL],Windows 10 GDR-DU
+Language - ps-AF,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [ps-AF],Windows 10 GDR-DU
+Language - pt-BR,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [pt-BR],Windows 10 GDR-DU
+Language - pt-PT,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [pt-PT],Windows 10 GDR-DU
+Language - rm-CH,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [rm-CH],Windows 10 GDR-DU
+Language - ro-RO,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [ro-RO],Windows 10 GDR-DU
+Language - ru-RU,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [ru-RU],Windows 10 GDR-DU
+Language - rw-RW,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [rw-RW],Windows 10 GDR-DU
+Language - si-LK,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [si-LK],Windows 10 GDR-DU
+Language - sk-SK,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [sk-SK],Windows 10 GDR-DU
+Language - sl-SI,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [sl-SI],Windows 10 GDR-DU
+Language - sq-AL,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [sq-AL],Windows 10 GDR-DU
+Language - sr-Cyrl-RS,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [sr-Cyrl-RS],Windows 10 GDR-DU
+Language - sr-Latn-RS,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [sr-Latn-RS],Windows 10 GDR-DU
+Language - sv-SE,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [sv-SE],Windows 10 GDR-DU
+Language - sw-KE,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [sw-KE],Windows 10 GDR-DU
+Language - ta-IN,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [ta-IN],Windows 10 GDR-DU
+Language - te-IN,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [te-IN],Windows 10 GDR-DU
+Language - th-TH,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [th-TH],Windows 10 GDR-DU
+Language - tn-ZA,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [tn-ZA],Windows 10 GDR-DU
+Language - tr-TR,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [tr-TR],Windows 10 GDR-DU
+Language - tt-RU,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [tt-RU],Windows 10 GDR-DU
+Language - uk-UA,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [uk-UA],Windows 10 GDR-DU
+Language - ur-PK,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [ur-PK],Windows 10 GDR-DU
+Language - uz-Latn-UZ,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [uz-Latn-UZ],Windows 10 GDR-DU
+Language - vi-VN,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [vi-VN],Windows 10 GDR-DU
+Language - wo-SN,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [wo-SN],Windows 10 GDR-DU
+Language - xh-ZA,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [xh-ZA],Windows 10 GDR-DU
+Language - yo-NG,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [yo-NG],Windows 10 GDR-DU
+Language - zh-CN,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [zh-CN],Windows 10 GDR-DU
+Language - zh-HK,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [zh-HK],Windows 10 GDR-DU
+Language - zh-TW,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [zh-TW],Windows 10 GDR-DU
+Language - zu-ZA,GDR-DU: LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [zu-ZA],Windows 10 GDR-DU
 Language - ka-GE,Georgian Language Interface Pack - Windows 10 - (KB3079343) [ka-GE_LIP],Windows 10 Language Interface Packs
 Language - ka-GE,Georgian Language Interface Pack - Windows 10 for x64-based Systems - (KB3079343) [ka-GE_LIP],Windows 10 Language Interface Packs
 Language - ka-GE,Georgian Language Interface Pack - Windows 10 Version 1511 - (KB3109596) [ka-GE_LIP],Windows 10 Language Interface Packs
@@ -1201,6 +1622,7 @@ Language - de-AT,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-base
 Language - de-CH,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [de-CH],Windows 10 Feature On Demand
 Language - de-DE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [de-DE],Windows 10 Feature On Demand
 Language - el-GR,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [el-GR],Windows 10 Feature On Demand
+Language - en-AU,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [en-au],Windows 10 Feature On Demand
 Language - en-CA,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [en-ca],Windows 10 Feature On Demand
 Language - en-GB,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [en-GB],Windows 10 Feature On Demand
 Language - en-IE,LanguageFeatureOnDemand - Windows 10 Build 15042 for AMD64-based Systems - (KB4013868) [en-ie],Windows 10 Feature On Demand
@@ -1307,6 +1729,7 @@ Language - de-AT,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based 
 Language - de-CH,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [de-CH],Windows 10 Feature On Demand
 Language - de-DE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [de-DE],Windows 10 Feature On Demand
 Language - el-GR,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [el-GR],Windows 10 Feature On Demand
+Language - en-AU,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [en-au],Windows 10 Feature On Demand
 Language - en-CA,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [en-ca],Windows 10 Feature On Demand
 Language - en-GB,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [en-GB],Windows 10 Feature On Demand
 Language - en-IE,LanguageFeatureOnDemand - Windows 10 Build 15042 for x86-based Systems - (KB4013868) [en-ie],Windows 10 Feature On Demand
@@ -1623,6 +2046,7 @@ Language - de-AT,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based
 Language - de-CH,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [de-CH],Windows 10 Feature On Demand
 Language - de-DE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [de-DE],Windows 10 Feature On Demand
 Language - el-GR,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [el-GR],Windows 10 Feature On Demand
+Language - en-AU,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [en-au],Windows 10 Feature On Demand
 Language - en-CA,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [en-ca],Windows 10 Feature On Demand
 Language - en-GB,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [en-GB],Windows 10 Feature On Demand
 Language - en-IE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x64-based Systems - (KB4016509) [en-ie],Windows 10 Feature On Demand
@@ -1729,6 +2153,7 @@ Language - de-AT,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based
 Language - de-CH,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [de-CH],Windows 10 Feature On Demand
 Language - de-DE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [de-DE],Windows 10 Feature On Demand
 Language - el-GR,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [el-GR],Windows 10 Feature On Demand
+Language - en-AU,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [en-au],Windows 10 Feature On Demand
 Language - en-CA,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [en-ca],Windows 10 Feature On Demand
 Language - en-GB,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [en-GB],Windows 10 Feature On Demand
 Language - en-IE,LanguageFeatureOnDemand - Windows 10 Version 1703 for x86-based Systems - (KB4016509) [en-ie],Windows 10 Feature On Demand
@@ -2821,6 +3246,8 @@ Language Packs,Update for Microsoft Office 2016 Language Interface Pack (KB31183
 Language Packs,Update for Microsoft Office 2016 Language Interface Pack (KB3118333) 64-Bit Edition,Office 2016
 Language Packs,Update for Microsoft Office 2016 Language Interface Pack (KB3191866) 32-Bit Edition,Office 2016
 Language Packs,Update for Microsoft Office 2016 Language Interface Pack (KB3191866) 64-Bit Edition,Office 2016
+Language Packs,Update for Microsoft Office 2016 Language Interface Pack (KB3191930) 32-Bit Edition,Office 2016
+Language Packs,Update for Microsoft Office 2016 Language Interface Pack (KB3191930) 64-Bit Edition,Office 2016
 Region - GB/US,Update for Microsoft Office Accounting 2007 (KB946690),Office 2007
 Superseded,Update for Microsoft Office Outlook 2007 Junk Email Filter (KB2825642),Office 2007
 Superseded,Update for Microsoft Office Outlook 2007 Junk Email Filter (KB2880505),Office 2007
