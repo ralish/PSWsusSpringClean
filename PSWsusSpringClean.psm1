@@ -7,11 +7,20 @@ Function Invoke-WsusSpringClean {
         .PARAMETER RunDefaultTasks
         Performs all clean-up tasks except for declining any unneeded updates as defined in the included update catalogue CSV file.
 
+        You can disable one or more of the default clean-up tasks by setting the associated switch parameter to false (e.g. -CompressUpdates:$false).
+
         You can perform a clean-up of unneeded updates by specifying the DeclineCategoriesInclude or DeclineCategoriesExclude parameter with your chosen categories.
 
         Also note that this does not perform a server synchronisation before clean-up or find suspect declined updates. These tasks can be included via their respective parameters.
         .PARAMETER SynchroniseServer
         Perform a synchronisation against the upstream server before running cleanup.
+        .PARAMETER FindSuspectDeclines
+        Scan all declined updates for any that may have been inadvertently declined.
+
+        The returned suspect updates are those which:
+         - Are not superseded or expired
+         - Are not cluster, farm or Itanium updates (if set to decline)
+         - Are not in the filtered list of updates to decline from the bundled catalogue
         .PARAMETER DeclineCategoriesExclude
         Array of update categories in the bundled updates catalogue to not decline.
         .PARAMETER DeclineCategoriesInclude
@@ -26,13 +35,6 @@ Function Invoke-WsusSpringClean {
         Decline any updates which are exclusively for pre-release products (e.g. betas).
         .PARAMETER DeclineSecurityOnlyUpdates
         Decline any Security Only updates.
-        .PARAMETER FindSuspectDeclines
-        Scan all declined updates for any that may have been inadvertently declined.
-
-        The returned suspect updates are those which:
-         - Are not superseded or expired
-         - Are not cluster, farm or Itanium updates (if set to decline)
-         - Are not in the filtered list of updates to decline from the bundled catalogue
         .PARAMETER CleanupObsoleteComputers
         Specifies that the cmdlet deletes obsolete computers from the database.
         .PARAMETER CleanupObsoleteUpdates
@@ -69,87 +71,62 @@ Function Invoke-WsusSpringClean {
         https://github.com/ralish/PSWsusSpringClean
     #>
 
-    [CmdletBinding(DefaultParameterSetName='CommonIn',SupportsShouldProcess)]
+    [CmdletBinding(DefaultParameterSetName='Default',SupportsShouldProcess)]
     Param(
-        [Parameter(ParameterSetName='CommonIn')]
-        [Parameter(ParameterSetName='CommonEx')]
         [Switch]$RunDefaultTasks,
-
         [Switch]$SynchroniseServer,
         [Switch]$FindSuspectDeclines,
 
-        [Parameter(ParameterSetName='CommonEx')]
-        [Parameter(ParameterSetName='Exclude')]
         [AllowEmptyCollection()]
         [String[]]$DeclineCategoriesExclude,
 
-        [Parameter(ParameterSetName='CommonIn')]
-        [Parameter(ParameterSetName='Include')]
-        [AllowEmptyCollection()]
-        [String[]]$DeclineCategoriesInclude=@(),
+        [String[]]$DeclineCategoriesInclude,
 
-        [Parameter(ParameterSetName='Exclude')]
-        [Parameter(ParameterSetName='Include')]
         [Switch]$DeclineClusterUpdates,
-
-        [Parameter(ParameterSetName='Exclude')]
-        [Parameter(ParameterSetName='Include')]
         [Switch]$DeclineFarmUpdates,
-
-        [Parameter(ParameterSetName='Exclude')]
-        [Parameter(ParameterSetName='Include')]
         [Switch]$DeclineItaniumUpdates,
-
-        [Parameter(ParameterSetName='Exclude')]
-        [Parameter(ParameterSetName='Include')]
         [Switch]$DeclinePrereleaseUpdates,
-
-        [Parameter(ParameterSetName='Exclude')]
-        [Parameter(ParameterSetName='Include')]
         [Switch]$DeclineSecurityOnlyUpdates,
 
         # Wrapping of Invoke-WsusServerCleanup
-        [Parameter(ParameterSetName='Exclude')]
-        [Parameter(ParameterSetName='Include')]
         [Switch]$CleanupObsoleteComputers,
-
-        [Parameter(ParameterSetName='Exclude')]
-        [Parameter(ParameterSetName='Include')]
         [Switch]$CleanupObsoleteUpdates,
-
-        [Parameter(ParameterSetName='Exclude')]
-        [Parameter(ParameterSetName='Include')]
         [Switch]$CleanupUnneededContentFiles,
-
-        [Parameter(ParameterSetName='Exclude')]
-        [Parameter(ParameterSetName='Include')]
         [Switch]$CompressUpdates,
-
-        [Parameter(ParameterSetName='Exclude')]
-        [Parameter(ParameterSetName='Include')]
         [Switch]$DeclineExpiredUpdates,
-
-        [Parameter(ParameterSetName='Exclude')]
-        [Parameter(ParameterSetName='Include')]
         [Switch]$DeclineSupersededUpdates
     )
 
     # Ensure that any errors we receive are considered fatal
     $ErrorActionPreference = 'Stop'
 
-    if ($RunDefaultTasks) {
-        $DeclineClusterUpdates=$true
-        $DeclineFarmUpdates=$true
-        $DeclineItaniumUpdates=$true
-        $DeclinePrereleaseUpdates=$true
-        $DeclineSecurityOnlyUpdates=$true
+    if ($PSBoundParameters.ContainsKey('DeclineCategoriesExclude') -and $PDeclineCategoriesInclude) {
+        throw 'Can only specify one of DeclineCategoriesExclude and DeclineCategoriesInclude.'
+    }
 
-        $CleanupObsoleteComputers=$true
-        $CleanupObsoleteUpdates=$true
-        $CleanupUnneededContentFiles=$true
-        $CompressUpdates=$true
-        $DeclineExpiredUpdates=$true
-        $DeclineSupersededUpdates=$true
+    if ($RunDefaultTasks) {
+        $DefaultTasks = @(
+            'DeclineClusterUpdates',
+            'DeclineFarmUpdates',
+            'DeclineItaniumUpdates',
+            'DeclinePrereleaseUpdates',
+            'DeclineSecurityOnlyUpdates',
+
+            'CleanupObsoleteComputers',
+            'CleanupObsoleteUpdates',
+            'CleanupUnneededContentFiles',
+            'CompressUpdates',
+            'DeclineExpiredUpdates',
+            'DeclineSupersededUpdates'
+        )
+
+        foreach ($Task in $DefaultTasks) {
+            if ($PSBoundParameters.ContainsKey($Task)) {
+                Set-Variable -Name $Task -Value (Get-Variable -Name $Task).Value -WhatIf:$false
+            } else {
+                Set-Variable -Name $Task -Value $true -WhatIf:$false
+            }
+        }
     }
 
     if ($SynchroniseServer) {
@@ -175,11 +152,14 @@ Function Invoke-WsusSpringClean {
         DeclineSecurityOnlyUpdates=$DeclineSecurityOnlyUpdates
         FindSuspectDeclines=$FindSuspectDeclines
     }
-    if ($PSCmdlet.ParameterSetName -in ('CommonEx', 'Exclude')) {
-        $SuspectDeclines = Invoke-WsusServerExtraCleanup -DeclineCategoriesExclude $DeclineCategoriesExclude @ExtraCleanupParams
-    } else {
-        $SuspectDeclines = Invoke-WsusServerExtraCleanup -DeclineCategoriesInclude $DeclineCategoriesInclude @ExtraCleanupParams
+
+    if ($PSBoundParameters.ContainsKey('DeclineCategoriesExclude')) {
+        $ExtraCleanupParams += $DeclineCategoriesExclude
+    } elseif ($DeclineCategoriesInclude) {
+        $ExtraCleanupParams += $DeclineCategoriesInclude
     }
+
+    $SuspectDeclines = Invoke-WsusServerExtraCleanup @ExtraCleanupParams
 
     Write-Host -ForegroundColor Green "`r`nBeginning WSUS server cleanup (Phase 3) ..."
     $CleanupParams = @{
@@ -188,7 +168,7 @@ Function Invoke-WsusSpringClean {
     }
     Invoke-WsusServerCleanupWrapper @CleanupParams
 
-    if ($FindSuspectDeclines) {
+    if ($SuspectDeclines) {
         return $SuspectDeclines
     }
 }
@@ -240,12 +220,9 @@ Function Invoke-WsusServerCleanupWrapper {
 Function Invoke-WsusServerExtraCleanup {
     [CmdletBinding(SupportsShouldProcess)]
     Param(
-        [Parameter(ParameterSetName='Exclude',Mandatory)]
         [AllowEmptyCollection()]
         [String[]]$DeclineCategoriesExclude,
 
-        [Parameter(ParameterSetName='Include',Mandatory)]
-        [AllowEmptyCollection()]
         [String[]]$DeclineCategoriesInclude,
 
         [Switch]$DeclineClusterUpdates,
@@ -429,7 +406,6 @@ Function Invoke-WsusServerSynchronisation {
         }
 
         do {
-            #$WsusServer.GetSubscription().GetSynchronizationProgress()
             Start-Sleep -Seconds 5
         } while ($WsusServer.GetSubscription().GetSynchronizationStatus() -eq 'Running')
 
@@ -470,7 +446,7 @@ Function Test-WsusSpringCleanCatalogue {
         [String]$CataloguePath
     )
 
-    if (!$PSBoundParameters.ContainsKey('CataloguePath')) {
+    if (!$CataloguePath) {
         $CataloguePath = Join-Path -Path $PSScriptRoot -ChildPath 'PSWsusSpringClean.csv'
     }
 
