@@ -25,6 +25,8 @@ The `PSWsusSpringClean` module provides several additional options for cleaning 
   Updates which only apply to pre-release products (e.g. release candidates).
 - Decline *Security Only Quality Updates* (`-DeclineSecurityOnlyUpdates`)  
   Microsoft's new non-cumulative security only updates. The *Security Monthly Quality Rollups* contain everything in these updates and more.
+- Decline language or region specific updates (`-DeclineLanguagesExclude` & `-DeclineLanguagesInclude`)  
+  Updates which are targeted to specific or regions (e.g. *Setswana* (`tn-ZA`)).
 - All parameters of `Invoke-WsusServerCleanup` for wrapping its functionality  
   Consult the help of `Invoke-WsusServerCleanup` for a description of these tasks.
 

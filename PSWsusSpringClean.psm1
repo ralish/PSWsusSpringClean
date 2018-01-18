@@ -35,6 +35,10 @@ Function Invoke-WsusSpringClean {
         Array of update categories in the bundled updates catalogue to not decline.
         .PARAMETER DeclineCategoriesInclude
         Array of update categories in the bundled updates catalogue to decline.
+        .PARAMETER DeclineLanguagesExclude
+        Array of update language codes to not decline.
+        .PARAMETER DeclineLanguagesInclude
+        Array of update language codes to decline.
         .PARAMETER CleanupObsoleteComputers
         Specifies that the cmdlet deletes obsolete computers from the database.
         .PARAMETER CleanupObsoleteUpdates
@@ -86,6 +90,12 @@ Function Invoke-WsusSpringClean {
         [String[]]$DeclineCategoriesExclude,
         [String[]]$DeclineCategoriesInclude,
 
+        [ValidateScript({Test-WsusUpdateLanguageCodes -LanguageCodes $_})]
+        [String[]]$DeclineLanguagesExclude,
+
+        [ValidateScript({Test-WsusUpdateLanguageCodes -LanguageCodes $_})]
+        [String[]]$DeclineLanguagesInclude,
+
         # Wrapping of Invoke-WsusServerCleanup
         [Switch]$CleanupObsoleteComputers,
         [Switch]$CleanupObsoleteUpdates,
@@ -100,6 +110,10 @@ Function Invoke-WsusSpringClean {
 
     if ($PSBoundParameters.ContainsKey('DeclineCategoriesExclude') -and $PSBoundParameters.ContainsKey('DeclineCategoriesInclude')) {
         throw 'Can only specify one of DeclineCategoriesExclude and DeclineCategoriesInclude.'
+    }
+
+    if ($PSBoundParameters.ContainsKey('DeclineLanguagesExclude') -and $PSBoundParameters.ContainsKey('DeclineLanguagesInclude')) {
+        throw 'Can only specify one of DeclineLanguagesExclude and DeclineLanguagesInclude.'
     }
 
     if ($RunDefaultTasks) {
@@ -145,6 +159,13 @@ Function Invoke-WsusSpringClean {
         }
     }
 
+    # Fetch the metadata for the languages we're going to decline
+    if ($PSBoundParameters.ContainsKey('DeclineLanguagesExclude')) {
+        $DeclineLanguagesMetadata = $script:WscLanguages.Language | Where-Object { $_.code -notin $DeclineLanguagesExclude }
+    } elseif ($PSBoundParameters.ContainsKey('DeclineLanguagesInclude')) {
+        $DeclineLanguagesMetadata = $script:WscLanguages.Language | Where-Object { $_.code -in $DeclineLanguagesInclude }
+    }
+
     if ($SynchroniseServer) {
         Write-Host -ForegroundColor Green "`r`nStarting WSUS server synchronisation ..."
         Invoke-WsusServerSynchronisation
@@ -172,6 +193,10 @@ Function Invoke-WsusSpringClean {
         $SpringCleanParams += @{DeclineCategories=$DeclineCategories}
     }
 
+    if ($DeclineLanguages) {
+        $SpringCleanParams += @{DeclineLanguages=$DeclineLanguagesMetadata}
+    }
+
     Invoke-WsusServerSpringClean @SpringCleanParams
 
     Write-Host -ForegroundColor Green "`r`nBeginning WSUS server cleanup (Phase 3) ..."
@@ -196,7 +221,8 @@ Function Get-WsusSuspectDeclines {
         [Switch]$DeclinePrereleaseUpdates,
         [Switch]$DeclineSecurityOnlyUpdates,
 
-        [String[]]$DeclineCategories
+        [String[]]$DeclineCategories,
+        [Xml.XmlElement[]]$DeclineLanguages
     )
 
     $WsusServer = Get-WsusServer
@@ -206,7 +232,9 @@ Function Get-WsusSuspectDeclines {
     $UpdateScope.ApprovedStates = [Microsoft.UpdateServices.Administration.ApprovedStates]::Declined
     $WsusDeclined = $WsusServer.GetUpdates($UpdateScope)
 
+    # Ignore all updates corresponding to categories or languages we declined
     $IgnoredDeclines = $script:WscCatalogue | Where-Object { $_.Category -in $DeclineCategories }
+    $IgnoredLanguagesRegEx = ' [\[]?({0})(_LP|_LIP)?[\]]?' -f [String]::Join('|', $DeclineLanguages.code)
 
     Write-Host -ForegroundColor Green '[*] Finding suspect declined updates ...'
     $SuspectDeclines = @()
@@ -243,6 +271,11 @@ Function Get-WsusSuspectDeclines {
 
         # Ignore any update categories which were declined
         if ($Update.Title -in $IgnoredDeclines.Title) {
+            continue
+        }
+
+        # Ignore any update languages which were declined
+        if ($Update.Title -match $IgnoredLanguagesRegEx) {
             continue
         }
 
@@ -287,12 +320,21 @@ Function Invoke-WsusDeclineUpdatesByRegEx {
         [ValidateNotNullOrEmpty()]
         [String]$RegEx,
 
-        [Parameter(Mandatory)]
+        [Parameter(Mandatory,ParameterSetName='Type')]
         [ValidateNotNullOrEmpty()]
-        [String]$Description
+        [String]$Type,
+
+        [Parameter(Mandatory,ParameterSetName='Language')]
+        [ValidateNotNullOrEmpty()]
+        [String]$Language
     )
 
-    Write-Host -ForegroundColor Green ('[*] Declining {0} updates ...' -f $Description)
+    if ($Type) {
+        Write-Host -ForegroundColor Green ('[*] Declining {0} updates ...' -f $Type)
+    } else {
+        Write-Host -ForegroundColor Green ('[*] Declining updates with language: {0}' -f $Language)
+    }
+
     foreach ($Update in $Updates) {
         if ($Update.Title -match $RegEx) {
             if ($PSCmdlet.ShouldProcess($Update.Title, 'Decline')) {
@@ -356,7 +398,8 @@ Function Invoke-WsusServerSpringClean {
         [Switch]$DeclinePrereleaseUpdates,
         [Switch]$DeclineSecurityOnlyUpdates,
 
-        [String[]]$DeclineCategories
+        [String[]]$DeclineCategories,
+        [Xml.XmlElement[]]$DeclineLanguages
     )
 
     $WsusServer = Get-WsusServer
@@ -373,28 +416,35 @@ Function Invoke-WsusServerSpringClean {
     $WsusAnyExceptDeclined = $WsusApproved + $WsusUnapproved
 
     if ($DeclineClusterUpdates) {
-        Invoke-WsusDeclineUpdatesByRegEx -Updates $WsusAnyExceptDeclined -RegEx $script:RegExClusterUpdates -Description 'cluster'
+        Invoke-WsusDeclineUpdatesByRegEx -Updates $WsusAnyExceptDeclined -RegEx $script:RegExClusterUpdates -Type 'cluster'
     }
 
     if ($DeclineFarmUpdates) {
-        Invoke-WsusDeclineUpdatesByRegEx -Updates $WsusAnyExceptDeclined -RegEx $script:RegExFarmUpdates -Description 'farm'
+        Invoke-WsusDeclineUpdatesByRegEx -Updates $WsusAnyExceptDeclined -RegEx $script:RegExFarmUpdates -Type 'farm'
     }
 
     if ($DeclineItaniumUpdates) {
-        Invoke-WsusDeclineUpdatesByRegEx -Updates $WsusAnyExceptDeclined -RegEx $script:RegExItaniumUpdates -Description 'Itanium'
+        Invoke-WsusDeclineUpdatesByRegEx -Updates $WsusAnyExceptDeclined -RegEx $script:RegExItaniumUpdates -Type 'Itanium'
     }
 
     if ($DeclinePrereleaseUpdates) {
-        Invoke-WsusDeclineUpdatesByRegEx -Updates $WsusAnyExceptDeclined -RegEx $script:RegExPrereleaseUpdates -Description 'pre-release'
+        Invoke-WsusDeclineUpdatesByRegEx -Updates $WsusAnyExceptDeclined -RegEx $script:RegExPrereleaseUpdates -Type 'pre-release'
     }
 
     if ($DeclineSecurityOnlyUpdates) {
-        Invoke-WsusDeclineUpdatesByRegEx -Updates $WsusAnyExceptDeclined -RegEx $script:RegExSecurityOnlyUpdates -Description 'Security Only'
+        Invoke-WsusDeclineUpdatesByRegEx -Updates $WsusAnyExceptDeclined -RegEx $script:RegExSecurityOnlyUpdates -Type 'Security Only'
     }
 
     if ($PSBoundParameters.ContainsKey('DeclineCategories')) {
         foreach ($Category in $DeclineCategories) {
             Invoke-WsusDeclineUpdatesByCategory -Updates $WsusAnyExceptDeclined -Category $Category
+        }
+    }
+
+    if ($PSBoundParameters.ContainsKey('DeclineLanguages')) {
+        foreach ($Language in $DeclineLanguages) {
+            $LanguageRegEx = ' [\[]?{0}(_LP|_LIP)?[\]]?' -f $Language.code
+            Invoke-WsusDeclineUpdatesByRegEx -Updates $WsusAnyExceptDeclined -RegEx $LanguageRegEx -Language $Language.code
         }
     }
 }
@@ -424,6 +474,27 @@ Function Invoke-WsusServerSynchronisation {
             throw ('WSUS server synchronisation completed with unexpected result: {0}' -f $SyncResult)
         }
     }
+}
+
+
+Function Test-WsusUpdateLanguageCodes {
+    Param(
+        [Parameter(Mandatory)]
+        [String[]]$LanguageCodes
+    )
+
+    if (!$script:WscLanguages) {
+        Import-WsusSpringCleanLanguages
+    }
+
+    $KnownLanguageCodes = $script:WscLanguages.Language.code
+    foreach ($LanguageCode in $LanguageCodes) {
+        if ($LanguageCode -notin $KnownLanguageCodes) {
+            throw 'Unknown language code specified: {0}' -f $LanguageCode
+        }
+    }
+
+    return $true
 }
 
 
@@ -464,6 +535,22 @@ Function Import-WsusSpringCleanCatalogue {
     Write-Host -ForegroundColor Green '[*] Importing update catalogue ...'
     $script:WscCatalogue = Import-Csv -Path $CataloguePath
     $script:WscCategories = $WscCatalogue.Category | Sort-Object | Get-Unique
+}
+
+
+Function Import-WsusSpringCleanLanguages {
+    [CmdletBinding()]
+    Param(
+        [ValidateNotNullOrEmpty()]
+        [String]$LanguagesPath
+    )
+
+    if (!$LanguagesPath) {
+        $LanguagesPath = Join-Path -Path $PSScriptRoot -ChildPath 'Languages.xml'
+    }
+
+    Write-Host -ForegroundColor Green '[*] Importing languages data ...'
+    $script:WscLanguages = ([Xml](Get-Content -Path $LanguagesPath)).Languages
 }
 
 
