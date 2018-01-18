@@ -19,8 +19,6 @@ The `PSWsusSpringClean` module provides several additional options for cleaning 
   Updates which only apply to **SQL Server 2000/2005** installations in a *failover clustering* configuration.
 - Decline farm server & deployment updates (`-DeclineFarmUpdates`)  
   Updates which only apply to *Farm Server* products or product installations in a *farm-deployment* configuration.
-- Decline Itanium architecture updates (`-DeclineItaniumUpdates`)  
-  Updates which only apply to products installed on *Itanium* architecture systems.
 - Decline pre-release updates (`-DeclinePrereleaseUpdates`)  
   Updates which only apply to pre-release products (e.g. release candidates).
 - Decline *Security Only Quality Updates* (`-DeclineSecurityOnlyUpdates`)  

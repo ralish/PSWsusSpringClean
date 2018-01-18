@@ -19,14 +19,12 @@ Function Invoke-WsusSpringClean {
 
         The returned suspect updates are those which:
          - Are not superseded or expired
-         - Are not cluster, farm or Itanium updates (if set to decline)
+         - Are not cluster or farm updates (if set to decline)
          - Are not in the filtered list of updates to decline from the bundled catalogue
         .PARAMETER DeclineClusterUpdates
         Decline any updates which are exclusively for failover clustering installations.
         .PARAMETER DeclineFarmUpdates
         Decline any updates which are exclusively for farm deployment installations.
-        .PARAMETER DeclineItaniumUpdates
-        Decline any updates which are exclusively for Itanium architecture installations.
         .PARAMETER DeclinePrereleaseUpdates
         Decline any updates which are exclusively for pre-release products (e.g. betas).
         .PARAMETER DeclineSecurityOnlyUpdates
@@ -56,9 +54,9 @@ Function Invoke-WsusSpringClean {
 
         Runs the default clean-up tasks & checks for declined updates that may not be intentional.
         .EXAMPLE
-        PS C:\>Invoke-WsusSpringClean -DeclineClusterUpdates -DeclineFarmUpdates -DeclineItaniumUpdates
+        PS C:\>Invoke-WsusSpringClean -DeclineClusterUpdates -DeclineFarmUpdates
 
-        Declines all failover clustering, farm server/deployment & Itanium updates.
+        Declines all failover clustering & farm server/deployment updates.
         .EXAMPLE
         PS C:\>Invoke-WsusSpringClean -DeclineCategoriesInclude @('Region - US', 'Superseded')
 
@@ -83,7 +81,6 @@ Function Invoke-WsusSpringClean {
 
         [Switch]$DeclineClusterUpdates,
         [Switch]$DeclineFarmUpdates,
-        [Switch]$DeclineItaniumUpdates,
         [Switch]$DeclinePrereleaseUpdates,
         [Switch]$DeclineSecurityOnlyUpdates,
 
@@ -120,7 +117,6 @@ Function Invoke-WsusSpringClean {
         $DefaultTasks = @(
             'DeclineClusterUpdates',
             'DeclineFarmUpdates',
-            'DeclineItaniumUpdates',
             'DeclinePrereleaseUpdates',
             'DeclineSecurityOnlyUpdates',
 
@@ -144,7 +140,6 @@ Function Invoke-WsusSpringClean {
     # Regular expressions for declining certain types of updates
     $script:RegExClusterUpdates = ' Failover Clustering '
     $script:RegExFarmUpdates = ' Farm[- ]'
-    $script:RegExItaniumUpdates = '(IA64|Itanium)'
     $script:RegExPrereleaseUpdates = ' (Beta|Preview|RC1|Release Candidate) '
     $script:RegExSecurityOnlyUpdates = ' Security Only (Quality )?Update '
 
@@ -184,7 +179,6 @@ Function Invoke-WsusSpringClean {
     $SpringCleanParams = @{
         DeclineClusterUpdates=$DeclineClusterUpdates
         DeclineFarmUpdates=$DeclineFarmUpdates
-        DeclineItaniumUpdates=$DeclineItaniumUpdates
         DeclinePrereleaseUpdates=$DeclinePrereleaseUpdates
         DeclineSecurityOnlyUpdates=$DeclineSecurityOnlyUpdates
     }
@@ -217,7 +211,6 @@ Function Get-WsusSuspectDeclines {
     Param(
         [Switch]$DeclineClusterUpdates,
         [Switch]$DeclineFarmUpdates,
-        [Switch]$DeclineItaniumUpdates,
         [Switch]$DeclinePrereleaseUpdates,
         [Switch]$DeclineSecurityOnlyUpdates,
 
@@ -251,11 +244,6 @@ Function Get-WsusSuspectDeclines {
 
         # Ignore farm updates if they were declined
         if ($DeclineFarmUpdates -and $Update.Title -match $RegExFarmUpdates) {
-            continue
-        }
-
-        # Ignore Itanium updates if they were declined
-        if ($DeclineItaniumUpdates -and $Update.Title -match $RegExItaniumUpdates) {
             continue
         }
 
@@ -394,7 +382,6 @@ Function Invoke-WsusServerSpringClean {
     Param(
         [Switch]$DeclineClusterUpdates,
         [Switch]$DeclineFarmUpdates,
-        [Switch]$DeclineItaniumUpdates,
         [Switch]$DeclinePrereleaseUpdates,
         [Switch]$DeclineSecurityOnlyUpdates,
 
@@ -421,10 +408,6 @@ Function Invoke-WsusServerSpringClean {
 
     if ($DeclineFarmUpdates) {
         Invoke-WsusDeclineUpdatesByRegEx -Updates $WsusAnyExceptDeclined -RegEx $script:RegExFarmUpdates -Type 'farm'
-    }
-
-    if ($DeclineItaniumUpdates) {
-        Invoke-WsusDeclineUpdatesByRegEx -Updates $WsusAnyExceptDeclined -RegEx $script:RegExItaniumUpdates -Type 'Itanium'
     }
 
     if ($DeclinePrereleaseUpdates) {
