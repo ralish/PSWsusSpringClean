@@ -87,10 +87,10 @@ Function Invoke-WsusSpringClean {
         [String[]]$DeclineCategoriesExclude,
         [String[]]$DeclineCategoriesInclude,
 
-        [ValidateScript({Test-WsusUpdateLanguageCodes -LanguageCodes $_})]
+        [ValidateScript({Test-WsusSpringCleanLanguageCodes -LanguageCodes $_})]
         [String[]]$DeclineLanguagesExclude,
 
-        [ValidateScript({Test-WsusUpdateLanguageCodes -LanguageCodes $_})]
+        [ValidateScript({Test-WsusSpringCleanLanguageCodes -LanguageCodes $_})]
         [String[]]$DeclineLanguagesInclude,
 
         # Wrapping of Invoke-WsusServerCleanup
@@ -111,6 +111,10 @@ Function Invoke-WsusSpringClean {
 
     if ($PSBoundParameters.ContainsKey('DeclineLanguagesExclude') -and $PSBoundParameters.ContainsKey('DeclineLanguagesInclude')) {
         throw 'Can only specify one of DeclineLanguagesExclude and DeclineLanguagesInclude.'
+    }
+
+    if (!$script:WscMetadata) {
+        Import-WsusSpringCleanMetadata
     }
 
     if ($RunDefaultTasks) {
@@ -154,11 +158,11 @@ Function Invoke-WsusSpringClean {
         }
     }
 
-    # Fetch the metadata for the languages we're going to decline
+    # Fetch the metadata for any languages we're going to decline
     if ($PSBoundParameters.ContainsKey('DeclineLanguagesExclude')) {
-        $DeclineLanguagesMetadata = $script:WscLanguages.Language | Where-Object { $_.code -notin $DeclineLanguagesExclude }
+        $DeclineLanguagesMetadata = $script:WscMetadata.Languages.Language | Where-Object { $_.code -notin $DeclineLanguagesExclude }
     } elseif ($PSBoundParameters.ContainsKey('DeclineLanguagesInclude')) {
-        $DeclineLanguagesMetadata = $script:WscLanguages.Language | Where-Object { $_.code -in $DeclineLanguagesInclude }
+        $DeclineLanguagesMetadata = $script:WscMetadata.Languages.Language | Where-Object { $_.code -in $DeclineLanguagesInclude }
     }
 
     if ($SynchroniseServer) {
@@ -187,7 +191,7 @@ Function Invoke-WsusSpringClean {
         $SpringCleanParams += @{DeclineCategories=$DeclineCategories}
     }
 
-    if ($DeclineLanguages) {
+    if ($DeclineLanguagesMetadata) {
         $SpringCleanParams += @{DeclineLanguages=$DeclineLanguagesMetadata}
     }
 
@@ -271,6 +275,16 @@ Function Get-WsusSuspectDeclines {
     }
 
     return $SuspectDeclines
+}
+
+
+Function Import-WsusSpringCleanMetadata {
+    [CmdletBinding()]
+    Param()
+
+    Write-Verbose -Message '[*] Importing module metadata ...'
+    $MetadataPath = Join-Path -Path $PSScriptRoot -ChildPath 'PSWsusSpringClean.xml'
+    $script:WscMetadata = ([Xml](Get-Content -Path $MetadataPath)).PSWsusSpringClean
 }
 
 
@@ -377,6 +391,34 @@ Function Invoke-WsusServerCleanupWrapper {
 }
 
 
+Function Invoke-WsusServerSynchronisation {
+    [CmdletBinding(SupportsShouldProcess)]
+    Param()
+
+    $WsusServer = Get-WsusServer
+
+    if ($PSCmdlet.ShouldProcess($env:COMPUTERNAME, 'WSUS synchronization')) {
+        $SyncStatus = $WsusServer.GetSubscription().GetSynchronizationStatus()
+        if ($SyncStatus -eq 'NotProcessing') {
+            $WsusServer.GetSubscription().StartSynchronization()
+        } elseif ($SyncStatus -eq 'Running') {
+            Write-Warning -Message "[!] A synchronisation appears to already be running! We'll wait for this one to complete ..."
+        } else {
+            throw ('WSUS server returned unknown synchronisation status: {0}' -f $SyncStatus)
+        }
+
+        do {
+            Start-Sleep -Seconds 5
+        } while ($WsusServer.GetSubscription().GetSynchronizationStatus() -eq 'Running')
+
+        $SyncResult = $WsusServer.GetSubscription().GetLastSynchronizationInfo().Result
+        if ($SyncResult -ne 'Succeeded') {
+            throw ('WSUS server synchronisation completed with unexpected result: {0}' -f $SyncResult)
+        }
+    }
+}
+
+
 Function Invoke-WsusServerSpringClean {
     [CmdletBinding(SupportsShouldProcess)]
     Param(
@@ -433,44 +475,17 @@ Function Invoke-WsusServerSpringClean {
 }
 
 
-Function Invoke-WsusServerSynchronisation {
-    [CmdletBinding(SupportsShouldProcess)]
-
-    $WsusServer = Get-WsusServer
-
-    if ($PSCmdlet.ShouldProcess($env:COMPUTERNAME, 'WSUS synchronization')) {
-        $SyncStatus = $WsusServer.GetSubscription().GetSynchronizationStatus()
-        if ($SyncStatus -eq 'NotProcessing') {
-            $WsusServer.GetSubscription().StartSynchronization()
-        } elseif ($SyncStatus -eq 'Running') {
-            Write-Warning -Message "[!] A synchronisation appears to already be running! We'll wait for this one to complete ..."
-        } else {
-            throw ('WSUS server returned unknown synchronisation status: {0}' -f $SyncStatus)
-        }
-
-        do {
-            Start-Sleep -Seconds 5
-        } while ($WsusServer.GetSubscription().GetSynchronizationStatus() -eq 'Running')
-
-        $SyncResult = $WsusServer.GetSubscription().GetLastSynchronizationInfo().Result
-        if ($SyncResult -ne 'Succeeded') {
-            throw ('WSUS server synchronisation completed with unexpected result: {0}' -f $SyncResult)
-        }
-    }
-}
-
-
-Function Test-WsusUpdateLanguageCodes {
+Function Test-WsusSpringCleanLanguageCodes {
     Param(
         [Parameter(Mandatory)]
         [String[]]$LanguageCodes
     )
 
-    if (!$script:WscLanguages) {
-        Import-WsusSpringCleanLanguages
+    if (!$script:WscMetadata) {
+        Import-WsusSpringCleanMetadata
     }
 
-    $KnownLanguageCodes = $script:WscLanguages.Language.code
+    $KnownLanguageCodes = $script:WscMetadata.Languages.Language.code
     foreach ($LanguageCode in $LanguageCodes) {
         if ($LanguageCode -notin $KnownLanguageCodes) {
             throw 'Unknown language code specified: {0}' -f $LanguageCode
@@ -515,25 +530,9 @@ Function Import-WsusSpringCleanCatalogue {
         $CataloguePath = Join-Path -Path $PSScriptRoot -ChildPath 'PSWsusSpringClean.csv'
     }
 
-    Write-Host -ForegroundColor Green '[*] Importing update catalogue ...'
+    Write-Verbose -Message '[*] Importing update catalogue ...'
     $script:WscCatalogue = Import-Csv -Path $CataloguePath
     $script:WscCategories = $WscCatalogue.Category | Sort-Object | Get-Unique
-}
-
-
-Function Import-WsusSpringCleanLanguages {
-    [CmdletBinding()]
-    Param(
-        [ValidateNotNullOrEmpty()]
-        [String]$LanguagesPath
-    )
-
-    if (!$LanguagesPath) {
-        $LanguagesPath = Join-Path -Path $PSScriptRoot -ChildPath 'Languages.xml'
-    }
-
-    Write-Host -ForegroundColor Green '[*] Importing languages data ...'
-    $script:WscLanguages = ([Xml](Get-Content -Path $LanguagesPath)).Languages
 }
 
 
