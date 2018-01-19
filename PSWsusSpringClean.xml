@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PSWsusSpringClean>
+    <Architectures>
+        <Architecture name="x64" regex="x64|64-Bit|AMD64" />
+        <Architecture name="ia64" regex="IA64|Itanium" />
+        <Architecture name="arm64" regex="ARM64" />
+    </Architectures>
+
     <Languages>
         <Language code="af-ZA" name="Afrikaans" region="South Africa" />
         <Language code="am-ET" name="Amharic" region="Ethiopia" />
