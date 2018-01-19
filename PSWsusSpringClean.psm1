@@ -252,8 +252,8 @@ Function Get-WsusSuspectDeclines {
     $WsusDeclined = $WsusServer.GetUpdates($UpdateScope)
 
     # Ignore all updates corresponding to architectures, categories or languages we declined
-    $IgnoredDeclines = $script:WscCatalogue | Where-Object { $_.Category -in $DeclineCategories }
     $IgnoredArchitecturesRegEx = ' ({0})' -f [String]::Join('|', $DeclineArchitectures.regex)
+    $IgnoredCategories = $script:WscCatalogue | Where-Object { $_.Category -in $DeclineCategories }
     $IgnoredLanguagesRegEx = ' [\[]?({0})(_LP|_LIP)?[\]]?' -f [String]::Join('|', $DeclineLanguages.code)
 
     Write-Host -ForegroundColor Green '[*] Finding suspect declined updates ...'
@@ -290,7 +290,7 @@ Function Get-WsusSuspectDeclines {
         }
 
         # Ignore any update categories which were declined
-        if ($Update.Title -in $IgnoredDeclines.Title) {
+        if ($Update.Title -in $IgnoredCategories.Title) {
             continue
         }
 
