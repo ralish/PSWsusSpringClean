@@ -60,17 +60,17 @@ Function Invoke-WsusSpringClean {
 
         Runs the default clean-up tasks & checks for declined updates that may not be intentional.
         .EXAMPLE
-        PS C:\>Invoke-WsusSpringClean -DeclineClusterUpdates -DeclineFarmUpdates
-
-        Declines all failover clustering & farm server/deployment updates.
-        .EXAMPLE
         PS C:\>Invoke-WsusSpringClean -DeclineCategoriesInclude @('Region - US', 'Superseded')
 
         Declines all unneeded updates in the "Region - US" & "Superseded" categories.
         .EXAMPLE
-        PS C:\>Invoke-WsusSpringClean -RunDefaultTasks -DeclineCategoriesExclude @() -WhatIf
+        PS C:\>Invoke-WsusSpringClean -DeclineLanguagesExclude @('en-AU')
 
-        Show what updates would be declined if we were to decline all unneeded updates.
+        Declines all language specific updates excluding those for English (Australia).
+        .EXAMPLE
+        PS C:\>Invoke-WsusSpringClean -DeclineArchitectures @('arm64', 'ia64')
+
+        Declines all architecture specific updates for ARM64 & IA64 (Itanium) systems.
         .NOTES
         The script intentionally avoids usage of most WSUS cmdlets provided by the UpdateServices module as many are extremely slow. This is particularly true of the Get-WsusUpdate cmdlet.
 

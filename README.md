@@ -104,14 +104,14 @@ Sample Usage
 # Runs the default clean-up tasks & checks for declined updates that may not be intentional
 $SuspectDeclines = Invoke-WsusSpringClean -RunDefaultTasks -FindSuspectDeclines
 
-# Decline all failover clustering, farm server/deployment & Itanium updates
-Invoke-WsusSpringClean -DeclineClusterUpdates -DeclineFarmUpdates -DeclineItaniumUpdates
-
 # Declines all unneeded updates in the "Region - US" & "Superseded" categories
 Invoke-WsusSpringClean -DeclineCategoriesInclude @('Region - US', 'Superseded')
 
-# Show what updates would be declined if we were to decline all unneeded updates
-Invoke-WsusSpringClean -RunDefaultTasks -DeclineCategoriesExclude @() -WhatIf
+# Declines all language specific updates excluding those for English (Australia)
+Invoke-WsusSpringClean -DeclineLanguagesExclude @('en-AU')
+
+# Declines all architecture specific updates for ARM64 & IA64 (Itanium) systems
+Invoke-WsusSpringClean -DeclineArchitectures @('arm64', 'ia64')
 ```
 
 License
