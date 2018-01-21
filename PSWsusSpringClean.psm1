@@ -172,7 +172,7 @@ Function Invoke-WsusSpringClean {
     if ($PSBoundParameters.ContainsKey('DeclineArchitectures')) {
         $DeclineArchitecturesMetadata = @()
         foreach ($Architecture in $DeclineArchitectures) {
-            $DeclineArchitecturesMetadata += $script:WscMetadata.SelectSingleNode('//Architectures/Architecture[@name="{0}"]' -f $Architecture)
+            $DeclineArchitecturesMetadata += $script:WscMetadata.Architectures.Architecture | Where-Object { $_.name -eq $Architecture }
         }
     }
 
