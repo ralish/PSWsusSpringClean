@@ -13,7 +13,7 @@ The Solution
 
 The `PSWsusSpringClean` module provides several additional options for cleaning your WSUS server:
 
-- Runs the default set of generally safe clean-up tasks (`RunCommonTasks`)  
+- Runs the default set of generally safe clean-up tasks (`-RunDefaultTasks`)  
   This consists of all the `Invoke-WsusServerCleanup` tasks and all parameters of this cmdlet prefixed with `-Decline`.
 - Decline failover clustering updates (`-DeclineClusterUpdates`)  
   Updates which only apply to **SQL Server 2000/2005** installations in a *failover clustering* configuration.
