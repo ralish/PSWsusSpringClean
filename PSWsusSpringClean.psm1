@@ -156,14 +156,6 @@ Function Invoke-WsusSpringClean {
     $script:RegExPrereleaseUpdates = ' (Beta|Preview|RC1|Release Candidate) '
     $script:RegExSecurityOnlyUpdates = ' Security Only (Quality )?Update '
 
-    # Fetch the metadata for any architectures we're going to decline
-    if ($PSBoundParameters.ContainsKey('DeclineArchitectures')) {
-        $DeclineArchitecturesMetadata = @()
-        foreach ($Architecture in $DeclineArchitectures) {
-            $DeclineArchitecturesMetadata += $script:WscMetadata.SelectSingleNode('//Architectures/Architecture[@name="{0}"]' -f $Architecture)
-        }
-    }
-
     # Determine which categories of updates to decline (if any)
     if ($PSBoundParameters.ContainsKey('DeclineCategoriesExclude') -or $PSBoundParameters.ContainsKey('DeclineCategoriesInclude')) {
         Import-WsusSpringCleanCatalogue
@@ -173,6 +165,14 @@ Function Invoke-WsusSpringClean {
             $DeclineCategories = $CatalogueCategories | Where-Object { $_ -notin $DeclineCategoriesExclude }
         } else {
             $DeclineCategories = $CatalogueCategories | Where-Object { $_ -in $DeclineCategoriesInclude }
+        }
+    }
+
+    # Fetch the metadata for any architectures we're going to decline
+    if ($PSBoundParameters.ContainsKey('DeclineArchitectures')) {
+        $DeclineArchitecturesMetadata = @()
+        foreach ($Architecture in $DeclineArchitectures) {
+            $DeclineArchitecturesMetadata += $script:WscMetadata.SelectSingleNode('//Architectures/Architecture[@name="{0}"]' -f $Architecture)
         }
     }
 
@@ -205,12 +205,12 @@ Function Invoke-WsusSpringClean {
         DeclineSecurityOnlyUpdates=$DeclineSecurityOnlyUpdates
     }
 
-    if ($DeclineArchitectures) {
-        $SpringCleanParams += @{DeclineArchitectures=$DeclineArchitecturesMetadata}
-    }
-
     if ($DeclineCategories) {
         $SpringCleanParams += @{DeclineCategories=$DeclineCategories}
+    }
+
+    if ($DeclineArchitecturesMetadata) {
+        $SpringCleanParams += @{DeclineArchitectures=$DeclineArchitecturesMetadata}
     }
 
     if ($DeclineLanguagesMetadata) {
@@ -240,8 +240,8 @@ Function Get-WsusSuspectDeclines {
         [Switch]$DeclinePrereleaseUpdates,
         [Switch]$DeclineSecurityOnlyUpdates,
 
-        [Xml.XmlElement[]]$DeclineArchitectures,
         [String[]]$DeclineCategories,
+        [Xml.XmlElement[]]$DeclineArchitectures,
         [Xml.XmlElement[]]$DeclineLanguages
     )
 
@@ -253,8 +253,8 @@ Function Get-WsusSuspectDeclines {
     $WsusDeclined = $WsusServer.GetUpdates($UpdateScope)
 
     # Ignore all updates corresponding to architectures, categories or languages we declined
+    $IgnoredCatalogueCategories = $script:WscCatalogue | Where-Object { $_.Category -in $DeclineCategories }
     $IgnoredArchitecturesRegEx = ' ({0})' -f [String]::Join('|', $DeclineArchitectures.regex)
-    $IgnoredCategories = $script:WscCatalogue | Where-Object { $_.Category -in $DeclineCategories }
     $IgnoredLanguagesRegEx = ' [\[]?({0})(_LP|_LIP)?[\]]?' -f [String]::Join('|', $DeclineLanguages.code)
 
     Write-Host -ForegroundColor Green '[*] Finding suspect declined updates ...'
@@ -285,13 +285,13 @@ Function Get-WsusSuspectDeclines {
             continue
         }
 
-        # Ignore any update architectures which were declined
-        if ($Update.Title -match $IgnoredArchitecturesRegEx) {
+        # Ignore any update categories which were declined
+        if ($Update.Title -in $IgnoredCatalogueCategories.Title) {
             continue
         }
 
-        # Ignore any update categories which were declined
-        if ($Update.Title -in $IgnoredCategories.Title) {
+        # Ignore any update architectures which were declined
+        if ($Update.Title -match $IgnoredArchitecturesRegEx) {
             continue
         }
 
@@ -442,8 +442,8 @@ Function Invoke-WsusServerSpringClean {
         [Switch]$DeclinePrereleaseUpdates,
         [Switch]$DeclineSecurityOnlyUpdates,
 
-        [Xml.XmlElement[]]$DeclineArchitectures,
         [String[]]$DeclineCategories,
+        [Xml.XmlElement[]]$DeclineArchitectures,
         [Xml.XmlElement[]]$DeclineLanguages
     )
 
@@ -480,17 +480,17 @@ Function Invoke-WsusServerSpringClean {
         Invoke-WsusDeclineUpdatesByRegEx -Updates $WsusAnyExceptDeclined -RegEx $script:RegExSecurityOnlyUpdates
     }
 
+    if ($PSBoundParameters.ContainsKey('DeclineCategories')) {
+        foreach ($Category in $DeclineCategories) {
+            Invoke-WsusDeclineUpdatesByCatalogue -Updates $WsusAnyExceptDeclined -Category $Category
+        }
+    }
+
     if ($PSBoundParameters.ContainsKey('DeclineArchitectures')) {
         foreach ($Architecture in $DeclineArchitectures) {
             Write-Host -ForegroundColor Green ('[*] Declining updates with architecture: {0}' -f $Architecture.name)
             $ArchitectureRegEx = ' ({0})' -f $Architecture.regex
             Invoke-WsusDeclineUpdatesByRegEx -Updates $WsusAnyExceptDeclined -RegEx $ArchitectureRegEx
-        }
-    }
-
-    if ($PSBoundParameters.ContainsKey('DeclineCategories')) {
-        foreach ($Category in $DeclineCategories) {
-            Invoke-WsusDeclineUpdatesByCatalogue -Updates $WsusAnyExceptDeclined -Category $Category
         }
     }
 
