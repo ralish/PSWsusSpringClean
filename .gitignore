@@ -9,3 +9,6 @@ ehthumbs.db
 ~$*
 *.swp
 *.tmp
+
+# Visual Studio Code
+.vscode/
