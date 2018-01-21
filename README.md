@@ -31,12 +31,13 @@ The `PSWsusSpringClean` module provides several additional options for cleaning 
   Consult the help of `Invoke-WsusServerCleanup` for a description of these tasks.
 
 Several additional parameters not related to declining updates are also provided:
+
 - Synchronise the WSUS server catalogue (`-SynchroniseServer`)  
   A synchronisation will be performed before any requested clean-up actions.
 - Flag for review updates which may be incorrectly declined (`-FindSuspectDeclines`)  
   Lists updates which may be incorrectly declined. See the [Suspect Declines](#suspect-declines) section for more details.
 
-## Unneeded Updates
+### Unneeded Updates
 
 There are many updates which are likely unwanted in WSUS installations but have no obvious indicator in the metadata which can be used to detect them. To handle these updates a CSV file of categorised potentially unneeded updates is included with this module and can be used to selectively decline listed updates based on their associated category. The CSV file can be easily imported into a spreadsheet application of your choice to review the provided categories and associated updates or make changes.
 
@@ -49,7 +50,7 @@ Two parameters are provided to indicate to the module which unneeded updates sho
 
 The `-DeclineCategoriesExclude` parameter should be used with caution as it could easily decline updates you did not intend to!
 
-## Suspect Declines
+### Suspect Declines
 
 The module also provides a function to identify updates which may have been inadvertently declined via the `-FindSuspectDeclines` parameter. This will identify all declined updates which meet all of the following criteria:
 

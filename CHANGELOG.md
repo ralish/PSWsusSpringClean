@@ -1,6 +1,13 @@
 Changelog
 =========
 
+## v0.4.0
+
+- Added new `DeclineArchitectures` parameter & removed (`DeclineItaniumUpdates`)
+- Added new `DeclineLanguagesExclude` & `DeclineLanguagesInclude` parameters
+- Removed 3,597(!) updates from the CSV as now handled by RegEx matching
+- Major performance improvements, minor fixes & documentation updates
+
 ## v0.3.1
 
 - Added 427 updates to the CSV (language updates)
@@ -23,7 +30,7 @@ Changelog
 
 ## v0.1.2
 
-- Added 2171(!) updates to the CSV (almost entirely language packs)
+- Added 2,171(!) updates to the CSV (almost entirely language packs)
 
 ## v0.1.1
 
