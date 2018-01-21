@@ -167,11 +167,12 @@ Function Invoke-WsusSpringClean {
     # Determine which categories of updates to decline (if any)
     if ($PSBoundParameters.ContainsKey('DeclineCategoriesExclude') -or $PSBoundParameters.ContainsKey('DeclineCategoriesInclude')) {
         Import-WsusSpringCleanCatalogue
+        $CatalogueCategories = $script:WscCatalogue.Category | Sort-Object | Get-Unique
 
         if ($PSBoundParameters.ContainsKey('DeclineCategoriesExclude')) {
-            $DeclineCategories = $script:WscCategories | Where-Object { $_ -notin $DeclineCategoriesExclude }
+            $DeclineCategories = $CatalogueCategories | Where-Object { $_ -notin $DeclineCategoriesExclude }
         } else {
-            $DeclineCategories = $script:WscCategories | Where-Object { $_ -in $DeclineCategoriesInclude }
+            $DeclineCategories = $CatalogueCategories | Where-Object { $_ -in $DeclineCategoriesInclude }
         }
     }
 
@@ -581,7 +582,6 @@ Function Import-WsusSpringCleanCatalogue {
 
     Write-Verbose -Message '[*] Importing update catalogue ...'
     $script:WscCatalogue = Import-Csv -Path $CataloguePath
-    $script:WscCategories = $WscCatalogue.Category | Sort-Object | Get-Unique
 }
 
 
