@@ -317,7 +317,7 @@ Function Import-WsusSpringCleanMetadata {
 }
 
 
-Function Invoke-WsusDeclineUpdatesByCategory {
+Function Invoke-WsusDeclineUpdatesByCatalogue {
     [CmdletBinding(SupportsShouldProcess)]
     Param(
         [Parameter(Mandatory)]
@@ -490,7 +490,7 @@ Function Invoke-WsusServerSpringClean {
 
     if ($PSBoundParameters.ContainsKey('DeclineCategories')) {
         foreach ($Category in $DeclineCategories) {
-            Invoke-WsusDeclineUpdatesByCategory -Updates $WsusAnyExceptDeclined -Category $Category
+            Invoke-WsusDeclineUpdatesByCatalogue -Updates $WsusAnyExceptDeclined -Category $Category
         }
     }
 
