@@ -1,6 +1,10 @@
 Changelog
 =========
 
+## v0.4.1
+
+- Major bug fix in retrieval of selected architecture(s) metadata
+
 ## v0.4.0
 
 - Added new `DeclineArchitectures` parameter & removed (`DeclineItaniumUpdates`)
