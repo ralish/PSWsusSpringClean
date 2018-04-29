@@ -1,6 +1,12 @@
 Changelog
 =========
 
+v0.4.2
+------
+
+- Enabled Strict Mode set to version 2.0 (latest at time of writing)
+- Add PSScriptAnalyzer linting configuration
+
 v0.4.1
 ------
 
