@@ -1,0 +1,6 @@
+{
+    "devskim.ignoreRulesList": [
+        // Restricted functions
+        "DS104456"
+    ]
+}
