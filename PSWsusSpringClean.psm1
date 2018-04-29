@@ -1,3 +1,15 @@
+# See the help for Set-StrictMode for the full details on what this enables.
+Set-StrictMode -Version 2.0
+
+# Ensure that any errors we receive are considered fatal
+$ErrorActionPreference = 'Stop'
+
+# Regular expressions for declining certain types of updates
+$RegExClusterUpdates = ' Failover Clustering '
+$RegExFarmUpdates = ' Farm[- ]'
+$RegExPrereleaseUpdates = ' (Beta|Preview|RC1|Release Candidate) '
+$RegExSecurityOnlyUpdates = ' Security Only (Quality )?Update '
+
 Function Invoke-WsusSpringClean {
     <#
         .SYNOPSIS
@@ -111,9 +123,6 @@ Function Invoke-WsusSpringClean {
         [Switch]$DeclineSupersededUpdates
     )
 
-    # Ensure that any errors we receive are considered fatal
-    $ErrorActionPreference = 'Stop'
-
     if ($PSBoundParameters.ContainsKey('DeclineCategoriesExclude') -and $PSBoundParameters.ContainsKey('DeclineCategoriesInclude')) {
         throw 'Can only specify one of DeclineCategoriesExclude and DeclineCategoriesInclude.'
     }
@@ -122,9 +131,7 @@ Function Invoke-WsusSpringClean {
         throw 'Can only specify one of DeclineLanguagesExclude and DeclineLanguagesInclude.'
     }
 
-    if (!$script:WscMetadata) {
-        Import-WsusSpringCleanMetadata
-    }
+    Import-WsusSpringCleanMetadata
 
     if ($RunDefaultTasks) {
         $DefaultTasks = @(
@@ -149,12 +156,6 @@ Function Invoke-WsusSpringClean {
             }
         }
     }
-
-    # Regular expressions for declining certain types of updates
-    $script:RegExClusterUpdates = ' Failover Clustering '
-    $script:RegExFarmUpdates = ' Farm[- ]'
-    $script:RegExPrereleaseUpdates = ' (Beta|Preview|RC1|Release Candidate) '
-    $script:RegExSecurityOnlyUpdates = ' Security Only (Quality )?Update '
 
     # Determine which categories of updates to decline (if any)
     if ($PSBoundParameters.ContainsKey('DeclineCategoriesExclude') -or $PSBoundParameters.ContainsKey('DeclineCategoriesInclude')) {
@@ -205,15 +206,15 @@ Function Invoke-WsusSpringClean {
         DeclineSecurityOnlyUpdates=$DeclineSecurityOnlyUpdates
     }
 
-    if ($DeclineCategories) {
+    if ($PSBoundParameters.ContainsKey('DeclineCategoriesExclude') -or $PSBoundParameters.ContainsKey('DeclineCategoriesInclude')) {
         $SpringCleanParams += @{DeclineCategories=$DeclineCategories}
     }
 
-    if ($DeclineArchitecturesMetadata) {
+    if ($PSBoundParameters.ContainsKey('DeclineArchitectures')) {
         $SpringCleanParams += @{DeclineArchitectures=$DeclineArchitecturesMetadata}
     }
 
-    if ($DeclineLanguagesMetadata) {
+    if ($PSBoundParameters.ContainsKey('DeclineLanguagesExclude') -or $PSBoundParameters.ContainsKey('DeclineLanguagesInclude')) {
         $SpringCleanParams += @{DeclineLanguages=$DeclineLanguagesMetadata}
     }
 
@@ -253,9 +254,15 @@ Function Get-WsusSuspectDeclines {
     $WsusDeclined = $WsusServer.GetUpdates($UpdateScope)
 
     # Ignore all updates corresponding to architectures, categories or languages we declined
-    $IgnoredCatalogueCategories = $script:WscCatalogue | Where-Object { $_.Category -in $DeclineCategories }
-    $IgnoredArchitecturesRegEx = ' ({0})' -f [String]::Join('|', $DeclineArchitectures.regex)
-    $IgnoredLanguagesRegEx = ' [\[]?({0})(_LP|_LIP)?[\]]?' -f [String]::Join('|', $DeclineLanguages.code)
+    if ($PSBoundParameters.ContainsKey('DeclineCategories')) {
+        $IgnoredCatalogueCategories = $script:WscCatalogue | Where-Object { $_.Category -in $DeclineCategories }
+    }
+    if ($PSBoundParameters.ContainsKey('DeclineArchitectures')) {
+        $IgnoredArchitecturesRegEx = ' ({0})' -f [String]::Join('|', $DeclineArchitectures.regex)
+    }
+    if ($PSBoundParameters.ContainsKey('DeclineLanguages')) {
+        $IgnoredLanguagesRegEx = ' [\[]?({0})(_LP|_LIP)?[\]]?' -f [String]::Join('|', $DeclineLanguages.code)
+    }
 
     Write-Host -ForegroundColor Green '[*] Finding suspect declined updates ...'
     $SuspectDeclines = @()
@@ -286,18 +293,24 @@ Function Get-WsusSuspectDeclines {
         }
 
         # Ignore any update categories which were declined
-        if ($Update.Title -in $IgnoredCatalogueCategories.Title) {
-            continue
+        if ($PSBoundParameters.ContainsKey('DeclineCategories')) {
+            if ($Update.Title -in $IgnoredCatalogueCategories.Title) {
+                continue
+            }
         }
 
         # Ignore any update architectures which were declined
-        if ($Update.Title -match $IgnoredArchitecturesRegEx) {
-            continue
+        if ($PSBoundParameters.ContainsKey('DeclineArchitectures')) {
+            if ($Update.Title -match $IgnoredArchitecturesRegEx) {
+                continue
+            }
         }
 
         # Ignore any update languages which were declined
-        if ($Update.Title -match $IgnoredLanguagesRegEx) {
-            continue
+        if ($PSBoundParameters.ContainsKey('DeclineLanguages')) {
+            if ($Update.Title -match $IgnoredLanguagesRegEx) {
+                continue
+            }
         }
 
         $SuspectDeclines += $Update
@@ -310,6 +323,10 @@ Function Get-WsusSuspectDeclines {
 Function Import-WsusSpringCleanMetadata {
     [CmdletBinding()]
     Param()
+
+    if (Get-Variable -Name WscCatalogue -Scope Script -ErrorAction SilentlyContinue) {
+        return
+    }
 
     Write-Verbose -Message '[*] Importing module metadata ...'
     $MetadataPath = Join-Path -Path $PSScriptRoot -ChildPath 'PSWsusSpringClean.xml'
@@ -324,7 +341,6 @@ Function Invoke-WsusDeclineUpdatesByCatalogue {
         [Microsoft.UpdateServices.Internal.BaseApi.Update[]]$Updates,
 
         [Parameter(Mandatory)]
-        [ValidateNotNullOrEmpty()]
         [String]$Category
     )
 
@@ -348,7 +364,6 @@ Function Invoke-WsusDeclineUpdatesByRegEx {
         [Microsoft.UpdateServices.Internal.BaseApi.Update[]]$Updates,
 
         [Parameter(Mandatory)]
-        [ValidateNotNullOrEmpty()]
         [String]$RegEx
     )
 
@@ -511,9 +526,7 @@ Function Test-WsusSpringCleanArchitectures {
         [String[]]$Architectures
     )
 
-    if (!$script:WscMetadata) {
-        Import-WsusSpringCleanMetadata
-    }
+    Import-WsusSpringCleanMetadata
 
     $KnownArchitectures = $script:WscMetadata.Architectures.Architecture.name
     foreach ($Architecture in $Architectures) {
@@ -532,9 +545,7 @@ Function Test-WsusSpringCleanLanguageCodes {
         [String[]]$LanguageCodes
     )
 
-    if (!$script:WscMetadata) {
-        Import-WsusSpringCleanMetadata
-    }
+    Import-WsusSpringCleanMetadata
 
     $KnownLanguageCodes = $script:WscMetadata.Languages.Language.code
     foreach ($LanguageCode in $LanguageCodes) {
@@ -577,7 +588,7 @@ Function Import-WsusSpringCleanCatalogue {
         [String]$CataloguePath
     )
 
-    if (!$CataloguePath) {
+    if (!$PSBoundParameters.ContainsKey('CataloguePath')) {
         $CataloguePath = Join-Path -Path $PSScriptRoot -ChildPath 'PSWsusSpringClean.csv'
     }
 
