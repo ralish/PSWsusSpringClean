@@ -79,7 +79,7 @@ Function Invoke-WsusSpringClean {
         https://github.com/ralish/PSWsusSpringClean
     #>
 
-    [CmdletBinding(DefaultParameterSetName='Default',SupportsShouldProcess)]
+    [CmdletBinding(DefaultParameterSetName='Default', SupportsShouldProcess)]
     Param(
         [Switch]$RunDefaultTasks,
         [Switch]$SynchroniseServer,
@@ -93,13 +93,13 @@ Function Invoke-WsusSpringClean {
         [String[]]$DeclineCategoriesExclude,
         [String[]]$DeclineCategoriesInclude,
 
-        [ValidateScript({Test-WsusSpringCleanArchitectures -Architectures $_})]
+        [ValidateScript( {Test-WsusSpringCleanArchitectures -Architectures $_} )]
         [String[]]$DeclineArchitectures,
 
-        [ValidateScript({Test-WsusSpringCleanLanguageCodes -LanguageCodes $_})]
+        [ValidateScript( {Test-WsusSpringCleanLanguageCodes -LanguageCodes $_} )]
         [String[]]$DeclineLanguagesExclude,
 
-        [ValidateScript({Test-WsusSpringCleanLanguageCodes -LanguageCodes $_})]
+        [ValidateScript( {Test-WsusSpringCleanLanguageCodes -LanguageCodes $_} )]
         [String[]]$DeclineLanguagesInclude,
 
         # Wrapping of Invoke-WsusServerCleanup
@@ -364,6 +364,7 @@ Function Invoke-WsusDeclineUpdatesByRegEx {
 
 
 Function Invoke-WsusServerCleanupWrapper {
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSShouldProcess', '')]
     [CmdletBinding(SupportsShouldProcess)]
     Param(
         [Switch]$CleanupObsoleteComputers,
@@ -548,7 +549,7 @@ Function Test-WsusSpringCleanLanguageCodes {
 
 Function ConvertTo-WsusSpringCleanCatalogue {
     Param(
-        [Parameter(Mandatory,ValueFromPipeline)]
+        [Parameter(Mandatory, ValueFromPipeline)]
         [Microsoft.UpdateServices.Internal.BaseApi.Update[]]$Updates
     )
 
