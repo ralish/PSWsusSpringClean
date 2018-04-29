@@ -234,6 +234,7 @@ Function Invoke-WsusSpringClean {
 
 
 Function Get-WsusSuspectDeclines {
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSUseSingularNouns', '')]
     [CmdletBinding()]
     Param(
         [Switch]$DeclineClusterUpdates,
@@ -521,6 +522,7 @@ Function Invoke-WsusServerSpringClean {
 
 
 Function Test-WsusSpringCleanArchitectures {
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSUseSingularNouns', '')]
     Param(
         [Parameter(Mandatory)]
         [String[]]$Architectures
@@ -540,6 +542,7 @@ Function Test-WsusSpringCleanArchitectures {
 
 
 Function Test-WsusSpringCleanLanguageCodes {
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSUseSingularNouns', '')]
     Param(
         [Parameter(Mandatory)]
         [String[]]$LanguageCodes

@@ -2,8 +2,7 @@
     IncludeRules = @('*')
 
     ExcludeRules = @(
-        'PSAvoidUsingWriteHost',
-        'PSUseSingularNouns'
+        'PSAvoidUsingWriteHost'
     )
 
     Rules = @{
