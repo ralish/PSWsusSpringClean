@@ -232,7 +232,6 @@ Function Invoke-WsusSpringClean {
     }
 }
 
-
 Function Get-WsusSuspectDeclines {
     [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSUseSingularNouns', '')]
     [CmdletBinding()]
@@ -320,7 +319,6 @@ Function Get-WsusSuspectDeclines {
     return $SuspectDeclines
 }
 
-
 Function Import-WsusSpringCleanMetadata {
     [CmdletBinding()]
     Param()
@@ -333,7 +331,6 @@ Function Import-WsusSpringCleanMetadata {
     $MetadataPath = Join-Path -Path $PSScriptRoot -ChildPath 'PSWsusSpringClean.xml'
     $script:WscMetadata = ([Xml](Get-Content -Path $MetadataPath)).PSWsusSpringClean
 }
-
 
 Function Invoke-WsusDeclineUpdatesByCatalogue {
     [CmdletBinding(SupportsShouldProcess)]
@@ -357,7 +354,6 @@ Function Invoke-WsusDeclineUpdatesByCatalogue {
     }
 }
 
-
 Function Invoke-WsusDeclineUpdatesByRegEx {
     [CmdletBinding(SupportsShouldProcess)]
     Param(
@@ -377,7 +373,6 @@ Function Invoke-WsusDeclineUpdatesByRegEx {
         }
     }
 }
-
 
 Function Invoke-WsusServerCleanupWrapper {
     [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSShouldProcess', '')]
@@ -422,7 +417,6 @@ Function Invoke-WsusServerCleanupWrapper {
     }
 }
 
-
 Function Invoke-WsusServerSynchronisation {
     [CmdletBinding(SupportsShouldProcess)]
     Param()
@@ -449,7 +443,6 @@ Function Invoke-WsusServerSynchronisation {
         }
     }
 }
-
 
 Function Invoke-WsusServerSpringClean {
     [CmdletBinding(SupportsShouldProcess)]
@@ -520,7 +513,6 @@ Function Invoke-WsusServerSpringClean {
     }
 }
 
-
 Function Test-WsusSpringCleanArchitectures {
     [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSUseSingularNouns', '')]
     Param(
@@ -540,7 +532,6 @@ Function Test-WsusSpringCleanArchitectures {
     return $true
 }
 
-
 Function Test-WsusSpringCleanLanguageCodes {
     [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSUseSingularNouns', '')]
     Param(
@@ -559,7 +550,6 @@ Function Test-WsusSpringCleanLanguageCodes {
 
     return $true
 }
-
 
 Function ConvertTo-WsusSpringCleanCatalogue {
     Param(
@@ -583,7 +573,6 @@ Function ConvertTo-WsusSpringCleanCatalogue {
     }
 }
 
-
 Function Import-WsusSpringCleanCatalogue {
     [CmdletBinding()]
     Param(
@@ -598,7 +587,6 @@ Function Import-WsusSpringCleanCatalogue {
     Write-Verbose -Message '[*] Importing update catalogue ...'
     $script:WscCatalogue = Import-Csv -Path $CataloguePath
 }
-
 
 Function Test-WsusSpringCleanCatalogue {
     [CmdletBinding()]
