@@ -13,9 +13,11 @@ $RegExSecurityOnlyUpdates = ' Security Only (Quality )?Update '
 Function Invoke-WsusSpringClean {
     <#
         .SYNOPSIS
-        Performs additional WSUS server clean-up beyond the capabilities of the built-in tools.
+        Performs additional WSUS server clean-up beyond the capabilities of the built-in tools
+
         .DESCRIPTION
         Adds the ability to decline numerous additional commonly unneeded updates as well as discover potentially incorrectly declined updates.
+
         .PARAMETER RunDefaultTasks
         Performs all clean-up tasks except for declining any unneeded updates as defined in the included update catalogue CSV file.
 
@@ -24,8 +26,10 @@ Function Invoke-WsusSpringClean {
         You can perform a clean-up of unneeded updates by specifying the DeclineCategoriesInclude or DeclineCategoriesExclude parameter with your chosen categories.
 
         Also note that this does not perform a server synchronisation before clean-up or find suspect declined updates. These tasks can be included via their respective parameters.
+
         .PARAMETER SynchroniseServer
         Perform a synchronisation against the upstream server before running cleanup.
+
         .PARAMETER FindSuspectDeclines
         Scan all declined updates for any that may have been inadvertently declined.
 
@@ -33,60 +37,81 @@ Function Invoke-WsusSpringClean {
          - Are not superseded or expired
          - Are not cluster or farm updates (if set to decline)
          - Are not in the filtered list of updates to decline from the bundled catalogue
+
         .PARAMETER DeclineClusterUpdates
         Decline any updates which are exclusively for failover clustering installations.
+
         .PARAMETER DeclineFarmUpdates
         Decline any updates which are exclusively for farm deployment installations.
+
         .PARAMETER DeclinePrereleaseUpdates
         Decline any updates which are exclusively for pre-release products (e.g. betas).
+
         .PARAMETER DeclineSecurityOnlyUpdates
         Decline any Security Only updates.
+
         .PARAMETER DeclineArchitectures
         Array of update architectures to decline.
 
         Valid options are: x64, ia64, arm64
 
         We don't support declining x86 updates as there's no mechanism to determine which updates are x86 specific versus multi-architecture.
+
         .PARAMETER DeclineCategoriesExclude
         Array of update categories in the bundled updates catalogue to not decline.
+
         .PARAMETER DeclineCategoriesInclude
         Array of update categories in the bundled updates catalogue to decline.
+
         .PARAMETER DeclineLanguagesExclude
         Array of update language codes to not decline.
+
         .PARAMETER DeclineLanguagesInclude
         Array of update language codes to decline.
+
         .PARAMETER CleanupObsoleteComputers
         Specifies that the cmdlet deletes obsolete computers from the database.
+
         .PARAMETER CleanupObsoleteUpdates
         Specifies that the cmdlet deletes obsolete updates from the database.
+
         .PARAMETER CleanupUnneededContentFiles
         Specifies that the cmdlet deletes unneeded update files.
+
         .PARAMETER CompressUpdates
         Specifies that the cmdlet deletes obsolete revisions to updates from the database.
+
         .PARAMETER DeclineExpiredUpdates
         Specifies that the cmdlet declines expired updates.
+
         .PARAMETER DeclineSupersededUpdates
         Specifies that the cmdlet declines superseded updates.
+
         .EXAMPLE
         PS C:\>$SuspectDeclines = Invoke-WsusSpringClean -RunDefaultTasks -FindSuspectDeclines
 
         Runs the default clean-up tasks & checks for declined updates that may not be intentional.
+
         .EXAMPLE
         PS C:\>Invoke-WsusSpringClean -DeclineCategoriesInclude @('Region - US', 'Superseded')
 
         Declines all unneeded updates in the "Region - US" & "Superseded" categories.
+
         .EXAMPLE
         PS C:\>Invoke-WsusSpringClean -DeclineLanguagesExclude @('en-AU')
 
         Declines all language specific updates excluding those for English (Australia).
+
         .EXAMPLE
         PS C:\>Invoke-WsusSpringClean -DeclineArchitectures @('arm64', 'ia64')
 
         Declines all architecture specific updates for ARM64 & IA64 (Itanium) systems.
+
         .NOTES
         The script intentionally avoids usage of most WSUS cmdlets provided by the UpdateServices module as many are extremely slow. This is particularly true of the Get-WsusUpdate cmdlet.
 
         The efficiency of the update declining logic could be substantially improved. That said, this script is not typically run frequently (~monthly), so this isn't a major priority.
+
         .LINK
         https://github.com/ralish/PSWsusSpringClean
     #>
