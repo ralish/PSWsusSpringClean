@@ -37,21 +37,43 @@ Superseded,Microsoft .NET Framework 3.5 SP1 Update for Windows Vista SP1 and Win
 Superseded,Microsoft .NET Framework 3.5 SP1 Update for Windows Vista SP1 and Windows Server 2008 x86 (KB982535),"Windows Server 2008, Windows Vista"
 Superseded,"Microsoft .NET Framework 3.5, Windows Vista SP1, and Windows Server 2008 Security Update for x64-based Systems (KB979913)","Windows Server 2008, Windows Vista"
 Superseded,"Microsoft .NET Framework 3.5, Windows Vista SP1, and Windows Server 2008 Security Update x86 (KB979913)","Windows Server 2008, Windows Vista"
+Superseded,Microsoft .NET Framework 4.5.2 for Windows 8.1 (KB2934520),Windows 8.1
+Superseded,Microsoft .NET Framework 4.5.2 for Windows 8.1 and Windows Server 2012 R2 for x64-based Systems (KB2934520),"Windows Server 2012 R2, Windows 8.1"
 Language Packs,Microsoft .NET Framework 4.5.2 Language Packs (KB2901983),"Windows Server 2008, Windows 7, Windows Server 2008 R2, Windows Vista"
 Language Packs,Microsoft .NET Framework 4.5.2 Language Packs for Windows 8 (KB2938103),Windows 8
 Language Packs,Microsoft .NET Framework 4.5.2 Language Packs for Windows 8 and Windows Server 2012 for x64-based Systems (KB2938103),"Windows 8, Windows Server 2012"
 Language Packs,Microsoft .NET Framework 4.5.2 Language Packs for Windows 8.1 (KB2938104),Windows 8.1
 Language Packs,Microsoft .NET Framework 4.5.2 Language Packs for Windows 8.1 and Windows Server 2012 R2 for x64-based Systems (KB2938104),"Windows Server 2012 R2, Windows 8.1"
 Language Packs,Microsoft .NET Framework 4.5.2 Upgrade Language Packs (KB2901983),"Windows Server 2008, Windows 7, Windows Server 2008 R2, Windows Vista"
+Superseded,Microsoft .NET Framework 4.6.1 for Windows Server 2012 R2 for x64 (KB3102467),Windows Server 2012 R2
+Superseded,Microsoft .NET Framework 4.6.1 for Windows Server 2012 R2 for x64 (KB3102467),Windows Server 2012 R2
 Language Packs,Microsoft .NET Framework 4.6.1 Language Packs (KB3102433),Windows 7
 Language Packs,Microsoft .NET Framework 4.6.1 Language Packs for Windows Server 2012 R2 for x64 (KB3102521),Windows Server 2012 R2
 Language Packs,Microsoft .NET Framework 4.6.1 Language Packs for x64 (KB3102433),Windows 7
 Language Packs,Microsoft .NET Framework 4.6.1 Upgrade Language Packs (KB3102433),Windows 7
 Language Packs,Microsoft .NET Framework 4.6.1 Upgrade Language Packs for x64 (KB3102433),Windows 7
+Superseded,Microsoft .NET Framework 4.7 for Windows 10 Version 1607 (KB3186568),Windows 10
+Superseded,Microsoft .NET Framework 4.7 for Windows 10 Version 1607 for x64 (KB3186568),Windows 10
+Superseded,Microsoft .NET Framework 4.7 for Windows 8.1 (KB3186539),Windows 8.1
+Superseded,Microsoft .NET Framework 4.7 for Windows 8.1 and Windows Server 2012 R2 for x64 (KB3186539),"Windows Server 2012 R2, Windows 8.1"
 Language Packs,Microsoft .NET Framework 4.7 Language Packs for Windows 10 Version 1607 (KB3186607),Windows 10
 Language Packs,Microsoft .NET Framework 4.7 Language Packs for Windows 10 Version 1607 and Windows Server 2016 for x64 (KB3186607),"Windows 10, Windows Server 2016"
+Language Packs,Microsoft .NET Framework 4.7 Language Packs for Windows 10 Version 1607 for x64 (KB3186607),Windows 10
 Language Packs,Microsoft .NET Framework 4.7 Language Packs for Windows 8.1 (KB3186606),Windows 8.1
 Language Packs,Microsoft .NET Framework 4.7 Language Packs for Windows 8.1 and Windows Server 2012 R2 for x64 (KB3186606),"Windows 8.1, Windows Server 2012 R2"
+Superseded,Microsoft .NET Framework 4.7.1 for Windows 10 Version 1607 (KB4033393),Windows 10
+Superseded,Microsoft .NET Framework 4.7.1 for Windows 10 Version 1607 for x64 (KB4033393),Windows 10
+Superseded,Microsoft .NET Framework 4.7.1 for Windows 8.1 (KB4033369),Windows 8.1
+Superseded,Microsoft .NET Framework 4.7.1 for Windows 8.1 and Windows Server 2012 R2 for x64 (KB4033369),"Windows Server 2012 R2, Windows 8.1"
+Language Packs,Microsoft .NET Framework 4.7.1 Language Packs for Windows 10 Version 1607 (KB4033418),Windows 10
+Language Packs,Microsoft .NET Framework 4.7.1 Language Packs for Windows 10 Version 1607 for x64 (KB4033418),Windows 10
+Language Packs,Microsoft .NET Framework 4.7.1 Language Packs for Windows 8.1 (KB4033417),Windows 8.1
+Language Packs,Microsoft .NET Framework 4.7.1 Language Packs for Windows 8.1 and Windows Server 2012 R2 for x64 (KB4033417),"Windows Server 2012 R2, Windows 8.1"
+Language Packs,Microsoft .NET Framework 4.7.2 Language Packs for Windows 10 Version 1607 (KB4054535),Windows 10
+Language Packs,Microsoft .NET Framework 4.7.2 Language Packs for Windows 10 Version 1607 for x64 (KB4054535),Windows 10
+Language Packs,Microsoft .NET Framework 4.7.2 Language Packs for Windows 8.1 (KB4054534),Windows 8.1
+Language Packs,Microsoft .NET Framework 4.7.2 Language Packs for Windows 8.1 for x64 (KB4054534),Windows 8.1
+Language Packs,Microsoft .NET Framework 4.7.2 Language Packs for Windows Server 2012 R2 for x64 (KB4054534),Windows Server 2012 R2
 Region - GB,Microsoft Office Accounting 2008 UK Service Pack 1 (KB949426),Office 2007
 Region - US,Microsoft Office Accounting 2008 US Service Pack 1 (KB949426),Office 2007
 Region - GB/US,Microsoft Office Accounting 2009 Service Pack 3 (KB2006634),Office 2007
@@ -181,11 +203,19 @@ Superseded,Security Update for SQL Server 2012 Service Pack 1 (KB3045318),Micros
 Superseded,Security Update for SQL Server 2012 Service Pack 2 (KB3045319),Microsoft SQL Server 2012
 Superseded,Security Update for SQL Server 2012 Service Pack 2 (KB3045321),Microsoft SQL Server 2012
 Superseded,Security Update for SQL Server 2012 Service Pack 2 GDR (KB3194719),Microsoft SQL Server 2012
+Superseded,Security Update for SQL Server 2012 Service Pack 3 CU (KB4057121),Microsoft SQL Server 2012
+Superseded,Security Update for SQL Server 2012 Service Pack 3 GDR (KB4057115),Microsoft SQL Server 2012
 Superseded,Security Update for SQL Server 2014 (KB3045323),Microsoft SQL Server 2014
 Superseded,Security Update for SQL Server 2014 (KB3045324),Microsoft SQL Server 2014
 Superseded,Security Update for SQL Server 2014 Service Pack 1 (KB3070446),Microsoft SQL Server 2014
 Superseded,Security Update for SQL Server 2014 Service Pack 1 CU (KB3194722),Microsoft SQL Server 2014
+Superseded,Security Update for SQL Server 2014 Service Pack 1 CU (KB4032542),Microsoft SQL Server 2014
 Superseded,Security Update for SQL Server 2014 Service Pack 1 GDR (KB3194720),Microsoft SQL Server 2014
+Superseded,Security Update for SQL Server 2014 Service Pack 1 GDR (KB4019091),Microsoft SQL Server 2014
+Superseded,Security Update for SQL Server 2016 RTM CU (KB4058559),Microsoft SQL Server 2016
+Superseded,Security Update for SQL Server 2016 RTM GDR (KB4058560),Microsoft SQL Server 2016
+Superseded,Security Update for SQL Server 2016 Service Pack 1 GDR (KB4458842),Microsoft SQL Server 2016
+Superseded,Security Update for SQL Server 2016 SP1 CU (KB4293808),Microsoft SQL Server 2016
 Superseded,Security Update for Windows 2000 (329834),Windows 2000
 Superseded,Security Update for Windows 2000 (819696),Windows 2000
 Superseded,Security Update for Windows 8.1 (KB2961858) without KB2919355,Windows 8.1
@@ -235,6 +265,7 @@ Superseded,SQL Server 2012 Service Pack 1 Setup Update (KB2674319),SQL Server 20
 Superseded,SQL Server 2012 Service Pack 2 Cumulative Update (CU) 15 KB3205416,Microsoft SQL Server 2012
 Superseded,SQL Server 2012 Service Pack 2 Cumulative Update (CU) 16 KB3205054,Microsoft SQL Server 2012
 Superseded,SQL Server 2014 Service Pack 1 Cumulative Update (CU) 11 KB4010392,Microsoft SQL Server 2014
+Superseded,SQL Server 2014 Service Pack 1 Cumulative Update (CU) 13 KB4019099,Microsoft SQL Server 2014
 Superseded,SQL Server 2016 RTM Cumulative Update (CU) 5 KB4013105,Microsoft SQL Server 2016
 Superseded,Update for Exchange Server 2003 (KB888619),Exchange Server 2003
 Superseded,Update for Exchange Server 2003 Service Pack 1 (KB931978) - Cluster,Exchange Server 2003
@@ -254,6 +285,8 @@ Language Packs,Update for Microsoft Office 2016 Language Interface Pack (KB31918
 Language Packs,Update for Microsoft Office 2016 Language Interface Pack (KB3191866) 64-Bit Edition,Office 2016
 Language Packs,Update for Microsoft Office 2016 Language Interface Pack (KB3191930) 32-Bit Edition,Office 2016
 Language Packs,Update for Microsoft Office 2016 Language Interface Pack (KB3191930) 64-Bit Edition,Office 2016
+Language Packs,Update for Microsoft Office 2016 Language Interface Pack (KB4032232) 32-Bit Edition,Office 2016
+Language Packs,Update for Microsoft Office 2016 Language Interface Pack (KB4032232) 64-Bit Edition,Office 2016
 Region - GB/US,Update for Microsoft Office Accounting 2007 (KB946690),Office 2007
 Superseded,Update for Microsoft Office Outlook 2007 Junk Email Filter (KB2825642),Office 2007
 Superseded,Update for Microsoft Office Outlook 2007 Junk Email Filter (KB2880505),Office 2007
