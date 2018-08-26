@@ -1,6 +1,11 @@
 Changelog
 =========
 
+v0.4.3
+------
+
+- Added 33 updates to the CSV
+
 v0.4.2
 ------
 
