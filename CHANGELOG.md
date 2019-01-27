@@ -1,6 +1,12 @@
 Changelog
 =========
 
+v0.4.4
+------
+
+- Added new `DeclineWindowsNextUpdates` parameter
+- Added & removed various updates to local catalogue
+
 v0.4.3
 ------
 
