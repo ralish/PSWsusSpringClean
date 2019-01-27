@@ -9,6 +9,7 @@ $RegExClusterUpdates = ' Failover Clustering '
 $RegExFarmUpdates = ' Farm[- ]'
 $RegExPrereleaseUpdates = ' (Beta|Preview|RC1|Release Candidate) '
 $RegExSecurityOnlyUpdates = ' Security Only (Quality )?Update '
+$RegExWindowsNextUpdates = ' (Server|Version) Next '
 
 Function Invoke-WsusSpringClean {
     <#
@@ -49,6 +50,9 @@ Function Invoke-WsusSpringClean {
 
         .PARAMETER DeclineSecurityOnlyUpdates
         Decline any Security Only updates.
+
+        .PARAMETER DeclineWindowsNextUpdates
+        Decline any Windows Next updates.
 
         .PARAMETER DeclineArchitectures
         Array of update architectures to decline.
@@ -126,6 +130,7 @@ Function Invoke-WsusSpringClean {
         [Switch]$DeclineFarmUpdates,
         [Switch]$DeclinePrereleaseUpdates,
         [Switch]$DeclineSecurityOnlyUpdates,
+        [Switch]$DeclineWindowsNextUpdates,
 
         [String[]]$DeclineCategoriesExclude,
         [String[]]$DeclineCategoriesInclude,
@@ -164,6 +169,7 @@ Function Invoke-WsusSpringClean {
             'DeclineFarmUpdates',
             'DeclinePrereleaseUpdates',
             'DeclineSecurityOnlyUpdates',
+            'DeclineWindowsNextUpdates',
 
             'CleanupObsoleteComputers',
             'CleanupObsoleteUpdates',
@@ -229,6 +235,7 @@ Function Invoke-WsusSpringClean {
         DeclineFarmUpdates=$DeclineFarmUpdates
         DeclinePrereleaseUpdates=$DeclinePrereleaseUpdates
         DeclineSecurityOnlyUpdates=$DeclineSecurityOnlyUpdates
+        DeclineWindowsNextUpdates=$DeclineWindowsNextUpdates
     }
 
     if ($PSBoundParameters.ContainsKey('DeclineCategoriesExclude') -or $PSBoundParameters.ContainsKey('DeclineCategoriesInclude')) {
@@ -265,6 +272,7 @@ Function Get-WsusSuspectDeclines {
         [Switch]$DeclineFarmUpdates,
         [Switch]$DeclinePrereleaseUpdates,
         [Switch]$DeclineSecurityOnlyUpdates,
+        [Switch]$DeclineWindowsNextUpdates,
 
         [String[]]$DeclineCategories,
         [Xml.XmlElement[]]$DeclineArchitectures,
@@ -314,6 +322,11 @@ Function Get-WsusSuspectDeclines {
 
         # Ignore Security Only Quality updates if they were declined
         if ($DeclineSecurityOnlyUpdates -and $Update.Title -match $RegExSecurityOnlyUpdates) {
+            continue
+        }
+
+        # Ignore Windows Next updates if they were declined
+        if ($DeclineWindowsNextUpdates -and $Update.Title -match $RegExWindowsNextUpdates) {
             continue
         }
 
@@ -476,6 +489,7 @@ Function Invoke-WsusServerSpringClean {
         [Switch]$DeclineFarmUpdates,
         [Switch]$DeclinePrereleaseUpdates,
         [Switch]$DeclineSecurityOnlyUpdates,
+        [Switch]$DeclineWindowsNextUpdates,
 
         [String[]]$DeclineCategories,
         [Xml.XmlElement[]]$DeclineArchitectures,
@@ -513,6 +527,11 @@ Function Invoke-WsusServerSpringClean {
     if ($DeclineSecurityOnlyUpdates) {
         Write-Host -ForegroundColor Green '[*] Declining Security Only updates ...'
         Invoke-WsusDeclineUpdatesByRegEx -Updates $WsusAnyExceptDeclined -RegEx $script:RegExSecurityOnlyUpdates
+    }
+
+    if ($DeclineWindowsNextUpdates) {
+        Write-Host -ForegroundColor Green '[*] Declining Windows Next updates ...'
+        Invoke-WsusDeclineUpdatesByRegEx -Updates $WsusAnyExceptDeclined -RegEx $script:RegExWindowsNextUpdates
     }
 
     if ($PSBoundParameters.ContainsKey('DeclineCategories')) {
