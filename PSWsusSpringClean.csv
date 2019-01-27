@@ -12,8 +12,6 @@ Superseded,Critical Update for Windows XP Media Center Edition 2004 (KB830786),W
 Superseded,Cumulative Security Update for Internet Explorer 5.01 Service Pack 4 (KB867282),Windows 2000
 Superseded,Cumulative Security Update for Internet Explorer 6 Service Pack 1 (KB867282),"Windows 2000, Windows XP"
 Superseded,Cumulative Security Update for Internet Explorer 6 Service Pack 1 (KB896688),"Windows XP, Windows 2000"
-Superseded,Important Update for SQL Server 2016 RTM (KB3210111),Microsoft SQL Server 2016
-Superseded,Important Update for SQL Server 2016 RTM CU(KB3210110),Microsoft SQL Server 2016
 Language Packs,Internet Explorer 8 for Windows XP with Language Interface Pack,Windows XP
 Language Packs,Internet Explorer 8 Language Packs for Windows Server 2008,Windows Server 2008
 Language Packs,Internet Explorer 8 Language Packs for Windows Server 2008 x64 Edition,Windows Server 2008
@@ -77,11 +75,7 @@ Language Packs,Microsoft .NET Framework 4.7.2 Language Packs for Windows Server 
 Region - GB,Microsoft Office Accounting 2008 UK Service Pack 1 (KB949426),Office 2007
 Region - US,Microsoft Office Accounting 2008 US Service Pack 1 (KB949426),Office 2007
 Region - GB/US,Microsoft Office Accounting 2009 Service Pack 3 (KB2006634),Office 2007
-Superseded,Microsoft SQL Server 2008 R2 Service Pack 1 (KB2528583),SQL Server 2008 R2
-Superseded,Microsoft SQL Server 2008 Service Pack 3 (KB2546951),SQL Server 2008
-Superseded,Microsoft SQL Server 2012 SP2 Cumulative Update (CU) 13 KB3165266,Microsoft SQL Server 2012
 Superseded,Microsoft SQL Server 2014 RTM Cumulative Update (CU) 14 KB3158271,Microsoft SQL Server 2014
-Superseded,Microsoft SQL Server 2014 SP1 Cumulative Update (CU) 8 KB3174038,Microsoft SQL Server 2014
 Superseded,Network Diagnostic Tool (KB914440),Windows XP
 Language Packs,Office 2003 Service Pack 3 (SP3) for Multilingual User Interface Pack,Office 2003
 Region - GB/US,Office Accounting 2007 Service Pack 1,Office 2007
@@ -213,10 +207,7 @@ Superseded,Security Update for SQL Server 2012 Service Pack 3 CU (KB4057121),Mic
 Superseded,Security Update for SQL Server 2012 Service Pack 3 GDR (KB4057115),Microsoft SQL Server 2012
 Superseded,Security Update for SQL Server 2014 (KB3045323),Microsoft SQL Server 2014
 Superseded,Security Update for SQL Server 2014 (KB3045324),Microsoft SQL Server 2014
-Superseded,Security Update for SQL Server 2014 Service Pack 1 (KB3070446),Microsoft SQL Server 2014
-Superseded,Security Update for SQL Server 2014 Service Pack 1 CU (KB3194722),Microsoft SQL Server 2014
 Superseded,Security Update for SQL Server 2014 Service Pack 1 CU (KB4032542),Microsoft SQL Server 2014
-Superseded,Security Update for SQL Server 2014 Service Pack 1 GDR (KB3194720),Microsoft SQL Server 2014
 Superseded,Security Update for SQL Server 2014 Service Pack 1 GDR (KB4019091),Microsoft SQL Server 2014
 Superseded,Security Update for SQL Server 2016 RTM CU (KB4058559),Microsoft SQL Server 2016
 Superseded,Security Update for SQL Server 2016 RTM GDR (KB4058560),Microsoft SQL Server 2016
@@ -224,33 +215,18 @@ Superseded,Security Update for SQL Server 2016 Service Pack 1 GDR (KB4458842),Mi
 Superseded,Security Update for SQL Server 2016 SP1 CU (KB4293808),Microsoft SQL Server 2016
 Superseded,Security Update for Windows 2000 (329834),Windows 2000
 Superseded,Security Update for Windows 2000 (819696),Windows 2000
-Superseded,Security Update for Windows 8.1 (KB2961858) without KB2919355,Windows 8.1
 Superseded,Security Update for Windows 8.1 (KB2961899) without KB2919355,Windows 8.1
-Superseded,Security Update for Windows 8.1 (KB2961908) without KB2919355,Windows 8.1
-Superseded,Security Update for Windows 8.1 (KB2965161) without KB2919355,Windows 8.1
-Superseded,Security Update for Windows 8.1 (KB2973408) without KB2919355,Windows 8.1
 Superseded,Security Update for Windows 8.1 (KB2973906) without KB2919355,Windows 8.1
-Superseded,Security Update for Windows 8.1 (KB2975625) without KB2919355,Windows 8.1
-Superseded,Security Update for Windows 8.1 for x64-based Systems (KB2961858) without KB2919355,Windows 8.1
 Superseded,Security Update for Windows 8.1 for x64-based Systems (KB2961899) without KB2919355,Windows 8.1
-Superseded,Security Update for Windows 8.1 for x64-based Systems (KB2961908) without KB2919355,Windows 8.1
-Superseded,Security Update for Windows 8.1 for x64-based Systems (KB2965161) without KB2919355,Windows 8.1
-Superseded,Security Update for Windows 8.1 for x64-based Systems (KB2973408) without KB2919355,Windows 8.1
 Superseded,Security Update for Windows 8.1 for x64-based Systems (KB2973906) without KB2919355,Windows 8.1
-Superseded,Security Update for Windows 8.1 for x64-based Systems (KB2975625) without KB2919355,Windows 8.1
 Superseded,"Security Update for Windows Media Format Runtime 9, 9.5 & 11 for Windows XP SP 2 (KB954155)",Windows XP
 Superseded,"Security Update for Windows Media Format Runtime 9, 9.5 & 11 for Windows XP SP2 (KB978695)",Windows XP
 Superseded,Security Update for Windows Media Player 9 for Windows XP SP2 (KB979402),Windows XP
 Superseded,Security Update for Windows Media Services (KB832359),Windows 2000
 Superseded,Security Update for Windows Messenger (KB887472),Windows XP
-Superseded,Security Update for Windows Server 2012 R2 (KB2961858) without KB2919355,Windows Server 2012 R2
 Superseded,Security Update for Windows Server 2012 R2 (KB2961899) without KB2919355,Windows Server 2012 R2
-Superseded,Security Update for Windows Server 2012 R2 (KB2961908) without KB2919355,Windows Server 2012 R2
 Superseded,Security Update for Windows Server 2012 R2 (KB2962073) without KB2919355,Windows Server 2012 R2
-Superseded,Security Update for Windows Server 2012 R2 (KB2965161) without KB2919355,Windows Server 2012 R2
-Superseded,Security Update for Windows Server 2012 R2 (KB2973408) without KB2919355,Windows Server 2012 R2
 Superseded,Security Update for Windows Server 2012 R2 (KB2973906) without KB2919355,Windows Server 2012 R2
-Superseded,Security Update for Windows Server 2012 R2 (KB2975625) without KB2919355,Windows Server 2012 R2
 Superseded,Security Update for Windows Vista Service Pack 1 (KB979688),Windows Vista
 Superseded,Security Update for Windows Vista Service Pack 1 for x64-based Systems (KB979688),Windows Vista
 Superseded,Security Update for Windows XP Service Pack 2 (KB952069),Windows XP
@@ -271,9 +247,7 @@ Superseded,SQL Server 2008 Books Online (August 2008),SQL Server Feature Pack
 Superseded,SQL Server 2012 Service Pack 1 Setup Update (KB2674319),SQL Server 2012 Product Updates for Setup
 Superseded,SQL Server 2012 Service Pack 2 Cumulative Update (CU) 15 KB3205416,Microsoft SQL Server 2012
 Superseded,SQL Server 2012 Service Pack 2 Cumulative Update (CU) 16 KB3205054,Microsoft SQL Server 2012
-Superseded,SQL Server 2014 Service Pack 1 Cumulative Update (CU) 11 KB4010392,Microsoft SQL Server 2014
 Superseded,SQL Server 2014 Service Pack 1 Cumulative Update (CU) 13 KB4019099,Microsoft SQL Server 2014
-Superseded,SQL Server 2016 RTM Cumulative Update (CU) 5 KB4013105,Microsoft SQL Server 2016
 Superseded,Update for Exchange Server 2003 (KB888619),Exchange Server 2003
 Superseded,Update for Exchange Server 2003 Service Pack 1 (KB931978) - Cluster,Exchange Server 2003
 Superseded,Update for Exchange Server 2003 Service Pack 1 (KB931978) - Non-cluster,Exchange Server 2003
