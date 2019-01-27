@@ -636,10 +636,20 @@ Function Test-WsusSpringCleanCatalogue {
     [CmdletBinding()]
     Param(
         [ValidateNotNullOrEmpty()]
-        [String]$CataloguePath
+        [String]$CataloguePath,
+
+        [Parameter(ParameterSetName='MarkedAsSuperseded')]
+        [Switch]$MarkedAsSuperseded,
+
+        [Parameter(ParameterSetName='NotPresentInWsus')]
+        [Switch]$NotPresentInWsus
     )
 
-    Import-WsusSpringCleanCatalogue @PSBoundParameters
+    if ($PSBoundParameters.ContainsKey('CataloguePath')) {
+        Import-WsusSpringCleanCatalogue @PSBoundParameters
+    } else {
+        Import-WsusSpringCleanCatalogue
+    }
 
     Write-Host -ForegroundColor Green '[*] Retrieving all updates ...'
     $WsusServer = Get-WsusServer
@@ -647,13 +657,35 @@ Function Test-WsusSpringCleanCatalogue {
     $WsusUpdateScope.ApprovedStates = [Microsoft.UpdateServices.Administration.ApprovedStates]::Any
     $WsusUpdates = $WsusServer.GetUpdates($WsusUpdateScope)
 
-    Write-Host -ForegroundColor Green '[*] Scanning for updates only present in catalogue ...'
-    $CatalogueOnly = @()
-    foreach ($Update in $script:WscCatalogue) {
-        if ($Update.Title -notin $WsusUpdates.Title) {
-            $CatalogueOnly += $Update
+    if ($MarkedAsSuperseded) {
+        Write-Host -ForegroundColor Green '[*] Scanning for updates marked as superseded ...'
+
+        $Results = @()
+        foreach ($Update in ($script:WscCatalogue | Where-Object Category -eq 'Superseded')) {
+            if ($Update.Title -in $WsusUpdates.Title) {
+                $MatchedUpdates = @()
+                $SupersededUpdates = @()
+
+                $MatchedUpdates += $WsusUpdates | Where-Object Title -eq $Update.Title
+                $SupersededUpdates += $MatchedUpdates | Where-Object IsSuperseded -eq $true
+
+                if ($MatchedUpdates.Count -eq $SupersededUpdates.Count) {
+                    $Results += $Update
+                }
+            }
         }
     }
 
-    return $CatalogueOnly
+    if ($NotPresentInWsus) {
+        Write-Host -ForegroundColor Green '[*] Scanning for updates not present in WSUS ...'
+
+        $Results = @()
+        foreach ($Update in $script:WscCatalogue) {
+            if ($Update.Title -notin $WsusUpdates.Title) {
+                $Results += $Update
+            }
+        }
+    }
+
+    return $Results
 }
