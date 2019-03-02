@@ -19,40 +19,17 @@ Function Invoke-WsusSpringClean {
         .DESCRIPTION
         Adds the ability to decline numerous additional commonly unneeded updates as well as discover potentially incorrectly declined updates.
 
-        .PARAMETER RunDefaultTasks
-        Performs all clean-up tasks except for declining any unneeded updates as defined in the included update catalogue CSV file.
+        .PARAMETER CleanupObsoleteComputers
+        Specifies that the cmdlet deletes obsolete computers from the database.
 
-        You can disable one or more of the default clean-up tasks by setting the associated switch parameter to false (e.g. -CompressUpdates:$false).
+        .PARAMETER CleanupObsoleteUpdates
+        Specifies that the cmdlet deletes obsolete updates from the database.
 
-        You can perform a clean-up of unneeded updates by specifying the DeclineCategoriesInclude or DeclineCategoriesExclude parameter with your chosen categories.
+        .PARAMETER CleanupUnneededContentFiles
+        Specifies that the cmdlet deletes unneeded update files.
 
-        Also note that this does not perform a server synchronisation before clean-up or find suspect declined updates. These tasks can be included via their respective parameters.
-
-        .PARAMETER SynchroniseServer
-        Perform a synchronisation against the upstream server before running cleanup.
-
-        .PARAMETER FindSuspectDeclines
-        Scan all declined updates for any that may have been inadvertently declined.
-
-        The returned suspect updates are those which:
-         - Are not superseded or expired
-         - Are not cluster or farm updates (if set to decline)
-         - Are not in the filtered list of updates to decline from the bundled catalogue
-
-        .PARAMETER DeclineClusterUpdates
-        Decline any updates which are exclusively for failover clustering installations.
-
-        .PARAMETER DeclineFarmUpdates
-        Decline any updates which are exclusively for farm deployment installations.
-
-        .PARAMETER DeclinePrereleaseUpdates
-        Decline any updates which are exclusively for pre-release products (e.g. betas).
-
-        .PARAMETER DeclineSecurityOnlyUpdates
-        Decline any Security Only updates.
-
-        .PARAMETER DeclineWindowsNextUpdates
-        Decline any Windows Next updates.
+        .PARAMETER CompressUpdates
+        Specifies that the cmdlet deletes obsolete revisions to updates from the database.
 
         .PARAMETER DeclineArchitectures
         Array of update architectures to decline.
@@ -67,29 +44,52 @@ Function Invoke-WsusSpringClean {
         .PARAMETER DeclineCategoriesInclude
         Array of update categories in the bundled updates catalogue to decline.
 
+        .PARAMETER DeclineClusterUpdates
+        Decline any updates which are exclusively for failover clustering installations.
+
+        .PARAMETER DeclineExpiredUpdates
+        Specifies that the cmdlet declines expired updates.
+
+        .PARAMETER DeclineFarmUpdates
+        Decline any updates which are exclusively for farm deployment installations.
+
         .PARAMETER DeclineLanguagesExclude
         Array of update language codes to not decline.
 
         .PARAMETER DeclineLanguagesInclude
         Array of update language codes to decline.
 
-        .PARAMETER CleanupObsoleteComputers
-        Specifies that the cmdlet deletes obsolete computers from the database.
+        .PARAMETER DeclinePrereleaseUpdates
+        Decline any updates which are exclusively for pre-release products (e.g. betas).
 
-        .PARAMETER CleanupObsoleteUpdates
-        Specifies that the cmdlet deletes obsolete updates from the database.
-
-        .PARAMETER CleanupUnneededContentFiles
-        Specifies that the cmdlet deletes unneeded update files.
-
-        .PARAMETER CompressUpdates
-        Specifies that the cmdlet deletes obsolete revisions to updates from the database.
-
-        .PARAMETER DeclineExpiredUpdates
-        Specifies that the cmdlet declines expired updates.
+        .PARAMETER DeclineSecurityOnlyUpdates
+        Decline any Security Only updates.
 
         .PARAMETER DeclineSupersededUpdates
         Specifies that the cmdlet declines superseded updates.
+
+        .PARAMETER DeclineWindowsNextUpdates
+        Decline any Windows Next updates.
+
+        .PARAMETER FindSuspectDeclines
+        Scan all declined updates for any that may have been inadvertently declined.
+
+        The returned suspect updates are those which:
+         - Are not superseded or expired
+         - Are not cluster or farm updates (if set to decline)
+         - Are not in the filtered list of updates to decline from the bundled catalogue
+
+        .PARAMETER RunDefaultTasks
+        Performs all clean-up tasks except for declining any unneeded updates as defined in the included update catalogue CSV file.
+
+        You can disable one or more of the default clean-up tasks by setting the associated switch parameter to false (e.g. -CompressUpdates:$false).
+
+        You can perform a clean-up of unneeded updates by specifying the DeclineCategoriesInclude or DeclineCategoriesExclude parameter with your chosen categories.
+
+        Also note that this does not perform a server synchronisation before clean-up or find suspect declined updates. These tasks can be included via their respective parameters.
+
+        .PARAMETER SynchroniseServer
+        Perform a synchronisation against the upstream server before running cleanup.
 
         .EXAMPLE
         PS C:\>$SuspectDeclines = Invoke-WsusSpringClean -RunDefaultTasks -FindSuspectDeclines
