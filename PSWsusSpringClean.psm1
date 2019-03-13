@@ -1,9 +1,6 @@
 # See the help for Set-StrictMode for the full details on what this enables.
 Set-StrictMode -Version 2.0
 
-# Ensure that any errors we receive are considered fatal
-$ErrorActionPreference = 'Stop'
-
 # Regular expressions for declining certain types of updates
 $RegExClusterUpdates = ' Failover Clustering '
 $RegExFarmUpdates = ' Farm[- ]'
