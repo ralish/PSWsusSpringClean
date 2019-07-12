@@ -132,13 +132,13 @@ Function Invoke-WsusSpringClean {
         [String[]]$DeclineCategoriesExclude,
         [String[]]$DeclineCategoriesInclude,
 
-        [ValidateScript( {Test-WsusSpringCleanArchitectures -Architectures $_} )]
+        [ValidateScript( { Test-WsusSpringCleanArchitectures -Architectures $_ } )]
         [String[]]$DeclineArchitectures,
 
-        [ValidateScript( {Test-WsusSpringCleanLanguageCodes -LanguageCodes $_} )]
+        [ValidateScript( { Test-WsusSpringCleanLanguageCodes -LanguageCodes $_ } )]
         [String[]]$DeclineLanguagesExclude,
 
-        [ValidateScript( {Test-WsusSpringCleanLanguageCodes -LanguageCodes $_} )]
+        [ValidateScript( { Test-WsusSpringCleanLanguageCodes -LanguageCodes $_ } )]
         [String[]]$DeclineLanguagesInclude,
 
         # Wrapping of Invoke-WsusServerCleanup
@@ -236,15 +236,15 @@ Function Invoke-WsusSpringClean {
     }
 
     if ($PSBoundParameters.ContainsKey('DeclineCategoriesExclude') -or $PSBoundParameters.ContainsKey('DeclineCategoriesInclude')) {
-        $SpringCleanParams += @{DeclineCategories=$DeclineCategories}
+        $SpringCleanParams += @{ DeclineCategories=$DeclineCategories }
     }
 
     if ($PSBoundParameters.ContainsKey('DeclineArchitectures')) {
-        $SpringCleanParams += @{DeclineArchitectures=$DeclineArchitecturesMetadata}
+        $SpringCleanParams += @{ DeclineArchitectures=$DeclineArchitecturesMetadata }
     }
 
     if ($PSBoundParameters.ContainsKey('DeclineLanguagesExclude') -or $PSBoundParameters.ContainsKey('DeclineLanguagesInclude')) {
-        $SpringCleanParams += @{DeclineLanguages=$DeclineLanguagesMetadata}
+        $SpringCleanParams += @{ DeclineLanguages=$DeclineLanguagesMetadata }
     }
 
     Invoke-WsusServerSpringClean @SpringCleanParams
