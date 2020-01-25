@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <PSWsusSpringClean>
     <Architectures>
         <Architecture name="x64" regex="x64|64-Bit|AMD64" />
