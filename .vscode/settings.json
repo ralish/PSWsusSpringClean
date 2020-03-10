@@ -8,5 +8,9 @@
         "DS104456"
     ],
 
+    // Markdown table of contents generation
+    "markdown.extension.toc.levels": "2..2",
+    "markdown.extension.toc.githubCompatibility": true,
+
     "powershell.scriptAnalysis.settingsPath": "PSScriptAnalyzerSettings.psd1"
 }

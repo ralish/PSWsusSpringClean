@@ -7,6 +7,13 @@ PSWsusSpringClean
 
 A PowerShell module to assist with cleaning-up superfluous updates in Windows Server Update Services (WSUS).
 
+- [The Problem](#the-problem)
+- [The Solution](#the-solution)
+- [Requirements](#requirements)
+- [Installing](#installing)
+- [Sample Usage](#sample-usage)
+- [License](#license)
+
 The Problem
 -----------
 
