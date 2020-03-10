@@ -1,6 +1,10 @@
 PSWsusSpringClean
 =================
 
+[![pwsh gv](https://img.shields.io/powershellgallery/v/PSWsusSpringClean)](https://www.powershellgallery.com/packages/PSWsusSpringClean)
+[![pwsh dl](https://img.shields.io/powershellgallery/dt/PSWsusSpringClean)](https://www.powershellgallery.com/packages/PSWsusSpringClean)
+[![license](https://img.shields.io/github/license/ralish/PSWsusSpringClean)](https://choosealicense.com/licenses/mit/)
+
 A PowerShell module to assist with cleaning-up superfluous updates in Windows Server Update Services (WSUS).
 
 The Problem
