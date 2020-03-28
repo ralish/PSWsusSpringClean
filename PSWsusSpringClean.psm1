@@ -72,9 +72,9 @@ Function Invoke-WsusSpringClean {
         Scan all declined updates for any that may have been inadvertently declined.
 
         The returned suspect updates are those which:
-         - Are not superseded or expired
-         - Are not cluster or farm updates (if set to decline)
-         - Are not in the filtered list of updates to decline from the bundled catalogue
+        - Are not superseded or expired
+        - Are not cluster or farm updates (if set to decline)
+        - Are not in the filtered list of updates to decline from the bundled catalogue
 
         .PARAMETER RunDefaultTasks
         Performs all clean-up tasks except for declining any unneeded updates as defined in the included update catalogue CSV file.
