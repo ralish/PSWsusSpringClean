@@ -82,13 +82,11 @@ Installing
 
 ### PowerShellGet (included with PowerShell 5.0)
 
-The latest release of the module is published to the [PowerShell Gallery](https://www.powershellgallery.com/) for installation via the [PowerShellGet module](https://www.powershellgallery.com/GettingStarted):
+The module is published to the [PowerShell Gallery](https://www.powershellgallery.com/packages/PSWsusSpringClean):
 
 ```posh
 Install-Module -Name PSWsusSpringClean
 ```
-
-You can find the module listing [here](https://www.powershellgallery.com/packages/PSWsusSpringClean).
 
 ### ZIP File
 
