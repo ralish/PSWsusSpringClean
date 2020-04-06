@@ -2,7 +2,8 @@
     IncludeRules = @('*')
 
     ExcludeRules = @(
-        'PSAvoidUsingWriteHost'
+        'PSAvoidUsingWriteHost',
+        'PSUseOutputTypeCorrectly'
     )
 
     Rules = @{
