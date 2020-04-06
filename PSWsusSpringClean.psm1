@@ -236,15 +236,15 @@ Function Invoke-WsusSpringClean {
     }
 
     if ($PSBoundParameters.ContainsKey('DeclineCategoriesExclude') -or $PSBoundParameters.ContainsKey('DeclineCategoriesInclude')) {
-        $SpringCleanParams += @{ DeclineCategories=$DeclineCategories }
+        $SpringCleanParams['DeclineCategories'] = $DeclineCategories
     }
 
     if ($PSBoundParameters.ContainsKey('DeclineArchitectures')) {
-        $SpringCleanParams += @{ DeclineArchitectures=$DeclineArchitecturesMetadata }
+        $SpringCleanParams['DeclineArchitectures'] = $DeclineArchitecturesMetadata
     }
 
     if ($PSBoundParameters.ContainsKey('DeclineLanguagesExclude') -or $PSBoundParameters.ContainsKey('DeclineLanguagesInclude')) {
-        $SpringCleanParams += @{ DeclineLanguages=$DeclineLanguagesMetadata }
+        $SpringCleanParams['DeclineLanguages'] = $DeclineLanguagesMetadata
     }
 
     Invoke-WsusServerSpringClean @SpringCleanParams
@@ -295,7 +295,7 @@ Function Get-WsusSuspectDeclines {
     }
 
     Write-Host -ForegroundColor Green '[*] Finding suspect declined updates ...'
-    $SuspectDeclines = @()
+    $SuspectDeclines = [Collections.ArrayList]::new()
     foreach ($Update in $WsusDeclined) {
         # Ignore superseded and expired updates
         if ($Update.IsSuperseded -or $Update.PublicationState -eq 'Expired') {
@@ -348,7 +348,7 @@ Function Get-WsusSuspectDeclines {
             }
         }
 
-        $SuspectDeclines += $Update
+        $null = $SuspectDeclines.Add($Update)
     }
 
     return $SuspectDeclines
@@ -600,9 +600,9 @@ Function ConvertTo-WsusSpringCleanCatalogue {
 
     Process {
         foreach ($Update in $Updates) {
-            [String[]]$ProductTitles = @()
+            $ProductTitles = [Collections.Generic.List[String]]::new()
             foreach ($ProductTitle in $Update.ProductTitles) {
-                $ProductTitles += $ProductTitle
+                $ProductTitles.Add($ProductTitle)
             }
 
             [PSCustomObject]@{
@@ -657,17 +657,14 @@ Function Test-WsusSpringCleanCatalogue {
     if ($MarkedAsSuperseded) {
         Write-Host -ForegroundColor Green '[*] Scanning for updates marked as superseded ...'
 
-        $Results = @()
+        $Results = [Collections.ArrayList]::new()
         foreach ($Update in ($script:WscCatalogue | Where-Object Category -eq 'Superseded')) {
             if ($Update.Title -in $WsusUpdates.Title) {
-                $MatchedUpdates = @()
-                $SupersededUpdates = @()
-
-                $MatchedUpdates += $WsusUpdates | Where-Object Title -eq $Update.Title
-                $SupersededUpdates += $MatchedUpdates | Where-Object IsSuperseded -eq $true
+                $MatchedUpdates = @($WsusUpdates | Where-Object Title -eq $Update.Title)
+                $SupersededUpdates = @($MatchedUpdates | Where-Object IsSuperseded -eq $true)
 
                 if ($MatchedUpdates.Count -eq $SupersededUpdates.Count) {
-                    $Results += $Update
+                    $null = $Results.Add($Update)
                 }
             }
         }
@@ -676,10 +673,10 @@ Function Test-WsusSpringCleanCatalogue {
     if ($NotPresentInWsus) {
         Write-Host -ForegroundColor Green '[*] Scanning for updates not present in WSUS ...'
 
-        $Results = @()
+        $Results = [Collections.ArrayList]::new()
         foreach ($Update in $script:WscCatalogue) {
             if ($Update.Title -notin $WsusUpdates.Title) {
-                $Results += $Update
+                $null = $Results.Add($Update)
             }
         }
     }
