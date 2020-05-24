@@ -295,7 +295,7 @@ Function Get-WsusSuspectDeclines {
     }
 
     Write-Host -ForegroundColor Green '[*] Finding suspect declined updates ...'
-    $SuspectDeclines = [Collections.ArrayList]::new()
+    $SuspectDeclines = New-Object -TypeName Collections.ArrayList
     foreach ($Update in $WsusDeclined) {
         # Ignore superseded and expired updates
         if ($Update.IsSuperseded -or $Update.PublicationState -eq 'Expired') {
@@ -600,7 +600,7 @@ Function ConvertTo-WsusSpringCleanCatalogue {
 
     Process {
         foreach ($Update in $Updates) {
-            $ProductTitles = [Collections.Generic.List[String]]::new()
+            $ProductTitles = New-Object -TypeName Collections.Generic.List[String]]
             foreach ($ProductTitle in $Update.ProductTitles) {
                 $ProductTitles.Add($ProductTitle)
             }
@@ -657,7 +657,7 @@ Function Test-WsusSpringCleanCatalogue {
     if ($MarkedAsSuperseded) {
         Write-Host -ForegroundColor Green '[*] Scanning for updates marked as superseded ...'
 
-        $Results = [Collections.ArrayList]::new()
+        $Results = New-Object -TypeName Collections.ArrayList
         foreach ($Update in ($script:WscCatalogue | Where-Object Category -eq 'Superseded')) {
             if ($Update.Title -in $WsusUpdates.Title) {
                 $MatchedUpdates = @($WsusUpdates | Where-Object Title -eq $Update.Title)
@@ -673,7 +673,7 @@ Function Test-WsusSpringCleanCatalogue {
     if ($NotPresentInWsus) {
         Write-Host -ForegroundColor Green '[*] Scanning for updates not present in WSUS ...'
 
-        $Results = [Collections.ArrayList]::new()
+        $Results = New-Object -TypeName Collections.ArrayList
         foreach ($Update in $script:WscCatalogue) {
             if ($Update.Title -notin $WsusUpdates.Title) {
                 $null = $Results.Add($Update)
