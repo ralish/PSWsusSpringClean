@@ -117,7 +117,7 @@ Function Invoke-WsusSpringClean {
         https://github.com/ralish/PSWsusSpringClean
     #>
 
-    [CmdletBinding(DefaultParameterSetName='Default', SupportsShouldProcess)]
+    [CmdletBinding(DefaultParameterSetName = 'Default', SupportsShouldProcess)]
     Param(
         [Switch]$RunDefaultTasks,
         [Switch]$SynchroniseServer,
@@ -219,20 +219,20 @@ Function Invoke-WsusSpringClean {
 
     Write-Host -ForegroundColor Green "`r`nBeginning WSUS server cleanup (Phase 1) ..."
     $CleanupWrapperParams = @{
-        CleanupObsoleteUpdates=$CleanupObsoleteUpdates
-        CompressUpdates=$CompressUpdates
-        DeclineExpiredUpdates=$DeclineExpiredUpdates
-        DeclineSupersededUpdates=$DeclineSupersededUpdates
+        CleanupObsoleteUpdates   = $CleanupObsoleteUpdates
+        CompressUpdates          = $CompressUpdates
+        DeclineExpiredUpdates    = $DeclineExpiredUpdates
+        DeclineSupersededUpdates = $DeclineSupersededUpdates
     }
     Invoke-WsusServerCleanupWrapper @CleanupWrapperParams
 
     Write-Host -ForegroundColor Green "`r`nBeginning WSUS server cleanup (Phase 2) ..."
     $SpringCleanParams = @{
-        DeclineClusterUpdates=$DeclineClusterUpdates
-        DeclineFarmUpdates=$DeclineFarmUpdates
-        DeclinePrereleaseUpdates=$DeclinePrereleaseUpdates
-        DeclineSecurityOnlyUpdates=$DeclineSecurityOnlyUpdates
-        DeclineWindowsNextUpdates=$DeclineWindowsNextUpdates
+        DeclineClusterUpdates      = $DeclineClusterUpdates
+        DeclineFarmUpdates         = $DeclineFarmUpdates
+        DeclinePrereleaseUpdates   = $DeclinePrereleaseUpdates
+        DeclineSecurityOnlyUpdates = $DeclineSecurityOnlyUpdates
+        DeclineWindowsNextUpdates  = $DeclineWindowsNextUpdates
     }
 
     if ($PSBoundParameters.ContainsKey('DeclineCategoriesExclude') -or $PSBoundParameters.ContainsKey('DeclineCategoriesInclude')) {
@@ -251,8 +251,8 @@ Function Invoke-WsusSpringClean {
 
     Write-Host -ForegroundColor Green "`r`nBeginning WSUS server cleanup (Phase 3) ..."
     $CleanupWrapperParams = @{
-        CleanupObsoleteComputers=$CleanupObsoleteComputers
-        CleanupUnneededContentFiles=$CleanupUnneededContentFiles
+        CleanupObsoleteComputers    = $CleanupObsoleteComputers
+        CleanupUnneededContentFiles = $CleanupUnneededContentFiles
     }
     Invoke-WsusServerCleanupWrapper @CleanupWrapperParams
 
@@ -635,10 +635,10 @@ Function Test-WsusSpringCleanCatalogue {
         [ValidateNotNullOrEmpty()]
         [String]$CataloguePath,
 
-        [Parameter(ParameterSetName='MarkedAsSuperseded')]
+        [Parameter(ParameterSetName = 'MarkedAsSuperseded')]
         [Switch]$MarkedAsSuperseded,
 
-        [Parameter(ParameterSetName='NotPresentInWsus')]
+        [Parameter(ParameterSetName = 'NotPresentInWsus')]
         [Switch]$NotPresentInWsus
     )
 
@@ -658,10 +658,10 @@ Function Test-WsusSpringCleanCatalogue {
         Write-Host -ForegroundColor Green '[*] Scanning for updates marked as superseded ...'
 
         $Results = New-Object -TypeName Collections.ArrayList
-        foreach ($Update in ($script:WscCatalogue | Where-Object Category -eq 'Superseded')) {
+        foreach ($Update in ($script:WscCatalogue | Where-Object Category -EQ 'Superseded')) {
             if ($Update.Title -in $WsusUpdates.Title) {
-                $MatchedUpdates = @($WsusUpdates | Where-Object Title -eq $Update.Title)
-                $SupersededUpdates = @($MatchedUpdates | Where-Object IsSuperseded -eq $true)
+                $MatchedUpdates = @($WsusUpdates | Where-Object Title -EQ $Update.Title)
+                $SupersededUpdates = @($MatchedUpdates | Where-Object IsSuperseded -EQ $true)
 
                 if ($MatchedUpdates.Count -eq $SupersededUpdates.Count) {
                     $null = $Results.Add($Update)
