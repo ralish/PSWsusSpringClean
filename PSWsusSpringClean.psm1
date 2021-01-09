@@ -188,7 +188,7 @@ Function Invoke-WsusSpringClean {
     # Determine which categories of updates to decline (if any)
     if ($PSBoundParameters.ContainsKey('DeclineCategoriesExclude') -or $PSBoundParameters.ContainsKey('DeclineCategoriesInclude')) {
         Import-WsusSpringCleanCatalogue
-        $CatalogueCategories = $script:WscCatalogue.Category | Sort-Object | Get-Unique
+        $CatalogueCategories = $Script:WscCatalogue.Category | Sort-Object | Get-Unique
 
         if ($PSBoundParameters.ContainsKey('DeclineCategoriesExclude')) {
             $DeclineCategories = $CatalogueCategories | Where-Object { $_ -notin $DeclineCategoriesExclude }
@@ -201,15 +201,15 @@ Function Invoke-WsusSpringClean {
     if ($PSBoundParameters.ContainsKey('DeclineArchitectures')) {
         $DeclineArchitecturesMetadata = @()
         foreach ($Architecture in $DeclineArchitectures) {
-            $DeclineArchitecturesMetadata += $script:WscMetadata.Architectures.Architecture | Where-Object { $_.name -eq $Architecture }
+            $DeclineArchitecturesMetadata += $Script:WscMetadata.Architectures.Architecture | Where-Object { $_.name -eq $Architecture }
         }
     }
 
     # Fetch the metadata for any languages we're going to decline
     if ($PSBoundParameters.ContainsKey('DeclineLanguagesExclude')) {
-        $DeclineLanguagesMetadata = $script:WscMetadata.Languages.Language | Where-Object { $_.code -notin $DeclineLanguagesExclude }
+        $DeclineLanguagesMetadata = $Script:WscMetadata.Languages.Language | Where-Object { $_.code -notin $DeclineLanguagesExclude }
     } elseif ($PSBoundParameters.ContainsKey('DeclineLanguagesInclude')) {
-        $DeclineLanguagesMetadata = $script:WscMetadata.Languages.Language | Where-Object { $_.code -in $DeclineLanguagesInclude }
+        $DeclineLanguagesMetadata = $Script:WscMetadata.Languages.Language | Where-Object { $_.code -in $DeclineLanguagesInclude }
     }
 
     if ($SynchroniseServer) {
@@ -285,7 +285,7 @@ Function Get-WsusSuspectDeclines {
 
     # Ignore all updates corresponding to architectures, categories or languages we declined
     if ($PSBoundParameters.ContainsKey('DeclineCategories')) {
-        $IgnoredCatalogueCategories = $script:WscCatalogue | Where-Object { $_.Category -in $DeclineCategories }
+        $IgnoredCatalogueCategories = $Script:WscCatalogue | Where-Object { $_.Category -in $DeclineCategories }
     }
     if ($PSBoundParameters.ContainsKey('DeclineArchitectures')) {
         $IgnoredArchitecturesRegEx = ' ({0})' -f [String]::Join('|', $DeclineArchitectures.regex)
@@ -364,7 +364,7 @@ Function Import-WsusSpringCleanMetadata {
 
     Write-Verbose -Message '[*] Importing module metadata ...'
     $MetadataPath = Join-Path -Path $PSScriptRoot -ChildPath 'PSWsusSpringClean.xml'
-    $script:WscMetadata = ([Xml](Get-Content -Path $MetadataPath)).PSWsusSpringClean
+    $Script:WscMetadata = ([Xml](Get-Content -Path $MetadataPath)).PSWsusSpringClean
 }
 
 Function Invoke-WsusDeclineUpdatesByCatalogue {
@@ -378,7 +378,7 @@ Function Invoke-WsusDeclineUpdatesByCatalogue {
     )
 
     Write-Host -ForegroundColor Green ('[*] Declining updates in category: {0}' -f $Category)
-    $UpdatesToDecline = $script:WscCatalogue | Where-Object { $_.Category -eq $Category }
+    $UpdatesToDecline = $Script:WscCatalogue | Where-Object { $_.Category -eq $Category }
     $MatchingUpdates = $Updates | Where-Object { $_.Title -in $UpdatesToDecline.Title }
 
     foreach ($Update in $MatchingUpdates) {
@@ -508,27 +508,27 @@ Function Invoke-WsusServerSpringClean {
 
     if ($DeclineClusterUpdates) {
         Write-Host -ForegroundColor Green '[*] Declining cluster updates ...'
-        Invoke-WsusDeclineUpdatesByRegEx -Updates $WsusAnyExceptDeclined -RegEx $script:RegExClusterUpdates
+        Invoke-WsusDeclineUpdatesByRegEx -Updates $WsusAnyExceptDeclined -RegEx $Script:RegExClusterUpdates
     }
 
     if ($DeclineFarmUpdates) {
         Write-Host -ForegroundColor Green '[*] Declining farm updates ...'
-        Invoke-WsusDeclineUpdatesByRegEx -Updates $WsusAnyExceptDeclined -RegEx $script:RegExFarmUpdates
+        Invoke-WsusDeclineUpdatesByRegEx -Updates $WsusAnyExceptDeclined -RegEx $Script:RegExFarmUpdates
     }
 
     if ($DeclinePrereleaseUpdates) {
         Write-Host -ForegroundColor Green '[*] Declining pre-release updates ...'
-        Invoke-WsusDeclineUpdatesByRegEx -Updates $WsusAnyExceptDeclined -RegEx $script:RegExPrereleaseUpdates
+        Invoke-WsusDeclineUpdatesByRegEx -Updates $WsusAnyExceptDeclined -RegEx $Script:RegExPrereleaseUpdates
     }
 
     if ($DeclineSecurityOnlyUpdates) {
         Write-Host -ForegroundColor Green '[*] Declining Security Only updates ...'
-        Invoke-WsusDeclineUpdatesByRegEx -Updates $WsusAnyExceptDeclined -RegEx $script:RegExSecurityOnlyUpdates
+        Invoke-WsusDeclineUpdatesByRegEx -Updates $WsusAnyExceptDeclined -RegEx $Script:RegExSecurityOnlyUpdates
     }
 
     if ($DeclineWindowsNextUpdates) {
         Write-Host -ForegroundColor Green '[*] Declining Windows Next updates ...'
-        Invoke-WsusDeclineUpdatesByRegEx -Updates $WsusAnyExceptDeclined -RegEx $script:RegExWindowsNextUpdates
+        Invoke-WsusDeclineUpdatesByRegEx -Updates $WsusAnyExceptDeclined -RegEx $Script:RegExWindowsNextUpdates
     }
 
     if ($PSBoundParameters.ContainsKey('DeclineCategories')) {
@@ -563,7 +563,7 @@ Function Test-WsusSpringCleanArchitectures {
 
     Import-WsusSpringCleanMetadata
 
-    $KnownArchitectures = $script:WscMetadata.Architectures.Architecture.name
+    $KnownArchitectures = $Script:WscMetadata.Architectures.Architecture.name
     foreach ($Architecture in $Architectures) {
         if ($Architecture -notin $KnownArchitectures) {
             throw 'Unknown architecture specified: {0}' -f $Architecture
@@ -582,7 +582,7 @@ Function Test-WsusSpringCleanLanguageCodes {
 
     Import-WsusSpringCleanMetadata
 
-    $KnownLanguageCodes = $script:WscMetadata.Languages.Language.code
+    $KnownLanguageCodes = $Script:WscMetadata.Languages.Language.code
     foreach ($LanguageCode in $LanguageCodes) {
         if ($LanguageCode -notin $KnownLanguageCodes) {
             throw 'Unknown language code specified: {0}' -f $LanguageCode
@@ -626,7 +626,7 @@ Function Import-WsusSpringCleanCatalogue {
     }
 
     Write-Verbose -Message '[*] Importing update catalogue ...'
-    $script:WscCatalogue = Import-Csv -Path $CataloguePath
+    $Script:WscCatalogue = Import-Csv -Path $CataloguePath
 }
 
 Function Test-WsusSpringCleanCatalogue {
@@ -658,7 +658,7 @@ Function Test-WsusSpringCleanCatalogue {
         Write-Host -ForegroundColor Green '[*] Scanning for updates marked as superseded ...'
 
         $Results = New-Object -TypeName Collections.ArrayList
-        foreach ($Update in ($script:WscCatalogue | Where-Object Category -EQ 'Superseded')) {
+        foreach ($Update in ($Script:WscCatalogue | Where-Object Category -EQ 'Superseded')) {
             if ($Update.Title -in $WsusUpdates.Title) {
                 $MatchedUpdates = @($WsusUpdates | Where-Object Title -EQ $Update.Title)
                 $SupersededUpdates = @($MatchedUpdates | Where-Object IsSuperseded -EQ $true)
@@ -674,7 +674,7 @@ Function Test-WsusSpringCleanCatalogue {
         Write-Host -ForegroundColor Green '[*] Scanning for updates not present in WSUS ...'
 
         $Results = New-Object -TypeName Collections.ArrayList
-        foreach ($Update in $script:WscCatalogue) {
+        foreach ($Update in $Script:WscCatalogue) {
             if ($Update.Title -notin $WsusUpdates.Title) {
                 $null = $Results.Add($Update)
             }
