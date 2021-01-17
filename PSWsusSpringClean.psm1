@@ -88,6 +88,11 @@ Function Invoke-WsusSpringClean {
         .PARAMETER SynchroniseServer
         Perform a synchronisation against the upstream server before running cleanup.
 
+        .PARAMETER UpdateServer
+        The WSUS server to perform operations on as returned by Get-WsusServer.
+
+        If omitted we'll attempt to connect to a WSUS server on the local system.
+
         .EXAMPLE
         PS C:\>$SuspectDeclines = Invoke-WsusSpringClean -RunDefaultTasks -FindSuspectDeclines
 
@@ -119,6 +124,8 @@ Function Invoke-WsusSpringClean {
 
     [CmdletBinding(DefaultParameterSetName = 'Default', SupportsShouldProcess)]
     Param(
+        [Microsoft.UpdateServices.Internal.BaseApi.UpdateServer]$UpdateServer,
+
         [Switch]$RunDefaultTasks,
         [Switch]$SynchroniseServer,
         [Switch]$FindSuspectDeclines,
@@ -156,6 +163,14 @@ Function Invoke-WsusSpringClean {
 
     if ($PSBoundParameters.ContainsKey('DeclineLanguagesExclude') -and $PSBoundParameters.ContainsKey('DeclineLanguagesInclude')) {
         throw 'Can only specify one of DeclineLanguagesExclude and DeclineLanguagesInclude.'
+    }
+
+    if (!$PSBoundParameters.ContainsKey('UpdateServer')) {
+        try {
+            $UpdateServer = Get-WsusServer
+        } catch {
+            throw ('Failed to connect to local WSUS server via Get-WsusServer.')
+        }
     }
 
     Import-WsusSpringCleanMetadata
@@ -214,11 +229,12 @@ Function Invoke-WsusSpringClean {
 
     if ($SynchroniseServer) {
         Write-Host -ForegroundColor Green "`r`nStarting WSUS server synchronisation ..."
-        Invoke-WsusServerSynchronisation
+        Invoke-WsusServerSynchronisation -UpdateServer $UpdateServer
     }
 
     Write-Host -ForegroundColor Green "`r`nBeginning WSUS server cleanup (Phase 1) ..."
     $CleanupWrapperParams = @{
+        UpdateServer             = $UpdateServer
         CleanupObsoleteUpdates   = $CleanupObsoleteUpdates
         CompressUpdates          = $CompressUpdates
         DeclineExpiredUpdates    = $DeclineExpiredUpdates
@@ -228,6 +244,7 @@ Function Invoke-WsusSpringClean {
 
     Write-Host -ForegroundColor Green "`r`nBeginning WSUS server cleanup (Phase 2) ..."
     $SpringCleanParams = @{
+        UpdateServer               = $UpdateServer
         DeclineClusterUpdates      = $DeclineClusterUpdates
         DeclineFarmUpdates         = $DeclineFarmUpdates
         DeclinePrereleaseUpdates   = $DeclinePrereleaseUpdates
@@ -251,6 +268,7 @@ Function Invoke-WsusSpringClean {
 
     Write-Host -ForegroundColor Green "`r`nBeginning WSUS server cleanup (Phase 3) ..."
     $CleanupWrapperParams = @{
+        UpdateServer                = $UpdateServer
         CleanupObsoleteComputers    = $CleanupObsoleteComputers
         CleanupUnneededContentFiles = $CleanupUnneededContentFiles
     }
@@ -265,6 +283,9 @@ Function Get-WsusSuspectDeclines {
     [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSUseSingularNouns', '')]
     [CmdletBinding()]
     Param(
+        [Parameter(Mandatory)]
+        [Microsoft.UpdateServices.Internal.BaseApi.UpdateServer]$UpdateServer,
+
         [Switch]$DeclineClusterUpdates,
         [Switch]$DeclineFarmUpdates,
         [Switch]$DeclinePrereleaseUpdates,
@@ -276,12 +297,11 @@ Function Get-WsusSuspectDeclines {
         [Xml.XmlElement[]]$DeclineLanguages
     )
 
-    $WsusServer = Get-WsusServer
     $UpdateScope = New-Object -TypeName Microsoft.UpdateServices.Administration.UpdateScope
 
     Write-Host -ForegroundColor Green '[*] Retrieving declined updates ...'
     $UpdateScope.ApprovedStates = [Microsoft.UpdateServices.Administration.ApprovedStates]::Declined
-    $WsusDeclined = $WsusServer.GetUpdates($UpdateScope)
+    $WsusDeclined = $UpdateServer.GetUpdates($UpdateScope)
 
     # Ignore all updates corresponding to architectures, categories or languages we declined
     if ($PSBoundParameters.ContainsKey('DeclineCategories')) {
@@ -413,6 +433,9 @@ Function Invoke-WsusServerCleanupWrapper {
     [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSShouldProcess', '')]
     [CmdletBinding(SupportsShouldProcess)]
     Param(
+        [Parameter(Mandatory)]
+        [Microsoft.UpdateServices.Internal.BaseApi.UpdateServer]$UpdateServer,
+
         [Switch]$CleanupObsoleteComputers,
         [Switch]$CleanupObsoleteUpdates,
         [Switch]$CleanupUnneededContentFiles,
@@ -423,45 +446,46 @@ Function Invoke-WsusServerCleanupWrapper {
 
     if ($CleanupObsoleteComputers) {
         Write-Host -ForegroundColor Green '[*] Deleting obsolete computers ...'
-        Write-Host (Invoke-WsusServerCleanup -CleanupObsoleteComputers)
+        Write-Host (Invoke-WsusServerCleanup -UpdateServer $UpdateServer -CleanupObsoleteComputers)
     }
 
     if ($CleanupObsoleteUpdates) {
         Write-Host -ForegroundColor Green '[*] Deleting obsolete updates ...'
-        Write-Host (Invoke-WsusServerCleanup -CleanupObsoleteUpdates)
+        Write-Host (Invoke-WsusServerCleanup -UpdateServer $UpdateServer -CleanupObsoleteUpdates)
     }
 
     if ($CleanupUnneededContentFiles) {
         Write-Host -ForegroundColor Green '[*] Deleting unneeded update files ...'
-        Write-Host (Invoke-WsusServerCleanup -CleanupUnneededContentFiles)
+        Write-Host (Invoke-WsusServerCleanup -UpdateServer $UpdateServer -CleanupUnneededContentFiles)
     }
 
     if ($CompressUpdates) {
         Write-Host -ForegroundColor Green '[*] Deleting obsolete update revisions ...'
-        Write-Host (Invoke-WsusServerCleanup -CompressUpdates)
+        Write-Host (Invoke-WsusServerCleanup -UpdateServer $UpdateServer -CompressUpdates)
     }
 
     if ($DeclineExpiredUpdates) {
         Write-Host -ForegroundColor Green '[*] Declining expired updates ...'
-        Write-Host (Invoke-WsusServerCleanup -DeclineExpiredUpdates)
+        Write-Host (Invoke-WsusServerCleanup -UpdateServer $UpdateServer -DeclineExpiredUpdates)
     }
 
     if ($DeclineSupersededUpdates) {
         Write-Host -ForegroundColor Green '[*] Declining superseded updates ...'
-        Write-Host (Invoke-WsusServerCleanup -DeclineSupersededUpdates)
+        Write-Host (Invoke-WsusServerCleanup -UpdateServer $UpdateServer -DeclineSupersededUpdates)
     }
 }
 
 Function Invoke-WsusServerSynchronisation {
     [CmdletBinding(SupportsShouldProcess)]
-    Param()
-
-    $WsusServer = Get-WsusServer
+    Param(
+        [Parameter(Mandatory)]
+        [Microsoft.UpdateServices.Internal.BaseApi.UpdateServer]$UpdateServer
+    )
 
     if ($PSCmdlet.ShouldProcess($env:COMPUTERNAME, 'WSUS synchronization')) {
-        $SyncStatus = $WsusServer.GetSubscription().GetSynchronizationStatus()
+        $SyncStatus = $UpdateServer.GetSubscription().GetSynchronizationStatus()
         if ($SyncStatus -eq 'NotProcessing') {
-            $WsusServer.GetSubscription().StartSynchronization()
+            $UpdateServer.GetSubscription().StartSynchronization()
         } elseif ($SyncStatus -eq 'Running') {
             Write-Warning -Message "[!] A synchronisation appears to already be running! We'll wait for this one to complete ..."
         } else {
@@ -470,9 +494,9 @@ Function Invoke-WsusServerSynchronisation {
 
         do {
             Start-Sleep -Seconds 5
-        } while ($WsusServer.GetSubscription().GetSynchronizationStatus() -eq 'Running')
+        } while ($UpdateServer.GetSubscription().GetSynchronizationStatus() -eq 'Running')
 
-        $SyncResult = $WsusServer.GetSubscription().GetLastSynchronizationInfo().Result
+        $SyncResult = $UpdateServer.GetSubscription().GetLastSynchronizationInfo().Result
         if ($SyncResult -ne 'Succeeded') {
             throw ('WSUS server synchronisation completed with unexpected result: {0}' -f $SyncResult)
         }
@@ -482,6 +506,9 @@ Function Invoke-WsusServerSynchronisation {
 Function Invoke-WsusServerSpringClean {
     [CmdletBinding(SupportsShouldProcess)]
     Param(
+        [Parameter(Mandatory)]
+        [Microsoft.UpdateServices.Internal.BaseApi.UpdateServer]$UpdateServer,
+
         [Switch]$DeclineClusterUpdates,
         [Switch]$DeclineFarmUpdates,
         [Switch]$DeclinePrereleaseUpdates,
@@ -493,16 +520,15 @@ Function Invoke-WsusServerSpringClean {
         [Xml.XmlElement[]]$DeclineLanguages
     )
 
-    $WsusServer = Get-WsusServer
     $UpdateScope = New-Object -TypeName Microsoft.UpdateServices.Administration.UpdateScope
 
     Write-Host -ForegroundColor Green '[*] Retrieving approved updates ...'
     $UpdateScope.ApprovedStates = [Microsoft.UpdateServices.Administration.ApprovedStates]::LatestRevisionApproved
-    $WsusApproved = $WsusServer.GetUpdates($UpdateScope)
+    $WsusApproved = $UpdateServer.GetUpdates($UpdateScope)
 
     Write-Host -ForegroundColor Green '[*] Retrieving unapproved updates ...'
     $UpdateScope.ApprovedStates = [Microsoft.UpdateServices.Administration.ApprovedStates]::NotApproved
-    $WsusUnapproved = $WsusServer.GetUpdates($UpdateScope)
+    $WsusUnapproved = $UpdateServer.GetUpdates($UpdateScope)
 
     $WsusAnyExceptDeclined = $WsusApproved + $WsusUnapproved
 
@@ -632,6 +658,8 @@ Function Import-WsusSpringCleanCatalogue {
 Function Test-WsusSpringCleanCatalogue {
     [CmdletBinding()]
     Param(
+        [Microsoft.UpdateServices.Internal.BaseApi.UpdateServer]$UpdateServer,
+
         [ValidateNotNullOrEmpty()]
         [String]$CataloguePath,
 
@@ -642,6 +670,14 @@ Function Test-WsusSpringCleanCatalogue {
         [Switch]$NotPresentInWsus
     )
 
+    if (!$PSBoundParameters.ContainsKey('UpdateServer')) {
+        try {
+            $UpdateServer = Get-WsusServer
+        } catch {
+            throw ('Failed to connect to local WSUS server via Get-WsusServer.')
+        }
+    }
+
     if ($PSBoundParameters.ContainsKey('CataloguePath')) {
         Import-WsusSpringCleanCatalogue @PSBoundParameters
     } else {
@@ -649,10 +685,9 @@ Function Test-WsusSpringCleanCatalogue {
     }
 
     Write-Host -ForegroundColor Green '[*] Retrieving all updates ...'
-    $WsusServer = Get-WsusServer
     $WsusUpdateScope = New-Object -TypeName Microsoft.UpdateServices.Administration.UpdateScope
     $WsusUpdateScope.ApprovedStates = [Microsoft.UpdateServices.Administration.ApprovedStates]::Any
-    $WsusUpdates = $WsusServer.GetUpdates($WsusUpdateScope)
+    $WsusUpdates = $UpdateServer.GetUpdates($WsusUpdateScope)
 
     if ($MarkedAsSuperseded) {
         Write-Host -ForegroundColor Green '[*] Scanning for updates marked as superseded ...'
