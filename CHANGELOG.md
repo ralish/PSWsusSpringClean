@@ -1,6 +1,13 @@
 Changelog
 =========
 
+v0.5.0
+------
+
+- Added `-UpdateServer` parameter to support remote servers
+- Ensure `Microsoft.UpdateServices.BaseApi` assembly is loaded
+- Apply code formatting
+
 v0.4.6
 ------
 
@@ -38,7 +45,7 @@ v0.4.1
 v0.4.0
 ------
 
-- Added new `DeclineArchitectures` parameter & removed (`DeclineItaniumUpdates`)
+- Added new `DeclineArchitectures` parameter & removed `DeclineItaniumUpdates`
 - Added new `DeclineLanguagesExclude` & `DeclineLanguagesInclude` parameters
 - Removed 3,597(!) updates from the CSV as now handled by RegEx matching
 - Major performance improvements, minor fixes & documentation updates
