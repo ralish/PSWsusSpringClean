@@ -5,6 +5,8 @@ PSWsusSpringClean
 [![pwsh dl](https://img.shields.io/powershellgallery/dt/PSWsusSpringClean)](https://www.powershellgallery.com/packages/PSWsusSpringClean)
 [![license](https://img.shields.io/github/license/ralish/PSWsusSpringClean)](https://choosealicense.com/licenses/mit/)
 
+[![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/ralish/PSWsusSpringClean)
+
 A PowerShell module to assist with cleaning-up superfluous updates in Windows Server Update Services (WSUS).
 
 - [The Problem](#the-problem)
