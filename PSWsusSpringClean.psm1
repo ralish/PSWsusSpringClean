@@ -375,6 +375,7 @@ Function Get-WsusSuspectDeclines {
 }
 
 Function Import-WsusSpringCleanMetadata {
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSUseSingularNouns', '')]
     [CmdletBinding()]
     Param()
 
