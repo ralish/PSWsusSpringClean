@@ -216,15 +216,15 @@ Function Invoke-WsusSpringClean {
     if ($PSBoundParameters.ContainsKey('DeclineArchitectures')) {
         $DeclineArchitecturesMetadata = @()
         foreach ($Architecture in $DeclineArchitectures) {
-            $DeclineArchitecturesMetadata += $Script:WscMetadata.Architectures.Architecture | Where-Object { $_.name -eq $Architecture }
+            $DeclineArchitecturesMetadata += $Script:WscMetadata.Architectures.Architecture | Where-Object name -EQ $Architecture
         }
     }
 
     # Fetch the metadata for any languages we're going to decline
     if ($PSBoundParameters.ContainsKey('DeclineLanguagesExclude')) {
-        $DeclineLanguagesMetadata = $Script:WscMetadata.Languages.Language | Where-Object { $_.code -notin $DeclineLanguagesExclude }
+        $DeclineLanguagesMetadata = $Script:WscMetadata.Languages.Language | Where-Object code -NotIn $DeclineLanguagesExclude
     } elseif ($PSBoundParameters.ContainsKey('DeclineLanguagesInclude')) {
-        $DeclineLanguagesMetadata = $Script:WscMetadata.Languages.Language | Where-Object { $_.code -in $DeclineLanguagesInclude }
+        $DeclineLanguagesMetadata = $Script:WscMetadata.Languages.Language | Where-Object code -In $DeclineLanguagesInclude
     }
 
     $WriteProgressParams = @{
@@ -341,7 +341,7 @@ Function Get-WsusSuspectDeclines {
 
     # Ignore all updates corresponding to architectures, categories or languages we declined
     if ($PSBoundParameters.ContainsKey('DeclineCategories')) {
-        $IgnoredCatalogueCategories = $Script:WscCatalogue | Where-Object { $_.Category -in $DeclineCategories }
+        $IgnoredCatalogueCategories = $Script:WscCatalogue | Where-Object Category -In $DeclineCategories
     }
     if ($PSBoundParameters.ContainsKey('DeclineArchitectures')) {
         $IgnoredArchitecturesRegEx = ' ({0})' -f [String]::Join('|', $DeclineArchitectures.regex)
@@ -443,8 +443,8 @@ Function Invoke-WsusDeclineUpdatesByCatalogue {
         [String]$Category
     )
 
-    $UpdatesToDecline = $Script:WscCatalogue | Where-Object { $_.Category -eq $Category }
-    $MatchingUpdates = $Updates | Where-Object { $_.Title -in $UpdatesToDecline.Title }
+    $UpdatesToDecline = $Script:WscCatalogue | Where-Object Category -EQ $Category
+    $MatchingUpdates = $Updates | Where-Object Title -In $UpdatesToDecline.Title
 
     foreach ($Update in $MatchingUpdates) {
         if ($PSCmdlet.ShouldProcess($Update.Title, 'Decline')) {
