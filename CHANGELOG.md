@@ -1,6 +1,11 @@
 Changelog
 =========
 
+v0.6.0
+------
+
+- Add `Write-Progress` support & remove most `Write-Host` calls
+
 v0.5.0
 ------
 
