@@ -86,7 +86,7 @@ Function Invoke-WsusSpringClean {
         Also note that this does not perform a server synchronisation before clean-up or find suspect declined updates. These tasks can be included via their respective parameters.
 
         .PARAMETER SynchroniseServer
-        Perform a synchronisation against the upstream server before running cleanup.
+        Perform a synchronisation against the upstream server before running clean-up.
 
         .PARAMETER UpdateServer
         The WSUS server to perform operations on as returned by Get-WsusServer.
@@ -173,8 +173,6 @@ Function Invoke-WsusSpringClean {
         }
     }
 
-    Import-WsusSpringCleanMetadata
-
     if ($RunDefaultTasks) {
         $DefaultTasks = @(
             'DeclineClusterUpdates',
@@ -199,6 +197,8 @@ Function Invoke-WsusSpringClean {
             }
         }
     }
+
+    Import-WsusSpringCleanMetadata
 
     # Determine which categories of updates to decline (if any)
     if ($PSBoundParameters.ContainsKey('DeclineCategoriesExclude') -or $PSBoundParameters.ContainsKey('DeclineCategoriesInclude')) {
@@ -227,12 +227,29 @@ Function Invoke-WsusSpringClean {
         $DeclineLanguagesMetadata = $Script:WscMetadata.Languages.Language | Where-Object { $_.code -in $DeclineLanguagesInclude }
     }
 
-    if ($SynchroniseServer) {
-        Write-Host -ForegroundColor Green "`r`nStarting WSUS server synchronisation ..."
-        Invoke-WsusServerSynchronisation -UpdateServer $UpdateServer
+    $WriteProgressParams = @{
+        Id       = 0
+        Activity = 'Running WSUS spring-clean'
     }
 
-    Write-Host -ForegroundColor Green "`r`nBeginning WSUS server cleanup (Phase 1) ..."
+    $TasksDone = 0
+    $TasksTotal = 3
+
+    if ($SynchroniseServer) {
+        $TasksTotal++
+    }
+
+    if ($FindSuspectDeclines) {
+        $TasksTotal++
+    }
+
+    if ($SynchroniseServer) {
+        Write-Progress @WriteProgressParams -Status 'Running server synchronisation' -PercentComplete ($TasksDone / $TasksTotal * 100)
+        Invoke-WsusServerSynchronisation -UpdateServer $UpdateServer
+        $TasksDone++
+    }
+
+    Write-Progress @WriteProgressParams -Status 'Running server clean-up (Phase 1)' -PercentComplete ($TasksDone / $TasksTotal * 100)
     $CleanupWrapperParams = @{
         UpdateServer             = $UpdateServer
         CleanupObsoleteUpdates   = $CleanupObsoleteUpdates
@@ -240,9 +257,9 @@ Function Invoke-WsusSpringClean {
         DeclineExpiredUpdates    = $DeclineExpiredUpdates
         DeclineSupersededUpdates = $DeclineSupersededUpdates
     }
-    Invoke-WsusServerCleanupWrapper @CleanupWrapperParams
+    Invoke-WsusServerCleanupWrapper @CleanupWrapperParams -ProgressParentId $WriteProgressParams['Id']
+    $TasksDone++
 
-    Write-Host -ForegroundColor Green "`r`nBeginning WSUS server cleanup (Phase 2) ..."
     $SpringCleanParams = @{
         UpdateServer               = $UpdateServer
         DeclineClusterUpdates      = $DeclineClusterUpdates
@@ -264,19 +281,26 @@ Function Invoke-WsusSpringClean {
         $SpringCleanParams['DeclineLanguages'] = $DeclineLanguagesMetadata
     }
 
-    Invoke-WsusServerSpringClean @SpringCleanParams
+    Write-Progress @WriteProgressParams -Status 'Running server clean-up (Phase 2)' -PercentComplete ($TasksDone / $TasksTotal * 100)
+    Invoke-WsusServerSpringClean @SpringCleanParams -ProgressParentId $WriteProgressParams['Id']
+    $TasksDone++
 
-    Write-Host -ForegroundColor Green "`r`nBeginning WSUS server cleanup (Phase 3) ..."
+    Write-Progress @WriteProgressParams -Status 'Running server clean-up (Phase 3)' -PercentComplete ($TasksDone / $TasksTotal * 100)
     $CleanupWrapperParams = @{
         UpdateServer                = $UpdateServer
         CleanupObsoleteComputers    = $CleanupObsoleteComputers
         CleanupUnneededContentFiles = $CleanupUnneededContentFiles
     }
-    Invoke-WsusServerCleanupWrapper @CleanupWrapperParams
+    Invoke-WsusServerCleanupWrapper @CleanupWrapperParams -ProgressParentId $WriteProgressParams['Id']
+    $TasksDone++
 
+    Write-Progress @WriteProgressParams -Status 'Searching for suspect declined updates' -PercentComplete ($TasksDone / $TasksTotal * 100)
     if ($FindSuspectDeclines) {
-        Get-WsusSuspectDeclines @SpringCleanParams
+        Get-WsusSuspectDeclines @SpringCleanParams -ProgressParentId $WriteProgressParams['Id']
+        $TasksDone++
     }
+
+    Write-Progress @WriteProgressParams -Completed
 }
 
 Function Get-WsusSuspectDeclines {
@@ -294,12 +318,24 @@ Function Get-WsusSuspectDeclines {
 
         [String[]]$DeclineCategories,
         [Xml.XmlElement[]]$DeclineArchitectures,
-        [Xml.XmlElement[]]$DeclineLanguages
+        [Xml.XmlElement[]]$DeclineLanguages,
+
+        [ValidateRange(-1, [Int]::MaxValue)]
+        [Int]$ProgressParentId
     )
+
+    $WriteProgressParams = @{
+        Activity = 'Searching for suspect declined updates'
+    }
+
+    if ($PSBoundParameters.ContainsKey('ProgressParentId')) {
+        $WriteProgressParams['ParentId'] = $ProgressParentId
+        $WriteProgressParams['Id'] = $ProgressParentId + 1
+    }
 
     $UpdateScope = New-Object -TypeName Microsoft.UpdateServices.Administration.UpdateScope
 
-    Write-Host -ForegroundColor Green '[*] Retrieving declined updates ...'
+    Write-Progress @WriteProgressParams -Status 'Retrieving declined updates' -PercentComplete 0
     $UpdateScope.ApprovedStates = [Microsoft.UpdateServices.Administration.ApprovedStates]::Declined
     $WsusDeclined = $UpdateServer.GetUpdates($UpdateScope)
 
@@ -314,9 +350,16 @@ Function Get-WsusSuspectDeclines {
         $IgnoredLanguagesRegEx = ' [\[]?({0})(_LP|_LIP)?[\]]?' -f [String]::Join('|', $DeclineLanguages.code)
     }
 
-    Write-Host -ForegroundColor Green '[*] Finding suspect declined updates ...'
+    Write-Progress @WriteProgressParams -Status 'Analyzing declined updates' -PercentComplete 20
+    $UpdatesProcessed = 0
     $SuspectDeclines = New-Object -TypeName Collections.ArrayList
     foreach ($Update in $WsusDeclined) {
+        # Update progress every 10 updates
+        if ($UpdatesProcessed % 10 -eq 0) {
+            $PercentComplete = $UpdatesProcessed / $WsusDeclined.Count * 80 + 20
+            Write-Progress @WriteProgressParams -PercentComplete $PercentComplete
+        }
+
         # Ignore superseded and expired updates
         if ($Update.IsSuperseded -or $Update.PublicationState -eq 'Expired') {
             continue
@@ -369,8 +412,10 @@ Function Get-WsusSuspectDeclines {
         }
 
         $null = $SuspectDeclines.Add($Update)
+        $UpdatesProcessed++
     }
 
+    Write-Progress @WriteProgressParams -Completed
     return $SuspectDeclines
 }
 
@@ -383,7 +428,7 @@ Function Import-WsusSpringCleanMetadata {
         return
     }
 
-    Write-Verbose -Message '[*] Importing module metadata ...'
+    Write-Verbose -Message 'Importing module metadata ...'
     $MetadataPath = Join-Path -Path $PSScriptRoot -ChildPath 'PSWsusSpringClean.xml'
     $Script:WscMetadata = ([Xml](Get-Content -Path $MetadataPath)).PSWsusSpringClean
 }
@@ -398,13 +443,12 @@ Function Invoke-WsusDeclineUpdatesByCatalogue {
         [String]$Category
     )
 
-    Write-Host -ForegroundColor Green ('[*] Declining updates in category: {0}' -f $Category)
     $UpdatesToDecline = $Script:WscCatalogue | Where-Object { $_.Category -eq $Category }
     $MatchingUpdates = $Updates | Where-Object { $_.Title -in $UpdatesToDecline.Title }
 
     foreach ($Update in $MatchingUpdates) {
         if ($PSCmdlet.ShouldProcess($Update.Title, 'Decline')) {
-            Write-Host -ForegroundColor Cyan ('[-] Declining update: {0}' -f $Update.Title)
+            Write-Verbose -Message ('Declining update: {0}' -f $Update.Title)
             $Update.Decline()
         }
     }
@@ -423,7 +467,7 @@ Function Invoke-WsusDeclineUpdatesByRegEx {
     foreach ($Update in $Updates) {
         if ($Update.Title -match $RegEx) {
             if ($PSCmdlet.ShouldProcess($Update.Title, 'Decline')) {
-                Write-Host -ForegroundColor Cyan ('[-] Declining update: {0}' -f $Update.Title)
+                Write-Verbose -Message ('Declining update: {0}' -f $Update.Title)
                 $Update.Decline()
             }
         }
@@ -442,38 +486,82 @@ Function Invoke-WsusServerCleanupWrapper {
         [Switch]$CleanupUnneededContentFiles,
         [Switch]$CompressUpdates,
         [Switch]$DeclineExpiredUpdates,
-        [Switch]$DeclineSupersededUpdates
+        [Switch]$DeclineSupersededUpdates,
+
+        [ValidateRange(-1, [Int]::MaxValue)]
+        [Int]$ProgressParentId
     )
 
+    $WriteProgressParams = @{
+        Activity = 'Running Microsoft built-in clean-up tasks'
+    }
+
+    if ($PSBoundParameters.ContainsKey('ProgressParentId')) {
+        $WriteProgressParams['ParentId'] = $ProgressParentId
+        $WriteProgressParams['Id'] = $ProgressParentId + 1
+    }
+
+    $TasksDone = 0
+    $TasksTotal = 0
+    $ValidTasks = @(
+        'CleanupObsoleteComputers'
+        'CleanupObsoleteUpdates'
+        'CleanupUnneededContentFiles'
+        'CompressUpdates'
+        'DeclineExpiredUpdates'
+        'DeclineSupersededUpdates'
+    )
+
+    foreach ($SwitchParam in ($MyInvocation.MyCommand.Parameters.Values | Where-Object SwitchParameter)) {
+        # This kind of sucks but as we're enumerating switch parameters we'll
+        # also get built-in ones like -Verbose. I'm not aware of any way to
+        # programmatically filter these out, and a blocklist feels brittle.
+        if ($SwitchParam.Name -notin $ValidTasks) {
+            continue
+        }
+
+        if (Get-Variable -Name $SwitchParam.Name -ValueOnly) {
+            $TasksTotal++
+        }
+    }
+
     if ($CleanupObsoleteComputers) {
-        Write-Host -ForegroundColor Green '[*] Deleting obsolete computers ...'
+        Write-Progress @WriteProgressParams -Status 'Deleting obsolete computers' -PercentComplete ($TasksDone / $TasksTotal * 100)
         Write-Host (Invoke-WsusServerCleanup -UpdateServer $UpdateServer -CleanupObsoleteComputers)
+        $TasksDone++
     }
 
     if ($CleanupObsoleteUpdates) {
-        Write-Host -ForegroundColor Green '[*] Deleting obsolete updates ...'
+        Write-Progress @WriteProgressParams -Status 'Deleting obsolete updates' -PercentComplete ($TasksDone / $TasksTotal * 100)
         Write-Host (Invoke-WsusServerCleanup -UpdateServer $UpdateServer -CleanupObsoleteUpdates)
+        $TasksDone++
     }
 
     if ($CleanupUnneededContentFiles) {
-        Write-Host -ForegroundColor Green '[*] Deleting unneeded update files ...'
+        Write-Progress @WriteProgressParams -Status 'Deleting unneeded update files' -PercentComplete ($TasksDone / $TasksTotal * 100)
         Write-Host (Invoke-WsusServerCleanup -UpdateServer $UpdateServer -CleanupUnneededContentFiles)
+        $TasksDone++
     }
 
     if ($CompressUpdates) {
-        Write-Host -ForegroundColor Green '[*] Deleting obsolete update revisions ...'
+        Write-Progress @WriteProgressParams -Status 'Deleting obsolete update revisions' -PercentComplete ($TasksDone / $TasksTotal * 100)
         Write-Host (Invoke-WsusServerCleanup -UpdateServer $UpdateServer -CompressUpdates)
+        $TasksDone++
     }
 
     if ($DeclineExpiredUpdates) {
-        Write-Host -ForegroundColor Green '[*] Declining expired updates ...'
+        Write-Progress @WriteProgressParams -Status 'Declining expired updates' -PercentComplete ($TasksDone / $TasksTotal * 100)
         Write-Host (Invoke-WsusServerCleanup -UpdateServer $UpdateServer -DeclineExpiredUpdates)
+        $TasksDone++
     }
 
     if ($DeclineSupersededUpdates) {
-        Write-Host -ForegroundColor Green '[*] Declining superseded updates ...'
+        Write-Progress @WriteProgressParams -Status 'Declining superseded updates' -PercentComplete ($TasksDone / $TasksTotal * 100)
         Write-Host (Invoke-WsusServerCleanup -UpdateServer $UpdateServer -DeclineSupersededUpdates)
+        $TasksDone++
     }
+
+    Write-Progress @WriteProgressParams -Completed
 }
 
 Function Invoke-WsusServerSynchronisation {
@@ -488,7 +576,7 @@ Function Invoke-WsusServerSynchronisation {
         if ($SyncStatus -eq 'NotProcessing') {
             $UpdateServer.GetSubscription().StartSynchronization()
         } elseif ($SyncStatus -eq 'Running') {
-            Write-Warning -Message "[!] A synchronisation appears to already be running! We'll wait for this one to complete ..."
+            Write-Warning -Message 'A synchronisation appears to already be running! Waiting for it to complete ...'
         } else {
             throw ('WSUS server returned unknown synchronisation status: {0}' -f $SyncStatus)
         }
@@ -518,67 +606,128 @@ Function Invoke-WsusServerSpringClean {
 
         [String[]]$DeclineCategories,
         [Xml.XmlElement[]]$DeclineArchitectures,
-        [Xml.XmlElement[]]$DeclineLanguages
+        [Xml.XmlElement[]]$DeclineLanguages,
+
+        [ValidateRange(-1, [Int]::MaxValue)]
+        [Int]$ProgressParentId
     )
+
+    $WriteProgressParams = @{
+        Activity = 'Running PSWsusSpringClean custom clean-up tasks'
+    }
+
+    if ($PSBoundParameters.ContainsKey('ProgressParentId')) {
+        $WriteProgressParams['ParentId'] = $ProgressParentId
+        $WriteProgressParams['Id'] = $ProgressParentId + 1
+    }
+
+    $TasksDone = 0
+    $TasksTotal = 2 # Retrieving approved & unapproved updates
+    $ValidTasks = @(
+        'DeclineClusterUpdates'
+        'DeclineFarmUpdates'
+        'DeclinePrereleaseUpdates'
+        'DeclineSecurityOnlyUpdates'
+        'DeclineWindowsNextUpdates'
+        'DeclineCategories'
+        'DeclineCategories'
+        'DeclineLanguages'
+    )
+
+    foreach ($Param in $MyInvocation.MyCommand.Parameters.Values) {
+        # This kind of sucks but as we're enumerating switch parameters we'll
+        # also get built-in ones like -Verbose. I'm not aware of any way to
+        # programmatically filter these out, and a blocklist feels brittle.
+        if ($Param.Name -notin $ValidTasks) {
+            continue
+        }
+
+        if ($Param.SwitchParameter) {
+            if ((Get-Variable -Name $Param.Name -ValueOnly) -eq $true) {
+                $TasksTotal++
+            }
+        } else {
+            $ArrayVar = Get-Variable -Name $Param.Name -ValueOnly
+            if ($null -ne $ArrayVar -and $ArrayVar.Count -gt 0) {
+                $TasksTotal++
+            }
+        }
+    }
 
     $UpdateScope = New-Object -TypeName Microsoft.UpdateServices.Administration.UpdateScope
 
-    Write-Host -ForegroundColor Green '[*] Retrieving approved updates ...'
+    Write-Progress @WriteProgressParams -Status 'Retrieving approved updates' -PercentComplete ($TasksDone / $TasksTotal * 100)
     $UpdateScope.ApprovedStates = [Microsoft.UpdateServices.Administration.ApprovedStates]::LatestRevisionApproved
     $WsusApproved = $UpdateServer.GetUpdates($UpdateScope)
+    $TasksDone++
 
-    Write-Host -ForegroundColor Green '[*] Retrieving unapproved updates ...'
+    Write-Progress @WriteProgressParams -Status 'Retrieving unapproved updates' -PercentComplete ($TasksDone / $TasksTotal * 100)
     $UpdateScope.ApprovedStates = [Microsoft.UpdateServices.Administration.ApprovedStates]::NotApproved
     $WsusUnapproved = $UpdateServer.GetUpdates($UpdateScope)
+    $TasksDone++
 
     $WsusAnyExceptDeclined = $WsusApproved + $WsusUnapproved
 
     if ($DeclineClusterUpdates) {
-        Write-Host -ForegroundColor Green '[*] Declining cluster updates ...'
+        Write-Progress @WriteProgressParams -Status 'Declining cluster updates' -PercentComplete ($TasksDone / $TasksTotal * 100)
         Invoke-WsusDeclineUpdatesByRegEx -Updates $WsusAnyExceptDeclined -RegEx $Script:RegExClusterUpdates
+        $TasksDone++
     }
 
     if ($DeclineFarmUpdates) {
-        Write-Host -ForegroundColor Green '[*] Declining farm updates ...'
+        Write-Progress @WriteProgressParams -Status 'Declining farm updates' -PercentComplete ($TasksDone / $TasksTotal * 100)
         Invoke-WsusDeclineUpdatesByRegEx -Updates $WsusAnyExceptDeclined -RegEx $Script:RegExFarmUpdates
+        $TasksDone++
     }
 
     if ($DeclinePrereleaseUpdates) {
-        Write-Host -ForegroundColor Green '[*] Declining pre-release updates ...'
+        Write-Progress @WriteProgressParams -Status 'Declining pre-release updates' -PercentComplete ($TasksDone / $TasksTotal * 100)
         Invoke-WsusDeclineUpdatesByRegEx -Updates $WsusAnyExceptDeclined -RegEx $Script:RegExPrereleaseUpdates
+        $TasksDone++
     }
 
     if ($DeclineSecurityOnlyUpdates) {
-        Write-Host -ForegroundColor Green '[*] Declining Security Only updates ...'
+        Write-Progress @WriteProgressParams -Status 'Declining Security Only updates' -PercentComplete ($TasksDone / $TasksTotal * 100)
         Invoke-WsusDeclineUpdatesByRegEx -Updates $WsusAnyExceptDeclined -RegEx $Script:RegExSecurityOnlyUpdates
+        $TasksDone++
     }
 
     if ($DeclineWindowsNextUpdates) {
-        Write-Host -ForegroundColor Green '[*] Declining Windows Next updates ...'
+        Write-Progress @WriteProgressParams -Status 'Declining Windows Next updates' -PercentComplete ($TasksDone / $TasksTotal * 100)
         Invoke-WsusDeclineUpdatesByRegEx -Updates $WsusAnyExceptDeclined -RegEx $Script:RegExWindowsNextUpdates
+        $TasksDone++
     }
 
     if ($PSBoundParameters.ContainsKey('DeclineCategories')) {
         foreach ($Category in $DeclineCategories) {
+            $Status = 'Declining updates in category: {0}' -f $Category
+            Write-Progress @WriteProgressParams -Status $Status -PercentComplete ($TasksDone / $TasksTotal * 100)
             Invoke-WsusDeclineUpdatesByCatalogue -Updates $WsusAnyExceptDeclined -Category $Category
         }
+        $TasksDone++
     }
 
     if ($PSBoundParameters.ContainsKey('DeclineArchitectures')) {
         foreach ($Architecture in $DeclineArchitectures) {
-            Write-Host -ForegroundColor Green ('[*] Declining updates with architecture: {0}' -f $Architecture.name)
+            $Status = 'Declining updates with architecture: {0}' -f $Architecture.name
+            Write-Progress @WriteProgressParams -Status $Status -PercentComplete ($TasksDone / $TasksTotal * 100)
             $ArchitectureRegEx = ' ({0})' -f $Architecture.regex
             Invoke-WsusDeclineUpdatesByRegEx -Updates $WsusAnyExceptDeclined -RegEx $ArchitectureRegEx
         }
+        $TasksDone++
     }
 
     if ($PSBoundParameters.ContainsKey('DeclineLanguages')) {
         foreach ($Language in $DeclineLanguages) {
-            Write-Host -ForegroundColor Green ('[*] Declining updates with language: {0}' -f $Language.code)
+            $Status = 'Declining updates with language: {0}' -f $Language.code
+            Write-Progress @WriteProgressParams -Status $Status -PercentComplete ($TasksDone / $TasksTotal * 100)
             $LanguageRegEx = ' [\[]?{0}(_LP|_LIP)?[\]]?' -f $Language.code
             Invoke-WsusDeclineUpdatesByRegEx -Updates $WsusAnyExceptDeclined -RegEx $LanguageRegEx
         }
+        $TasksDone++
     }
+
+    Write-Progress @WriteProgressParams -Completed
 }
 
 Function Test-WsusSpringCleanArchitectures {
@@ -596,8 +745,6 @@ Function Test-WsusSpringCleanArchitectures {
             throw 'Unknown architecture specified: {0}' -f $Architecture
         }
     }
-
-    return $true
 }
 
 Function Test-WsusSpringCleanLanguageCodes {
@@ -615,8 +762,6 @@ Function Test-WsusSpringCleanLanguageCodes {
             throw 'Unknown language code specified: {0}' -f $LanguageCode
         }
     }
-
-    return $true
 }
 
 Function ConvertTo-WsusSpringCleanCatalogue {
@@ -652,7 +797,7 @@ Function Import-WsusSpringCleanCatalogue {
         $CataloguePath = Join-Path -Path $PSScriptRoot -ChildPath 'PSWsusSpringClean.csv'
     }
 
-    Write-Verbose -Message '[*] Importing update catalogue ...'
+    Write-Verbose -Message 'Importing update catalogue ...'
     $Script:WscCatalogue = Import-Csv -Path $CataloguePath
 }
 
@@ -662,13 +807,7 @@ Function Test-WsusSpringCleanCatalogue {
         [Microsoft.UpdateServices.Internal.BaseApi.UpdateServer]$UpdateServer,
 
         [ValidateNotNullOrEmpty()]
-        [String]$CataloguePath,
-
-        [Parameter(ParameterSetName = 'MarkedAsSuperseded')]
-        [Switch]$MarkedAsSuperseded,
-
-        [Parameter(ParameterSetName = 'NotPresentInWsus')]
-        [Switch]$NotPresentInWsus
+        [String]$CataloguePath
     )
 
     if (!$PSBoundParameters.ContainsKey('UpdateServer')) {
@@ -685,37 +824,42 @@ Function Test-WsusSpringCleanCatalogue {
         Import-WsusSpringCleanCatalogue
     }
 
-    Write-Host -ForegroundColor Green '[*] Retrieving all updates ...'
+    $WriteProgressParams = @{
+        Activity = 'Testing PSWsusSpringClean catalogue'
+    }
+
+    $TasksDone = 0
+    $TasksTotal = 3
+
+    Write-Progress @WriteProgressParams -Status 'Retrieving all updates' -PercentComplete ($TasksDone / $TasksTotal * 100)
     $WsusUpdateScope = New-Object -TypeName Microsoft.UpdateServices.Administration.UpdateScope
     $WsusUpdateScope.ApprovedStates = [Microsoft.UpdateServices.Administration.ApprovedStates]::Any
     $WsusUpdates = $UpdateServer.GetUpdates($WsusUpdateScope)
+    $TasksDone++
 
-    if ($MarkedAsSuperseded) {
-        Write-Host -ForegroundColor Green '[*] Scanning for updates marked as superseded ...'
+    Write-Progress @WriteProgressParams -Status 'Scanning for updates marked as superseded' -PercentComplete ($TasksDone / $TasksTotal * 100)
+    $Results = New-Object -TypeName Collections.ArrayList
+    foreach ($Update in ($Script:WscCatalogue | Where-Object Category -EQ 'Superseded')) {
+        if ($Update.Title -in $WsusUpdates.Title) {
+            $MatchedUpdates = @($WsusUpdates | Where-Object Title -EQ $Update.Title)
+            $SupersededUpdates = @($MatchedUpdates | Where-Object IsSuperseded -EQ $true)
 
-        $Results = New-Object -TypeName Collections.ArrayList
-        foreach ($Update in ($Script:WscCatalogue | Where-Object Category -EQ 'Superseded')) {
-            if ($Update.Title -in $WsusUpdates.Title) {
-                $MatchedUpdates = @($WsusUpdates | Where-Object Title -EQ $Update.Title)
-                $SupersededUpdates = @($MatchedUpdates | Where-Object IsSuperseded -EQ $true)
-
-                if ($MatchedUpdates.Count -eq $SupersededUpdates.Count) {
-                    $null = $Results.Add($Update)
-                }
-            }
-        }
-    }
-
-    if ($NotPresentInWsus) {
-        Write-Host -ForegroundColor Green '[*] Scanning for updates not present in WSUS ...'
-
-        $Results = New-Object -TypeName Collections.ArrayList
-        foreach ($Update in $Script:WscCatalogue) {
-            if ($Update.Title -notin $WsusUpdates.Title) {
+            if ($MatchedUpdates.Count -eq $SupersededUpdates.Count) {
                 $null = $Results.Add($Update)
             }
         }
     }
+    $TasksDone++
 
+    Write-Progress @WriteProgressParams -Status 'Scanning for updates not present in WSUS' -PercentComplete ($TasksDone / $TasksTotal * 100)
+    $Results = New-Object -TypeName Collections.ArrayList
+    foreach ($Update in $Script:WscCatalogue) {
+        if ($Update.Title -notin $WsusUpdates.Title) {
+            $null = $Results.Add($Update)
+        }
+    }
+    $TasksDone++
+
+    Write-Progress @WriteProgressParams -Completed
     return $Results
 }
