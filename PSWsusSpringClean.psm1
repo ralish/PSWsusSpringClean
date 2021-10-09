@@ -475,6 +475,7 @@ Function Invoke-WsusDeclineUpdatesByRegEx {
 }
 
 Function Invoke-WsusServerCleanupWrapper {
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSAvoidUsingWriteHost', '')]
     [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSShouldProcess', '')]
     [CmdletBinding(SupportsShouldProcess)]
     Param(
