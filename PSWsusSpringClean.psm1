@@ -746,6 +746,8 @@ Function Test-WsusSpringCleanArchitectures {
             throw 'Unknown architecture specified: {0}' -f $Architecture
         }
     }
+
+    return $true
 }
 
 Function Test-WsusSpringCleanLanguageCodes {
@@ -763,6 +765,8 @@ Function Test-WsusSpringCleanLanguageCodes {
             throw 'Unknown language code specified: {0}' -f $LanguageCode
         }
     }
+
+    return $true
 }
 
 Function ConvertTo-WsusSpringCleanCatalogue {
