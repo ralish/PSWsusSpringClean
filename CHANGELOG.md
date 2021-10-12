@@ -1,6 +1,11 @@
 Changelog
 =========
 
+v0.6.1
+------
+
+- Ensure `ValidateScript()` functions return `$true` on success
+
 v0.6.0
 ------
 
