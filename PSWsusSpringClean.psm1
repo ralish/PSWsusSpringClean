@@ -169,7 +169,7 @@ Function Invoke-WsusSpringClean {
         try {
             $UpdateServer = Get-WsusServer
         } catch {
-            throw ('Failed to connect to local WSUS server via Get-WsusServer.')
+            throw 'Failed to connect to local WSUS server via Get-WsusServer.'
         }
     }
 
@@ -333,7 +333,7 @@ Function Get-WsusSuspectDeclines {
         $WriteProgressParams['Id'] = $ProgressParentId + 1
     }
 
-    $UpdateScope = New-Object -TypeName Microsoft.UpdateServices.Administration.UpdateScope
+    $UpdateScope = New-Object -TypeName 'Microsoft.UpdateServices.Administration.UpdateScope'
 
     Write-Progress @WriteProgressParams -Status 'Retrieving declined updates' -PercentComplete 0
     $UpdateScope.ApprovedStates = [Microsoft.UpdateServices.Administration.ApprovedStates]::Declined
@@ -353,7 +353,7 @@ Function Get-WsusSuspectDeclines {
 
     Write-Progress @WriteProgressParams -Status 'Analyzing declined updates' -PercentComplete 20
     $UpdatesProcessed = 0
-    $SuspectDeclines = New-Object -TypeName Collections.ArrayList
+    $SuspectDeclines = New-Object -TypeName 'Collections.ArrayList'
     foreach ($Update in $WsusDeclined) {
         # Update progress every 10 updates
         if ($UpdatesProcessed % 10 -eq 0) {
@@ -425,7 +425,7 @@ Function Import-WsusSpringCleanMetadata {
     [CmdletBinding()]
     Param()
 
-    if (Get-Variable -Name WscCatalogue -Scope Script -ErrorAction SilentlyContinue) {
+    if (Get-Variable -Name 'WscCatalogue' -Scope Script -ErrorAction SilentlyContinue) {
         return
     }
 
@@ -580,7 +580,7 @@ Function Invoke-WsusServerSynchronisation {
         } elseif ($SyncStatus -eq 'Running') {
             Write-Warning -Message 'A synchronisation appears to already be running! Waiting for it to complete ...'
         } else {
-            throw ('WSUS server returned unknown synchronisation status: {0}' -f $SyncStatus)
+            throw 'WSUS server returned unknown synchronisation status: {0}' -f $SyncStatus
         }
 
         do {
@@ -589,7 +589,7 @@ Function Invoke-WsusServerSynchronisation {
 
         $SyncResult = $UpdateServer.GetSubscription().GetLastSynchronizationInfo().Result
         if ($SyncResult -ne 'Succeeded') {
-            throw ('WSUS server synchronisation completed with unexpected result: {0}' -f $SyncResult)
+            throw 'WSUS server synchronisation completed with unexpected result: {0}' -f $SyncResult
         }
     }
 }
@@ -656,7 +656,7 @@ Function Invoke-WsusServerSpringClean {
         }
     }
 
-    $UpdateScope = New-Object -TypeName Microsoft.UpdateServices.Administration.UpdateScope
+    $UpdateScope = New-Object -TypeName 'Microsoft.UpdateServices.Administration.UpdateScope'
 
     Write-Progress @WriteProgressParams -Status 'Retrieving approved updates' -PercentComplete ($TasksDone / $TasksTotal * 100)
     $UpdateScope.ApprovedStates = [Microsoft.UpdateServices.Administration.ApprovedStates]::LatestRevisionApproved
@@ -778,7 +778,7 @@ Function ConvertTo-WsusSpringCleanCatalogue {
 
     Process {
         foreach ($Update in $Updates) {
-            $ProductTitles = New-Object -TypeName Collections.Generic.List[String]]
+            $ProductTitles = New-Object -TypeName 'Collections.Generic.List[String]'
             foreach ($ProductTitle in $Update.ProductTitles) {
                 $ProductTitles.Add($ProductTitle)
             }
@@ -820,7 +820,7 @@ Function Test-WsusSpringCleanCatalogue {
         try {
             $UpdateServer = Get-WsusServer
         } catch {
-            throw ('Failed to connect to local WSUS server via Get-WsusServer.')
+            throw 'Failed to connect to local WSUS server via Get-WsusServer.'
         }
     }
 
@@ -838,13 +838,13 @@ Function Test-WsusSpringCleanCatalogue {
     $TasksTotal = 3
 
     Write-Progress @WriteProgressParams -Status 'Retrieving all updates' -PercentComplete ($TasksDone / $TasksTotal * 100)
-    $WsusUpdateScope = New-Object -TypeName Microsoft.UpdateServices.Administration.UpdateScope
+    $WsusUpdateScope = New-Object -TypeName 'Microsoft.UpdateServices.Administration.UpdateScope'
     $WsusUpdateScope.ApprovedStates = [Microsoft.UpdateServices.Administration.ApprovedStates]::Any
     $WsusUpdates = $UpdateServer.GetUpdates($WsusUpdateScope)
     $TasksDone++
 
     Write-Progress @WriteProgressParams -Status 'Scanning for updates marked as superseded' -PercentComplete ($TasksDone / $TasksTotal * 100)
-    $Results = New-Object -TypeName Collections.ArrayList
+    $Results = New-Object -TypeName 'Collections.ArrayList'
     foreach ($Update in ($Script:WscCatalogue | Where-Object Category -EQ 'Superseded')) {
         if ($Update.Title -in $WsusUpdates.Title) {
             $MatchedUpdates = @($WsusUpdates | Where-Object Title -EQ $Update.Title)
@@ -858,7 +858,7 @@ Function Test-WsusSpringCleanCatalogue {
     $TasksDone++
 
     Write-Progress @WriteProgressParams -Status 'Scanning for updates not present in WSUS' -PercentComplete ($TasksDone / $TasksTotal * 100)
-    $Results = New-Object -TypeName Collections.ArrayList
+    $Results = New-Object -TypeName 'Collections.ArrayList'
     foreach ($Update in $Script:WscCatalogue) {
         if ($Update.Title -notin $WsusUpdates.Title) {
             $null = $Results.Add($Update)
