@@ -123,6 +123,7 @@ Function Invoke-WsusSpringClean {
     #>
 
     [CmdletBinding(DefaultParameterSetName = 'Default', SupportsShouldProcess)]
+    [OutputType([Void], [Microsoft.UpdateServices.Internal.BaseApi.Update[]])]
     Param(
         [Microsoft.UpdateServices.Internal.BaseApi.UpdateServer]$UpdateServer,
 
@@ -306,6 +307,7 @@ Function Invoke-WsusSpringClean {
 Function Get-WsusSuspectDeclines {
     [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSUseSingularNouns', '')]
     [CmdletBinding()]
+    [OutputType([Void], [Microsoft.UpdateServices.Internal.BaseApi.Update[]])]
     Param(
         [Parameter(Mandatory)]
         [Microsoft.UpdateServices.Internal.BaseApi.UpdateServer]$UpdateServer,
@@ -417,12 +419,13 @@ Function Get-WsusSuspectDeclines {
     }
 
     Write-Progress @WriteProgressParams -Completed
-    return , $SuspectDeclines.ToArray()
+    return $SuspectDeclines.ToArray()
 }
 
 Function Import-WsusSpringCleanMetadata {
     [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSUseSingularNouns', '')]
     [CmdletBinding()]
+    [OutputType([Void])]
     Param()
 
     if (Get-Variable -Name 'WscCatalogue' -Scope Script -ErrorAction SilentlyContinue) {
@@ -436,6 +439,7 @@ Function Import-WsusSpringCleanMetadata {
 
 Function Invoke-WsusDeclineUpdatesByCatalogue {
     [CmdletBinding(SupportsShouldProcess)]
+    [OutputType([Void])]
     Param(
         [Parameter(Mandatory)]
         [Microsoft.UpdateServices.Internal.BaseApi.Update[]]$Updates,
@@ -457,6 +461,7 @@ Function Invoke-WsusDeclineUpdatesByCatalogue {
 
 Function Invoke-WsusDeclineUpdatesByRegEx {
     [CmdletBinding(SupportsShouldProcess)]
+    [OutputType([Void])]
     Param(
         [Parameter(Mandatory)]
         [Microsoft.UpdateServices.Internal.BaseApi.Update[]]$Updates,
@@ -479,6 +484,7 @@ Function Invoke-WsusServerCleanupWrapper {
     [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSAvoidUsingWriteHost', '')]
     [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSShouldProcess', '')]
     [CmdletBinding(SupportsShouldProcess)]
+    [OutputType([Void])]
     Param(
         [Parameter(Mandatory)]
         [Microsoft.UpdateServices.Internal.BaseApi.UpdateServer]$UpdateServer,
@@ -568,6 +574,7 @@ Function Invoke-WsusServerCleanupWrapper {
 
 Function Invoke-WsusServerSynchronisation {
     [CmdletBinding(SupportsShouldProcess)]
+    [OutputType([Void])]
     Param(
         [Parameter(Mandatory)]
         [Microsoft.UpdateServices.Internal.BaseApi.UpdateServer]$UpdateServer
@@ -596,6 +603,7 @@ Function Invoke-WsusServerSynchronisation {
 
 Function Invoke-WsusServerSpringClean {
     [CmdletBinding(SupportsShouldProcess)]
+    [OutputType([Void])]
     Param(
         [Parameter(Mandatory)]
         [Microsoft.UpdateServices.Internal.BaseApi.UpdateServer]$UpdateServer,
@@ -734,6 +742,7 @@ Function Invoke-WsusServerSpringClean {
 
 Function Test-WsusSpringCleanArchitectures {
     [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSUseSingularNouns', '')]
+    [OutputType([Boolean])]
     Param(
         [Parameter(Mandatory)]
         [String[]]$Architectures
@@ -753,6 +762,7 @@ Function Test-WsusSpringCleanArchitectures {
 
 Function Test-WsusSpringCleanLanguageCodes {
     [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSUseSingularNouns', '')]
+    [OutputType([Boolean])]
     Param(
         [Parameter(Mandatory)]
         [String[]]$LanguageCodes
@@ -771,6 +781,7 @@ Function Test-WsusSpringCleanLanguageCodes {
 }
 
 Function ConvertTo-WsusSpringCleanCatalogue {
+    [OutputType([PSCustomObject[]])]
     Param(
         [Parameter(Mandatory, ValueFromPipeline)]
         [Microsoft.UpdateServices.Internal.BaseApi.Update[]]$Updates
@@ -794,6 +805,7 @@ Function ConvertTo-WsusSpringCleanCatalogue {
 
 Function Import-WsusSpringCleanCatalogue {
     [CmdletBinding()]
+    [OutputType([Void])]
     Param(
         [ValidateNotNullOrEmpty()]
         [String]$CataloguePath
@@ -809,6 +821,7 @@ Function Import-WsusSpringCleanCatalogue {
 
 Function Test-WsusSpringCleanCatalogue {
     [CmdletBinding()]
+    [OutputType([PSCustomObject[]])]
     Param(
         [Microsoft.UpdateServices.Internal.BaseApi.UpdateServer]$UpdateServer,
 
@@ -866,5 +879,5 @@ Function Test-WsusSpringCleanCatalogue {
     $TasksDone++
 
     Write-Progress @WriteProgressParams -Completed
-    return , $Results.ToArray()
+    return $Results.ToArray()
 }
