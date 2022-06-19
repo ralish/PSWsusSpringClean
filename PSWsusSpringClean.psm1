@@ -353,7 +353,7 @@ Function Get-WsusSuspectDeclines {
 
     Write-Progress @WriteProgressParams -Status 'Analyzing declined updates' -PercentComplete 20
     $UpdatesProcessed = 0
-    $SuspectDeclines = New-Object -TypeName 'Collections.ArrayList'
+    $SuspectDeclines = New-Object -TypeName 'Collections.Generic.List[Microsoft.UpdateServices.Internal.BaseApi.Update]'
     foreach ($Update in $WsusDeclined) {
         # Update progress every 10 updates
         if ($UpdatesProcessed % 10 -eq 0) {
@@ -412,12 +412,12 @@ Function Get-WsusSuspectDeclines {
             }
         }
 
-        $null = $SuspectDeclines.Add($Update)
+        $SuspectDeclines.Add($Update)
         $UpdatesProcessed++
     }
 
     Write-Progress @WriteProgressParams -Completed
-    return $SuspectDeclines
+    return , $SuspectDeclines.ToArray()
 }
 
 Function Import-WsusSpringCleanMetadata {
@@ -834,6 +834,7 @@ Function Test-WsusSpringCleanCatalogue {
         Activity = 'Testing PSWsusSpringClean catalogue'
     }
 
+    $Results = New-Object -TypeName 'Collections.Generic.List[PSCustomObject]'
     $TasksDone = 0
     $TasksTotal = 3
 
@@ -844,28 +845,26 @@ Function Test-WsusSpringCleanCatalogue {
     $TasksDone++
 
     Write-Progress @WriteProgressParams -Status 'Scanning for updates marked as superseded' -PercentComplete ($TasksDone / $TasksTotal * 100)
-    $Results = New-Object -TypeName 'Collections.ArrayList'
     foreach ($Update in ($Script:WscCatalogue | Where-Object Category -EQ 'Superseded')) {
         if ($Update.Title -in $WsusUpdates.Title) {
             $MatchedUpdates = @($WsusUpdates | Where-Object Title -EQ $Update.Title)
             $SupersededUpdates = @($MatchedUpdates | Where-Object IsSuperseded -EQ $true)
 
             if ($MatchedUpdates.Count -eq $SupersededUpdates.Count) {
-                $null = $Results.Add($Update)
+                $Results.Add($Update)
             }
         }
     }
     $TasksDone++
 
     Write-Progress @WriteProgressParams -Status 'Scanning for updates not present in WSUS' -PercentComplete ($TasksDone / $TasksTotal * 100)
-    $Results = New-Object -TypeName 'Collections.ArrayList'
     foreach ($Update in $Script:WscCatalogue) {
         if ($Update.Title -notin $WsusUpdates.Title) {
-            $null = $Results.Add($Update)
+            $Results.Add($Update)
         }
     }
     $TasksDone++
 
     Write-Progress @WriteProgressParams -Completed
-    return $Results
+    return , $Results.ToArray()
 }
