@@ -339,7 +339,8 @@ Function Get-WsusSuspectDeclines {
     $UpdateScope.ApprovedStates = [Microsoft.UpdateServices.Administration.ApprovedStates]::Declined
     $WsusDeclined = $UpdateServer.GetUpdates($UpdateScope)
 
-    # Ignore all updates corresponding to architectures, categories or languages we declined
+    # Ignore all updates corresponding to architectures, categories, or
+    # languages we declined.
     if ($PSBoundParameters.ContainsKey('DeclineCategories')) {
         $IgnoredCatalogueCategories = $Script:WscCatalogue | Where-Object Category -In $DeclineCategories
     }
