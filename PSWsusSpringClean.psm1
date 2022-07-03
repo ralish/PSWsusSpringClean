@@ -341,31 +341,45 @@ Function Get-WsusSuspectDeclines {
     $UpdateScope.ApprovedStates = [Microsoft.UpdateServices.Administration.ApprovedStates]::Declined
     $WsusDeclined = $UpdateServer.GetUpdates($UpdateScope)
 
-    # Ignore all updates corresponding to architectures, categories, or
-    # languages we declined.
+    # Filter superseded and expired updates first as it's likely there will be
+    # lots. This will help to improve performance of the remaining filtering.
+    Write-Progress @WriteProgressParams -Status 'Filtering superseded and expired updates' -PercentComplete 20
+    $WsusDeclined = $WsusDeclined | Where-Object {
+        $_.IsSuperseded -EQ $false -and
+        $_.PublicationState -NE 'Expired'
+    }
+
+    # Filter any declined architectures
+    if ($PSBoundParameters.ContainsKey('DeclineArchitectures')) {
+        Write-Progress @WriteProgressParams -Status 'Filtering declined architectures' -PercentComplete 30
+        $ArchitecturesRegEx = '\s({0})' -f [String]::Join('|', $DeclineArchitectures.regex)
+        $WsusDeclined = $WsusDeclined | Where-Object Title -NotMatch $ArchitecturesRegEx
+    }
+
+    # Filter any declined languages
+    if ($PSBoundParameters.ContainsKey('DeclineLanguages')) {
+        foreach ($Language in $DeclineLanguages) {
+            $Status = 'Filtering declined language: {0}' -f $Language.code
+            Write-Progress @WriteProgressParams -Status $Status -PercentComplete 40
+
+            $LanguageRegEx = '\s\[?{0}(_LP|_LIP)?\]?' -f $Language.code
+            $WsusDeclined = $WsusDeclined | Where-Object Title -NotMatch $LanguageRegEx
+        }
+    }
+
+    # Ignore declined categories
     if ($PSBoundParameters.ContainsKey('DeclineCategories')) {
         $IgnoredCatalogueCategories = $Script:WscCatalogue | Where-Object Category -In $DeclineCategories
     }
-    if ($PSBoundParameters.ContainsKey('DeclineArchitectures')) {
-        $IgnoredArchitecturesRegEx = '\s({0})' -f [String]::Join('|', $DeclineArchitectures.regex)
-    }
-    if ($PSBoundParameters.ContainsKey('DeclineLanguages')) {
-        $IgnoredLanguagesRegEx = '\s\[?{0}(_LP|_LIP)?\]?' -f [String]::Join('|', $DeclineLanguages.code)
-    }
 
-    Write-Progress @WriteProgressParams -Status 'Analyzing declined updates' -PercentComplete 20
-    $UpdatesProcessed = 0
+    Write-Progress @WriteProgressParams -Status 'Analyzing declined updates' -PercentComplete 50
     $SuspectDeclines = New-Object -TypeName 'Collections.Generic.List[Microsoft.UpdateServices.Internal.BaseApi.Update]'
+    $UpdatesProcessed = 0
     foreach ($Update in $WsusDeclined) {
-        # Update progress every 10 updates
-        if ($UpdatesProcessed % 10 -eq 0) {
-            $PercentComplete = $UpdatesProcessed / $WsusDeclined.Count * 80 + 20
+        # Update progress every 100 updates
+        if ($UpdatesProcessed % 100 -eq 0) {
+            $PercentComplete = $UpdatesProcessed / $WsusDeclined.Count * 50 + 50
             Write-Progress @WriteProgressParams -PercentComplete $PercentComplete
-        }
-
-        # Ignore superseded and expired updates
-        if ($Update.IsSuperseded -or $Update.PublicationState -eq 'Expired') {
-            continue
         }
 
         # Ignore cluster updates if they were declined
@@ -396,20 +410,6 @@ Function Get-WsusSuspectDeclines {
         # Ignore any update categories which were declined
         if ($PSBoundParameters.ContainsKey('DeclineCategories')) {
             if ($Update.Title -in $IgnoredCatalogueCategories.Title) {
-                continue
-            }
-        }
-
-        # Ignore any update architectures which were declined
-        if ($PSBoundParameters.ContainsKey('DeclineArchitectures')) {
-            if ($Update.Title -match $IgnoredArchitecturesRegEx) {
-                continue
-            }
-        }
-
-        # Ignore any update languages which were declined
-        if ($PSBoundParameters.ContainsKey('DeclineLanguages')) {
-            if ($Update.Title -match $IgnoredLanguagesRegEx) {
                 continue
             }
         }
