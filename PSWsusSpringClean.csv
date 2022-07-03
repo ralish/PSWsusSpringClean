@@ -47,15 +47,12 @@ Superseded,Microsoft .NET Framework 4.6.1 for Windows Server 2012 R2 for x64 (KB
 Superseded,Microsoft .NET Framework 4.6.1 for Windows Server 2012 R2 for x64 (KB3102467),Windows Server 2012 R2
 Language Packs,Microsoft .NET Framework 4.6.1 Language Packs (KB3102433),Windows 7
 Language Packs,Microsoft .NET Framework 4.6.1 Language Packs for Windows Server 2012 R2 for x64 (KB3102521),Windows Server 2012 R2
-Language Packs,Microsoft .NET Framework 4.6.1 Language Packs for x64 (KB3102433),Windows 7
 Language Packs,Microsoft .NET Framework 4.6.1 Upgrade Language Packs (KB3102433),Windows 7
-Language Packs,Microsoft .NET Framework 4.6.1 Upgrade Language Packs for x64 (KB3102433),Windows 7
 Superseded,Microsoft .NET Framework 4.7 for Windows 10 Version 1607 (KB3186568),Windows 10
 Superseded,Microsoft .NET Framework 4.7 for Windows 10 Version 1607 for x64 (KB3186568),Windows 10
 Superseded,Microsoft .NET Framework 4.7 for Windows 8.1 (KB3186539),Windows 8.1
 Superseded,Microsoft .NET Framework 4.7 for Windows 8.1 and Windows Server 2012 R2 for x64 (KB3186539),"Windows Server 2012 R2, Windows 8.1"
 Language Packs,Microsoft .NET Framework 4.7 Language Packs for Windows 10 Version 1607 (KB3186607),Windows 10
-Language Packs,Microsoft .NET Framework 4.7 Language Packs for Windows 10 Version 1607 and Windows Server 2016 for x64 (KB3186607),"Windows 10, Windows Server 2016"
 Language Packs,Microsoft .NET Framework 4.7 Language Packs for Windows 10 Version 1607 for x64 (KB3186607),Windows 10
 Language Packs,Microsoft .NET Framework 4.7 Language Packs for Windows 8.1 (KB3186606),Windows 8.1
 Language Packs,Microsoft .NET Framework 4.7 Language Packs for Windows 8.1 and Windows Server 2012 R2 for x64 (KB3186606),"Windows 8.1, Windows Server 2012 R2"
@@ -151,19 +148,14 @@ Superseded,Security Update for Microsoft .NET Framework 3.5.1 on Windows 7 x86 (
 Superseded,Security Update for Microsoft .NET Framework 3.5.1 on Windows 7 x86 (KB2742598),Windows 7
 Superseded,Security Update for Microsoft .NET Framework 3.5.1 on Windows 7 x86 (KB2756920),Windows 7
 Superseded,Security Update for Microsoft .NET Framework 3.5.1 on Windows 7 x86 (KB2789644),"Windows 7, Windows Embedded Standard 7"
-Superseded,Security Update for Microsoft .NET Framework 4 on Windows Vista SP2 and Windows Server 2008 SP2  x86 (KB3099866),"Windows Server 2008, Windows Vista"
 Superseded,Security Update for Microsoft .NET Framework 4 on Windows Vista SP2 and Windows Server 2008 SP2 x64 (KB3099866),"Windows Server 2008, Windows Vista"
-Superseded,Security Update for Microsoft .NET Framework 4.5 and 4.5.1 on Windows 8 (KB2894855),Windows 8
-Superseded,Security Update for Microsoft .NET Framework 4.5 and 4.5.1 on Windows 8 and Windows Server 2012 for x64-based Systems (KB2894855),"Windows 8, Windows Server 2012"
 Superseded,Security Update for Microsoft .NET Framework 4.5 on Vista and Server 2008 for x64 (KB2861193),"Windows Server 2008, Windows Vista"
 Superseded,Security Update for Microsoft .NET Framework 4.5 on Windows 8 (KB2737084),Windows 8
 Superseded,Security Update for Microsoft .NET Framework 4.5 on Windows 8 (KB2840632),Windows 8
-Superseded,Security Update for Microsoft .NET Framework 4.5 on Windows 8 (KB2898865),Windows 8
 Superseded,Security Update for Microsoft .NET Framework 4.5 on Windows 8 and Windows Server 2012 for x64 (KB2742614),"Windows 8, Windows Server 2012"
 Superseded,Security Update for Microsoft .NET Framework 4.5 on Windows 8 and Windows Server 2012 for x64-based Systems (KB2737084),"Windows 8, Windows Server 2012"
 Superseded,Security Update for Microsoft .NET Framework 4.5 on Windows 8 and Windows Server 2012 for x64-based Systems (KB2840632),"Windows 8, Windows Server 2012"
 Superseded,Security Update for Microsoft .NET Framework 4.5 on Windows 8 and Windows Server 2012 for x64-based Systems (KB2861702),"Windows 8, Windows Server 2012"
-Superseded,Security Update for Microsoft .NET Framework 4.5 on Windows 8 and Windows Server 2012 for x64-based Systems (KB2898865),"Windows 8, Windows Server 2012"
 Superseded,Security Update for Microsoft .NET Framework 4.5 on Windows 8 x86 (KB2742614),Windows 8
 Superseded,Security Update for Microsoft .NET Framework 4.5 on Windows 8 x86 (KB2861702),Windows 8
 Superseded,Security Update for Microsoft .NET Framework 4.5 on Windows Vista and Windows Server 2008 x86 (KB2861193),"Windows Server 2008, Windows Vista"
@@ -211,8 +203,6 @@ Superseded,Security Update for SQL Server 2014 Service Pack 1 CU (KB4032542),Mic
 Superseded,Security Update for SQL Server 2014 Service Pack 1 GDR (KB4019091),Microsoft SQL Server 2014
 Superseded,Security Update for SQL Server 2016 RTM CU (KB4058559),Microsoft SQL Server 2016
 Superseded,Security Update for SQL Server 2016 RTM GDR (KB4058560),Microsoft SQL Server 2016
-Superseded,Security Update for SQL Server 2016 Service Pack 1 GDR (KB4458842),Microsoft SQL Server 2016
-Superseded,Security Update for SQL Server 2016 SP1 CU (KB4293808),Microsoft SQL Server 2016
 Superseded,Security Update for Windows 2000 (329834),Windows 2000
 Superseded,Security Update for Windows 2000 (819696),Windows 2000
 Superseded,Security Update for Windows 8.1 (KB2961899) without KB2919355,Windows 8.1
@@ -225,7 +215,6 @@ Superseded,Security Update for Windows Media Player 9 for Windows XP SP2 (KB9794
 Superseded,Security Update for Windows Media Services (KB832359),Windows 2000
 Superseded,Security Update for Windows Messenger (KB887472),Windows XP
 Superseded,Security Update for Windows Server 2012 R2 (KB2961899) without KB2919355,Windows Server 2012 R2
-Superseded,Security Update for Windows Server 2012 R2 (KB2962073) without KB2919355,Windows Server 2012 R2
 Superseded,Security Update for Windows Server 2012 R2 (KB2973906) without KB2919355,Windows Server 2012 R2
 Superseded,Security Update for Windows Vista Service Pack 1 (KB979688),Windows Vista
 Superseded,Security Update for Windows Vista Service Pack 1 for x64-based Systems (KB979688),Windows Vista
@@ -256,20 +245,6 @@ Language Packs,Update for LIP SP2 MUI Resource Loading (KB913808),Windows XP
 Superseded,Update for Microsoft .NET Framework 3.0 (KB932394),"Windows Server 2003, Windows Server 2003, Datacenter Edition, Windows XP, Windows XP x64 Edition"
 Language Packs,Update for Microsoft .NET Framework 4.5 Language Packs for x64-based Systems (KB2770446),"Windows Server 2008, Windows 7, Windows Server 2008 R2, Windows Vista"
 Language Packs,Update for Microsoft .NET Framework 4.5 Language Packs x86 (KB2770446),"Windows Server 2008, Windows 7, Windows Vista"
-Language Packs,Update for Microsoft Office 2016 Language Interface Pack (KB2910955) 32-Bit Edition,Office 2016
-Language Packs,Update for Microsoft Office 2016 Language Interface Pack (KB2910955) 64-Bit Edition,Office 2016
-Language Packs,Update for Microsoft Office 2016 Language Interface Pack (KB3118261) 32-Bit Edition,Office 2016
-Language Packs,Update for Microsoft Office 2016 Language Interface Pack (KB3118261) 64-Bit Edition,Office 2016
-Language Packs,Update for Microsoft Office 2016 Language Interface Pack (KB3118333) 32-Bit Edition,Office 2016
-Language Packs,Update for Microsoft Office 2016 Language Interface Pack (KB3118333) 64-Bit Edition,Office 2016
-Language Packs,Update for Microsoft Office 2016 Language Interface Pack (KB3191866) 32-Bit Edition,Office 2016
-Language Packs,Update for Microsoft Office 2016 Language Interface Pack (KB3191866) 64-Bit Edition,Office 2016
-Language Packs,Update for Microsoft Office 2016 Language Interface Pack (KB3191930) 32-Bit Edition,Office 2016
-Language Packs,Update for Microsoft Office 2016 Language Interface Pack (KB3191930) 64-Bit Edition,Office 2016
-Language Packs,Update for Microsoft Office 2016 Language Interface Pack (KB4032232) 32-Bit Edition,Office 2016
-Language Packs,Update for Microsoft Office 2016 Language Interface Pack (KB4032232) 64-Bit Edition,Office 2016
-Language Packs,Update for Microsoft Office 2016 Language Interface Pack (KB4461475) 32-Bit Edition,Office 2016
-Language Packs,Update for Microsoft Office 2016 Language Interface Pack (KB4461475) 64-Bit Edition,Office 2016
 Region - GB/US,Update for Microsoft Office Accounting 2007 (KB946690),Office 2007
 Superseded,Update for Microsoft Office Outlook 2007 Junk Email Filter (KB2825642),Office 2007
 Superseded,Update for Microsoft Office Outlook 2007 Junk Email Filter (KB2880505),Office 2007
