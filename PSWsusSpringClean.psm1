@@ -8,6 +8,11 @@ $RegExPrereleaseUpdates = '\b(Beta|Pre-release|Preview|RC1|Release Candidate)\b'
 $RegExSecurityOnlyUpdates = '\bSecurity Only (Quality )?Update\b'
 $RegExWindowsNextUpdates = '\b(Server|Version) Next\b'
 
+# Match updates which appear to be language related
+$RegExLanguageUpdates = '(Language( Interface)?|LIP) Pack|_LI?P'
+# Matches BCP 47 language ranges (RFC 5646)
+$RegExBcp47 = '\b[a-z]{2,3}(-[a-z]{2,4})?-[a-z]{2,}\b'
+
 Function Invoke-WsusSpringClean {
     <#
         .SYNOPSIS
@@ -362,8 +367,25 @@ Function Get-WsusSuspectDeclines {
             $Status = 'Filtering declined language: {0}' -f $Language.code
             Write-Progress @WriteProgressParams -Status $Status -PercentComplete 40
 
-            $RegExLanguage = '\s\[?{0}(_LP|_LIP)?\]?' -f $Language.code
-            $WsusDeclined = $WsusDeclined | Where-Object Title -NotMatch $RegExLanguage
+            $RegExLanguageCode = '\s\[?{0}(_LI?P)?\]?' -f $Language.code
+            $RegExLanguageName = '\b{0} (Language( Interface)?|LIP) Pack\b' -f [Regex]::Escape($Language.name)
+            $FilteredDeclines = New-Object -TypeName 'Collections.Generic.List[Microsoft.UpdateServices.Internal.BaseApi.Update]'
+
+            foreach ($Update in $WsusDeclined) {
+                # If an update matches a BCP 47 language range and a language
+                # name, then only act on the former as it's more specific.
+                if ($Update.Title -match $RegExLanguageCode) {
+                    continue
+                }
+
+                if ($Update.Title -match $RegExLanguageName) {
+                    continue
+                }
+
+                $FilteredDeclines.Add($Update)
+            }
+
+            $WsusDeclined = $FilteredDeclines
         }
     }
 
@@ -731,11 +753,39 @@ Function Invoke-WsusServerSpringClean {
 
     if ($PSBoundParameters.ContainsKey('DeclineLanguages')) {
         $PercentComplete = $TasksDone / $TasksTotal * 100
+
+        # Limit the updates we iterate over for each language
+        $WsusLanguageUpdates = $WsusAnyExceptDeclined | Where-Object {
+            $_.Title -match $RegExBcp47 -or
+            $_.Title -match $RegExLanguageUpdates
+        }
+
         foreach ($Language in $DeclineLanguages) {
             $Status = 'Declining updates with language: {0}' -f $Language.code
             Write-Progress @WriteProgressParams -Status $Status -PercentComplete $PercentComplete
-            $RegExLanguage = '\s\[?{0}(_LP|_LIP)?\]?' -f $Language.code
-            Invoke-WsusDeclineUpdatesByRegEx -Updates $WsusAnyExceptDeclined -RegEx $RegExLanguage
+
+            $RegExLanguageCode = '\s\[?{0}(_LI?P)?\]?' -f $Language.code
+            $RegExLanguageName = '\b{0} (Language( Interface)?|LIP) Pack\b' -f [Regex]::Escape($Language.name)
+
+            foreach ($Update in $WsusLanguageUpdates) {
+                # If an update matches a BCP 47 language range and a language
+                # name, then only act on the former as it's more specific.
+                if ($Update.Title -match $RegExLanguageCode) {
+                    if ($PSCmdlet.ShouldProcess($Update.Title, 'Decline')) {
+                        Write-Verbose -Message ('Declining update: {0}' -f $Update.Title)
+                        $Update.Decline()
+                    }
+
+                    continue
+                }
+
+                if ($Update.Title -match $RegExLanguageName) {
+                    if ($PSCmdlet.ShouldProcess($Update.Title, 'Decline')) {
+                        Write-Verbose -Message ('Declining update: {0}' -f $Update.Title)
+                        $Update.Decline()
+                    }
+                }
+            }
         }
         $TasksDone++
     }
