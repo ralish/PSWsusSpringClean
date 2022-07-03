@@ -352,8 +352,8 @@ Function Get-WsusSuspectDeclines {
     # Filter any declined architectures
     if ($PSBoundParameters.ContainsKey('DeclineArchitectures')) {
         Write-Progress @WriteProgressParams -Status 'Filtering declined architectures' -PercentComplete 30
-        $ArchitecturesRegEx = '\s({0})' -f [String]::Join('|', $DeclineArchitectures.regex)
-        $WsusDeclined = $WsusDeclined | Where-Object Title -NotMatch $ArchitecturesRegEx
+        $RegExArchitectures = '\s({0})' -f [String]::Join('|', $DeclineArchitectures.regex)
+        $WsusDeclined = $WsusDeclined | Where-Object Title -NotMatch $RegExArchitectures
     }
 
     # Filter any declined languages
@@ -362,8 +362,8 @@ Function Get-WsusSuspectDeclines {
             $Status = 'Filtering declined language: {0}' -f $Language.code
             Write-Progress @WriteProgressParams -Status $Status -PercentComplete 40
 
-            $LanguageRegEx = '\s\[?{0}(_LP|_LIP)?\]?' -f $Language.code
-            $WsusDeclined = $WsusDeclined | Where-Object Title -NotMatch $LanguageRegEx
+            $RegExLanguage = '\s\[?{0}(_LP|_LIP)?\]?' -f $Language.code
+            $WsusDeclined = $WsusDeclined | Where-Object Title -NotMatch $RegExLanguage
         }
     }
 
@@ -723,8 +723,8 @@ Function Invoke-WsusServerSpringClean {
         foreach ($Architecture in $DeclineArchitectures) {
             $Status = 'Declining updates with architecture: {0}' -f $Architecture.name
             Write-Progress @WriteProgressParams -Status $Status -PercentComplete $PercentComplete
-            $ArchitectureRegEx = '\s({0})' -f $Architecture.regex
-            Invoke-WsusDeclineUpdatesByRegEx -Updates $WsusAnyExceptDeclined -RegEx $ArchitectureRegEx
+            $RegExArchitecture = '\s({0})' -f $Architecture.regex
+            Invoke-WsusDeclineUpdatesByRegEx -Updates $WsusAnyExceptDeclined -RegEx $RegExArchitecture
         }
         $TasksDone++
     }
@@ -734,8 +734,8 @@ Function Invoke-WsusServerSpringClean {
         foreach ($Language in $DeclineLanguages) {
             $Status = 'Declining updates with language: {0}' -f $Language.code
             Write-Progress @WriteProgressParams -Status $Status -PercentComplete $PercentComplete
-            $LanguageRegEx = '\s\[?{0}(_LP|_LIP)?\]?' -f $Language.code
-            Invoke-WsusDeclineUpdatesByRegEx -Updates $WsusAnyExceptDeclined -RegEx $LanguageRegEx
+            $RegExLanguage = '\s\[?{0}(_LP|_LIP)?\]?' -f $Language.code
+            Invoke-WsusDeclineUpdatesByRegEx -Updates $WsusAnyExceptDeclined -RegEx $RegExLanguage
         }
         $TasksDone++
     }
