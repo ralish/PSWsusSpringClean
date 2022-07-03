@@ -2,11 +2,11 @@
 Set-StrictMode -Version 3.0
 
 # Regular expressions for declining certain types of updates
-$RegExClusterUpdates = ' Failover Clustering '
-$RegExFarmUpdates = ' Farm[- ]'
-$RegExPrereleaseUpdates = ' (Beta|Preview|RC1|Release Candidate) '
-$RegExSecurityOnlyUpdates = ' Security Only (Quality )?Update '
-$RegExWindowsNextUpdates = ' (Server|Version) Next '
+$RegExClusterUpdates = '\bFailover Clustering\b'
+$RegExFarmUpdates = '\bfarm-deployment\b'
+$RegExPrereleaseUpdates = '\b(Beta|Pre-release|Preview|RC1|Release Candidate)\b'
+$RegExSecurityOnlyUpdates = '\bSecurity Only (Quality )?Update\b'
+$RegExWindowsNextUpdates = '\b(Server|Version) Next\b'
 
 Function Invoke-WsusSpringClean {
     <#
@@ -347,10 +347,10 @@ Function Get-WsusSuspectDeclines {
         $IgnoredCatalogueCategories = $Script:WscCatalogue | Where-Object Category -In $DeclineCategories
     }
     if ($PSBoundParameters.ContainsKey('DeclineArchitectures')) {
-        $IgnoredArchitecturesRegEx = ' ({0})' -f [String]::Join('|', $DeclineArchitectures.regex)
+        $IgnoredArchitecturesRegEx = '\s({0})' -f [String]::Join('|', $DeclineArchitectures.regex)
     }
     if ($PSBoundParameters.ContainsKey('DeclineLanguages')) {
-        $IgnoredLanguagesRegEx = ' [\[]?({0})(_LP|_LIP)?[\]]?' -f [String]::Join('|', $DeclineLanguages.code)
+        $IgnoredLanguagesRegEx = '\s\[?{0}(_LP|_LIP)?\]?' -f [String]::Join('|', $DeclineLanguages.code)
     }
 
     Write-Progress @WriteProgressParams -Status 'Analyzing declined updates' -PercentComplete 20
@@ -709,29 +709,32 @@ Function Invoke-WsusServerSpringClean {
     }
 
     if ($PSBoundParameters.ContainsKey('DeclineCategories')) {
+        $PercentComplete = $TasksDone / $TasksTotal * 100
         foreach ($Category in $DeclineCategories) {
             $Status = 'Declining updates in category: {0}' -f $Category
-            Write-Progress @WriteProgressParams -Status $Status -PercentComplete ($TasksDone / $TasksTotal * 100)
+            Write-Progress @WriteProgressParams -Status $Status -PercentComplete $PercentComplete
             Invoke-WsusDeclineUpdatesByCatalogue -Updates $WsusAnyExceptDeclined -Category $Category
         }
         $TasksDone++
     }
 
     if ($PSBoundParameters.ContainsKey('DeclineArchitectures')) {
+        $PercentComplete = $TasksDone / $TasksTotal * 100
         foreach ($Architecture in $DeclineArchitectures) {
             $Status = 'Declining updates with architecture: {0}' -f $Architecture.name
-            Write-Progress @WriteProgressParams -Status $Status -PercentComplete ($TasksDone / $TasksTotal * 100)
-            $ArchitectureRegEx = ' ({0})' -f $Architecture.regex
+            Write-Progress @WriteProgressParams -Status $Status -PercentComplete $PercentComplete
+            $ArchitectureRegEx = '\s({0})' -f $Architecture.regex
             Invoke-WsusDeclineUpdatesByRegEx -Updates $WsusAnyExceptDeclined -RegEx $ArchitectureRegEx
         }
         $TasksDone++
     }
 
     if ($PSBoundParameters.ContainsKey('DeclineLanguages')) {
+        $PercentComplete = $TasksDone / $TasksTotal * 100
         foreach ($Language in $DeclineLanguages) {
             $Status = 'Declining updates with language: {0}' -f $Language.code
-            Write-Progress @WriteProgressParams -Status $Status -PercentComplete ($TasksDone / $TasksTotal * 100)
-            $LanguageRegEx = ' [\[]?{0}(_LP|_LIP)?[\]]?' -f $Language.code
+            Write-Progress @WriteProgressParams -Status $Status -PercentComplete $PercentComplete
+            $LanguageRegEx = '\s\[?{0}(_LP|_LIP)?\]?' -f $Language.code
             Invoke-WsusDeclineUpdatesByRegEx -Updates $WsusAnyExceptDeclined -RegEx $LanguageRegEx
         }
         $TasksDone++
