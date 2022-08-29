@@ -1,6 +1,15 @@
 Changelog
 =========
 
+v0.6.2
+------
+
+- Major improvements to language updates detection
+- Remove obsolete updates from bundled catalogue
+- Performance improvements searching for suspect declines
+- Miscellaneous improvements to regex update filters
+- Minor code clean-up & developer tooling improvements
+
 v0.6.1
 ------
 
