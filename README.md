@@ -7,19 +7,21 @@ PSWsusSpringClean
 
 A PowerShell module to assist with cleaning-up superfluous updates in Windows Server Update Services (WSUS).
 
-- [The Problem](#the-problem)
-- [The Solution](#the-solution)
+- [The problem](#the-problem)
+- [The solution](#the-solution)
 - [Requirements](#requirements)
 - [Installing](#installing)
-- [Sample Usage](#sample-usage)
+- [Sample usage](#sample-usage)
 - [License](#license)
 
-The Problem
+The problem
 -----------
 
-For the cleanliness obsessed among us, maintaining a pristine WSUS catalogue of approved updates can be a tedious and time-consuming affair. While WSUS itself provides tools to help manage this process, via the graphical *Server Cleanup Wizard* and its PowerShell equivalent `Invoke-WsusServerCleanup`, these tools can only decline or delete updates which WSUS itself is already aware are obsolete via update metadata. Unfortunately, many updates are obsolete but lack the metadata to indicate as such, or are still current but may be unwanted (e.g. Itanium architecture updates). Manually maintaining an ever-increasing catalogue of updates while removing these unwanted updates rapidly becomes a timesink.
+For the cleanliness obsessed among us, maintaining a pristine WSUS catalogue of approved updates can be a tedious and time-consuming affair. While WSUS itself provides tools to help manage this process, via the graphical *Server Cleanup Wizard* and its PowerShell equivalent `Invoke-WsusServerCleanup`, these tools can only decline or delete updates which WSUS itself is already aware are obsolete via update metadata.
 
-The Solution
+Unfortunately, many updates are obsolete but lack the metadata to indicate as such, or are still current but may be unwanted (e.g. Itanium architecture updates). Manually maintaining an ever-increasing catalogue of updates while removing these unwanted updates rapidly becomes a timesink.
+
+The solution
 ------------
 
 The `PSWsusSpringClean` module provides several additional options for cleaning your WSUS server:
@@ -107,7 +109,7 @@ You can check that PowerShell is able to locate the module by running the follow
 Get-Module PSWsusSpringClean -ListAvailable
 ```
 
-Sample Usage
+Sample usage
 ------------
 
 ```posh
