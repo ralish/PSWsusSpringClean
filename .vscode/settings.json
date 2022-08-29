@@ -25,6 +25,6 @@
 
     "[powershell]": {
         "editor.formatOnSave": true,
-        "editor.rulers": [80]
+        "editor.rulers": [79]
     }
 }
