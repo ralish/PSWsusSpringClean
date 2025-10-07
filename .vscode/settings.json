@@ -3,11 +3,6 @@
     // See: https://github.com/editorconfig/editorconfig-vscode/issues/153
     "files.trimTrailingWhitespace": false,
 
-    "devskim.ignoreRulesList": [
-        // Restricted functions
-        "DS104456"
-    ],
-
     // Markdown table of contents generation
     "markdown.extension.toc.levels": "2..2",
     "markdown.extension.toc.slugifyMode": "github",
