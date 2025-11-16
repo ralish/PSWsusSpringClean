@@ -56,7 +56,7 @@ There are many updates which are likely unwanted in WSUS installations but have 
 
 Two parameters are provided to indicate to the module which unneeded updates should be declined:
 
-- Decline only the updates in the listed categories (`-DeclineCategoriesInclude`) [**Default**]  
+- Decline only the updates in the listed categories (`-DeclineCategoriesInclude`) \[**Default**\]  
   An array of strings corresponding to the categories of unneeded updates to be declined. If an empty array is provided (default) then *no* updates listed in the CSV will be declined.
 - Decline all unneeded updates except those in the listed categories (`-DeclineCategoriesExclude`)  
   An array of strings corresponding to the categories of unneeded updates to exclude from declining. If an empty array is provided then **all** updates listed in the CSV will be declined!
