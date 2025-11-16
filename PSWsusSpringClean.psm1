@@ -350,8 +350,8 @@ Function Get-WsusSuspectDeclines {
     # lots. This will help to improve performance of the remaining filtering.
     Write-Progress @WriteProgressParams -Status 'Filtering superseded and expired updates' -PercentComplete 20
     $WsusDeclined = $WsusDeclined | Where-Object {
-        $_.IsSuperseded -EQ $false -and
-        $_.PublicationState -NE 'Expired'
+        $_.IsSuperseded -eq $false -and
+        $_.PublicationState -ne 'Expired'
     }
 
     # Filter any declined architectures
